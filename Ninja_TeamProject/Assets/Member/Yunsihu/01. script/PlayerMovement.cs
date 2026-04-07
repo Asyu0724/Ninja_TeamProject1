@@ -41,27 +41,14 @@ public class PlayerController : MonoBehaviour
     }
     private void OnJump(InputValue value)
     {
-        if (_currentJumpCount == 0)
+        if (_currentJumpCount < 1)
             return;
         if (_currentJumpCount > 0)
         {
             _rb.linearVelocityY = 0;
             _rb.AddForceY(JumpPower, ForceMode2D.Impulse);
-            _currentJumpCount -= 1;
+            _currentJumpCount--;
         }
-        /*/if (_currentJumpCount > 0)
-         {
-
-             _isGrounded = true;
-             Debug.Log(_currentJumpCount);
-             --_currentJumpCount;
-             return;
-         }
-         else
-         {
-             _isGrounded = false;
-         }*/
-
     }
     private void FixedUpdate()
     {
