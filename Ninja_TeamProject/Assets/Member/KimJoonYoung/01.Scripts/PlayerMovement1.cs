@@ -4,7 +4,7 @@ using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController2 : MonoBehaviour
+public class PlayerController1 : MonoBehaviour
 {
     [Header("PlayerSettingValue")]
     [SerializeField] private float speed;
@@ -95,9 +95,11 @@ public class PlayerController2 : MonoBehaviour
 
     private void PlayerAtk() // 공격 메소드
     {
-        _playerAtkTimer = 1f; // 플레이어 콤보 쿨타임 1초로 설정
         if (_atkTime) // 공격 중이 아닐때
-        StartCoroutine(AtkCoroutine()); // 코루틴 실행
+        {
+            _playerAtkTimer = 1f; // 플레이어 콤보 쿨타임 1초로 설정
+            StartCoroutine(AtkCoroutine()); // 코루틴 실행
+        }
 
 
         if (!_atkNow) // 공격 중 일때

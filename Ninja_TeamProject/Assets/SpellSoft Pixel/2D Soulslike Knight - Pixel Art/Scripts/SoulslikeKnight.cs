@@ -12,7 +12,6 @@ using UnityEngine;
 
 public class SoulslikeKnight : MonoBehaviour
 {
-
     private Rigidbody2D rb2D;
     private Animator animator;
 
@@ -75,7 +74,6 @@ public class SoulslikeKnight : MonoBehaviour
         GetAttackInput();
         GetHealInput();
         FlipSprite();
-
     }
 
     private void FixedUpdate()
