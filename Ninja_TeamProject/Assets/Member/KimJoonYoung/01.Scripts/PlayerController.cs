@@ -3,8 +3,9 @@ using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.TextCore;
 
-public class PlayerController1 : MonoBehaviour
+public class PlayerControllers : MonoBehaviour
 {
     [Header("PlayerSettingValue")]
     [SerializeField] private float speed;
@@ -31,12 +32,10 @@ public class PlayerController1 : MonoBehaviour
     // Player 공격
     private int _playerAtkCombo;
     private int _currentJumpCount;
-
     private float _playerAtkTimer;
-    private float _playerAtkCoolTime;
-
+    private float _cantMoveTimer;
     private bool _atkTime = true;
-    private bool _atkNow;
+    private bool _atkNow = true;
 
 
     private Rigidbody2D _rb;
@@ -62,18 +61,26 @@ public class PlayerController1 : MonoBehaviour
 
     private void FixedUpdate()
     {
+        // 애니메이션
         _animator.SetFloat(_xMoveHash, Mathf.Abs(_moveDir));
         _animator.SetFloat(_yVelocityHash, _rb.linearVelocityY);
         _animator.SetBool(_isGroundedHash, _isGrounded);
         _animator.SetBool(_attackNowHash, _atkNow);
 
-        _rb.linearVelocityX = _moveDir * speed;
+        // 플레이어
+        if (_cantMoveTimer < 0)
+        {
+            _rb.linearVelocityX = _moveDir * speed; // 속도
+            transform.localRotation = Quaternion.Euler(0, _lastMoveDir > 0 ? 0 : 180f, 0f); // 플립
+        }
 
         CheckGround();
-        
-        transform.localRotation = Quaternion.Euler(0, _lastMoveDir > 0 ? 0 : 180f, 0f);
 
-    
+        if (_cantMoveTimer > 0)
+        {
+            _rb.linearVelocityX = 0;
+            _cantMoveTimer -= Time.deltaTime;
+        }
     }
 
     private void Update()
@@ -95,15 +102,11 @@ public class PlayerController1 : MonoBehaviour
 
     private void PlayerAtk() // 공격 메소드
     {
-        if (_atkTime) // 공격 중이 아닐때
-        {
-            _playerAtkTimer = 1f; // 플레이어 콤보 쿨타임 1초로 설정
-            StartCoroutine(AtkCoroutine()); // 코루틴 실행
-        }
+        StartCoroutine(AtkComboTimeReset());
 
-
-        if (!_atkNow) // 공격 중 일때
+        if (_atkNow) // 공격 중 일때
         {
+            _cantMoveTimer = 0.75f;
             StartCoroutine(AtkCoolDown());
             switch (_playerAtkCombo)
             {
@@ -118,25 +121,25 @@ public class PlayerController1 : MonoBehaviour
                     break;
             }
         }
+        _atkNow = false;
     }
 
-    IEnumerator AtkCoroutine()
+    IEnumerator AtkComboTimeReset()
     {
-        _atkTime = false;
-        while (_playerAtkTimer > 0) // 1초동안 입력없으면 초기화
+        _playerAtkTimer = 1.9f; // n초 안에 콤보를 해야됨
+        while (_playerAtkTimer > 0)
         {
             _playerAtkTimer -= Time.deltaTime;
             yield return null;
         }
         _playerAtkCombo = 0;
-        _atkTime = true;
     }
+
     IEnumerator AtkCoolDown()
     {
-        _atkNow = true;
         _playerAtkCombo++;
-        yield return new WaitForSeconds(0.3f);
-        _atkNow = false;
+        yield return new WaitForSeconds(0.4f);
+        _atkNow = true;
     }
 
     private void OnDrawGizmos()
@@ -160,7 +163,7 @@ public class PlayerController1 : MonoBehaviour
         if (_currentJumpCount == 0)
             return;
 
-        if (_currentJumpCount > 0)
+        if (_currentJumpCount > 0 && _cantMoveTimer < 0)
         {
             _rb.linearVelocityY = 0;
             _rb.AddForceY(JumpPower, ForceMode2D.Impulse);
