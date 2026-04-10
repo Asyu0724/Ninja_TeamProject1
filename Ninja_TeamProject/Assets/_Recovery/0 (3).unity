@@ -479,11 +479,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e58c4efae602b94fb057dda0150de6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  _speed: 8
+  _speed: 5
   _jumpPower: 8
   _jumpCount: 2
-  _canComboAttackTimer: 0.1
-  _canAttackTimer: 0.5
 --- !u!70 &1580897737
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -607,12 +605,12 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -5978364503768993528, guid: c33fbba657337ca41aadc4c92c9afeaa, type: 3}
+  m_Sprite: {fileID: -7166050136392503351, guid: 796b38c8abf30f44dbf0f0d0bfcb62ba, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.14906833, y: 0.124223605}
+  m_Size: {x: 0.75, y: 0.625}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -627,7 +625,7 @@ Animator:
   m_GameObject: {fileID: 1842936475}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d27b8210cc6a0d74aac5e70bfc2237b5, type: 2}
+  m_Controller: {fileID: 922868433087922225, guid: 796b38c8abf30f44dbf0f0d0bfcb62ba, type: 3}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
