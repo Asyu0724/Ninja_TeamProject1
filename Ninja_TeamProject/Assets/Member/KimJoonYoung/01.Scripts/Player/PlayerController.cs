@@ -19,6 +19,9 @@ public class PlayerControllers : Agent
     private float _lastMoveDir = 1;
     private bool _isGrounded;
 
+    // Health
+    private HealthSystem _healthSystem;
+
     // Combo Setting
     [Header("ComboSetting")]
     [SerializeField] private float _canComboAttackTimer;
@@ -40,6 +43,13 @@ public class PlayerControllers : Agent
     {
         base.Awake();
         _currentJumpCount = _jumpCount;
+        _healthSystem = GetComponent<HealthSystem>();
+    }
+
+    private void Start()
+    {
+        UIManager.Instance.HealthUI.InitHealthUI(_healthSystem.Health);
+        _healthSystem.OnDamaged += UpdateHealthUI;
     }
 
     /*---------------------------------------------------*/ // Physics 
@@ -148,8 +158,24 @@ public class PlayerControllers : Agent
         Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(transform.position + (Vector3)_agentAttack.offset, _agentAttack.boxSize, 0);
         foreach (Collider2D collider in collider2Ds)
         {
-            collider.gameObject.GetComponent<TestEnemy>().AttackedNow(collider);
+            if (collider.gameObject.CompareTag("Enemy"))
+            {
+                collider.gameObject.GetComponent<HealthSystem>().GetDamage(1,gameObject);
+                collider.gameObject.GetComponent<TestEnemy>().AttackedNow();
+            }
         }
+        
     }
+
+    private void UpdateHealthUI()
+    {
+        UIManager.Instance.HealthUI.UpdateHealthUI(_healthSystem.Health);
+    }
+
+    private void OnDestroy()
+    {
+        _healthSystem.OnDamaged -= UpdateHealthUI;
+    }
+
 
 }

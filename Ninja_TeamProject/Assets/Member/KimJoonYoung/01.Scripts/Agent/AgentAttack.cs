@@ -9,11 +9,24 @@ public class AgentAttack : MonoBehaviour
     [Header("OverLab")]
     public Vector2 boxSize;
     public Vector2 offset;
-    private bool isAttacked;
+    private Vector2 offsetMinus;
+    private Vector2 offsetPlus;
 
+    private void Awake()
+    {
+        offsetPlus.x = offset.x;
+        offsetMinus.x = offset.x * -1;
+    }
     public void Flip(float moveDir)
     {
-        offset.x = moveDir;
+        if (moveDir >= 0)
+        {
+            offset.x = offsetPlus.x;
+        }
+        else if (moveDir < 0)
+        {
+            offset = offsetMinus;
+        }
     }
 
     private void OnDrawGizmos()

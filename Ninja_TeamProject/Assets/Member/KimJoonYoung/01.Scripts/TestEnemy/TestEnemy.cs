@@ -1,38 +1,33 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TestEnemy : Agent
 {
-    [SerializeField] private TextMeshProUGUI hpText;
-    [SerializeField] private int _testenemyHP = 10;
-
+    private HealthSystem _healthSystem;
+    private EnemyHealthBarUI _enemyHealthBarUI;
     private bool attacked;
 
     // Hash
     private int _isAttackedHash = Animator.StringToHash("Attacked");
 
-    private void Start()
+    protected override void Awake()
     {
-        hpText.text = ($"Enemy Bot HP : {_testenemyHP}");
+        base.Awake();
+        _healthSystem = GetComponent<HealthSystem>();
+        _enemyHealthBarUI = GetComponentInChildren<EnemyHealthBarUI>();
     }
 
     private void Update()
     {
         _agentRenderer.SetBoolParam(_isAttackedHash, attacked);
-
-        if (_testenemyHP < 1)
-        {
-            hpText.text = ($"Died");
-            Destroy(gameObject);
-        }
     }
 
-    public void AttackedNow(bool atk)
+    public void AttackedNow()
     {
-        _testenemyHP--;
-        hpText.text = ($"Enemy Bot HP : {_testenemyHP}");
-        attacked = atk;
+        _enemyHealthBarUI.HealthBarUpdate();
+        attacked = true;
         StartCoroutine(Attacked());
     }
 
