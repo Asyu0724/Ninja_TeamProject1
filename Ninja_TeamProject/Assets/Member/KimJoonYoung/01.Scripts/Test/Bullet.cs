@@ -17,7 +17,13 @@ public class Bullet : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
-            collision.gameObject.GetComponent<HealthSystem>().GetDamage(1, gameObject);
+        {
+            if (!collision.gameObject.GetComponent<PlayerController>()._qSkillUse)
+            {
+                collision.gameObject.GetComponent<HealthSystem>().GetDamage(1, gameObject);
+            }
+        }
+
 
         Destroy(gameObject);
     }
