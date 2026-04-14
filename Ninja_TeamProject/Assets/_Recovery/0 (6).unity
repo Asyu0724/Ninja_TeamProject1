@@ -2246,7 +2246,7 @@ MonoBehaviour:
   _jumpCount: 2
   _canComboAttackTimer: 0.2
   _canAttackTimer: 0.5
-  _qskillCoolTime: 5
+  _qskillCoolTime: 12
 --- !u!70 &1580897737
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
