@@ -8,12 +8,16 @@ public class AgentAttack : MonoBehaviour
     // 오버랩
     [Header("OverLab")]
     public Vector2 boxSize;
+    private Vector2 firstboxSize;
+
     public Vector2 offset;
+    private Vector2 firstOffset;
     private Vector2 offsetMinus;
     private Vector2 offsetPlus;
 
     private void Awake()
     {
+        firstboxSize = boxSize;
         offsetPlus.x = offset.x;
         offsetMinus.x = offset.x * -1;
     }
@@ -27,6 +31,32 @@ public class AgentAttack : MonoBehaviour
         {
             offset = offsetMinus;
         }
+    }
+
+    public void SkillBoxSize(float Size)
+    {
+        boxSize.x = Size;
+    }
+
+    public void FirstBoxSize()
+    {
+        boxSize = firstboxSize;
+    }
+    public void SkillOffset(float Offset)
+    {
+        if (offset.x >= 0)
+        {
+            offset.x = Offset;
+        }
+        else if (offset.x < 0)
+        {
+            offset.x = -Offset;
+        }
+    }
+
+    public void FirstOffset()
+    {
+        offset = firstOffset;
     }
 
     private void OnDrawGizmos()
