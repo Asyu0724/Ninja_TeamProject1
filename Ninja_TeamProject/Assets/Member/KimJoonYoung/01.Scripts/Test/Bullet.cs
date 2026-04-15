@@ -16,12 +16,10 @@ public class Bullet : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.TryGetComponent(out PlayerController player))
         {
-            if (!collision.gameObject.GetComponent<PlayerController>()._qSkillUse)
-            {
+            if (!player.gameObject.GetComponent<PlayerSkill>()._qSkillUse)
                 collision.gameObject.GetComponent<HealthSystem>().GetDamage(1, gameObject);
-            }
         }
 
 
