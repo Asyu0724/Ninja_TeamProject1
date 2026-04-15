@@ -28,6 +28,11 @@ public abstract class Boss : MonoBehaviour
         Destroy(gameObject);
     }
 
+/*    protected Collider2D[] CheckCircleOverlap(Vector2 position, float range)
+    {
+        return Physics2D.overlapCircleAll();
+    }*/
+
     public abstract void Attack();
     
 }
