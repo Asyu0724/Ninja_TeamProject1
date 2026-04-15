@@ -1,26 +1,24 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerSkillBarUI : MonoBehaviour
+public class PlayerSkillCoolTimebarUI : MonoBehaviour
 {
     [SerializeField] private Slider skillBar;
     private PlayerController playerController;
+    private float _qSkillCooltime;
 
     private void Awake()
     {
         playerController = GetComponentInParent<PlayerController>();
         skillBar.maxValue = playerController._qskillCoolTime;
-        skillBar.value = skillBar.maxValue;
+        skillBar.value = 0;
+        _qSkillCooltime = playerController._qskillCoolTime;
     }
 
-    public void QSkillCoolTimeBarUpdate()
+    public void qSkillCoolTimeBarUpdate()
     {
         skillBar.value = 0;
-    }
-
-    private void Update()
-    {
-        if (skillBar.value <= skillBar.maxValue)
+        while (skillBar.value >= skillBar.maxValue)
         {
             skillBar.value += Time.deltaTime;
         }
