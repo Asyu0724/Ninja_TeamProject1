@@ -2172,7 +2172,7 @@ GameObject:
   - component: {fileID: 1580897738}
   - component: {fileID: 1580897737}
   - component: {fileID: 1580897739}
-  - component: {fileID: 1580897736}
+  - component: {fileID: 1580897740}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -2229,24 +2229,6 @@ MonoBehaviour:
   m_DefaultActionMap: 
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &1580897736
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1580897729}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e58c4efae602b94fb057dda0150de6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  _speed: 8
-  _jumpPower: 8
-  _jumpCount: 2
-  _canComboAttackTimer: 0.2
-  _canAttackTimer: 0.5
-  _qskillCoolTime: 5
 --- !u!70 &1580897737
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -2325,6 +2307,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HealthSystem
   <Health>k__BackingField: 5
   _maxHealth: 5
+--- !u!114 &1580897740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1580897729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2b0c06df0f691c4c95e1adda8dd6f11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  _speed: 8
+  _jumpPower: 8
+  _jumpCount: 2
+  _canComboAttackTimer: 0.1
+  _canAttackTimer: 0.2
+  _qskillCoolTime: 9
 --- !u!1 &1701758149
 GameObject:
   m_ObjectHideFlags: 0
@@ -3251,7 +3251,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2124210158}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -6.73, y: -2.79, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3609,7 +3609,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1701758152}
-  - {fileID: 2124210161}
   - {fileID: 1580897734}
   - {fileID: 978192239}
   - {fileID: 1472320426}
@@ -3618,3 +3617,4 @@ SceneRoots:
   - {fileID: 64133477}
   - {fileID: 254061874}
   - {fileID: 1558276427}
+  - {fileID: 2124210161}
