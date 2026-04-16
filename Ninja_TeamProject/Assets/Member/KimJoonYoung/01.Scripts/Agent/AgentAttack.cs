@@ -33,25 +33,24 @@ public class AgentAttack : MonoBehaviour
         }
     }
 
-    public void SkillBoxSize(Vector2 Size)
+    public void SkillBoxSize(float Size)
     {
-        boxSize = Size;
+        boxSize.x = Size;
     }
 
     public void FirstBoxSize()
     {
         boxSize = firstboxSize;
     }
-    public void SkillOffset(Vector2 Offset)
+    public void SkillOffset(float Offset)
     {
-        offset.y = Offset.y;
         if (offset.x >= 0)
         {
-            offset.x = Offset.x;
+            offset.x = Offset;
         }
         else if (offset.x < 0)
         {
-            offset.x = -Offset.x;
+            offset.x = -Offset;
         }
     }
 
