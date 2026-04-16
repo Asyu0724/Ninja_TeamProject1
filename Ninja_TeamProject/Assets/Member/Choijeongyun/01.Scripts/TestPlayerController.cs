@@ -1,13 +1,13 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController : MonoBehaviour
+public class TestPlayerController : MonoBehaviour
 {
     [SerializeField] private float _speed;
     [SerializeField] private float _jumpPower;
     private float _moveDir;
     private Rigidbody2D _rigid;
-
+    
     // 범위제한
     private float minLimit;
     private float maxLimit;
