@@ -42,20 +42,20 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: BackGround
+    uniqueID: 2184519657
+    locked: 0
   - name: BackProb
     uniqueID: 356559819
-    locked: 0
-  - name: BackGround
-    uniqueID: 2862053503
-    locked: 0
-  - name: Ground
-    uniqueID: 3450461763
     locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
   - name: Enemy
     uniqueID: 1375837515
+    locked: 0
+  - name: Ground
+    uniqueID: 2284413991
     locked: 0
   - name: Player
     uniqueID: 479758373
