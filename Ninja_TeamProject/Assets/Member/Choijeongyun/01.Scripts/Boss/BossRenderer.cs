@@ -14,21 +14,23 @@ public class BossRenderer : MonoBehaviour
     private int _ChargeHash = Animator.StringToHash(name: "Charge");
     private int _DeathHash = Animator.StringToHash(name: "Death");
 
-    public bool _isGrounded { get; private set; }
-    public bool _Attack1 { get; private set; }
-    public bool _Attack2 { get; private set; }
-    public bool _Charge { get; private set; }
-    public bool _Death { get; private set; }
+    private float _moveX;
 
     private void Awake()
     {
         _animator = GetComponentInChildren<Animator>();
     }
 
+    private void FixedUpdate()
+    {
+        _moveX = Mathf.Abs(bossMove.GetComponent<Rigidbody2D>().linearVelocityX); 
+    }
+
     private void Update()
     {
         _animator.SetBool(_Attack1Hash, bossMove._Attack1);
         _animator.SetBool(_Attack2Hash, bossMove._Attack2);
+        _animator.SetFloat(_xMoveHash, _moveX);
     }
 
     public void AnimationFinished()

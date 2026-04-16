@@ -21,9 +21,9 @@ public class BossMover : MonoBehaviour
     [SerializeField] private Vector2 _boxSize;
     [SerializeField] private Vector2 boxOffset;
 
+    private bool _isSkill => _Attack1 || _Attack2 || _Charge;
+
     public float _lastAttackTime { get; private set; }
-
-
     public bool _isGrounded { get; private set; }
     public bool _Attack1 { get; private set; }
     public bool _Attack2 { get; private set; }
@@ -47,20 +47,15 @@ public class BossMover : MonoBehaviour
         _distance = player.position.x - transform.position.x;
         _moveDir.x = _distance > 0 ? 1f : -1f;
 
-        if (Mathf.Abs(_distance) < 2.0f)
-        {
-            _moveDir.x = 0;
-        }
+        if (Mathf.Abs(_distance) < 2.0f) _moveDir.x = 0;
 
-        _rigid.linearVelocityX = _moveDir.x * _speed;
+        if(!_isSkill) _rigid.linearVelocityX = _moveDir.x * _speed;
 
         CheckPlayer();
 
-        if (_isCanAttack == true)
+        if (_isCanAttack == true && !_isSkill && _lastAttackTime <= 0)
         {
-            if (!_Attack1 && !_Attack2 && _lastAttackTime<=0) {
-                StartAttack();
-            }
+            StartAttack();
         }
     }
 
@@ -83,15 +78,18 @@ public class BossMover : MonoBehaviour
     {
         _lastAttackTime -= Time.deltaTime;
 
-        if (_moveDir.x > 0)
+        if (!_isSkill)
         {
-            if (boxOffset.x < 0) boxOffset.x *= -1;
-            transform.rotation = Quaternion.Euler(0, 0, 0);
-        }
-        else if (_moveDir.x < 0)
-        {
-            if (boxOffset.x > 0) boxOffset.x *= -1;
-            transform.rotation = Quaternion.Euler(0, 180, 0);
+            if (_moveDir.x > 0)
+            {
+                if (boxOffset.x < 0) boxOffset.x *= -1;
+                transform.rotation = Quaternion.Euler(0, 0, 0);
+            }
+            else if (_moveDir.x < 0)
+            {
+                if (boxOffset.x > 0) boxOffset.x *= -1;
+                transform.rotation = Quaternion.Euler(0, 180, 0);
+            }
         }
     }
 
