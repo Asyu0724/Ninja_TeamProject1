@@ -19,7 +19,7 @@ public class PlayerController2 : MonoBehaviour
     [SerializeField] private LayerMask whatIsGround;
 
 
-    // Player
+    // PlayerMoveController
     private float _moveDir;
     private float _lastMoveDir;
 
@@ -28,7 +28,7 @@ public class PlayerController2 : MonoBehaviour
 
 
 
-    // Player 공격
+    // PlayerMoveController 공격
     private int _playerAtkCombo;
     private int _currentJumpCount;
 

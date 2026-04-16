@@ -4,7 +4,7 @@ using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController1 : MonoBehaviour
+public class PlayerMove : MonoBehaviour
 {
     [Header("PlayerSettingValue")]
     [SerializeField] private float speed;
@@ -19,7 +19,7 @@ public class PlayerController1 : MonoBehaviour
     [SerializeField] private LayerMask whatIsGround;
 
 
-    // Player
+    // PlayerMoveController
     private float _moveDir;
     private float _lastMoveDir;
 
@@ -28,7 +28,7 @@ public class PlayerController1 : MonoBehaviour
 
 
 
-    // Player 공격
+    // PlayerMoveController 공격
     private int _playerAtkCombo;
     private int _currentJumpCount;
 
