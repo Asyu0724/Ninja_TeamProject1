@@ -103,11 +103,11 @@ public class PlayerController : Agent
     IEnumerator PlayerHited()
     {
         _playerHited = true;
+        AudioManager.instance.PlaySfx(AudioManager.Sfx.Hit);
         _agentMover._rb.linearVelocityX *= 0.3f;
         yield return new WaitForSeconds(0.1f);
         _playerHited = false;
     }
-
     /*---------------------------------------------------*/ // Game method
 
     private void Flip()
