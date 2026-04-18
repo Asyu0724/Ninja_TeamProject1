@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Bullet
   - Boss
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -41,8 +42,11 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Ground
-    uniqueID: 3450461763
+  - name: BackGround
+    uniqueID: 2184519657
+    locked: 0
+  - name: BackProb
+    uniqueID: 356559819
     locked: 0
   - name: Default
     uniqueID: 0
@@ -50,11 +54,17 @@ TagManager:
   - name: Enemy
     uniqueID: 1375837515
     locked: 0
+  - name: Ground
+    uniqueID: 2284413991
+    locked: 0
   - name: Player
     uniqueID: 479758373
     locked: 0
   - name: UI
     uniqueID: 2440376153
+    locked: 0
+  - name: FrontProb
+    uniqueID: 3846734357
     locked: 0
   m_RenderingLayers:
   - Default
