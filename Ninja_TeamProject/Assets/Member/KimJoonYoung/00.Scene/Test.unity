@@ -16925,7 +16925,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 502268b4e2e5c4d4ba4d8e93e4eb8797, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 14860100ebee4e6489ccb75e9880b598, type: 2}
 --- !u!4 &1756646515
 Transform:
   m_ObjectHideFlags: 0
@@ -17623,6 +17623,26 @@ PrefabInstance:
     - target: {fileID: 5622928556684873304, guid: cdd78871081b7d14e904ea56de654d91, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6177653574092668043, guid: cdd78871081b7d14e904ea56de654d91, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6177653574092668043, guid: cdd78871081b7d14e904ea56de654d91, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dd6a9e17dec4d444bb1eca0b468b2607, type: 3}
+    - target: {fileID: 6177653574092668043, guid: cdd78871081b7d14e904ea56de654d91, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6177653574092668043, guid: cdd78871081b7d14e904ea56de654d91, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6177653574092668043, guid: cdd78871081b7d14e904ea56de654d91, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6991192052290232578, guid: cdd78871081b7d14e904ea56de654d91, type: 3}
       propertyPath: m_Name

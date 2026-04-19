@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class BossMover : MonoBehaviour
 {
-    public PlayerController _playercontroller;
+    public PlayerControllers _playercontroller;
     private Rigidbody2D _rigid;
     private Vector2 _moveDir;
     private float _distance;

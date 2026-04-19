@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.TextCore;
 
-public class PlayerController : Agent
+public class PlayerControllers : Agent
 {
     // Player Setting
     [Header("PlayerSetting")]
