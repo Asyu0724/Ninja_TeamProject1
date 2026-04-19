@@ -6,7 +6,7 @@ using TMPro;
 
 public class PlayerSkill : Agent
 {
-    private PlayerControllers playerController;
+    private PlayerController playerController;
     private AudioSource _audioSource;
     private bool _playerHited;
 
@@ -43,7 +43,7 @@ public class PlayerSkill : Agent
     {
         base.Awake();
         _playerSkillBarUI = GetComponentInChildren<PlayerSkillBarUI>();
-        playerController = GetComponent<PlayerControllers>();
+        playerController = GetComponent<PlayerController>();
         _audioSource = GetComponent<AudioSource>();
     }
 
