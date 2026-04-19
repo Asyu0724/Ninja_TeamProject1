@@ -2,7 +2,7 @@ using System.Collections;
 using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
 
-public class GolemBoss : Boss
+public class GolemBoss : Boss//, IDamageable
 {
     public float patternDelay = 5f;
     public float closeAttackRange = 5.0f;
@@ -11,6 +11,8 @@ public class GolemBoss : Boss
     private bool isAttacking = false;
     private CameraShake cs;
 
+    Rigidbody2D _rb;
+
     //----------------------
     int bigCloudHash;
     int smallCloudHash;
@@ -18,7 +20,7 @@ public class GolemBoss : Boss
     int spinAttackHash;
     int spinAttackEndHash;
     int turnLeftHash;
-    int turnRightHash;
+    int noDamageSpinAttackHash;
     //----------------------
 
     protected override void Start()
@@ -27,6 +29,7 @@ public class GolemBoss : Boss
 
         player = GameObject.FindGameObjectWithTag("Player").transform;
         cs = GameObject.Find("Main Camera").GetComponent<CameraShake>();
+        _rb = GetComponent<Rigidbody2D>();
 
         //---------------------------------
         bigCloudHash = Animator.StringToHash("BigCloud");
@@ -35,7 +38,7 @@ public class GolemBoss : Boss
         spinAttackHash = Animator.StringToHash("SpinAttack");
         spinAttackEndHash = Animator.StringToHash("SpinAttackEnd");
         turnLeftHash = Animator.StringToHash("TurnLeft");
-        turnRightHash = Animator.StringToHash("TurnRight");
+        noDamageSpinAttackHash = Animator.StringToHash("NoDamageSpinAttack");
         //---------------------------------
 
         StartCoroutine(BossThinkRoutine());
@@ -79,8 +82,6 @@ public class GolemBoss : Boss
     {
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
 
-        
-        yield return StartCoroutine(TurnAround());
         if (distanceToPlayer <= closeAttackRange)
         {
             int randomPattern = UnityEngine.Random.Range(0, 4);
@@ -124,6 +125,7 @@ public class GolemBoss : Boss
     }
     private IEnumerator Pattern1_BigCloud()
     {
+        yield return StartCoroutine(TurnAround());
         Debug.Log("공격 1");
         anim.SetBool(bigCloudHash, true);
         yield return new WaitForSeconds(2f);
@@ -131,6 +133,7 @@ public class GolemBoss : Boss
     }
     private IEnumerator Pattern2_SmallCloud()
     {
+        yield return StartCoroutine(TurnAround());
         Debug.Log("공격 2");
         anim.SetBool(smallCloudHash, true);
 
@@ -138,19 +141,25 @@ public class GolemBoss : Boss
     }
     private IEnumerator Pattern3_ShockWave()
     {
+        yield return StartCoroutine(TurnAround());
         Debug.Log("공격 3");
         anim.SetBool(shockWaveHash, true);
-        yield return new WaitForSeconds(2f);
-        cs.Shake(0.1f, 0.1f);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(3f);
 
     }
     private IEnumerator Pattern4_SpinAttack()
     {
+        yield return StartCoroutine(TurnAround());
         Debug.Log("공격 4 시작");
+        float dir = (player.position - transform.position).normalized.x;
+        anim.SetBool(noDamageSpinAttackHash, true);
+        yield return new WaitForSeconds(3.4f);
+        anim.SetBool(noDamageSpinAttackHash, false);
         anim.SetBool(spinAttackHash, true);
-        yield return new WaitForSeconds(3f);
+        _rb.linearVelocityX = dir * 3;
+        yield return new WaitForSeconds(3.5f);
         Debug.Log("공격 4 끝");
+        _rb.linearVelocityX = 0;
         anim.SetBool(spinAttackHash, false);
         anim.SetBool(spinAttackEndHash, true);
     }
@@ -245,13 +254,4 @@ public class GolemBoss : Boss
             }
         }
     }
-    //오버랩--------------------------------------------------------
-
-/*    void Flip()
-    {
-        if (player.position.x > transform.position.x + 0.5f)
-            transform.localScale = new Vector3(1, 1, 1);
-        else
-            transform.localScale = new Vector3(-1, 1, 1);
-    }*/
 }

@@ -51,6 +51,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Bossbar
+    uniqueID: 2568343899
+    locked: 0
   - name: Enemy
     uniqueID: 1375837515
     locked: 0
