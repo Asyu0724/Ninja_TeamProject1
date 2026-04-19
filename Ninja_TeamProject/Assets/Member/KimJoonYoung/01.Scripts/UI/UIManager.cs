@@ -9,6 +9,9 @@ public class UIManager : MonoBehaviour
     [field:SerializeField]
     public HealthBarUI HealthUI {  get; private set; }
 
+    [field: SerializeField]
+    public HealthBarUI BossHealthUI { get; private set; }
+
     public static UIManager Instance { get; private set; }
     private void Awake()
     {

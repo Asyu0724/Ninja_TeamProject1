@@ -135,6 +135,11 @@ public class PlayerSkill : Agent
                 collider.gameObject.GetComponent<HealthSystem>().GetDamage(_attackDamageAmount, gameObject);
                 enemy.AttackedNow();
             }
+
+            if (collider.TryGetComponent(out Boss boss))
+            {
+                boss.TakeDamage(_attackDamageAmount);
+            }
         }
 
     }
@@ -150,6 +155,11 @@ public class PlayerSkill : Agent
 
                 collider.gameObject.GetComponent<HealthSystem>().GetDamage(_qSkillDamageAmount, gameObject);
                 enemy.AttackedNow();
+            }
+
+            if (collider.TryGetComponent(out Boss boss))
+            {
+                boss.TakeDamage(_attackDamageAmount);
             }
         }
         _agentAttack.FirstBoxSize();
