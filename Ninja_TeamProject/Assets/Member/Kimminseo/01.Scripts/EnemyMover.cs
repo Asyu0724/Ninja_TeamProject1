@@ -22,8 +22,8 @@ public class EnemyMover : MonoBehaviour
 
     private void Start()
     {
-        minLimit = Camera.main.ViewportToWorldPoint(new Vector2(0, 0));
-        maxLimit = Camera.main.ViewportToWorldPoint(new Vector2(1, 1));
+        minLimit = Camera.main.ViewportToWorldPoint(new Vector2(0.4f, 0.4f));
+        maxLimit = Camera.main.ViewportToWorldPoint(new Vector2(0.7f, 0.7f));
     }
     private void Update()
     {

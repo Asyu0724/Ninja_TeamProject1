@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Enemy
+  - Bullet
+  - Boss
   layers:
   - Default
   - TransparentFX
@@ -11,9 +14,9 @@ TagManager:
   - Ground
   - Water
   - UI
-  - Ground
-  - 
-  - 
+  - Player
+  - Enemy
+  - Bullet
   - 
   - 
   - 
@@ -38,11 +41,23 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Background
-    uniqueID: 1777822993
+  - name: Ground
+    uniqueID: 3450461763
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Enemy
+    uniqueID: 1375837515
+    locked: 0
+  - name: Player
+    uniqueID: 479758373
+    locked: 0
+  - name: UI
+    uniqueID: 2440376153
+    locked: 0
+  - name: Background
+    uniqueID: 614951197
     locked: 0
   m_RenderingLayers:
   - Default
