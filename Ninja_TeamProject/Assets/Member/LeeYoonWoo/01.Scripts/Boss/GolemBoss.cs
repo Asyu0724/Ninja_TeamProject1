@@ -7,7 +7,8 @@ public class GolemBoss : Boss//, IDamageable
     public float patternDelay = 5f;
     public float closeAttackRange = 5.0f;
 
-    private Transform player;
+    private Transform playerPos;
+    private PlayerController player;
     private bool isAttacking = false;
     private CameraShake cs;
 
@@ -27,9 +28,10 @@ public class GolemBoss : Boss//, IDamageable
     {
         base.Start();
 
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        playerPos = GameObject.FindGameObjectWithTag("Player").transform;
         cs = GameObject.Find("Main Camera").GetComponent<CameraShake>();
         _rb = GetComponent<Rigidbody2D>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
 
         //---------------------------------
         bigCloudHash = Animator.StringToHash("BigCloud");
@@ -80,7 +82,7 @@ public class GolemBoss : Boss//, IDamageable
 
     private IEnumerator ChooseNextPattern()
     {
-        float distanceToPlayer = Vector2.Distance(transform.position, player.position);
+        float distanceToPlayer = Vector2.Distance(transform.position, playerPos.position);
 
         if (distanceToPlayer <= closeAttackRange)
         {
@@ -100,7 +102,7 @@ public class GolemBoss : Boss//, IDamageable
     }
     private IEnumerator TurnAround()
     {
-        float dir = player.position.x - transform.position.x;
+        float dir = playerPos.position.x - transform.position.x;
 
         if (dir > 0 && transform.localScale.x < 0)
         {
@@ -151,12 +153,12 @@ public class GolemBoss : Boss//, IDamageable
     {
         yield return StartCoroutine(TurnAround());
         Debug.Log("공격 4 시작");
-        float dir = (player.position - transform.position).normalized.x;
+        float dir = (playerPos.position - transform.position).normalized.x;
         anim.SetBool(noDamageSpinAttackHash, true);
-        yield return new WaitForSeconds(3.4f);
+        yield return new WaitForSeconds(3.8f);
         anim.SetBool(noDamageSpinAttackHash, false);
         anim.SetBool(spinAttackHash, true);
-        _rb.linearVelocityX = dir * 3;
+        _rb.linearVelocityX = dir * 4.3f;
         yield return new WaitForSeconds(3.5f);
         Debug.Log("공격 4 끝");
         _rb.linearVelocityX = 0;
@@ -201,8 +203,14 @@ public class GolemBoss : Boss//, IDamageable
         if (hit != null)
         {
             Debug.Log("플레이어 맞음 : Bigcloud");
-            HealthSystem hp = hit.GetComponent<HealthSystem>();
 
+            PlayerController pc = hit.GetComponentInParent<PlayerController>();
+            if (pc != null)
+            {
+                StartCoroutine(pc.PlayerHited());
+            }
+
+            HealthSystem hp = hit.GetComponentInParent<HealthSystem>();
             if (hp != null)
             {
                 hp.GetDamage(1, gameObject);
@@ -224,12 +232,21 @@ public class GolemBoss : Boss//, IDamageable
 
         if (hit != null)
         {
-            Debug.Log("플레이어 맞음 : Smallcloud");
-            HealthSystem hp = hit.GetComponent<HealthSystem>();
-
-            if (hp != null)
+            if (hit != null)
             {
-                hp.GetDamage(1, gameObject);
+                Debug.Log("플레이어 맞음 : SmallCloud");
+
+                PlayerController pc = hit.GetComponentInParent<PlayerController>();
+                if (pc != null)
+                {
+                    StartCoroutine(pc.PlayerHited());
+                }
+
+                HealthSystem hp = hit.GetComponentInParent<HealthSystem>();
+                if (hp != null)
+                {
+                    hp.GetDamage(1, gameObject);
+                }
             }
         }
     }
@@ -246,8 +263,14 @@ public class GolemBoss : Boss//, IDamageable
         if (hit != null)
         {
             Debug.Log("플레이어 맞음 : SpinAttack");
-            HealthSystem hp = hit.GetComponent<HealthSystem>();
 
+            PlayerController pc = hit.GetComponentInParent<PlayerController>();
+            if (pc != null)
+            {
+                StartCoroutine(pc.PlayerHited());
+            }
+
+            HealthSystem hp = hit.GetComponentInParent<HealthSystem>();
             if (hp != null)
             {
                 hp.GetDamage(1, gameObject);
