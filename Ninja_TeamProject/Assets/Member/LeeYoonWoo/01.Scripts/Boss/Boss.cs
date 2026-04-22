@@ -11,19 +11,34 @@ public abstract class Boss : MonoBehaviour
 
     protected Animator anim;
 
+    int hitCount = 0;
+    [SerializeField] int hitsPerHp = 4;
+
     protected virtual void Start()
     {
         currentHealth = maxHealth;
         anim = GetComponentInChildren<Animator>();
+
+        UIManager.Instance.BossHealthUI.InitHealthUI((int)maxHealth);
     }
-    
+
     public virtual void TakeDamage(float damageAmount)
     {
-        currentHealth -= damageAmount;
+        hitCount += (int)damageAmount;
 
-        if (currentHealth <= 0)
+        UIManager.Instance.BossHealthUI.Shake();
+
+        if (hitCount >= hitsPerHp)
         {
-            Die();
+            hitCount = 0;
+            currentHealth--;
+
+            UIManager.Instance.BossHealthUI.UpdateHealthUI((int)currentHealth);
+
+            if (currentHealth <= 0)
+            {
+                Die();
+            }
         }
     }
 

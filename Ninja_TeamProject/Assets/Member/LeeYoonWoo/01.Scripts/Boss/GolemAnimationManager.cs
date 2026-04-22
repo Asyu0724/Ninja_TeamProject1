@@ -3,11 +3,23 @@ using UnityEngine;
 public class GolemAnimationManage : MonoBehaviour
 {
     GolemBoss boss;
-    Transform player;
+    PlayerController player;
+    CameraShake cs;
+    GameObject[] stones;
+    StoneUp[] su;
+    private int _i = 0;
     void Start()
     {
         boss = GetComponentInParent<GolemBoss>();
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        cs = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraShake>();
+        stones = GameObject.FindGameObjectsWithTag("Stone");
+        su = new StoneUp[stones.Length];
+        foreach (GameObject t in stones)
+        {
+            su[_i] = t.GetComponent<StoneUp>();
+            _i++;
+        }
     }
 
     public void AttackEnd()
@@ -30,5 +42,12 @@ public class GolemAnimationManage : MonoBehaviour
         boss.SpinAttackOverLap();
     }
 
-
+    public void CameraShake()
+    {
+        cs.Shake(0.1f, 0.1f);
+        foreach (StoneUp t in su)
+        {
+            t.StoneForce();
+        }
+    }
 }
