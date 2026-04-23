@@ -3,13 +3,14 @@ using UnityEngine;
 
 public class AgentMover : MonoBehaviour
 {
+
     public Rigidbody2D _rb { get; private set; }
     public bool isGrounded { get; private set; }
     // 오버랩
     [Header("OverLab")]
     [SerializeField] private Vector2 boxSize;
     [SerializeField] private Vector2 offset;
-    [SerializeField] private LayerMask whatIsGround;
+     public LayerMask whatIsGround;
 
     private void Awake()
     {
