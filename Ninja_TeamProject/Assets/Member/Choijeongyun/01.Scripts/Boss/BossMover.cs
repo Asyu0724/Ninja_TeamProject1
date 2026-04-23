@@ -14,14 +14,21 @@ public class BossMover : MonoBehaviour
     private float maxLimit;
     private float offset = 0.5f;
 
-    [SerializeField] private float _speed;
+    [SerializeField] private float speed;
 
     private bool _isCanAttack;
     [SerializeField] private LayerMask PlayerLayer;
-    [SerializeField] private Vector2 _boxSize;
+    [SerializeField] private Vector2 boxSize;
     [SerializeField] private Vector2 boxOffset;
 
-    private bool _isSkill => _Attack1 || _Attack2 || _Charge;
+    [SerializeField] private LayerMask isGround;
+    [SerializeField] private Vector2 groundBoxSize;
+    [SerializeField] private Vector2 groundOffset;
+
+    [SerializeField] private BossHealth _bossHP;
+
+
+    private bool _isSkill => _Attack1 || _Attack2 || _Charge || _isJump;
 
     public float _lastAttackTime { get; private set; }
     public bool _isGrounded { get; private set; }
@@ -29,6 +36,8 @@ public class BossMover : MonoBehaviour
     public bool _Attack2 { get; private set; }
     public bool _Charge { get; private set; }
     public bool _Death { get; private set; }
+    public bool _isJump { get; private set; }
+
 
     private void Awake()
     {
@@ -48,10 +57,15 @@ public class BossMover : MonoBehaviour
         _moveDir.x = _distance > 0 ? 1f : -1f;
 
         if (Mathf.Abs(_distance) < 2.0f) _moveDir.x = 0;
+        if (Mathf.Abs(_distance) > 5.0f && _isGrounded == true)
+        {
+            _isJump = true;
+            // transform.position = player.transform.position;
+        }
 
-        if(!_isSkill) _rigid.linearVelocityX = _moveDir.x * _speed;
+        if(!_isSkill) _rigid.linearVelocityX = _moveDir.x * speed;
 
-        CheckPlayer();
+        CheckOverlap();
 
         if (_isCanAttack == true && !_isSkill && _lastAttackTime <= 0)
         {
@@ -71,7 +85,8 @@ public class BossMover : MonoBehaviour
     {
         _Attack1 = false;
         _Attack2 = false;
-        _Charge = false;
+        _bossHP.ChargeHP(false);
+        _isJump = false;
     }
 
     private void Update() // 회전
@@ -93,16 +108,20 @@ public class BossMover : MonoBehaviour
         }
     }
 
-    private void CheckPlayer()
+    private void CheckOverlap()
     {
-        _isCanAttack = Physics2D.OverlapBox(transform.position + (Vector3)boxOffset, _boxSize, 0, PlayerLayer);
-        if(_isCanAttack) Debug.Log("플레이어 확인됨");
+        _isCanAttack = Physics2D.OverlapBox(transform.position + (Vector3)boxOffset, boxSize, 0, PlayerLayer);
+
+        _isGrounded = Physics2D.OverlapBox(transform.position + (Vector3)groundOffset, groundBoxSize, 0, isGround);
+
+        // if(_isCanAttack) Debug.Log("플레이어 확인됨");
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(transform.position + (Vector3)boxOffset, _boxSize);
+        Gizmos.DrawWireCube(transform.position + (Vector3)boxOffset, boxSize);
+        Gizmos.DrawWireCube(transform.position + (Vector3)groundOffset, groundBoxSize);
     }
 
 
