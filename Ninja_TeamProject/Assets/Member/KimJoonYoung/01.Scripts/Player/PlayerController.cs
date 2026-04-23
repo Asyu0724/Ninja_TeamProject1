@@ -1,10 +1,11 @@
-using System.Collections;
+    using System.Collections;
 using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.TextCore;
+using UnityEngine.UIElements;
 
 public class PlayerController : Agent
 {
@@ -21,6 +22,10 @@ public class PlayerController : Agent
 
     public bool _playerHited;
 
+    public float _distance;
+    public float _angle;
+    public Vector2 _perp;
+
     // Scripts
     private HealthSystem _healthSystem;
     private PlayerSkill _playerSkill;
@@ -30,6 +35,7 @@ public class PlayerController : Agent
     private int _yVelocityHash = Animator.StringToHash("Y_Velocity");
     private int _isGroundedHash = Animator.StringToHash("IsGrounded");
     private int _playerHitedHash = Animator.StringToHash("PlayerHited");
+    private int _playerJumpedHash = Animator.StringToHash("IsJumped");
 
     private bool _SkillUse;
 
@@ -50,6 +56,7 @@ public class PlayerController : Agent
 
     /*---------------------------------------------------*/ // Physics 
 
+   
     private void FixedUpdate()
     {
         if (!_playerHited && !_SkillUse)
@@ -57,13 +64,45 @@ public class PlayerController : Agent
             _isGrounded = _agentMover.CheckGround();
             if (_isGrounded && _agentMover._rb.linearVelocityY <= 0)
                 _currentJumpCount = _jumpCount;
-
             _agentMover._rb.linearVelocityX = _moveDir * _speed;
 
             Flip();
             _agentAttack.Flip(_lastMoveDir);
         }
+
+        
     }
+    private void Update()
+    {
+        if (_moveDir == 0)
+        {
+            _agentMover._rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+        }
+        else
+            _agentMover._rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+
+        _SkillUse = _playerSkill._qSkillUse;
+
+
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, _distance, _agentMover.whatIsGround);
+
+        if (hit)
+        {
+            _perp = Vector2.Perpendicular(hit.normal).normalized;
+            _angle = Vector2.Angle(hit.normal, Vector2.up); // 지면으로부터 수직의 레이캐스트를 형성
+
+            Debug.DrawLine(hit.point, hit.point + hit.normal, Color.blue);
+            Debug.DrawLine(hit.point, hit.point + _perp, Color.red);
+        }
+    }
+    private void LateUpdate()
+    {
+        _agentRenderer.SetFloatParam(_xMoveHash, Mathf.Abs(_moveDir));
+        _agentRenderer.SetFloatParam(_yVelocityHash, _agentMover._rb.linearVelocityY);
+        _agentRenderer.SetBoolParam(_isGroundedHash, _isGrounded);
+        _agentRenderer.SetBoolParam(_playerHitedHash, _playerHited);
+    }
+
 
     /*---------------------------------------------------*/ // Input event
 
@@ -86,17 +125,6 @@ public class PlayerController : Agent
                 _currentJumpCount--;
             }
         }
-    }
-    /*---------------------------------------------------*/ // Game logic
-
-    private void Update()
-    {
-        _agentRenderer.SetFloatParam(_xMoveHash, Mathf.Abs(_moveDir));
-        _agentRenderer.SetFloatParam(_yVelocityHash, _agentMover._rb.linearVelocityY);
-        _agentRenderer.SetBoolParam(_isGroundedHash, _isGrounded);
-        _agentRenderer.SetBoolParam(_playerHitedHash, _playerHited);
-
-        _SkillUse = _playerSkill._qSkillUse;
     }
 
     /*---------------------------------------------------*/ // Inumerator
