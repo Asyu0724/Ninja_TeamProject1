@@ -78,7 +78,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 6
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -156,12 +156,12 @@ TextureImporter:
       name: teleport appear (168x79)_0
       rect:
         serializedVersion: 2
-        x: 14
-        y: 631
-        width: 91
-        height: 240
+        x: 0
+        y: 770
+        width: 168
+        height: 86
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -178,12 +178,12 @@ TextureImporter:
       name: teleport appear (168x79)_1
       rect:
         serializedVersion: 2
-        x: 21
-        y: 552
-        width: 26
-        height: 7
+        x: 0
+        y: 683
+        width: 168
+        height: 86
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -200,12 +200,12 @@ TextureImporter:
       name: teleport appear (168x79)_2
       rect:
         serializedVersion: 2
-        x: 48
-        y: 552
-        width: 48
-        height: 6
+        x: 0
+        y: 603
+        width: 168
+        height: 86
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -222,13 +222,13 @@ TextureImporter:
       name: teleport appear (168x79)_3
       rect:
         serializedVersion: 2
-        x: 20
-        y: 473
-        width: 67
-        height: 9
+        x: 0
+        y: 535
+        width: 168
+        height: 86
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 12}
       customData: 
       outline: []
       physicsShape: []
@@ -244,13 +244,13 @@ TextureImporter:
       name: teleport appear (168x79)_4
       rect:
         serializedVersion: 2
-        x: 26
-        y: 394
-        width: 57
-        height: 9
+        x: 0
+        y: 466
+        width: 168
+        height: 86
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 12}
       customData: 
       outline: []
       physicsShape: []
@@ -266,13 +266,13 @@ TextureImporter:
       name: teleport appear (168x79)_5
       rect:
         serializedVersion: 2
-        x: 28
-        y: 315
-        width: 53
-        height: 13
+        x: 0
+        y: 379
+        width: 168
+        height: 86
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 9, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
@@ -288,12 +288,12 @@ TextureImporter:
       name: teleport appear (168x79)_6
       rect:
         serializedVersion: 2
-        x: 35
-        y: 236
-        width: 42
-        height: 16
+        x: 0
+        y: 300
+        width: 168
+        height: 86
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -310,12 +310,12 @@ TextureImporter:
       name: teleport appear (168x79)_7
       rect:
         serializedVersion: 2
-        x: 38
-        y: 157
-        width: 33
-        height: 17
+        x: 0
+        y: 215
+        width: 168
+        height: 86
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -332,12 +332,12 @@ TextureImporter:
       name: teleport appear (168x79)_8
       rect:
         serializedVersion: 2
-        x: 38
-        y: 78
-        width: 27
-        height: 19
+        x: 0
+        y: 123
+        width: 168
+        height: 86
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -354,12 +354,12 @@ TextureImporter:
       name: teleport appear (168x79)_9
       rect:
         serializedVersion: 2
-        x: 37
-        y: 0
-        width: 25
-        height: 21
+        x: 0
+        y: 68
+        width: 168
+        height: 50
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -372,11 +372,33 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: teleport appear (168x79)_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2
+        width: 168
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49b4cecff4a071a419941283c69f8e07
+      internalID: 2097078186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 645f93c3d53881645b377d0c2ae7cf3b
     internalID: 0
     vertices: []
     indices: 
@@ -384,10 +406,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":11.0},"gridSpriteSize":{"x":168.0,"y":86.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       teleport appear (168x79)_0: 256208957278509065
       teleport appear (168x79)_1: -8555434302639576997
+      teleport appear (168x79)_10: 2097078186
       teleport appear (168x79)_2: 3635999737563595368
       teleport appear (168x79)_3: 864570385568836256
       teleport appear (168x79)_4: -3085412474696973495

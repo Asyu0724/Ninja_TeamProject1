@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 
 public class SBossMove : MonoBehaviour
 {
-    [SerializeField]private float speed = 7f;
+    [SerializeField]private float speed = 4.6f;
     [SerializeField]private Rigidbody2D rigid;
     [SerializeField]private Transform playerTRM;
     [SerializeField]private Vector2 moveDir;
@@ -14,10 +14,10 @@ public class SBossMove : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        playerTRM = GameObject.Find("UMM").transform;
-        moveDir = playerTRM.position - transform.position.normalized;
+        playerTRM = GameObject.Find("Square").transform;
+        moveDir = (playerTRM.position - transform.position).normalized;
         rigid.linearVelocityX = moveDir.x * speed;
     }
 }
