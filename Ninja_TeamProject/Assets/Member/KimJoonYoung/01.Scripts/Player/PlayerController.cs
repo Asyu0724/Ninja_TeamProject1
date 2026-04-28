@@ -14,6 +14,12 @@ public class PlayerController : Agent
     [SerializeField] private int _jumpPower;
     [SerializeField] private int _jumpCount;
 
+    public float Speed
+    {
+        get => _agentMover._rb.linearVelocityX / _speed;
+        private set {}
+    }
+
     private int _currentJumpCount;
     private float _moveDir;
     private float _lastMoveDir = 1;
@@ -52,7 +58,7 @@ public class PlayerController : Agent
 
     private void FixedUpdate()
     {
-        if (!_playerHited && !_SkillUse)
+        if (!_SkillUse)
         {
             _isGrounded = _agentMover.CheckGround();
             if (_isGrounded && _agentMover._rb.linearVelocityY <= 0)
@@ -103,8 +109,7 @@ public class PlayerController : Agent
     public IEnumerator PlayerHited()
     {
         _playerHited = true;
-        AudioManager.instance.PlaySfx(AudioManager.Sfx.Hit);
-        _agentMover._rb.linearVelocityX *= 0.3f;
+        AudioManager.instance.PlaySfx(AudioManager.Sfx.Hit);    
         yield return new WaitForSeconds(0.75f);
         _playerHited = false;
     }
