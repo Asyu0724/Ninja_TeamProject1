@@ -1,18 +1,22 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
 using UnityEditor.Rendering;
 using TMPro;
+using Random = UnityEngine.Random;
 
-public class PlayerSkill : Agent
+public class PlayerAttackManager : Agent
 {
+    [SerializeField] private LayerMask _damageLayerMask;
     private PlayerController playerController;
     private AudioSource _audioSource;
     private bool _playerHited;
 
     // Attack Setting
-    [Header("ComboSetting")]
+    [Header("ComboSetting")] 
     [SerializeField] private float _canComboAttackTimer;
+
     [SerializeField] private float _canAttackTimer;
     [SerializeField] private int _attackDamageAmount = 1;
     private int _currentAttackComboCount;
@@ -21,8 +25,9 @@ public class PlayerSkill : Agent
     private bool _canAttack = true;
 
     // QSKill Setting
-    [Header("QSkillSetting")]
-    [SerializeField] private TextMeshProUGUI cantUseSkillText;
+    [Header("QSkillSetting")] [SerializeField]
+    private TextMeshProUGUI cantUseSkillText;
+
     [SerializeField] private int _qSkillDamageAmount = 3;
     [SerializeField] private Vector2 _qSkillBoxSize;
     [SerializeField] private Vector2 _qSkillOffset;
@@ -47,6 +52,10 @@ public class PlayerSkill : Agent
         _audioSource = GetComponent<AudioSource>();
     }
 
+    private void FixedUpdate()
+    {
+         
+    }
 
     private void Update()
     {
@@ -61,18 +70,14 @@ public class PlayerSkill : Agent
             StartCoroutine(AttackTimer()); // 콤보 끝나면 0.5초 기다리셈
         }
 
-        _playerHited = playerController._playerHited;
+        _playerHited = playerController.PlayerHit;
     }
 
 
     private void OnAttack(InputValue value)
     {
-        if (!_playerHited && !_qSkillUse)
+        if (!_playerHited && !_qSkillUse && _canAttack && _canComboAttack)
         {
-            if (_canAttack) // 공격 가능 상태일때
-            {
-                if (_canComboAttack)
-                {
                     switch (Random.Range(0, 3))
                     {
                         case 0:
@@ -85,64 +90,72 @@ public class PlayerSkill : Agent
                             AudioManager.instance.PlaySfx(AudioManager.Sfx.avgAtk2);
                             break;
                     }
+
                     _currentAttackComboCount = ++_attackComboCount;
                     _canComboAttack = false;
                     StartCoroutine(AttackComboTimer());
                     StartCoroutine(AttackCombo());
-                }
-            }
         }
     }
+
     private void OnSkill(InputValue value)
     {
-        if (!_playerHited && _canAttack && _qSkillCoolTime && _agentMover.isGrounded)
+        _agentAttack.SkillBoxSize(_qSkillBoxSize);
+        _agentAttack.SkillOffset(_qSkillOffset);
+        Collider2D[] collider2Ds =
+            Physics2D.OverlapBoxAll(transform.position + (Vector3)_agentAttack.offset, _agentAttack.boxSize, 0);
+        foreach (Collider2D collider in collider2Ds)
         {
-            _canUseQSkill = true;
-            _agentAttack.SkillBoxSize(_qSkillBoxSize);
-            _agentAttack.SkillOffset(_qSkillOffset);
-            CheckGround();
-            if (_canUseQSkill)
+            if (collider.TryGetComponent(out IDamageable health) && !_playerHited && _canAttack && _qSkillCoolTime &&
+                _agentMover.isGrounded)
             {
-                cantUseSkillText.text = null;
-                _qSkill = true;
-                _qSkillUse = true;
-                _qSkillCoolTime = false;
-                StartCoroutine(UseQSkill());
-                StartCoroutine(QSkillAttack());
-                StartCoroutine(CanQSkill());
-                StartCoroutine(QSkillCoolTime());
-                StartCoroutine(QSkillAttackSound());
-                _playerSkillBarUI.QSkillCoolTimeBarUpdate();
-                    
+                _canUseQSkill = true;
+                CheckGround();
+                if (_canUseQSkill)
+                {
+                    cantUseSkillText.text = null;
+                    _qSkill = true;
+                    _qSkillUse = true;
+                    _qSkillCoolTime = false;
+                    StartCoroutine(UseQSkill());
+                    StartCoroutine(QSkillAttack());
+                    StartCoroutine(CanQSkill());
+                    StartCoroutine(QSkillCoolTime());
+                    StartCoroutine(QSkillAttackSound());
+                    _playerSkillBarUI.QSkillCoolTimeBarUpdate();
+
+                }
+                else if (!_canUseQSkill)
+                {
+                    StartCoroutine(QSkillText());
+                    _agentAttack.FirstBoxSize();
+                    _agentAttack.FirstOffset();
+                }
             }
-            else if (!_canUseQSkill)
+            else
             {
-                StartCoroutine(QSkillText());
                 _agentAttack.FirstBoxSize();
                 _agentAttack.FirstOffset();
             }
         }
-    }
 
+    }
 
     private void AttackNow()
     {
-        Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(transform.position + (Vector3)_agentAttack.offset, _agentAttack.boxSize, 0);
-        foreach (Collider2D collider in collider2Ds)
-        {
-            if (collider.gameObject.TryGetComponent(out TestEnemy enemy))
+            Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(transform.position + (Vector3)_agentAttack.offset,
+                _agentAttack.boxSize, 0 , _damageLayerMask);
+            foreach (Collider2D collider in collider2Ds)
             {
-                collider.gameObject.GetComponent<HealthSystem>().GetDamage(_attackDamageAmount, gameObject);
-                enemy.AttackedNow();
+                if (collider.CompareTag("Enemy") && collider.TryGetComponent<HealthSystem>(out HealthSystem health));
+                {
+                    collider.gameObject.GetComponent<HealthSystem>().GetDamage(_attackDamageAmount, gameObject);
+                    collider.gameObject.GetComponent<TestEnemy>()?.AttackedNow();
+                }
             }
-
-            if (collider.TryGetComponent(out Boss boss))
-            {
-                boss.TakeDamage(_attackDamageAmount);
-            }
-        }
-
     }
+
+
     private void QSkillNow()
     {
         _agentAttack.SkillBoxSize(_qSkillBoxSize);
@@ -155,6 +168,8 @@ public class PlayerSkill : Agent
 
                 collider.gameObject.GetComponent<HealthSystem>().GetDamage(_qSkillDamageAmount, gameObject);
                 enemy.AttackedNow();
+                _agentAttack.FirstBoxSize();
+                _agentAttack.FirstOffset();
             }
 
             if (collider.TryGetComponent(out Boss boss))
@@ -162,8 +177,6 @@ public class PlayerSkill : Agent
                 boss.TakeDamage(_attackDamageAmount);
             }
         }
-        _agentAttack.FirstBoxSize();
-        _agentAttack.FirstOffset();
     }
 
     private void CheckGround()

@@ -4,12 +4,12 @@ using UnityEngine.UI;
 public class PlayerSkillBarUI : MonoBehaviour
 {
     [SerializeField] private Slider skillBar;
-    private PlayerSkill playerSkill;
+    private PlayerAttackManager _playerAttackManager;
 
     private void Awake()
     {
-        playerSkill = GetComponentInParent<PlayerSkill>();
-        skillBar.maxValue = playerSkill._qskillCoolTime;
+        _playerAttackManager = GetComponentInParent<PlayerAttackManager>();
+        skillBar.maxValue = _playerAttackManager._qskillCoolTime;
         skillBar.value = 0;
     }
 
