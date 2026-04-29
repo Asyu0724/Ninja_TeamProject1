@@ -1,4 +1,5 @@
 using System.Collections;
+using Member.KimJoonYoung._01.Scripts.Interface;
 using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEditor.Tilemaps;
@@ -6,38 +7,36 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.TextCore;
 
-public class PlayerController : Agent
+public class PlayerController : Agent 
 {
     // Player Setting
     [Header("PlayerSetting")]
-    [SerializeField] private float _speed;
-    [SerializeField] private int _jumpPower;
-    [SerializeField] private int _jumpCount;
-
     public float Speed
     {
         get => _agentMover._rb.linearVelocityX / _speed;
         private set {}
     }
-
+    [SerializeField] private float _speed;
+    [SerializeField] private int _jumpPower;
+    [SerializeField] private int _jumpCount;
     private int _currentJumpCount;
-    private float _moveDir;
     private float _lastMoveDir = 1;
     private bool _isGrounded;
+    private Vector2 _moveDir;
 
-    public bool _playerHited;
+    public bool PlayerHit {get; private set;}
 
     // Scripts
     private HealthSystem _healthSystem;
-    private PlayerSkill _playerSkill;
+    private PlayerAttackManager _playerAttackManager;
 
     // Hash
-    private int _xMoveHash = Animator.StringToHash("X_Move");
-    private int _yVelocityHash = Animator.StringToHash("Y_Velocity");
-    private int _isGroundedHash = Animator.StringToHash("IsGrounded");
-    private int _playerHitedHash = Animator.StringToHash("PlayerHited");
+    private readonly int _xMoveHash = Animator.StringToHash("X_Move");
+    private readonly int _yVelocityHash = Animator.StringToHash("Y_Velocity");
+    private readonly int _isGroundedHash = Animator.StringToHash("IsGrounded");
+    private readonly int _playerHitedHash = Animator.StringToHash("PlayerHited");
 
-    private bool _SkillUse;
+    private bool _skillUse;
 
     /*---------------------------------------------------*/ // Initialization
     protected override void Awake()
@@ -45,7 +44,7 @@ public class PlayerController : Agent
         base.Awake();
         _currentJumpCount = _jumpCount;
         _healthSystem = GetComponent<HealthSystem>();
-        _playerSkill = GetComponent<PlayerSkill>();
+        _playerAttackManager = GetComponent<PlayerAttackManager>();
     }
 
     private void Start()
@@ -58,13 +57,14 @@ public class PlayerController : Agent
 
     private void FixedUpdate()
     {
-        if (!_SkillUse)
+        _isGrounded = _agentMover.CheckGround();
+        if (!_skillUse)
         {
-            _isGrounded = _agentMover.CheckGround();
+            _agentMover.Move(_moveDir.x * _speed);
             if (_isGrounded && _agentMover._rb.linearVelocityY <= 0)
                 _currentJumpCount = _jumpCount;
 
-            _agentMover._rb.linearVelocityX = _moveDir * _speed;
+            /*_agentMover._rb.linearVelocityX = _moveDir * _speed;*/
 
             Flip();
             _agentAttack.Flip(_lastMoveDir);
@@ -75,20 +75,20 @@ public class PlayerController : Agent
 
     private void OnMove(InputValue value)
     {
-        _moveDir = value.Get<Vector2>().x;
-
-        if (_moveDir != 0)
+        _moveDir.x = value.Get<Vector2>().x;
+        if (_moveDir.x != 0)
             _lastMoveDir = value.Get<Vector2>().x;
     }
+    
     private void OnJump(InputValue value)
     {
-        if (!_playerHited && !_SkillUse)
+        if (!PlayerHit && !_skillUse)
         {
             if (_currentJumpCount < 1) return;
 
             if (_currentJumpCount > 0)
             {
-                _agentMover.AddForceToAgent(_jumpPower * Vector2.up);
+                _agentMover.Jump(_jumpPower);
                 _currentJumpCount--;
             }
         }
@@ -97,21 +97,21 @@ public class PlayerController : Agent
 
     private void Update()
     {
-        _agentRenderer.SetFloatParam(_xMoveHash, Mathf.Abs(_moveDir));
+        _agentRenderer.SetFloatParam(_xMoveHash, Mathf.Abs(_moveDir.x));
         _agentRenderer.SetFloatParam(_yVelocityHash, _agentMover._rb.linearVelocityY);
         _agentRenderer.SetBoolParam(_isGroundedHash, _isGrounded);
-        _agentRenderer.SetBoolParam(_playerHitedHash, _playerHited);
+        _agentRenderer.SetBoolParam(_playerHitedHash, PlayerHit);
 
-        _SkillUse = _playerSkill._qSkillUse;
+        _skillUse = _playerAttackManager._qSkillUse;
     }
 
     /*---------------------------------------------------*/ // Inumerator
     public IEnumerator PlayerHited()
     {
-        _playerHited = true;
+        PlayerHit = true;
         AudioManager.instance.PlaySfx(AudioManager.Sfx.Hit);    
-        yield return new WaitForSeconds(0.75f);
-        _playerHited = false;
+        yield return new WaitForSeconds(_healthSystem.InvTime);
+        PlayerHit = false;
     }
     /*---------------------------------------------------*/ // Game method
 
@@ -126,7 +126,7 @@ public class PlayerController : Agent
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Bullet"))
+        if (collision.gameObject.TryGetComponent<ICollisionAttackable> (out ICollisionAttackable attackable) && !PlayerHit)
         {
             StartCoroutine(PlayerHited());
         }
