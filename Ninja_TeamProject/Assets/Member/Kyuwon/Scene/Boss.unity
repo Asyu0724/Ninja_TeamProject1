@@ -644,10 +644,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f076847d617fc2e4f8fbcdd665c818c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SBossMove
-  speed: 3
   rigid: {fileID: 0}
   playerTRM: {fileID: 0}
   moveDir: {x: 0, y: 0}
+  animator: {fileID: 0}
 --- !u!1 &961045743
 GameObject:
   m_ObjectHideFlags: 0
@@ -799,7 +799,7 @@ GameObject:
   - component: {fileID: 1367120202}
   m_Layer: 0
   m_Name: VIsual
-  m_TagString: Untagged
+  m_TagString: UMM
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -895,7 +895,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 22.666666, y: 5.3333335}
+  m_Size: {x: 4.3333335, y: 3.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
