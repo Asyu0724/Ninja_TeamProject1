@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 704248584082449258}
   - component: {fileID: 9096775737555466354}
-  - component: {fileID: 32560677177150356}
   - component: {fileID: 7138521889693211374}
   - component: {fileID: 5549341326705384535}
   - component: {fileID: 1778642969121242954}
@@ -71,33 +70,6 @@ MonoBehaviour:
   m_DefaultActionMap: 
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!50 &32560677177150356
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5275127526186022653}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 2
-  m_Material: {fileID: 6200000, guid: 9caa020558353a24e886bf7360b82459, type: 2}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!70 &7138521889693211374
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -164,7 +136,7 @@ MonoBehaviour:
   _speed: 8
   _jumpPower: 8
   _jumpCount: 2
-  _playerHited: 0
+  _currentJumpCount: 0
 --- !u!114 &46173080967755659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,10 +149,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08fbd34190baced4884b5bd2a2bb757b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerSkill
+  _damageLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
   _canComboAttackTimer: 0.15
   _canAttackTimer: 0.2
-  _qskillCoolTime: 5
+  _attackDamageAmount: 1
+  cantUseSkillText: {fileID: 0}
   _qSkillDamageAmount: 12
+  _qSkillBoxSize: {x: 0, y: 0}
+  _qSkillOffset: {x: 0, y: 0}
+  _qskillCoolTime: 5
 --- !u!1001 &212663601586975115
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -399,7 +378,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 479758373
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 2ee9ea69e9185c14aa0e469e0cef1be6, type: 2}

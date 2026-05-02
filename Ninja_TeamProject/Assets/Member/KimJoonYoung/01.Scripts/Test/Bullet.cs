@@ -1,6 +1,7 @@
+using Member.KimJoonYoung._01.Scripts.Interface;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class Bullet : MonoBehaviour , ICollisionAttackable
 {
     [SerializeField] private float speed;
     private Rigidbody2D _rb;
@@ -12,13 +13,20 @@ public class Bullet : MonoBehaviour
 
     private void Start()
     {
-        _rb.linearVelocityX = -speed;
+        if (GameObject.FindGameObjectWithTag("Player").transform.position.x > transform.position.x)
+        {
+            _rb.linearVelocityX = speed;
+        }
+        else
+        {
+            _rb.linearVelocityX = -speed;
+        }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.TryGetComponent(out PlayerController player))
         {
-            if (!player.gameObject.GetComponent<PlayerSkill>()._qSkillUse)
+            if (!player.gameObject.GetComponent<PlayerAttackManager>()._qSkillUse)
                 collision.gameObject.GetComponent<HealthSystem>().GetDamage(1, gameObject);
         }
 

@@ -28,6 +28,16 @@ public class AgentMover : MonoBehaviour
         return isGrounded;
     }
 
+    public void Move(float value)
+    {
+        _rb.linearVelocityX = value;
+    }
+
+    public void Jump(float value)
+    {
+        AddForceToAgent(value * Vector2.up);
+    }
+
     private void OnDrawGizmos() // 기즈모
     {
         Gizmos.color = Color.red;
