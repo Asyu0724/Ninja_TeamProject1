@@ -10,7 +10,8 @@ public class SBossMove : MonoBehaviour
     [SerializeField]private Transform playerTRM;
     [SerializeField] private Vector2 moveDir;
     [SerializeField] private Animator animator;
-    private bool isAttacking = false;
+    [SerializeField] private float chargingCool = 7.0f;
+    private bool coolTime = false;
 
     private void Awake()
     {
@@ -23,6 +24,7 @@ public class SBossMove : MonoBehaviour
     {
         if (playerTRM != null)
         {
+            float distance = Vector2.Distance(transform.position, playerTRM.position);
             moveDir = (playerTRM.position - transform.position).normalized;
             rigid.linearVelocityX = moveDir.x * speed;
             if (moveDir.x > 0)
@@ -36,12 +38,28 @@ public class SBossMove : MonoBehaviour
 
             int BossMove = Mathf.Abs(moveDir.x) >= 0.1f ? 1 : 0;
             animator.SetFloat("MoveX", BossMove);
+
+            if (distance < 10.0f && coolTime == false)
+            {
+                Debug.Log("이얏");
+                coolTime = true;
+            }
+            if (coolTime == true)
+            {
+                chargingCool -= Time.deltaTime;
+
+                if (chargingCool <= 0f)
+                {
+                    coolTime = false;
+                    chargingCool = 7.0f;
+                }
+            }
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("UMM") && !isAttacking)
+        if(collision.gameObject.CompareTag("UMM"))
         {
             Debug.Log("sj");
             StartCoroutine(AttackRoutine());
@@ -50,13 +68,9 @@ public class SBossMove : MonoBehaviour
 
     private IEnumerator AttackRoutine()
     {
-        isAttacking = true;
-
         animator.SetTrigger("Slash");
 
         yield return new WaitForSeconds(1.0f);
-
-        isAttacking = false;
 
         rigid.linearVelocityX = 3.0f;
     }
