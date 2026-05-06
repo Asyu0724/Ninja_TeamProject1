@@ -7,6 +7,10 @@ public class TestPlayerController : MonoBehaviour
     [SerializeField] private float _jumpPower;
     private float _moveDir;
     private Rigidbody2D _rigid;
+
+    [SerializeField] private BossSkill _bossSkill;
+    [SerializeField] private int _maxHealth;
+    private int _health;
     
     // 범위제한
     private float minLimit;
@@ -22,6 +26,7 @@ public class TestPlayerController : MonoBehaviour
     {
         minLimit = Camera.main.ViewportToWorldPoint(new Vector2(0, 0)).x;
         maxLimit = Camera.main.ViewportToWorldPoint(new Vector2(1, 1)).x;
+        _health = _maxHealth;
     }
 
     private void OnMove(InputValue value)  // a, d 받기
@@ -36,12 +41,19 @@ public class TestPlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (_bossSkill.isKnockBack) return;
         _rigid.linearVelocityX = _moveDir * _speed;
     }
 
     private void LateUpdate()
     {
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, minLimit + offset, maxLimit - offset), transform.position.y, transform.position.z);
+    }
+
+    public void ChangeHealth(int value)
+    {
+        _health -= value;
+        Debug.Log(_health);
     }
 }
 

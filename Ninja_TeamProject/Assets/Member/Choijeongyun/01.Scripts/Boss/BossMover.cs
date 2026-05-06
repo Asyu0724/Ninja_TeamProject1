@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,34 +8,38 @@ public class BossMover : MonoBehaviour
     private Vector2 _moveDir;
     private float _distance;
 
-    public Transform player;
+    public TestPlayerController player;
 
     // 범위제한
     private float minLimit;
     private float maxLimit;
-    private float offset = 0.5f;
+    private float offset = 1.5f;
 
     [SerializeField] private float speed;
+    [SerializeField] private float jumpPower;
 
+    // 보스가 공격을 할수 있는지 체크
     private bool _isCanAttack;
     [SerializeField] private LayerMask PlayerLayer;
     [SerializeField] private Vector2 boxSize;
     [SerializeField] private Vector2 boxOffset;
 
+    // 보스가 바닥과 닿아 있는지 체크
     [SerializeField] private LayerMask isGround;
     [SerializeField] private Vector2 groundBoxSize;
     [SerializeField] private Vector2 groundOffset;
 
     [SerializeField] private BossHealth _bossHP;
+    [SerializeField] private BossSkill _bossSkill;
 
 
-    private bool _isSkill => _Attack1 || _Attack2 || _Charge || _isJump;
+    private bool _isSkill => _Attack1 || _Attack2 || _bossHP._isCharge || _isJump;
 
     public float _lastAttackTime { get; private set; }
-    public bool _isGrounded { get; private set; }
+    // public bool _isGrounded { get; private set; }
     public bool _Attack1 { get; private set; }
     public bool _Attack2 { get; private set; }
-    public bool _Charge { get; private set; }
+
     public bool _Death { get; private set; }
     public bool _isJump { get; private set; }
 
@@ -53,14 +58,14 @@ public class BossMover : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _distance = player.position.x - transform.position.x;
+        _distance = player.transform.position.x - transform.position.x;
         _moveDir.x = _distance > 0 ? 1f : -1f;
 
         if (Mathf.Abs(_distance) < 2.0f) _moveDir.x = 0;
-        if (Mathf.Abs(_distance) > 5.0f && _isGrounded == true)
+        if (Mathf.Abs(_distance) > 6.0f && !_isSkill)
         {
-            _isJump = true;
-            // transform.position = player.transform.position;
+            _isJump = true; 
+            // _rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
         }
 
         if(!_isSkill) _rigid.linearVelocityX = _moveDir.x * speed;
@@ -78,6 +83,7 @@ public class BossMover : MonoBehaviour
         int random = Random.Range(0, 2);
         if (random == 0) _Attack1 = true;
         else if (random == 1) _Attack2 = true;
+
         _lastAttackTime = 2f;
     }
 
@@ -89,11 +95,16 @@ public class BossMover : MonoBehaviour
         _isJump = false;
     }
 
-    private void Update() // 회전
+    public void MoveToPlayer()
+    {
+        transform.position = player.transform.position;
+    }
+
+    private void Update() 
     {
         _lastAttackTime -= Time.deltaTime;
 
-        if (!_isSkill)
+        if (!_isSkill) // 회전
         {
             if (_moveDir.x > 0)
             {
@@ -112,7 +123,7 @@ public class BossMover : MonoBehaviour
     {
         _isCanAttack = Physics2D.OverlapBox(transform.position + (Vector3)boxOffset, boxSize, 0, PlayerLayer);
 
-        _isGrounded = Physics2D.OverlapBox(transform.position + (Vector3)groundOffset, groundBoxSize, 0, isGround);
+        // _isGrounded = Physics2D.OverlapBox(transform.position + (Vector3)groundOffset, groundBoxSize, 0, isGround);
 
         // if(_isCanAttack) Debug.Log("플레이어 확인됨");
     }
@@ -121,7 +132,7 @@ public class BossMover : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(transform.position + (Vector3)boxOffset, boxSize);
-        Gizmos.DrawWireCube(transform.position + (Vector3)groundOffset, groundBoxSize);
+        // Gizmos.DrawWireCube(transform.position + (Vector3)groundOffset, groundBoxSize);
     }
 
 
