@@ -6,7 +6,7 @@ public class BossMover : MonoBehaviour
 {
     private Rigidbody2D _rigid;
     private Vector2 _moveDir;
-    private float _distance;
+    private Vector2 _distance;
 
     public TestPlayerController player;
 
@@ -33,14 +33,14 @@ public class BossMover : MonoBehaviour
     [SerializeField] private BossSkill _bossSkill;
 
 
-    private bool _isSkill => _Attack1 || _Attack2 || _bossHP._isCharge || _isJump;
+    private bool _isSkill => _Attack1 || _Attack2 || _bossHP._isCharge || _isJump || _Attack3;
 
     public float _lastAttackTime { get; private set; }
     // public bool _isGrounded { get; private set; }
     public bool _Attack1 { get; private set; }
     public bool _Attack2 { get; private set; }
 
-    public bool _Death { get; private set; }
+    public bool _Attack3 { get; private set; }
     public bool _isJump { get; private set; }
 
 
@@ -58,11 +58,15 @@ public class BossMover : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _distance = player.transform.position.x - transform.position.x;
-        _moveDir.x = _distance > 0 ? 1f : -1f;
-
-        if (Mathf.Abs(_distance) < 2.0f) _moveDir.x = 0;
-        if (Mathf.Abs(_distance) > 6.0f && !_isSkill)
+        _distance = player.transform.position - transform.position;
+        _moveDir.x = _distance.x > 0 ? 1f : -1f;
+        
+        if (Mathf.Abs(_distance.x) < 2.0f)
+        {
+            _moveDir.x = 0;
+            if (Mathf.Abs(_distance.y) > 1.0f && !_isSkill) _Attack3 = true;
+        }
+        if (Mathf.Abs(_distance.x) > 6.0f && !_isSkill)
         {
             _isJump = true; 
             // _rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
@@ -91,6 +95,7 @@ public class BossMover : MonoBehaviour
     {
         _Attack1 = false;
         _Attack2 = false;
+        _Attack3 = false;
         _bossHP.ChargeHP(false);
         _isJump = false;
     }
