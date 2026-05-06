@@ -1,14 +1,14 @@
-# 디폴트 무시된 파일
+# Default ignored files
 /shelf/
 /workspace.xml
-# Rider에서 무시된 파일
+# Rider ignored files
 /projectSettingsUpdater.xml
 /.idea.Ninja_TeamProject.iml
-/contentModel.xml
 /modules.xml
-# 에디터 기반 HTTP 클라이언트 요청
+/contentModel.xml
+# Editor-based HTTP Client requests
 /httpRequests/
-# 쿼리 파일을 포함한 무시된 디폴트 폴더
+# Ignored default folder with query files
 /queries/
 # Datasource local storage ignored files
 /dataSources/
