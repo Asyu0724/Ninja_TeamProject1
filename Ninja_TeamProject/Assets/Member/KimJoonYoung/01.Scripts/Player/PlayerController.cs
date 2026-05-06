@@ -82,7 +82,7 @@ public class PlayerController : Agent
     
     private void OnJump(InputValue value)
     {
-        if (!PlayerHit && !_skillUse)
+        if (!_skillUse)
         {
             if (_currentJumpCount < 1) return;
 
@@ -109,9 +109,15 @@ public class PlayerController : Agent
     public IEnumerator PlayerHited()
     {
         PlayerHit = true;
+        GameManager.Instance.timeScaleManager.OnHit();
+        GameManager.Instance.bloomManager.OnHit();
         AudioManager.instance.PlaySfx(AudioManager.Sfx.Hit);    
         yield return new WaitForSeconds(_healthSystem.InvTime);
+        GameManager.Instance.timeScaleManager.OffHit();
+        GameManager.Instance.bloomManager.OffHit(); 
         PlayerHit = false;
+        /*TimeScaleManager.Instance.OffHit();
+        BloomManager.Instance.OffHit();*/
     }
     /*---------------------------------------------------*/ // Game method
 

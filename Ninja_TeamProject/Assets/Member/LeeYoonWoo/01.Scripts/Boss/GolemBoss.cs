@@ -200,23 +200,14 @@ public class GolemBoss : Boss//, IDamageable
             playerLayer
         );
 
-        if (hit != null)
+        if (hit != null && !hit.GetComponent<PlayerController>().PlayerHit)
         {
             Debug.Log("플레이어 맞음 : Bigcloud");
-
-            PlayerController pc = hit.GetComponentInParent<PlayerController>();
-            if (pc != null)
-            {
-                StartCoroutine(pc.PlayerHited());
-            }
-
-            HealthSystem hp = hit.GetComponentInParent<HealthSystem>();
-            if (hp != null)
-            {
-                hp.GetDamage(1, gameObject);
-            }
+            hit.GetComponent<HealthSystem>().GetDamage(1, gameObject);
+            StartCoroutine(hit.GetComponent<PlayerController>().PlayerHited());
         }
     }
+
     public void SmallCloudOverLap()
     {
         float dir = transform.localScale.x > 0 ? 1f : -1f;
@@ -230,24 +221,11 @@ public class GolemBoss : Boss//, IDamageable
             playerLayer
         );
 
-        if (hit != null)
+        if (hit != null && !hit.GetComponent<PlayerController>().PlayerHit)
         {
-            if (hit != null)
-            {
-                Debug.Log("플레이어 맞음 : SmallCloud");
-
-                PlayerController pc = hit.GetComponentInParent<PlayerController>();
-                if (pc != null)
-                {
-                    StartCoroutine(pc.PlayerHited());
-                }
-
-                HealthSystem hp = hit.GetComponentInParent<HealthSystem>();
-                if (hp != null)
-                {
-                    hp.GetDamage(1, gameObject);
-                }
-            }
+            Debug.Log("플레이어 맞음 : SmallCloud");
+            hit.GetComponent<HealthSystem>().GetDamage(1, gameObject);
+            StartCoroutine(hit.GetComponent<PlayerController>().PlayerHited());
         }
     }
     public void SpinAttackOverLap()
@@ -260,21 +238,12 @@ public class GolemBoss : Boss//, IDamageable
             playerLayer
         );
 
-        if (hit != null)
+        if (hit != null && !hit.GetComponent<PlayerController>().PlayerHit)
         {
             Debug.Log("플레이어 맞음 : SpinAttack");
 
-            PlayerController pc = hit.GetComponentInParent<PlayerController>();
-            if (pc != null)
-            {
-                StartCoroutine(pc.PlayerHited());
-            }
-
-            HealthSystem hp = hit.GetComponentInParent<HealthSystem>();
-            if (hp != null)
-            {
-                hp.GetDamage(1, gameObject);
-            }
+            hit.GetComponent<HealthSystem>().GetDamage(1 , gameObject);
+            StartCoroutine(hit.GetComponent<PlayerController>().PlayerHited());
         }
     }
 }

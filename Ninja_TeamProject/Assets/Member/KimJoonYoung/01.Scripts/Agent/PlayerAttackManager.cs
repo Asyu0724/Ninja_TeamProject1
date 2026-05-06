@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 using System.Collections;
 using UnityEditor.Rendering;
 using TMPro;
+using Unity.VisualScripting.Dependencies.NCalc;
 using Random = UnityEngine.Random;
 
 public class PlayerAttackManager : Agent
@@ -14,8 +15,8 @@ public class PlayerAttackManager : Agent
     private bool _playerHited;
 
     // Attack Setting
-    [Header("ComboSetting")] 
-    [SerializeField] private float _canComboAttackTimer;
+    [Header("ComboSetting")] [SerializeField]
+    private float _canComboAttackTimer;
 
     [SerializeField] private float _canAttackTimer;
     [SerializeField] private int _attackDamageAmount = 1;
@@ -52,9 +53,9 @@ public class PlayerAttackManager : Agent
         _audioSource = GetComponent<AudioSource>();
     }
 
-    private void FixedUpdate()
+    private void Start()
     {
-         
+        cantUseSkillText.text = null;
     }
 
     private void Update()
@@ -78,78 +79,64 @@ public class PlayerAttackManager : Agent
     {
         if (!_playerHited && !_qSkillUse && _canAttack && _canComboAttack)
         {
-                    switch (Random.Range(0, 3))
-                    {
-                        case 0:
-                            AudioManager.instance.PlaySfx(AudioManager.Sfx.avgAtk0);
-                            break;
-                        case 1:
-                            AudioManager.instance.PlaySfx(AudioManager.Sfx.avgAtk1);
-                            break;
-                        case 2:
-                            AudioManager.instance.PlaySfx(AudioManager.Sfx.avgAtk2);
-                            break;
-                    }
 
-                    _currentAttackComboCount = ++_attackComboCount;
-                    _canComboAttack = false;
-                    StartCoroutine(AttackComboTimer());
-                    StartCoroutine(AttackCombo());
+            switch (Random.Range(0, 3))
+            {
+                case 0:
+                    AudioManager.instance.PlaySfx(AudioManager.Sfx.avgAtk0);
+                    break;
+                case 1:
+                    AudioManager.instance.PlaySfx(AudioManager.Sfx.avgAtk1);
+                    break;
+                case 2:
+                    AudioManager.instance.PlaySfx(AudioManager.Sfx.avgAtk2);
+                    break;
+            }
+
+            _currentAttackComboCount = ++_attackComboCount;
+            _canComboAttack = false;
+            StartCoroutine(AttackComboTimer());
+            StartCoroutine(AttackCombo());
         }
     }
 
     private void OnSkill(InputValue value)
     {
-        _agentAttack.SkillBoxSize(_qSkillBoxSize);
-        _agentAttack.SkillOffset(_qSkillOffset);
-        Collider2D[] collider2Ds =
-            Physics2D.OverlapBoxAll(transform.position + (Vector3)_agentAttack.offset, _agentAttack.boxSize, 0);
-        foreach (Collider2D collider in collider2Ds)
+        if (!_qSkillUse)
         {
-            if (collider.TryGetComponent(out IDamageable health) && !_playerHited && _canAttack && _qSkillCoolTime &&
-                _agentMover.isGrounded)
+            if (!_playerHited && _canAttack && _qSkillCoolTime && _agentMover.isGrounded && CheckGround())
             {
-                _canUseQSkill = true;
-                CheckGround();
-                if (_canUseQSkill)
-                {
-                    cantUseSkillText.text = null;
-                    _qSkill = true;
-                    _qSkillUse = true;
-                    _qSkillCoolTime = false;
-                    StartCoroutine(UseQSkill());
-                    StartCoroutine(QSkillAttack());
-                    StartCoroutine(CanQSkill());
-                    StartCoroutine(QSkillCoolTime());
-                    StartCoroutine(QSkillAttackSound());
-                    _playerSkillBarUI.QSkillCoolTimeBarUpdate();
-
-                }
-                else if (!_canUseQSkill)
-                {
-                    StartCoroutine(QSkillText());
-                    _agentAttack.FirstBoxSize();
-                    _agentAttack.FirstOffset();
-                }
+                cantUseSkillText.text = null;
+                _qSkill = true;
+                _qSkillUse = true;
+                _qSkillCoolTime = false;
+                StartCoroutine(UseQSkill());
+                StartCoroutine(QSkillAttack());
+                StartCoroutine(CanQSkill());
+                StartCoroutine(QSkillCoolTime());
+                StartCoroutine(QSkillAttackSound());
+                _playerSkillBarUI.QSkillCoolTimeBarUpdate();
             }
             else
             {
+                if (cantUseSkillText.text == null)
+                    StartCoroutine(QSkillText());
                 _agentAttack.FirstBoxSize();
                 _agentAttack.FirstOffset();
             }
         }
-
     }
 
-    private void AttackNow()
+
+private void AttackNow()
     {
             Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(transform.position + (Vector3)_agentAttack.offset,
                 _agentAttack.boxSize, 0 , _damageLayerMask);
             foreach (Collider2D collider in collider2Ds)
             {
-                if (collider.CompareTag("Enemy") && collider.TryGetComponent<HealthSystem>(out HealthSystem health));
+                if (collider.TryGetComponent<HealthSystem>(out HealthSystem health) && collider.CompareTag("Enemy"))
                 {
-                    collider.gameObject.GetComponent<HealthSystem>().GetDamage(_attackDamageAmount, gameObject);
+                    health.GetDamage(_attackDamageAmount, gameObject);
                     collider.gameObject.GetComponent<TestEnemy>()?.AttackedNow();
                 }
             }
@@ -179,21 +166,22 @@ public class PlayerAttackManager : Agent
         }
     }
 
-    private void CheckGround()
+    private bool CheckGround()
     {
-        Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(transform.position + (Vector3)_agentAttack.offset, _agentAttack.boxSize, 0);
+        _agentAttack.SkillBoxSize(_qSkillBoxSize);
+        _agentAttack.SkillOffset(_qSkillOffset);
+        Collider2D[] collider2Ds =
+            Physics2D.OverlapBoxAll(transform.position + (Vector3)_agentAttack.offset, _agentAttack.boxSize, 0);
         foreach (Collider2D collider in collider2Ds)
         {
-            if (!collider.gameObject.CompareTag("Ground"))
+            if (collider.gameObject.CompareTag("Ground"))
             {
-                _canUseQSkill = true;
-            }
-            else
-            {
-                _canUseQSkill = false;
+                return false;
             }
         }
+        return true;
     }
+
     /*---------------------------------------------------*/ // Coroutine
     IEnumerator AttackTimer()
     {
@@ -223,6 +211,8 @@ public class PlayerAttackManager : Agent
         _agentMover._rb.linearVelocityX = 0f;
         yield return new WaitForSeconds(1f);
         _qSkillUse = false;
+        _agentAttack.FirstBoxSize();
+        _agentAttack.FirstOffset();
     }
     IEnumerator QSkillAttack()
     {
@@ -249,5 +239,6 @@ public class PlayerAttackManager : Agent
     {
         cantUseSkillText.text = "Can't Use Q Skill";
         yield return new WaitForSeconds(3);
+        cantUseSkillText.text = null;
     }
 }

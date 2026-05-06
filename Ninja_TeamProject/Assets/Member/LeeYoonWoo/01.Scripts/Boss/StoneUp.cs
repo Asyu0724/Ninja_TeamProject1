@@ -15,16 +15,14 @@ public class StoneUp : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            IDamageable damageable = other.GetComponent<IDamageable>();
+        IDamageable damageable = other.GetComponent<IDamageable>();
 
-            if (damageable != null)
-            {
-                damageable.GetDamage(1, gameObject);
-                StartCoroutine(player.PlayerHited());
-            }
+        if (damageable != null)
+        {
+            damageable.GetDamage(1, gameObject);
+            StartCoroutine(player.PlayerHited());
         }
+
     }
 
     void FixedUpdate()

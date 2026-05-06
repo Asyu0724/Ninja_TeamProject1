@@ -25,13 +25,9 @@ public class HealthSystem : MonoBehaviour, IDamageable
         if (!_invNow)
         {
             StartCoroutine(InvNow());
-            if (!GameManager.Instance.player.PlayerHit)
-            {
-                Health -= damage;
-                Health = Mathf.Clamp(Health, 0, _maxHealth);
-                OnDamaged?.Invoke();
-            }
-
+            Health -= damage;
+            Health = Mathf.Clamp(Health, 0, _maxHealth);
+            OnDamaged?.Invoke();
             if (Health <= 0)
             {
                 //죽음

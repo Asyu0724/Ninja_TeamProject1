@@ -17,6 +17,7 @@ public class TestEnemy : Agent
         base.Awake();
         _healthSystem = GetComponent<HealthSystem>();
         _enemyHealthBarUI = GetComponentInChildren<EnemyHealthBarUI>();
+        _healthSystem.OnDamaged += AttackedNow;
     }
 
     private void Update()
