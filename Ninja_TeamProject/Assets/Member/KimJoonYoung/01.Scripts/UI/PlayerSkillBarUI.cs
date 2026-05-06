@@ -1,3 +1,4 @@
+using Member.KimJoonYoung._01.Scripts.Agent;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,7 +10,7 @@ public class PlayerSkillBarUI : MonoBehaviour
     private void Awake()
     {
         _playerAttackManager = GetComponentInParent<PlayerAttackManager>();
-        skillBar.maxValue = _playerAttackManager._qskillCoolTime;
+        skillBar.maxValue = _playerAttackManager.PlayerSkillData.skillCoolTime;
         skillBar.value = 0;
     }
 

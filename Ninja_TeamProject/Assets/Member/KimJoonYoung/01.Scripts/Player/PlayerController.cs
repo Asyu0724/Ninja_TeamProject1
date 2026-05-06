@@ -1,4 +1,5 @@
 using System.Collections;
+using Member.KimJoonYoung._01.Scripts.Agent;
 using Member.KimJoonYoung._01.Scripts.Interface;
 using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
@@ -51,6 +52,7 @@ public class PlayerController : Agent
     {
         UIManager.Instance.HealthUI.InitHealthUI(_healthSystem.Health);
         _healthSystem.OnDamaged += UpdateHealthUI;
+        _healthSystem.OnDamaged += HandlerPlayerHit;
     }
 
     /*---------------------------------------------------*/ // Physics 
@@ -102,11 +104,11 @@ public class PlayerController : Agent
         _agentRenderer.SetBoolParam(_isGroundedHash, _isGrounded);
         _agentRenderer.SetBoolParam(_playerHitedHash, PlayerHit);
 
-        _skillUse = _playerAttackManager._qSkillUse;
+        _skillUse = _playerAttackManager.QSkillUse;
     }
 
     /*---------------------------------------------------*/ // Inumerator
-    public IEnumerator PlayerHited()
+    private IEnumerator PlayerHited()
     {
         PlayerHit = true;
         GameManager.Instance.timeScaleManager.OnHit();
@@ -116,8 +118,6 @@ public class PlayerController : Agent
         GameManager.Instance.timeScaleManager.OffHit();
         GameManager.Instance.bloomManager.OffHit(); 
         PlayerHit = false;
-        /*TimeScaleManager.Instance.OffHit();
-        BloomManager.Instance.OffHit();*/
     }
     /*---------------------------------------------------*/ // Game method
 
@@ -129,10 +129,9 @@ public class PlayerController : Agent
         }
     }
 
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void HandlerPlayerHit()
     {
-        if (collision.gameObject.TryGetComponent<ICollisionAttackable> (out ICollisionAttackable attackable) && !PlayerHit)
+        if (!PlayerHit)
         {
             StartCoroutine(PlayerHited());
         }

@@ -1,7 +1,10 @@
+using System.Diagnostics;
 using JetBrains.Annotations;
+using Member.LeeYoonWoo.SO;
 using UnityEngine;
+using Debug = UnityEngine.Debug;
 
-public abstract class Boss : MonoBehaviour
+public abstract class Boss : MonoBehaviour , IDamageable
 {
     public string bossName;
     public float maxHealth;
@@ -12,18 +15,21 @@ public abstract class Boss : MonoBehaviour
     protected Animator anim;
 
     int hitCount = 0;
+    [SerializeField] protected BossDataSO bossData;
     [SerializeField] int hitsPerHp = 4;
 
-    protected virtual void Start()
+    protected virtual void Awake()
     {
+        maxHealth = bossData.maxHealth;
         currentHealth = maxHealth;
         anim = GetComponentInChildren<Animator>();
 
         UIManager.Instance.BossHealthUI.InitHealthUI((int)maxHealth);
     }
 
-    public virtual void TakeDamage(float damageAmount)
+    public void TakeDamage(float damageAmount)
     {
+        Debug.Log(damageAmount);
         hitCount += (int)damageAmount;
 
         UIManager.Instance.BossHealthUI.Shake();
@@ -41,9 +47,7 @@ public abstract class Boss : MonoBehaviour
             }
         }
     }
-
-
-
+    
     protected virtual void Die()
     {
         Destroy(gameObject);
@@ -58,7 +62,10 @@ public abstract class Boss : MonoBehaviour
     {
         return Physics2D.OverlapBoxAll(position, size, 0f, playerLayer);
     }
-
-    public abstract void Attack();
     
+
+    public void GetDamage(int damage, GameObject dealer)
+    {
+        TakeDamage(damage);
+    }
 }

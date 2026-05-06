@@ -13,16 +13,12 @@ public class StoneUp : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        IDamageable damageable = other.GetComponent<IDamageable>();
-
-        if (damageable != null)
+        if (collision.TryGetComponent(out IDamageable damageable))
         {
-            damageable.GetDamage(1, gameObject);
-            StartCoroutine(player.PlayerHited());
+            damageable.GetDamage(1 , gameObject);
         }
-
     }
 
     void FixedUpdate()
