@@ -3945,7 +3945,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!114 &378623942
 MonoBehaviour:
@@ -7910,7 +7910,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!114 &1218089305
 MonoBehaviour:
@@ -39020,17 +39020,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 704248584082449258, guid: 9804090e1a97a8b40844cc5ec853359f, type: 3}
   m_PrefabInstance: {fileID: 3854932815150956936}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1580897736 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1778642969121242954, guid: 9804090e1a97a8b40844cc5ec853359f, type: 3}
-  m_PrefabInstance: {fileID: 3854932815150956936}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 329483005}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e58c4efae602b94fb057dda0150de6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
 --- !u!50 &1580897742
 Rigidbody2D:
   serializedVersion: 5
@@ -39058,6 +39047,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &1580897746 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1778642969121242954, guid: 9804090e1a97a8b40844cc5ec853359f, type: 3}
+  m_PrefabInstance: {fileID: 3854932815150956936}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329483005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e58c4efae602b94fb057dda0150de6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
 --- !u!1 &1604695798
 GameObject:
   m_ObjectHideFlags: 0
@@ -39438,7 +39438,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 288aade1e01b5404db69f0a5c1de56e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  player: {fileID: 1580897736}
+  player: {fileID: 1580897746}
   timeScaleManager: {fileID: 1279968937}
   bloomManager: {fileID: 1756646516}
 --- !u!4 &1809678737

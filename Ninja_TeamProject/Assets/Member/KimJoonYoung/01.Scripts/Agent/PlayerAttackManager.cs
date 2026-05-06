@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 using System.Collections;
 using UnityEditor.Rendering;
 using TMPro;
+using Unity.VisualScripting.Dependencies.NCalc;
 using Random = UnityEngine.Random;
 
 public class PlayerAttackManager : Agent
@@ -52,9 +53,9 @@ public class PlayerAttackManager : Agent
         _audioSource = GetComponent<AudioSource>();
     }
 
-    private void FixedUpdate()
+    private void Start()
     {
-
+        cantUseSkillText.text = null;
     }
 
     private void Update()
@@ -101,13 +102,9 @@ public class PlayerAttackManager : Agent
 
     private void OnSkill(InputValue value)
     {
-
-        if (!_playerHited && _canAttack && _qSkillCoolTime &&
-            _agentMover.isGrounded)
+        if (!_qSkillUse)
         {
-            _canUseQSkill = true;
-            CheckGround();
-            if (_canUseQSkill)
+            if (!_playerHited && _canAttack && _qSkillCoolTime && _agentMover.isGrounded && CheckGround())
             {
                 cantUseSkillText.text = null;
                 _qSkill = true;
@@ -119,11 +116,11 @@ public class PlayerAttackManager : Agent
                 StartCoroutine(QSkillCoolTime());
                 StartCoroutine(QSkillAttackSound());
                 _playerSkillBarUI.QSkillCoolTimeBarUpdate();
-
             }
-            else if (!_canUseQSkill)
+            else
             {
-                StartCoroutine(QSkillText());
+                if (cantUseSkillText.text == null)
+                    StartCoroutine(QSkillText());
                 _agentAttack.FirstBoxSize();
                 _agentAttack.FirstOffset();
             }
@@ -137,7 +134,7 @@ private void AttackNow()
                 _agentAttack.boxSize, 0 , _damageLayerMask);
             foreach (Collider2D collider in collider2Ds)
             {
-                if (collider.TryGetComponent<HealthSystem>(out HealthSystem health) && collider.CompareTag("Enemy"));
+                if (collider.TryGetComponent<HealthSystem>(out HealthSystem health) && collider.CompareTag("Enemy"))
                 {
                     health.GetDamage(_attackDamageAmount, gameObject);
                     collider.gameObject.GetComponent<TestEnemy>()?.AttackedNow();
@@ -169,21 +166,22 @@ private void AttackNow()
         }
     }
 
-    private void CheckGround()
+    private bool CheckGround()
     {
-        Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(transform.position + (Vector3)_agentAttack.offset, _agentAttack.boxSize, 0);
+        _agentAttack.SkillBoxSize(_qSkillBoxSize);
+        _agentAttack.SkillOffset(_qSkillOffset);
+        Collider2D[] collider2Ds =
+            Physics2D.OverlapBoxAll(transform.position + (Vector3)_agentAttack.offset, _agentAttack.boxSize, 0);
         foreach (Collider2D collider in collider2Ds)
         {
-            if (!collider.gameObject.CompareTag("Ground"))
+            if (collider.gameObject.CompareTag("Ground"))
             {
-                _canUseQSkill = true;
-            }
-            else
-            {
-                _canUseQSkill = false;
+                return false;
             }
         }
+        return true;
     }
+
     /*---------------------------------------------------*/ // Coroutine
     IEnumerator AttackTimer()
     {
@@ -241,5 +239,6 @@ private void AttackNow()
     {
         cantUseSkillText.text = "Can't Use Q Skill";
         yield return new WaitForSeconds(3);
+        cantUseSkillText.text = null;
     }
 }

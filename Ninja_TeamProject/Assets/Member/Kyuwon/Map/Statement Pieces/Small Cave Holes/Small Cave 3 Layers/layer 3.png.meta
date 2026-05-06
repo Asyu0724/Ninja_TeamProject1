@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Ninja_TeamProject/Assets/Member/Kyuwon/Map/Statement Pieces/Small Cave Holes/Small Cave 3 Layers/layer 3.png.meta
 guid: 7fc9753827709084d85cd1fa0a5db21c
 TextureImporter:
   internalIDToNameTable:
@@ -11,6 +12,23 @@ TextureImporter:
   - first:
       213: -1842832432868323586
     second: layer 3_2
+========
+guid: 61d56e7954132cc4c963f535a04126d0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3814809173454846509
+    second: layer 2_0
+  - first:
+      213: 6403311724617086822
+    second: layer 2_1
+  - first:
+      213: 4915574518810539172
+    second: layer 2_2
+  - first:
+      213: -3912334792477337484
+    second: layer 2_3
+>>>>>>>> Kimminseo:Ninja_TeamProject/Assets/Member/Choijeongyun/03.Assets/Background/The Columns/Vertical Layers and Sprite Sheet/layer 2.png.meta
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,6 +131,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     ignorePlatformSupport: 0
+<<<<<<<< HEAD:Ninja_TeamProject/Assets/Member/Kyuwon/Map/Statement Pieces/Small Cave Holes/Small Cave 3 Layers/layer 3.png.meta
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
@@ -126,12 +145,15 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     ignorePlatformSupport: 0
+========
+>>>>>>>> Kimminseo:Ninja_TeamProject/Assets/Member/Choijeongyun/03.Assets/Background/The Columns/Vertical Layers and Sprite Sheet/layer 2.png.meta
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
+<<<<<<<< HEAD:Ninja_TeamProject/Assets/Member/Kyuwon/Map/Statement Pieces/Small Cave Holes/Small Cave 3 Layers/layer 3.png.meta
       name: layer 3_0
       rect:
         serializedVersion: 2
@@ -139,6 +161,15 @@ TextureImporter:
         y: 77
         width: 5
         height: 8
+========
+      name: layer 2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 338
+        width: 192
+        height: 33
+>>>>>>>> Kimminseo:Ninja_TeamProject/Assets/Member/Choijeongyun/03.Assets/Background/The Columns/Vertical Layers and Sprite Sheet/layer 2.png.meta
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,13 +178,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
+<<<<<<<< HEAD:Ninja_TeamProject/Assets/Member/Kyuwon/Map/Statement Pieces/Small Cave Holes/Small Cave 3 Layers/layer 3.png.meta
       spriteID: e8470f5aa6172ea20800000000000000
       internalID: 3090156997194052750
+========
+      spriteID: 3d5825ab4431f0bc0800000000000000
+      internalID: -3814809173454846509
+>>>>>>>> Kimminseo:Ninja_TeamProject/Assets/Member/Choijeongyun/03.Assets/Background/The Columns/Vertical Layers and Sprite Sheet/layer 2.png.meta
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
+<<<<<<<< HEAD:Ninja_TeamProject/Assets/Member/Kyuwon/Map/Statement Pieces/Small Cave Holes/Small Cave 3 Layers/layer 3.png.meta
       name: layer 3_1
       rect:
         serializedVersion: 2
@@ -183,6 +220,15 @@ TextureImporter:
         y: 0
         width: 129
         height: 64
+========
+      name: layer 2_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 161
+        width: 192
+        height: 43
+>>>>>>>> Kimminseo:Ninja_TeamProject/Assets/Member/Choijeongyun/03.Assets/Background/The Columns/Vertical Layers and Sprite Sheet/layer 2.png.meta
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,8 +237,57 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
+<<<<<<<< HEAD:Ninja_TeamProject/Assets/Member/Kyuwon/Map/Statement Pieces/Small Cave Holes/Small Cave 3 Layers/layer 3.png.meta
       spriteID: efe80528aa1fc66e0800000000000000
       internalID: -1842832432868323586
+========
+      spriteID: 66735eb56122dd850800000000000000
+      internalID: 6403311724617086822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer 2_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 90
+        width: 192
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a4f9a42bf0a73440800000000000000
+      internalID: 4915574518810539172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: layer 2_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 57
+        width: 192
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4789cf31c3894b9c0800000000000000
+      internalID: -3912334792477337484
+>>>>>>>> Kimminseo:Ninja_TeamProject/Assets/Member/Choijeongyun/03.Assets/Background/The Columns/Vertical Layers and Sprite Sheet/layer 2.png.meta
       vertices: []
       indices: 
       edges: []
@@ -211,9 +306,16 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+<<<<<<<< HEAD:Ninja_TeamProject/Assets/Member/Kyuwon/Map/Statement Pieces/Small Cave Holes/Small Cave 3 Layers/layer 3.png.meta
       layer 3_0: 3090156997194052750
       layer 3_1: 345903015829488348
       layer 3_2: -1842832432868323586
+========
+      layer 2_0: -3814809173454846509
+      layer 2_1: 6403311724617086822
+      layer 2_2: 4915574518810539172
+      layer 2_3: -3912334792477337484
+>>>>>>>> Kimminseo:Ninja_TeamProject/Assets/Member/Choijeongyun/03.Assets/Background/The Columns/Vertical Layers and Sprite Sheet/layer 2.png.meta
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
