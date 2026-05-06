@@ -59,18 +59,12 @@ public class PlayerSkill : Agent
 
     private void OnAttack(InputValue value)
     {
-        if (!_playerHited && !_qSkillUse    )
+        if (!_playerHited && !_qSkillUse && _canAttack && _canComboAttack)
         {
-            if (_canAttack) // 공격 가능 상태일때
-            {
-                if (_canComboAttack)
-                {
-                    _currentAttackComboCount = ++_attackComboCount;
-                    _canComboAttack = false;
-                    StartCoroutine(AttackComboTimer());
-                    StartCoroutine(AttackCombo());
-                }
-            }
+            _currentAttackComboCount = ++_attackComboCount;
+            _canComboAttack = false;
+            StartCoroutine(AttackComboTimer());
+            StartCoroutine(AttackCombo());
         }
     }
     private void OnSkill(InputValue value)
@@ -94,28 +88,30 @@ public class PlayerSkill : Agent
         Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(transform.position + (Vector3)_agentAttack.offset, _agentAttack.boxSize, 0);
         foreach (Collider2D collider in collider2Ds)
         {
-            if (collider.gameObject.TryGetComponent(out TestEnemy enemy))
-            {
-                collider.gameObject.GetComponent<HealthSystem>().GetDamage(1, gameObject);
-                enemy.AttackedNow();
-            }
+            if (collider.TryGetComponent(out IDamageable damageable))
+                damageable.GetDamage(_qSkillDamageAmount, gameObject);
         }
-
     }
     private void QSkillNow()
     {
-        _agentAttack.SkillBoxSize(new Vector2(5,_agentAttack.boxSize.y));
-        _agentAttack.SkillOffset(new Vector2(1.9f,_agentAttack.offset.y));
+        SkillOverlab();
         Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(transform.position + (Vector3)_agentAttack.offset, _agentAttack.boxSize, 0);
         foreach (Collider2D collider in collider2Ds)
         {
-            if (collider.gameObject.TryGetComponent(out TestEnemy enemy))
-            {
-
-                collider.gameObject.GetComponent<HealthSystem>().GetDamage(_qSkillDamageAmount, gameObject);
-                enemy.AttackedNow();
-            }
+            if (collider.TryGetComponent(out IDamageable damageable))
+                damageable.GetDamage(_qSkillDamageAmount, gameObject);
         }
+        SkillOverlabReset();
+    }
+
+    private void SkillOverlab()
+    {
+        _agentAttack.SkillBoxSize(new Vector2(5,_agentAttack.boxSize.y));
+        _agentAttack.SkillOffset(new Vector2(1.9f,_agentAttack.offset.y));
+    }
+
+    private void SkillOverlabReset()
+    {
         _agentAttack.FirstBoxSize();
         _agentAttack.FirstOffset();
     }

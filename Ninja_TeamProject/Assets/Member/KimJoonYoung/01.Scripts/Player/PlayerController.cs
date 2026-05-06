@@ -14,10 +14,7 @@ public class PlayerController : Agent
     public float Speed
     {
         get => _agentMover._rb.linearVelocityX / _speed;
-        private set
-        {
-            
-        }
+        private set {}
     }
     [SerializeField] private float _speed;
     [SerializeField] private int _jumpPower;
