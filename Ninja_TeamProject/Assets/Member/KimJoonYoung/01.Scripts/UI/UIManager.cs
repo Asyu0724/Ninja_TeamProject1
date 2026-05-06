@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -8,6 +9,7 @@ public class UIManager : MonoBehaviour
     [field:SerializeField] public HealthBarUI HealthUI {  get; private set; }
     [field: SerializeField] public HealthBarUI BossHealthUI { get; private set; }
     [SerializeField] private Image gameOverImage;
+    public event Action OnGameOver;
 
     public static UIManager Instance { get; private set; }
     private void Awake()
@@ -36,6 +38,7 @@ public class UIManager : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return null;
         }
+        OnGameOver?.Invoke();
         yield break;
     }
 }
