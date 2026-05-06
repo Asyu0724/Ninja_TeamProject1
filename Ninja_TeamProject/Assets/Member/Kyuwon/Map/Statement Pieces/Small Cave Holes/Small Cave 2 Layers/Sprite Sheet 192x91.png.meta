@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Ninja_TeamProject/Assets/Member/Kyuwon/Map/Statement Pieces/Small Cave Holes/Small Cave 2 Layers/Sprite Sheet 192x91.png.meta
 guid: 59317f4c21f3f874389bc48a877d25e3
 TextureImporter:
   internalIDToNameTable:
@@ -23,6 +24,35 @@ TextureImporter:
   - first:
       213: 4131235423405830991
     second: Sprite Sheet 192x91_6
+========
+guid: 00c198243ec666749bf7bb80962e0c8f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7166236263522030466
+    second: Run (32x32)_0
+  - first:
+      213: 2470319409956435798
+    second: Run (32x32)_1
+  - first:
+      213: -4540918584354326388
+    second: Run (32x32)_2
+  - first:
+      213: -4455822056875728695
+    second: Run (32x32)_3
+  - first:
+      213: -5364790588639958657
+    second: Run (32x32)_4
+  - first:
+      213: -1512656188830553638
+    second: Run (32x32)_5
+  - first:
+      213: -2754230144694611447
+    second: Run (32x32)_6
+  - first:
+      213: -2419971920513260168
+    second: Run (32x32)_7
+>>>>>>>> Kimminseo:Ninja_TeamProject/Assets/Member/Kyuwon/Animations/The Blood King/Run (32x32).png.meta
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -144,6 +174,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
+<<<<<<<< HEAD:Ninja_TeamProject/Assets/Member/Kyuwon/Map/Statement Pieces/Small Cave Holes/Small Cave 2 Layers/Sprite Sheet 192x91.png.meta
       name: Sprite Sheet 192x91_0
       rect:
         serializedVersion: 2
@@ -283,6 +314,15 @@ TextureImporter:
         y: 0
         width: 192
         height: 151
+========
+      name: Run (32x32)_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 223
+        width: 26
+        height: 21
+>>>>>>>> Kimminseo:Ninja_TeamProject/Assets/Member/Kyuwon/Animations/The Blood King/Run (32x32).png.meta
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -291,8 +331,167 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
+<<<<<<<< HEAD:Ninja_TeamProject/Assets/Member/Kyuwon/Map/Statement Pieces/Small Cave Holes/Small Cave 2 Layers/Sprite Sheet 192x91.png.meta
       spriteID: f437d97bab8155930800000000000000
       internalID: 4131235423405830991
+========
+      spriteID: 283d0cfc9e5937360800000000000000
+      internalID: 7166236263522030466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run (32x32)_1
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 191
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 657b4304a66584220800000000000000
+      internalID: 2470319409956435798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run (32x32)_2
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 161
+        width: 28
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8837993b9a6bf0c0800000000000000
+      internalID: -4540918584354326388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run (32x32)_3
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 129
+        width: 28
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c0629d727db922c0800000000000000
+      internalID: -4455822056875728695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run (32x32)_4
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 95
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f79a1cd226f6c85b0800000000000000
+      internalID: -5364790588639958657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run (32x32)_5
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 63
+        width: 19
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad9657de537f10be0800000000000000
+      internalID: -1512656188830553638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run (32x32)_6
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 33
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9021ec3a64207c9d0800000000000000
+      internalID: -2754230144694611447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run (32x32)_7
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 1
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 875236f1c588a6ed0800000000000000
+      internalID: -2419971920513260168
+>>>>>>>> Kimminseo:Ninja_TeamProject/Assets/Member/Kyuwon/Animations/The Blood King/Run (32x32).png.meta
       vertices: []
       indices: 
       edges: []
@@ -311,6 +510,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+<<<<<<<< HEAD:Ninja_TeamProject/Assets/Member/Kyuwon/Map/Statement Pieces/Small Cave Holes/Small Cave 2 Layers/Sprite Sheet 192x91.png.meta
       Sprite Sheet 192x91_0: 763853551825694737
       Sprite Sheet 192x91_1: 8237716862154017153
       Sprite Sheet 192x91_2: 8543966634607011093
@@ -318,6 +518,16 @@ TextureImporter:
       Sprite Sheet 192x91_4: 479136680524209527
       Sprite Sheet 192x91_5: 2078745056825700001
       Sprite Sheet 192x91_6: 4131235423405830991
+========
+      Run (32x32)_0: 7166236263522030466
+      Run (32x32)_1: 2470319409956435798
+      Run (32x32)_2: -4540918584354326388
+      Run (32x32)_3: -4455822056875728695
+      Run (32x32)_4: -5364790588639958657
+      Run (32x32)_5: -1512656188830553638
+      Run (32x32)_6: -2754230144694611447
+      Run (32x32)_7: -2419971920513260168
+>>>>>>>> Kimminseo:Ninja_TeamProject/Assets/Member/Kyuwon/Animations/The Blood King/Run (32x32).png.meta
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

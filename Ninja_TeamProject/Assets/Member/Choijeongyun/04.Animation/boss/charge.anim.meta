@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Ninja_TeamProject/Assets/Member/Choijeongyun/04.Animation/boss/charge.anim.meta
 guid: ec9a35e62e381b34e8978ad82008ceca
+========
+guid: d8e97725dee73864e8e822c98050c993
+>>>>>>>> Kimminseo:Ninja_TeamProject/Assets/Member/Choijeongyun/04.Animation/boss/attack2.anim.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 7400000

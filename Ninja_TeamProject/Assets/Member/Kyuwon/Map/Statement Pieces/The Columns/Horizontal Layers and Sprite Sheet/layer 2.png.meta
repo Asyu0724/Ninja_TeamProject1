@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Ninja_TeamProject/Assets/Member/Kyuwon/Map/Statement Pieces/The Columns/Horizontal Layers and Sprite Sheet/layer 2.png.meta
 guid: 19ecd496a50a36c49bf0d65a2a342b91
 TextureImporter:
   internalIDToNameTable:
@@ -14,6 +15,23 @@ TextureImporter:
   - first:
       213: -3912334792477337484
     second: layer 2_3
+========
+guid: f83fe8b79c7a18e4bb37f47fba1e0406
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7040464113994632316
+    second: Jump (32x32)_0
+  - first:
+      213: -3189815164548763352
+    second: Jump (32x32)_1
+  - first:
+      213: 2833811909832372217
+    second: Jump (32x32)_2
+  - first:
+      213: 443421026784949492
+    second: Jump (32x32)_3
+>>>>>>>> Kimminseo:Ninja_TeamProject/Assets/Member/Kyuwon/Animations/The Blood King/Jump (32x32).png.meta
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -135,6 +153,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
+<<<<<<<< HEAD:Ninja_TeamProject/Assets/Member/Kyuwon/Map/Statement Pieces/The Columns/Horizontal Layers and Sprite Sheet/layer 2.png.meta
       name: layer 2_0
       rect:
         serializedVersion: 2
@@ -142,6 +161,15 @@ TextureImporter:
         y: 0
         width: 23
         height: 192
+========
+      name: Jump (32x32)_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 96
+        width: 24
+        height: 25
+>>>>>>>> Kimminseo:Ninja_TeamProject/Assets/Member/Kyuwon/Animations/The Blood King/Jump (32x32).png.meta
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,13 +178,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
+<<<<<<<< HEAD:Ninja_TeamProject/Assets/Member/Kyuwon/Map/Statement Pieces/The Columns/Horizontal Layers and Sprite Sheet/layer 2.png.meta
       spriteID: 3d5825ab4431f0bc0800000000000000
       internalID: -3814809173454846509
+========
+      spriteID: c7c09884fc0c4b160800000000000000
+      internalID: 7040464113994632316
+>>>>>>>> Kimminseo:Ninja_TeamProject/Assets/Member/Kyuwon/Animations/The Blood King/Jump (32x32).png.meta
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
+<<<<<<<< HEAD:Ninja_TeamProject/Assets/Member/Kyuwon/Map/Statement Pieces/The Columns/Horizontal Layers and Sprite Sheet/layer 2.png.meta
       name: layer 2_1
       rect:
         serializedVersion: 2
@@ -164,6 +198,15 @@ TextureImporter:
         y: 0
         width: 36
         height: 192
+========
+      name: Jump (32x32)_1
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 64
+        width: 25
+        height: 25
+>>>>>>>> Kimminseo:Ninja_TeamProject/Assets/Member/Kyuwon/Animations/The Blood King/Jump (32x32).png.meta
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,13 +215,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
+<<<<<<<< HEAD:Ninja_TeamProject/Assets/Member/Kyuwon/Map/Statement Pieces/The Columns/Horizontal Layers and Sprite Sheet/layer 2.png.meta
       spriteID: 66735eb56122dd850800000000000000
       internalID: 6403311724617086822
+========
+      spriteID: 821bae912008bb3d0800000000000000
+      internalID: -3189815164548763352
+>>>>>>>> Kimminseo:Ninja_TeamProject/Assets/Member/Kyuwon/Animations/The Blood King/Jump (32x32).png.meta
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
+<<<<<<<< HEAD:Ninja_TeamProject/Assets/Member/Kyuwon/Map/Statement Pieces/The Columns/Horizontal Layers and Sprite Sheet/layer 2.png.meta
       name: layer 2_2
       rect:
         serializedVersion: 2
@@ -186,6 +235,15 @@ TextureImporter:
         y: 0
         width: 59
         height: 192
+========
+      name: Jump (32x32)_2
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 32
+        width: 25
+        height: 25
+>>>>>>>> Kimminseo:Ninja_TeamProject/Assets/Member/Kyuwon/Animations/The Blood King/Jump (32x32).png.meta
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,13 +252,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
+<<<<<<<< HEAD:Ninja_TeamProject/Assets/Member/Kyuwon/Map/Statement Pieces/The Columns/Horizontal Layers and Sprite Sheet/layer 2.png.meta
       spriteID: 4a4f9a42bf0a73440800000000000000
       internalID: 4915574518810539172
+========
+      spriteID: 9ff64d5fae8b35720800000000000000
+      internalID: 2833811909832372217
+>>>>>>>> Kimminseo:Ninja_TeamProject/Assets/Member/Kyuwon/Animations/The Blood King/Jump (32x32).png.meta
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
+<<<<<<<< HEAD:Ninja_TeamProject/Assets/Member/Kyuwon/Map/Statement Pieces/The Columns/Horizontal Layers and Sprite Sheet/layer 2.png.meta
       name: layer 2_3
       rect:
         serializedVersion: 2
@@ -208,6 +272,15 @@ TextureImporter:
         y: 0
         width: 26
         height: 192
+========
+      name: Jump (32x32)_3
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 0
+        width: 26
+        height: 25
+>>>>>>>> Kimminseo:Ninja_TeamProject/Assets/Member/Kyuwon/Animations/The Blood King/Jump (32x32).png.meta
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,8 +289,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
+<<<<<<<< HEAD:Ninja_TeamProject/Assets/Member/Kyuwon/Map/Statement Pieces/The Columns/Horizontal Layers and Sprite Sheet/layer 2.png.meta
       spriteID: 4789cf31c3894b9c0800000000000000
       internalID: -3912334792477337484
+========
+      spriteID: 4f4b4731319572600800000000000000
+      internalID: 443421026784949492
+>>>>>>>> Kimminseo:Ninja_TeamProject/Assets/Member/Kyuwon/Animations/The Blood King/Jump (32x32).png.meta
       vertices: []
       indices: 
       edges: []
@@ -236,10 +314,17 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+<<<<<<<< HEAD:Ninja_TeamProject/Assets/Member/Kyuwon/Map/Statement Pieces/The Columns/Horizontal Layers and Sprite Sheet/layer 2.png.meta
       layer 2_0: -3814809173454846509
       layer 2_1: 6403311724617086822
       layer 2_2: 4915574518810539172
       layer 2_3: -3912334792477337484
+========
+      Jump (32x32)_0: 7040464113994632316
+      Jump (32x32)_1: -3189815164548763352
+      Jump (32x32)_2: 2833811909832372217
+      Jump (32x32)_3: 443421026784949492
+>>>>>>>> Kimminseo:Ninja_TeamProject/Assets/Member/Kyuwon/Animations/The Blood King/Jump (32x32).png.meta
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Ninja_TeamProject/Assets/Member/Choijeongyun/04.Animation/boss/attack1.anim.meta
 guid: 12e561f177177884080c998541016a76
+========
+guid: 8fd9ba23627196449ac9b6fd06081d8d
+>>>>>>>> Kimminseo:Ninja_TeamProject/Assets/Member/Choijeongyun/04.Animation/boss/death.anim.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 7400000
