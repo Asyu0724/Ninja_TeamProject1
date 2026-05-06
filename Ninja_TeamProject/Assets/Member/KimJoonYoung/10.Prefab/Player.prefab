@@ -1,5 +1,78 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5079954616969739492
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1997046014733172767}
+  - component: {fileID: 4502657067748678792}
+  - component: {fileID: 1217059430921580577}
+  m_Layer: 6
+  m_Name: PlayerCam
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1997046014733172767
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5079954616969739492}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 704248584082449258}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &4502657067748678792
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5079954616969739492}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &1217059430921580577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5079954616969739492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7205e023d397c8e4cb5bfc6f316dbeb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerCam
+  _playerTrm: {fileID: 704248584082449258}
 --- !u!1 &5275127526186022653
 GameObject:
   m_ObjectHideFlags: 0
@@ -14,6 +87,7 @@ GameObject:
   - component: {fileID: 5549341326705384535}
   - component: {fileID: 1778642969121242954}
   - component: {fileID: 46173080967755659}
+  - component: {fileID: 5561000576972864367}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -38,6 +112,7 @@ Transform:
   - {fileID: 8827615427414358018}
   - {fileID: 3157506186024302092}
   - {fileID: 3516599604308864249}
+  - {fileID: 1997046014733172767}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &9096775737555466354
@@ -119,6 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f3c2c8553139c04ab799b1663610355, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthSystem
+  <InvTime>k__BackingField: 0.3
   <Health>k__BackingField: 5
   _maxHealth: 5
 --- !u!114 &1778642969121242954
@@ -136,7 +212,6 @@ MonoBehaviour:
   _speed: 8
   _jumpPower: 8
   _jumpCount: 2
-  _currentJumpCount: 0
 --- !u!114 &46173080967755659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,17 +224,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08fbd34190baced4884b5bd2a2bb757b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerSkill
-  _damageLayerMask:
+  damageLayerMask:
+    serializedVersion: 2
+    m_Bits: 2176
+  <PlayerAttackData>k__BackingField: {fileID: 11400000, guid: fa504c1a36676824b9cf1bd183ebecce, type: 2}
+  <PlayerSkillData>k__BackingField: {fileID: 11400000, guid: c4e05f18fc0bc0745b3497bac26333e7, type: 2}
+  cantUseSkillText: {fileID: 0}
+--- !u!50 &5561000576972864367
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5275127526186022653}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 2
+  m_Material: {fileID: 6200000, guid: 9caa020558353a24e886bf7360b82459, type: 2}
+  m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  _canComboAttackTimer: 0.15
-  _canAttackTimer: 0.2
-  _attackDamageAmount: 1
-  cantUseSkillText: {fileID: 0}
-  _qSkillDamageAmount: 12
-  _qSkillBoxSize: {x: 0, y: 0}
-  _qSkillOffset: {x: 0, y: 0}
-  _qskillCoolTime: 5
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 4
 --- !u!1001 &212663601586975115
 PrefabInstance:
   m_ObjectHideFlags: 0
