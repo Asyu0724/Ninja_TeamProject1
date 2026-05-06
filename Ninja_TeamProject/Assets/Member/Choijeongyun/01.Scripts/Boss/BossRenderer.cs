@@ -49,4 +49,9 @@ public class BossRenderer : MonoBehaviour
     {
         bossMove.MoveToPlayer();
     }
+
+    public void AnimSpeed(float value)
+    {
+        _animator.speed = value;
+    }
 }

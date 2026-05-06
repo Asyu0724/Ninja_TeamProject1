@@ -31,6 +31,7 @@ public class BossMover : MonoBehaviour
 
     [SerializeField] private BossHealth _bossHP;
     [SerializeField] private BossSkill _bossSkill;
+    [SerializeField] private BossRenderer _bossRenderer;
 
 
     private bool _isSkill => _Attack1 || _Attack2 || _bossHP._isCharge || _isJump || _Attack3;
@@ -64,7 +65,11 @@ public class BossMover : MonoBehaviour
         if (Mathf.Abs(_distance.x) < 2.0f)
         {
             _moveDir.x = 0;
-            if (Mathf.Abs(_distance.y) > 1.0f && !_isSkill) _Attack3 = true;
+            if (_distance.y > 0.6f)
+            {
+                if (!_isSkill) _Attack3 = true;
+                else if(!_Attack3) _bossRenderer.AnimSpeed(1.5f);
+            }
         }
         if (Mathf.Abs(_distance.x) > 6.0f && !_isSkill)
         {
@@ -98,6 +103,7 @@ public class BossMover : MonoBehaviour
         _Attack3 = false;
         _bossHP.ChargeHP(false);
         _isJump = false;
+        _bossRenderer.AnimSpeed(1.0f);
     }
 
     public void MoveToPlayer()
