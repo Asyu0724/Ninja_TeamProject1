@@ -24,4 +24,9 @@ public class AgentRenderer : MonoBehaviour
         _animator.SetBool(paramHash, value);
 
     }
+
+    public void SetTriggerParam(int paramHash)
+    {
+        _animator.SetTrigger(paramHash);
+    }
 }

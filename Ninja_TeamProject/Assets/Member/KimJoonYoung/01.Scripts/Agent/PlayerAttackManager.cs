@@ -63,24 +63,27 @@ namespace Member.KimJoonYoung._01.Scripts.Agent
 
         private void Update()
         {
-            _agentRenderer.SetIntegerParam(_attackComboCountHash, _currentAttackComboCount);
-            _agentRenderer.SetBoolParam(_qSkillHash, _qSkill);
-            _agentRenderer.SetBoolParam(_qSkillUseHash, QSkillUse);
-
-            if (_attackComboCount > 1)
+            if (!_playerController.PlayerIsDead)
             {
-                _attackComboCount = 0;
-                _canAttack = false;
-                StartCoroutine(AttackTimer()); // 콤보 끝나면 0.5초 기다리셈
-            }
+                _agentRenderer.SetIntegerParam(_attackComboCountHash, _currentAttackComboCount);
+                _agentRenderer.SetBoolParam(_qSkillHash, _qSkill);
+                _agentRenderer.SetBoolParam(_qSkillUseHash, QSkillUse);
 
-            _playerHited = _playerController.PlayerHit;
+                if (_attackComboCount > 1)
+                {
+                    _attackComboCount = 0;
+                    _canAttack = false;
+                    StartCoroutine(AttackTimer()); // 콤보 끝나면 0.5초 기다리셈
+                }
+
+                _playerHited = _playerController.PlayerHit;
+            }
         }
 
 
         private void OnAttack(InputValue value)
         {
-            if (!_playerHited && !QSkillUse && _canAttack && _canComboAttack)
+            if (!_playerHited && !QSkillUse && _canAttack && _canComboAttack && !_playerController.PlayerIsDead)
             {
 
                 switch (Random.Range(0, 3))
@@ -105,7 +108,7 @@ namespace Member.KimJoonYoung._01.Scripts.Agent
 
         private void OnSkill(InputValue value)
         {
-            if (!QSkillUse)
+            if (!QSkillUse && !_playerController.PlayerIsDead)
             {
                 if (!_playerHited && _canAttack && QSkillCoolTimeNow && _agentMover.isGrounded && CheckGround())
                 {
