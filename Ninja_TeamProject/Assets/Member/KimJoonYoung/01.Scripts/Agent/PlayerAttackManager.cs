@@ -134,7 +134,7 @@ private void AttackNow()
                 _agentAttack.boxSize, 0 , _damageLayerMask);
             foreach (Collider2D collider in collider2Ds)
             {
-                if (collider.TryGetComponent<HealthSystem>(out HealthSystem health) && collider.CompareTag("Enemy"));
+                if (collider.TryGetComponent<HealthSystem>(out HealthSystem health) && collider.CompareTag("Enemy"))
                 {
                     health.GetDamage(_attackDamageAmount, gameObject);
                     collider.gameObject.GetComponent<TestEnemy>()?.AttackedNow();

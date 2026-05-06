@@ -53,7 +53,7 @@ public class PlayerSkill : Agent
             StartCoroutine(AttackTimer()); // 콤보 끝나면 0.5초 기다리셈
         }
 
-        _playerHited = playerController._playerHited;
+        _playerHited = playerController.PlayerHit;
     }
 
 
@@ -104,8 +104,8 @@ public class PlayerSkill : Agent
     }
     private void QSkillNow()
     {
-        _agentAttack.SkillBoxSize(5);
-        _agentAttack.SkillOffset(1.9f);
+        _agentAttack.SkillBoxSize(new Vector2(5,_agentAttack.boxSize.y));
+        _agentAttack.SkillOffset(new Vector2(1.9f,_agentAttack.offset.y));
         Collider2D[] collider2Ds = Physics2D.OverlapBoxAll(transform.position + (Vector3)_agentAttack.offset, _agentAttack.boxSize, 0);
         foreach (Collider2D collider in collider2Ds)
         {
