@@ -41,7 +41,7 @@ public class TestPlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (_bossSkill.isKnockBack) return;
+        if (_bossSkill.IsKnockBack) return;
         _rigid.linearVelocityX = _moveDir * _speed;
     }
 

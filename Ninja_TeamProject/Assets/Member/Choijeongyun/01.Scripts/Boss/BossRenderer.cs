@@ -5,7 +5,7 @@ public class BossRenderer : MonoBehaviour
 {
     private Animator _animator;
     [SerializeField] private BossMover bossMove;
-    [SerializeField] private BossHealth _bossHP;
+    [SerializeField] private BossHealth bossHP;
 
     private int _xMoveHash = Animator.StringToHash(name: "MoveX");
     // private int _isGroundedHash = Animator.StringToHash("IsGrounded");
@@ -30,13 +30,13 @@ public class BossRenderer : MonoBehaviour
 
     private void Update()
     {
-        _animator.SetBool(_attack1Hash, bossMove._Attack1);
-        _animator.SetBool(_attack2Hash, bossMove._Attack2);
-        _animator.SetBool(_attack3Hash, bossMove._Attack3);
+        _animator.SetBool(_attack1Hash, bossMove.Attack1);
+        _animator.SetBool(_attack2Hash, bossMove.Attack2);
+        _animator.SetBool(_attack3Hash, bossMove.Attack3);
         _animator.SetFloat(_xMoveHash, _moveX);
-        _animator.SetBool(_deathHash, _bossHP._isDeath);
-        _animator.SetBool(_chargeHash, _bossHP._isCharge);
-        _animator.SetBool(_jumpHash, bossMove._isJump);
+        _animator.SetBool(_deathHash, bossHP.IsDeath);
+        _animator.SetBool(_chargeHash, bossHP.IsCharge);
+        _animator.SetBool(_jumpHash, bossMove.IsJump);
         // _animator.SetBool(_isGroundedHash, bossMove._isGrounded);
     }
 
