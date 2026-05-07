@@ -14,6 +14,7 @@ public class SBossMove : MonoBehaviour
     [SerializeField] private float TelCool = 18.0f;
     private bool charcoolTime = false;
     private bool TelcoolTime = false;
+    public float faceCool = 0.5f;
 
 
     private float _lastChagingTime = 0;
@@ -39,14 +40,7 @@ public class SBossMove : MonoBehaviour
 
             if (distance < 10.0f && CanCharing == false)
             {
-                Debug.Log("이얏");
-                animator.SetTrigger("Charging");
-                charcoolTime = true;
-            }
-            if (CanCharing == true)
-            {
-                charcoolTime = false;
-                _lastChagingTime = Time.time;
+                //StartCoroutine(ChargeRoutine());
             }
 
             if (distance > 17.0f && distance < 20.0f && TelcoolTime == false)
@@ -54,6 +48,7 @@ public class SBossMove : MonoBehaviour
                 Debug.Log("호잇");
                 TelcoolTime = true;
             }
+
             if (TelcoolTime == true)
             {
                 TelCool -= Time.deltaTime;
@@ -66,35 +61,51 @@ public class SBossMove : MonoBehaviour
             }
         }
     }
+
     private void Move()
     {
-
         distance = Vector2.Distance(transform.position, playerTRM.position);
         moveDir = (playerTRM.position - transform.position).normalized;
         rigid.linearVelocityX = moveDir.x * speed;
     }
+
     private void RotateBoss()
     {
-        if (moveDir.x > 0)
+        if (moveDir.x >= 0)
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);
+            //speed = 0;
+            faceCool -= Time.deltaTime;
+            if (faceCool <= 0)
+            {
+                speed = 3.0f;
+                faceCool = 0.5f;
+            }
         }
-        else if (moveDir.x < 0)
+        else if (moveDir.x <= 0)
         {
             transform.rotation = Quaternion.Euler(0, 180, 0);
+            //speed = 0;
+            faceCool -= Time.deltaTime;
+            if (faceCool <= 0)
+            {
+                speed = 3.0f;
+                faceCool = 0.5f;
+            }
         }
     }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("UMM"))
         {
-
-            StartCoroutine(AttackRoutine());
+            //StartCoroutine(AttackRoutine());
         }
     }
 
     private IEnumerator AttackRoutine()
     {
+        speed = 0;
         int randomValue = Random.Range(0, 5);
 
         if (randomValue < 1)
@@ -107,8 +118,26 @@ public class SBossMove : MonoBehaviour
             animator.SetTrigger("Slash");
         }
 
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1.0f);
+        speed = 3.0f;
+    }
 
-        rigid.linearVelocityX = 3.0f;
+    private IEnumerator ChargeRoutine()
+    {
+        speed = 0;
+        Debug.Log("이얏");
+        animator.SetTrigger("Charging");
+        charcoolTime = true;
+
+        if (CanCharing == true)
+        {
+            charcoolTime = false;
+            _lastChagingTime = Time.time;
+        }
+
+        //yield return new WaitForSeconds(1.0f);
+        return null;
+        
+        speed = 3.0f;
     }
 }
