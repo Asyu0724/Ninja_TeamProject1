@@ -6,14 +6,19 @@ using System.Collections;
 public class SBossMove : MonoBehaviour
 {
     private float speed = 3.0f;
-    [SerializeField]private Rigidbody2D rigid;
-    [SerializeField]private Transform playerTRM;
+    [SerializeField] private Rigidbody2D rigid;
+    [SerializeField] private Transform playerTRM;
     [SerializeField] private Vector2 moveDir;
     [SerializeField] private Animator animator;
     [SerializeField] private float chargingCool = 9.0f;
     [SerializeField] private float TelCool = 18.0f;
     private bool charcoolTime = false;
     private bool TelcoolTime = false;
+
+
+    private float _lastChagingTime = 0;
+    private float distance;
+    private bool CanCharing => Time.time >= _lastChagingTime + chargingCool;
 
     private void Awake()
     {
@@ -26,35 +31,22 @@ public class SBossMove : MonoBehaviour
     {
         if (playerTRM != null)
         {
-            float distance = Vector2.Distance(transform.position, playerTRM.position);
-            moveDir = (playerTRM.position - transform.position).normalized;
-            rigid.linearVelocityX = moveDir.x * speed;
-            if (moveDir.x > 0)
-            {
-                transform.rotation = Quaternion.Euler(0, 0, 0);
-            }
-            else if (moveDir.x < 0)
-            {
-                transform.rotation = Quaternion.Euler(0, 180, 0);
-            }
+            Move();
+            RotateBoss();
 
             int BossMove = Mathf.Abs(moveDir.x) >= 0.1f ? 1 : 0;
             animator.SetFloat("MoveX", BossMove);
 
-            if (distance < 10.0f && charcoolTime == false)
+            if (distance < 10.0f && CanCharing == false)
             {
                 Debug.Log("이얏");
+                animator.SetTrigger("Charging");
                 charcoolTime = true;
             }
-            if (charcoolTime == true)
+            if (CanCharing == true)
             {
-                chargingCool -= Time.deltaTime;
-
-                if (chargingCool <= 0f)
-                {
-                    charcoolTime = false;
-                    chargingCool = 9.0f;
-                }
+                charcoolTime = false;
+                _lastChagingTime = Time.time;
             }
 
             if (distance > 17.0f && distance < 20.0f && TelcoolTime == false)
@@ -74,12 +66,29 @@ public class SBossMove : MonoBehaviour
             }
         }
     }
+    private void Move()
+    {
 
+        distance = Vector2.Distance(transform.position, playerTRM.position);
+        moveDir = (playerTRM.position - transform.position).normalized;
+        rigid.linearVelocityX = moveDir.x * speed;
+    }
+    private void RotateBoss()
+    {
+        if (moveDir.x > 0)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+        else if (moveDir.x < 0)
+        {
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("UMM"))
+        if (collision.gameObject.CompareTag("UMM"))
         {
-            Debug.Log("sj");
+
             StartCoroutine(AttackRoutine());
         }
     }
