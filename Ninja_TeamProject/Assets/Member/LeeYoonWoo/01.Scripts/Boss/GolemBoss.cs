@@ -1,61 +1,45 @@
+using System;
 using System.Collections;
 using System.Diagnostics.CodeAnalysis;
+using Member.LeeYoonWoo.SO;
+using Unity.VisualScripting;
+using UnityEditor.Search;
 using UnityEngine;
 
-public class GolemBoss : Boss//, IDamageable
+public class GolemBoss : Boss 
 {
     public float patternDelay = 5f;
     public float closeAttackRange = 5.0f;
 
-    private Transform playerPos;
-    private PlayerController player;
+    [SerializeField] private Transform playerPos;
+    [SerializeField] private PlayerController player;
+    [SerializeField] private CameraShake cs;
     private bool isAttacking = false;
-    private CameraShake cs;
 
     Rigidbody2D _rb;
 
     //----------------------
-    int bigCloudHash;
-    int smallCloudHash;
-    int shockWaveHash;
-    int spinAttackHash;
-    int spinAttackEndHash;
-    int turnLeftHash;
-    int noDamageSpinAttackHash;
+    int bigCloudHash = Animator.StringToHash("BigCloud");
+    int smallCloudHash = Animator.StringToHash("SmallCloud");
+    int shockWaveHash = Animator.StringToHash("ShockWave");
+    int spinAttackHash = Animator.StringToHash("SpinAttack");
+    int spinAttackEndHash = Animator.StringToHash("SpinAttackEnd");
+    int turnLeftHash = Animator.StringToHash("TurnLeft");
+    int noDamageSpinAttackHash = Animator.StringToHash("NoDamageSpinAttack");
     //----------------------
 
-    protected override void Start()
+
+    protected override void Awake()
     {
-        base.Start();
-
-        playerPos = GameObject.FindGameObjectWithTag("Player").transform;
-        cs = GameObject.Find("Main Camera").GetComponent<CameraShake>();
+        base.Awake();
         _rb = GetComponent<Rigidbody2D>();
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+    }
 
-        //---------------------------------
-        bigCloudHash = Animator.StringToHash("BigCloud");
-        smallCloudHash = Animator.StringToHash("SmallCloud");
-        shockWaveHash = Animator.StringToHash("ShockWave");
-        spinAttackHash = Animator.StringToHash("SpinAttack");
-        spinAttackEndHash = Animator.StringToHash("SpinAttackEnd");
-        turnLeftHash = Animator.StringToHash("TurnLeft");
-        noDamageSpinAttackHash = Animator.StringToHash("NoDamageSpinAttack");
-        //---------------------------------
-
+    private void Start()
+    {
         StartCoroutine(BossThinkRoutine());
     }
-
-    public override void Attack()
-    {
-        
-    }
-
-    void Update()
-    {
-        //Flip();
-    }
-
+    
     public void AttackEnd()
     {
         anim.SetBool(spinAttackEndHash, false);
@@ -193,19 +177,10 @@ public class GolemBoss : Boss//, IDamageable
 
         Vector3 center = transform.position + Vector3.right * 2.8f * dir;
 
-        Collider2D hit = Physics2D.OverlapBox(
-            center,
-            new Vector3(5f, 1.5f, 0),
-            0f,
-            playerLayer
-        );
+        Collider2D hit = Physics2D.OverlapBox(center, new Vector3(5f, 1.5f, 0), 0f, playerLayer);
 
-        if (hit != null && !hit.GetComponent<PlayerController>().PlayerHit)
-        {
-            Debug.Log("플레이어 맞음 : Bigcloud");
-            hit.GetComponent<HealthSystem>().GetDamage(1, gameObject);
-            StartCoroutine(hit.GetComponent<PlayerController>().PlayerHited());
-        }
+        Debug.Log("플레이어 맞음 : Bigcloud");
+        hit?.GetComponent<IDamageable>().GetDamage(bossData.spinAttackDamage, gameObject);
     }
 
     public void SmallCloudOverLap()
@@ -214,36 +189,19 @@ public class GolemBoss : Boss//, IDamageable
 
         Vector3 center = transform.position + Vector3.right * 3.3f * dir + Vector3.down * 0.2f;
 
-        Collider2D hit = Physics2D.OverlapBox(
-            center,
-            new Vector3(5.5f, 2, 0),
-            0f,
-            playerLayer
-        );
-
-        if (hit != null && !hit.GetComponent<PlayerController>().PlayerHit)
-        {
-            Debug.Log("플레이어 맞음 : SmallCloud");
-            hit.GetComponent<HealthSystem>().GetDamage(1, gameObject);
-            StartCoroutine(hit.GetComponent<PlayerController>().PlayerHited());
-        }
+        Collider2D hit = Physics2D.OverlapBox(center, new Vector3(5.5f, 2, 0), 0f, playerLayer);
+        
+        Debug.Log("플레이어 맞음 : SmallCloud");
+        hit?.GetComponent<IDamageable>().GetDamage(bossData.spinAttackDamage, gameObject);
     }
+
     public void SpinAttackOverLap()
     {
         Vector3 center = transform.position + Vector3.up * 0.3f + Vector3.left * 0.1f;
 
-        Collider2D hit = Physics2D.OverlapCircle(
-            center,
-            1.5f,
-            playerLayer
-        );
+        Collider2D hit = Physics2D.OverlapCircle(center, 1.5f, playerLayer);
 
-        if (hit != null && !hit.GetComponent<PlayerController>().PlayerHit)
-        {
-            Debug.Log("플레이어 맞음 : SpinAttack");
-
-            hit.GetComponent<HealthSystem>().GetDamage(1 , gameObject);
-            StartCoroutine(hit.GetComponent<PlayerController>().PlayerHited());
-        }
+        Debug.Log("플레이어 맞음 : SpinAttack");
+        hit?.GetComponent<IDamageable>().GetDamage(bossData.spinAttackDamage, gameObject);
     }
 }

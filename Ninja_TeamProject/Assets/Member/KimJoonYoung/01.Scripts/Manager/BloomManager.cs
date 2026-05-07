@@ -7,26 +7,36 @@ using UnityEngine.Rendering.Universal;
 public class BloomManager : MonoBehaviour
 {
     public static BloomManager Instance;
-    private Volume volume;
+    private Volume _volume;
     
 
     private void Awake()
     {
         Instance = this;
-        volume = GetComponent<Volume>();
+        _volume = GetComponent<Volume>();
     }
 
     public void OnHit()
     {
-        volume.profile.TryGet(out ColorAdjustments color);
-        color.colorFilter.value = Color.red;
-        
+        _volume.profile.TryGet(out Vignette color);
+        color.color.value = Color.red;
     }   
     
-    public void OffHit()
+    public void OffHit(float health , float maxHealth)
     {
-        volume.profile.TryGet(out ColorAdjustments color);
-        color.colorFilter.value = Color.white;
+        _volume.profile.TryGet(out Vignette color);
         
+        if (health / maxHealth <= 0.4f)
+        {
+            color.color.value = Color.softRed;
+        }
+        else if (health / maxHealth <= 0.6f)
+        {
+            color.color.value = Color.indianRed;
+        }
+        else
+        {
+            color.color.value = Color.white;
+        }
     }
 }

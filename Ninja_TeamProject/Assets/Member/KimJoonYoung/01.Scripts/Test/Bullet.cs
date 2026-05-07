@@ -1,3 +1,4 @@
+using Member.KimJoonYoung._01.Scripts.Agent;
 using Member.KimJoonYoung._01.Scripts.Interface;
 using UnityEngine;
 
@@ -26,7 +27,7 @@ public class Bullet : MonoBehaviour , ICollisionAttackable
     {
         if (collision.gameObject.TryGetComponent(out PlayerController player))
         {
-            if (!player.gameObject.GetComponent<PlayerAttackManager>()._qSkillUse)
+            if (!player.gameObject.GetComponent<PlayerAttackManager>().QSkillUse)
                 collision.gameObject.GetComponent<HealthSystem>().GetDamage(1, gameObject);
         }
 

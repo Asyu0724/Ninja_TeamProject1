@@ -1,4 +1,6 @@
+using System;
 using System.Collections;
+using Member.KimJoonYoung._01.Scripts.Agent;
 using Member.KimJoonYoung._01.Scripts.Interface;
 using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
@@ -10,15 +12,8 @@ using UnityEngine.TextCore;
 public class PlayerController : Agent 
 {
     // Player Setting
+
     [Header("PlayerSetting")]
-    public float Speed
-    {
-        get => _agentMover._rb.linearVelocityX / _speed;
-        private set
-        {
-            
-        }
-    }
     [SerializeField] private float _speed;
     [SerializeField] private int _jumpPower;
     [SerializeField] private int _jumpCount;
@@ -26,8 +21,9 @@ public class PlayerController : Agent
     private float _lastMoveDir = 1;
     private bool _isGrounded;
     private Vector2 _moveDir;
-
+    public float Speed => _agentMover._rb.linearVelocityX / _speed;
     public bool PlayerHit {get; private set;}
+    public bool PlayerIsDead {get; private set;}
 
     // Scripts
     private HealthSystem _healthSystem;
@@ -38,6 +34,7 @@ public class PlayerController : Agent
     private readonly int _yVelocityHash = Animator.StringToHash("Y_Velocity");
     private readonly int _isGroundedHash = Animator.StringToHash("IsGrounded");
     private readonly int _playerHitedHash = Animator.StringToHash("PlayerHited");
+    private readonly int _deadHash = Animator.StringToHash("Dead");
 
     private bool _skillUse;
 
@@ -54,14 +51,22 @@ public class PlayerController : Agent
     {
         UIManager.Instance.HealthUI.InitHealthUI(_healthSystem.Health);
         _healthSystem.OnDamaged += UpdateHealthUI;
+        _healthSystem.OnDamaged += HandlerPlayerHit;
+        _healthSystem.Dead += HandlerDead;
     }
+
 
     /*---------------------------------------------------*/ // Physics 
 
     private void FixedUpdate()
     {
         _isGrounded = _agentMover.CheckGround();
-        if (!_skillUse)
+        Move();
+    }
+
+    private void Move()
+    {
+        if (!_skillUse && !PlayerIsDead)
         {
             _agentMover.Move(_moveDir.x * _speed);
             if (_isGrounded && _agentMover._rb.linearVelocityY <= 0)
@@ -78,14 +83,17 @@ public class PlayerController : Agent
 
     private void OnMove(InputValue value)
     {
-        _moveDir.x = value.Get<Vector2>().x;
-        if (_moveDir.x != 0)
-            _lastMoveDir = value.Get<Vector2>().x;
+        if (!PlayerIsDead)
+        {
+            _moveDir.x = value.Get<Vector2>().x;
+            if (_moveDir.x != 0)
+                _lastMoveDir = value.Get<Vector2>().x;
+        }
     }
     
     private void OnJump(InputValue value)
     {
-        if (!_skillUse)
+        if (!_skillUse && !PlayerIsDead)
         {
             if (_currentJumpCount < 1) return;
 
@@ -100,16 +108,19 @@ public class PlayerController : Agent
 
     private void Update()
     {
-        _agentRenderer.SetFloatParam(_xMoveHash, Mathf.Abs(_moveDir.x));
-        _agentRenderer.SetFloatParam(_yVelocityHash, _agentMover._rb.linearVelocityY);
         _agentRenderer.SetBoolParam(_isGroundedHash, _isGrounded);
-        _agentRenderer.SetBoolParam(_playerHitedHash, PlayerHit);
+        if (!PlayerIsDead)
+        {
+            _agentRenderer.SetFloatParam(_xMoveHash, Mathf.Abs(_moveDir.x));
+            _agentRenderer.SetFloatParam(_yVelocityHash, _agentMover._rb.linearVelocityY);
+            _agentRenderer.SetBoolParam(_playerHitedHash, PlayerHit);
 
-        _skillUse = _playerAttackManager._qSkillUse;
+            _skillUse = _playerAttackManager.QSkillUse;
+        }
     }
 
     /*---------------------------------------------------*/ // Inumerator
-    public IEnumerator PlayerHited()
+    private IEnumerator PlayerHited()
     {
         PlayerHit = true;
         GameManager.Instance.timeScaleManager.OnHit();
@@ -117,10 +128,8 @@ public class PlayerController : Agent
         AudioManager.instance.PlaySfx(AudioManager.Sfx.Hit);    
         yield return new WaitForSeconds(_healthSystem.InvTime);
         GameManager.Instance.timeScaleManager.OffHit();
-        GameManager.Instance.bloomManager.OffHit(); 
+        GameManager.Instance.bloomManager.OffHit(_healthSystem.Health , _healthSystem.MaxHealth); 
         PlayerHit = false;
-        /*TimeScaleManager.Instance.OffHit();
-        BloomManager.Instance.OffHit();*/
     }
     /*---------------------------------------------------*/ // Game method
 
@@ -132,10 +141,9 @@ public class PlayerController : Agent
         }
     }
 
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void HandlerPlayerHit()
     {
-        if (collision.gameObject.TryGetComponent<ICollisionAttackable> (out ICollisionAttackable attackable) && !PlayerHit)
+        if (!PlayerHit && !PlayerIsDead)
         {
             StartCoroutine(PlayerHited());
         }
@@ -145,9 +153,13 @@ public class PlayerController : Agent
     {
         UIManager.Instance.HealthUI.UpdateHealthUI(_healthSystem.Health);
     }
-
-    private void OnDestroy()
+    
+    private void HandlerDead()
     {
         _healthSystem.OnDamaged -= UpdateHealthUI;
+        PlayerIsDead = true;
+        UIManager.Instance.Dead();
+        _agentMover._rb.linearVelocityX = 0;
+        _agentRenderer.SetBoolParam(_deadHash , PlayerIsDead);
     }
 }

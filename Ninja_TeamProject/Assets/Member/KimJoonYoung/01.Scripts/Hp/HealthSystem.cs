@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Unity.Cinemachine;
 using UnityEngine;
 
 public interface IDamageable
@@ -11,13 +12,14 @@ public class HealthSystem : MonoBehaviour, IDamageable
 {
     [field: SerializeField] public float InvTime {get; private set; }
     [field: SerializeField] public int Health { get; private set; }
-    [SerializeField] private int _maxHealth;
+    [field:SerializeField] public int MaxHealth {get; private set;}
     public event Action OnDamaged;
+    public event Action Dead;
     private bool _invNow;
 
     private void Awake()
     {
-        Health = _maxHealth;
+        Health = MaxHealth;
     }
 
     public void GetDamage(int damage, GameObject dealer)
@@ -25,17 +27,12 @@ public class HealthSystem : MonoBehaviour, IDamageable
         if (!_invNow)
         {
             StartCoroutine(InvNow());
-            if (!GameManager.Instance.player.PlayerHit)
-            {
-                Health -= damage;
-                Health = Mathf.Clamp(Health, 0, _maxHealth);
-                OnDamaged?.Invoke();
-            }
-
+            Health -= damage;
+            Health = Mathf.Clamp(Health, 0, MaxHealth);
+            OnDamaged?.Invoke();
             if (Health <= 0)
             {
-                //죽음
-                Destroy(gameObject);
+                Dead?.Invoke();
             }
         }
     }
