@@ -1,6 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 public class BossMover : MonoBehaviour
 {
@@ -8,19 +9,19 @@ public class BossMover : MonoBehaviour
     private Vector2 _moveDir;
     private Vector2 _distance;
 
-    public TestPlayerController player;
+    public PlayerController player;
 
     // 범위제한
-    private float minLimit;
-    private float maxLimit;
-    private float offset = 1.5f;
+    private float _minLimit;
+    private float _maxLimit;
+    private float _offset = 1.5f;
 
     [SerializeField] private float speed;
     [SerializeField] private float jumpPower;
 
     // 보스가 공격을 할수 있는지 체크
     private bool _isCanAttack;
-    [SerializeField] private LayerMask PlayerLayer;
+    [SerializeField] private LayerMask playerLayer;
     [SerializeField] private Vector2 boxSize;
     [SerializeField] private Vector2 boxOffset;
 
@@ -29,20 +30,22 @@ public class BossMover : MonoBehaviour
     [SerializeField] private Vector2 groundBoxSize;
     [SerializeField] private Vector2 groundOffset;
 
-    [SerializeField] private BossHealth _bossHP;
-    [SerializeField] private BossSkill _bossSkill;
-    [SerializeField] private BossRenderer _bossRenderer;
+    [SerializeField] private BossHealth bossHP;
+    [SerializeField] private BossSkill bossSkill;
+    [SerializeField] private BossRenderer bossRenderer;
 
 
-    private bool _isSkill => _Attack1 || _Attack2 || _bossHP._isCharge || _isJump || _Attack3;
+    private bool IsSkill => Attack1 || Attack2 || bossHP.IsCharge || IsJump || Attack3;
 
-    public float _lastAttackTime { get; private set; }
+    public float LastAttackTime { get; private set; }
     // public bool _isGrounded { get; private set; }
-    public bool _Attack1 { get; private set; }
-    public bool _Attack2 { get; private set; }
+    public bool Attack1 { get; private set; }
+    public bool Attack2 { get; private set; }
 
-    public bool _Attack3 { get; private set; }
-    public bool _isJump { get; private set; }
+    public bool Attack3 { get; private set; }
+    public bool IsJump { get; private set; }
+
+    public bool IsShake { get; private set; }
 
 
     private void Awake()
@@ -52,8 +55,8 @@ public class BossMover : MonoBehaviour
 
     private void Start()
     {
-        minLimit = Camera.main.ViewportToWorldPoint(new Vector2(0, 0)).x;
-        maxLimit = Camera.main.ViewportToWorldPoint(new Vector2(1, 1)).x;
+        _minLimit = Camera.main.ViewportToWorldPoint(new Vector2(0, 0)).x;
+        _maxLimit = Camera.main.ViewportToWorldPoint(new Vector2(1, 1)).x;
 
     }
 
@@ -65,23 +68,23 @@ public class BossMover : MonoBehaviour
         if (Mathf.Abs(_distance.x) < 2.0f)
         {
             _moveDir.x = 0;
-            if (_distance.y > 0.6f)
+            if (_distance.y > 0.4f)
             {
-                if (!_isSkill) _Attack3 = true;
-                else if(!_Attack3) _bossRenderer.AnimSpeed(1.5f);
+                if (!IsSkill) Attack3 = true;
+                // else if(!Attack3) bossRenderer.AnimSpeed(1.5f); 
             }
         }
-        if (Mathf.Abs(_distance.x) > 6.0f && !_isSkill)
+        if (Mathf.Abs(_distance.x) > 6.0f && !IsSkill)
         {
-            _isJump = true; 
+            IsJump = true;
             // _rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
         }
 
-        if(!_isSkill) _rigid.linearVelocityX = _moveDir.x * speed;
+        if(!IsSkill) _rigid.linearVelocityX = _moveDir.x * speed;
 
         CheckOverlap();
 
-        if (_isCanAttack == true && !_isSkill && _lastAttackTime <= 0)
+        if (_isCanAttack == true && !IsSkill && LastAttackTime <= 0)
         {
             StartAttack();
         }
@@ -90,32 +93,36 @@ public class BossMover : MonoBehaviour
     private void StartAttack()
     {
         int random = Random.Range(0, 2);
-        if (random == 0) _Attack1 = true;
-        else if (random == 1) _Attack2 = true;
+        if (random == 0) Attack1 = true;
+        else if (random == 1) Attack2 = true;
 
-        _lastAttackTime = 2f;
+        LastAttackTime = 2f;
     }
 
     public void SkillOff()
     {
-        _Attack1 = false;
-        _Attack2 = false;
-        _Attack3 = false;
-        _bossHP.ChargeHP(false);
-        _isJump = false;
-        _bossRenderer.AnimSpeed(1.0f);
+        Attack1 = false;
+        Attack2 = false;
+        Attack3 = false;
+        bossHP.ChargeHP(false);
+        IsJump = false;
+        IsShake = false;
+        // bossRenderer.AnimSpeed(1.0f);
     }
 
     public void MoveToPlayer()
     {
-        transform.position = player.transform.position;
+        Vector2 newPos = transform.position;
+        newPos.x = player.transform.position.x;
+        transform.position = newPos;
+        IsShake = true;
     }
 
     private void Update() 
     {
-        _lastAttackTime -= Time.deltaTime;
+        LastAttackTime -= Time.deltaTime;
 
-        if (!_isSkill) // 회전
+        if (!IsSkill) // 회전
         {
             if (_moveDir.x > 0)
             {
@@ -132,7 +139,7 @@ public class BossMover : MonoBehaviour
 
     private void CheckOverlap()
     {
-        _isCanAttack = Physics2D.OverlapBox(transform.position + (Vector3)boxOffset, boxSize, 0, PlayerLayer);
+        _isCanAttack = Physics2D.OverlapBox(transform.position + (Vector3)boxOffset, boxSize, 0, playerLayer);
 
         // _isGrounded = Physics2D.OverlapBox(transform.position + (Vector3)groundOffset, groundBoxSize, 0, isGround);
 
@@ -149,6 +156,6 @@ public class BossMover : MonoBehaviour
 
     private void LateUpdate()
     {
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, minLimit + offset, maxLimit - offset), transform.position.y, transform.position.z);
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, _minLimit + _offset, _maxLimit - _offset), transform.position.y, transform.position.z);
     }
 }

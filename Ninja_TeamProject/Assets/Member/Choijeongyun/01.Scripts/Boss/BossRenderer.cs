@@ -1,11 +1,13 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class BossRenderer : MonoBehaviour
 {
     private Animator _animator;
+    private SpriteRenderer _renderer;
     [SerializeField] private BossMover bossMove;
-    [SerializeField] private BossHealth _bossHP;
+    [SerializeField] private BossHealth bossHP;
 
     private int _xMoveHash = Animator.StringToHash(name: "MoveX");
     // private int _isGroundedHash = Animator.StringToHash("IsGrounded");
@@ -21,6 +23,7 @@ public class BossRenderer : MonoBehaviour
     private void Awake()
     {
         _animator = GetComponentInChildren<Animator>();
+        _renderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     private void FixedUpdate()
@@ -30,13 +33,13 @@ public class BossRenderer : MonoBehaviour
 
     private void Update()
     {
-        _animator.SetBool(_attack1Hash, bossMove._Attack1);
-        _animator.SetBool(_attack2Hash, bossMove._Attack2);
-        _animator.SetBool(_attack3Hash, bossMove._Attack3);
+        _animator.SetBool(_attack1Hash, bossMove.Attack1);
+        _animator.SetBool(_attack2Hash, bossMove.Attack2);
+        _animator.SetBool(_attack3Hash, bossMove.Attack3);
         _animator.SetFloat(_xMoveHash, _moveX);
-        _animator.SetBool(_deathHash, _bossHP._isDeath);
-        _animator.SetBool(_chargeHash, _bossHP._isCharge);
-        _animator.SetBool(_jumpHash, bossMove._isJump);
+        _animator.SetBool(_deathHash, bossHP.IsDeath);
+        _animator.SetBool(_chargeHash, bossHP.IsCharge);
+        _animator.SetBool(_jumpHash, bossMove.IsJump);
         // _animator.SetBool(_isGroundedHash, bossMove._isGrounded);
     }
 
@@ -53,5 +56,35 @@ public class BossRenderer : MonoBehaviour
     public void AnimSpeed(float value)
     {
         _animator.speed = value;
+    }
+
+    public void BossDie()
+    {
+        gameObject.SetActive(false); // 임시방편
+    }
+    
+    private IEnumerator Attacked()
+    {
+        _renderer.color = Color.red;
+        Color color = _renderer.color;
+        
+        color.a = 0.7f;
+        _renderer.color = color;
+        
+        yield return new WaitForSeconds(0.1f);
+        
+        color.a = 1f;
+        _renderer.color = color;
+        
+        yield return new WaitForSeconds(0.1f);
+        
+        color.a = 0.7f;
+        _renderer.color = color;
+        
+        yield return new WaitForSeconds(0.1f);
+        
+        color.a = 1f;
+        _renderer.color = color;
+        _renderer.color = Color.white;
     }
 }

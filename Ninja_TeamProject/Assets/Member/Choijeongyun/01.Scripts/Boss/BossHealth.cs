@@ -1,31 +1,36 @@
 using System.Xml.Schema;
+using Member.KimJoonYoung._01.Scripts.Agent;
 using UnityEngine;
 
-public class BossHealth : MonoBehaviour
+public class BossHealth : MonoBehaviour, IDamageable
 {
-    [SerializeField] private int _maxHealth = 20;
+    [SerializeField] private int maxHealth = 20;
+    [SerializeField] private BossRenderer _renderer;
+    
     private int _bossHealth;
-    public bool _isDeath { get; private set; }
-    public bool _isCharge { get; private set; }
+    public bool IsDeath { get; private set; }
+    public bool IsCharge { get; private set; }
     private int _canCharge = 10;
 
 
     private void Start()
     {
-        _bossHealth = _maxHealth;
-        _isDeath = false;
+        _bossHealth = maxHealth;
+        IsDeath = false;
     }
 
-    public void ChangeHealth(int value)
+    public void GetDamage(int damage, GameObject dealer)
     {
-        _bossHealth -= value;
-        if (_bossHealth <= 0) _isDeath = true;
+        _bossHealth -= damage;
+        _bossHealth = Mathf.Clamp(_bossHealth, 0, maxHealth);
+        _renderer.StartCoroutine("Attacked");
+        if (_bossHealth <= 0) IsDeath = true;
     }
 
     public void ChargeHP(bool value)
     {
-        _isCharge = value;
-        if (_canCharge <= 0) _isCharge = false;
+        _bossHealth = Mathf.Clamp(_bossHealth, 0, maxHealth);
+        if (_canCharge <= 0) IsCharge = false;
         _canCharge--;
     }
 
