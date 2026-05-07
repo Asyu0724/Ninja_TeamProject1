@@ -24,6 +24,8 @@ public class HealthSystem : MonoBehaviour, IDamageable
 
     public void GetDamage(int damage, GameObject dealer)
     {
+        if (Health <= 0) return;
+        
         if (!_invNow)
         {
             StartCoroutine(InvNow());
