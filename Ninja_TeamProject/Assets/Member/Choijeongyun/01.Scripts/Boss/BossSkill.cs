@@ -6,7 +6,8 @@ public class BossSkill : MonoBehaviour
 {
     // 스크립트 가져오기
     [SerializeField] private BossMover bossMove;
-    [SerializeField] protected TestPlayerController player;
+    [SerializeField] private PlayerController player;
+    [SerializeField] private HealthSystem healthSystem;
 
     // 보스 범위 공격 
     [SerializeField] private Transform areaStart;
@@ -20,23 +21,22 @@ public class BossSkill : MonoBehaviour
     [SerializeField] private Transform dirStart;
     [SerializeField] private Transform dirEnd;
 
+    private bool _isAttackFin;
 
-    private bool isAttackFin;
+    public bool IsKnockBack { get; private set; } 
 
-    public bool isKnockBack { get; private set; } 
-
-    private Vector2 knockBackDir; // 넉백 방향
+    private Vector2 _knockBackDir; // 넉백 방향
     [SerializeField] private float speed = 5f; // 넉백 세기
 
     private void AttackStart()
     {
-        isAttackFin = false;
+        _isAttackFin = false;
         StartCoroutine(AttackRoutine());
     }
 
     private IEnumerator AttackRoutine()
     {
-        while (!isAttackFin)
+        while (!_isAttackFin)
         {
             CheckCollision();
             yield return null;
@@ -45,9 +45,9 @@ public class BossSkill : MonoBehaviour
 
     private IEnumerator KnockBackRoutine()
     {
-        isKnockBack = true;
+        IsKnockBack = true;
         yield return new WaitForSeconds(0.5f);
-        isKnockBack = false;
+        IsKnockBack = false;
     }
 
     private void CheckCollision()
@@ -59,22 +59,25 @@ public class BossSkill : MonoBehaviour
         {
             if (colliders[i].CompareTag("Player"))
             {
-                player = colliders[i].GetComponent<TestPlayerController>(); // 컨트롤러 가져오기
+                player = colliders[i].GetComponent<PlayerController>(); // 컨트롤러 가져오기
 
                 if (player != null && player.GetComponent<Rigidbody2D>() != null) // 플레이어가 감지되면
                 {
 
-                    knockBackDir = this.dirStart.position - this.dirEnd.position; // 넉백
+                    _knockBackDir = this.dirStart.position - this.dirEnd.position; // 넉백
 
                     // 플레이어 리지드바디 이동
                     StartCoroutine(KnockBackRoutine());
-                    player.GetComponent<Rigidbody2D>().AddForce(-knockBackDir.normalized * speed, ForceMode2D.Impulse);
+                    player.GetComponent<Rigidbody2D>().AddForce(-_knockBackDir.normalized * speed, ForceMode2D.Impulse);
 
-                    if (!isAttackFin)
+                    if (!_isAttackFin)
                     {
-                        player.ChangeHealth(2);
-                        if(bossMove._isJump) player.ChangeHealth(3);
-                        isAttackFin = true;
+                        healthSystem.GetDamage(2, this.gameObject);
+                        if(bossMove.IsJump) healthSystem.GetDamage(3, this.gameObject);
+                        
+                        // player.ChangeHealth(2);
+                        // if(bossMove.IsJump) player.ChangeHealth(3);
+                        _isAttackFin = true;
                     }
                 }
 
@@ -90,6 +93,6 @@ public class BossSkill : MonoBehaviour
 
     private void AttackFin()
     {
-        isAttackFin = true;
+        _isAttackFin = true;
     }
 }
