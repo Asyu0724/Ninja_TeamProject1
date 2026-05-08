@@ -1,3 +1,4 @@
+using Member.KimJoonYoung._01.Scripts.Agent;
 using UnityEngine;
 
 public abstract class Agent : MonoBehaviour
