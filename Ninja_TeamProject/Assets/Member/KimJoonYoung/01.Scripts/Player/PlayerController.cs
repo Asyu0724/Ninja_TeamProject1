@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using Member.KimJoonYoung._01.Scripts.Agent;
 using Member.KimJoonYoung._01.Scripts.Interface;
+using Member.KimJoonYoung._01.Scripts.UI.PauseMenu;
 using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEditor.Tilemaps;
@@ -53,6 +54,19 @@ public class PlayerController : Agent
         _healthSystem.OnDamaged += UpdateHealthUI;
         _healthSystem.OnDamaged += HandlerPlayerHit;
         _healthSystem.Dead += HandlerDead;
+        PauseMenuManager.Instance.OnPauseAction += HandlerInputDisable;
+        PauseMenuManager.Instance.OffPauseAction += HandlerInputEnable;
+    }
+
+
+    private void HandlerInputDisable()
+    {
+        gameObject.GetComponent<PlayerInput>().enabled = false;
+    }
+    private void HandlerInputEnable()
+    {
+        gameObject.GetComponent<PlayerInput>().enabled = true;
+        _moveDir.x = 0;
     }
 
 

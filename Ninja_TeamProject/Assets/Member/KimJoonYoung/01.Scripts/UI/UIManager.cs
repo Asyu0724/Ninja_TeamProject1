@@ -34,7 +34,7 @@ public class UIManager : MonoBehaviour
 
         while (elapsedTime <= fadedTime)
         {
-            gameOverImage.GetComponent<CanvasRenderer>().SetAlpha(Mathf.Lerp(0f, 0.8f, elapsedTime / fadedTime));
+            gameOverImage.GetComponent<CanvasRenderer>().SetAlpha(Mathf.Lerp(0f, 1f, elapsedTime / fadedTime));
             
             elapsedTime += Time.deltaTime;
             yield return null;

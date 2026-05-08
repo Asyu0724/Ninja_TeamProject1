@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class GameOverUI : MonoBehaviour
 {
+    [SerializeField] private GameObject EscPanel;
     [SerializeField] private Button restartButton;
     [SerializeField] private Button mainMenuButton;
     private Sequence _sequence;
@@ -16,8 +17,9 @@ public class GameOverUI : MonoBehaviour
 
     private void GameOver()
     {
+        EscPanel.SetActive(false);
         _sequence = DOTween.Sequence();
-        _sequence.Prepend(transform.DOLocalMoveY(0, 1.5f).SetEase(Ease.OutBounce));
+        _sequence.Prepend(transform.DOLocalMoveY(0, 1.5f).SetEase(Ease.InOutCubic));
         _sequence.AppendInterval(0.5f);
         _sequence.OnComplete(GameSelectMenu);
     }

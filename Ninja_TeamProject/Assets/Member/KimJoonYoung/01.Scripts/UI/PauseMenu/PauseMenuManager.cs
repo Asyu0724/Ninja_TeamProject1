@@ -10,7 +10,6 @@ namespace Member.KimJoonYoung._01.Scripts.UI.PauseMenu
 {
     public class PauseMenuManager : MonoBehaviour
     {
-        [SerializeField] private PlayerInput playerInput;
         [SerializeField] private TextMeshProUGUI title;
         [SerializeField] private Button rsmBtn;
         [SerializeField] private Button settingBtn;
@@ -18,6 +17,9 @@ namespace Member.KimJoonYoung._01.Scripts.UI.PauseMenu
         private Image _panel;
         private bool _isPaused;
         private bool _canOnOff = true;
+        public static PauseMenuManager Instance;
+        public Action OnPauseAction;
+        public Action OffPauseAction;
         
         private void Update()
         {
@@ -32,19 +34,46 @@ namespace Member.KimJoonYoung._01.Scripts.UI.PauseMenu
 
         private void Awake()
         {
+            Instance = this;
             _panel = GetComponent<Image>();
+        }
+
+        private void Start()
+        {
+            gameObject.SetActive(true);
+        }
+
+        public void OnPause()
+        {
+            Sequence seq = DOTween.Sequence();
+            OnPauseAction?.Invoke();
+            _isPaused = true;
+            _canOnOff = false;
+            TimeScaleManager.Instance.TimeStop();
+            OnPauseMove(seq);
+        }
+        
+        private void OnPauseMove(Sequence seq)
+        {
+            seq.SetUpdate(true);
+            seq.Prepend(_panel.DOFade(0.8f, 0.5f).SetEase(Ease.OutCubic));
+            seq.Join(title.transform.DOLocalMoveX(-700.0f, 0.5f).SetEase(Ease.OutCubic).SetDelay(0.05f));
+            seq.Join(rsmBtn.transform.DOLocalMoveX(-700.0f, 0.5f).SetEase(Ease.OutCubic).SetDelay(0.05f));
+            seq.Join(settingBtn.transform.DOLocalMoveX(-700.0f, 0.5f).SetEase(Ease.OutCubic).SetDelay(0.05f));
+            seq.Join(exitBtn.transform.DOLocalMoveX(-700.0f, 0.5f).SetEase(Ease.OutCubic).SetDelay(0.05f));
+            seq.OnComplete(CanOnMenu);
         }
         
         public void OffPause()
         {
             Sequence seq = DOTween.Sequence();
+            OffPauseAction?.Invoke();
             _isPaused = false;
             _canOnOff = false;
-            playerInput.enabled = true;
             TimeScaleManager.Instance.TimeResume();
             OffPauseMove(seq);
         }
-
+        
         private void OffPauseMove(Sequence seq)
         {
             seq.SetUpdate(true);
@@ -54,27 +83,6 @@ namespace Member.KimJoonYoung._01.Scripts.UI.PauseMenu
             seq.Join(settingBtn.transform.DOLocalMoveX(-1400.0f, 0.5f).SetEase(Ease.OutCubic).SetDelay(0.05f));
             seq.Join(exitBtn.transform.DOLocalMoveX(-1400.0f, 0.5f).SetEase(Ease.OutCubic));
             seq.OnComplete(CanOnMenu);
-        }
-        
-        private void OnPauseMove(Sequence seq)
-        {
-            seq.SetUpdate(true);
-            seq.Prepend(_panel.DOFade(0.8f, 0.5f).SetEase(Ease.OutCubic));
-            seq.Join(title.transform.DOLocalMoveX(-750.0f, 0.5f).SetEase(Ease.OutCubic).SetDelay(0.05f));
-            seq.Join(rsmBtn.transform.DOLocalMoveX(-750.0f, 0.5f).SetEase(Ease.OutCubic).SetDelay(0.05f));
-            seq.Join(settingBtn.transform.DOLocalMoveX(-750.0f, 0.5f).SetEase(Ease.OutCubic).SetDelay(0.05f));
-            seq.Join(exitBtn.transform.DOLocalMoveX(-750.0f, 0.5f).SetEase(Ease.OutCubic).SetDelay(0.05f));
-            seq.OnComplete(CanOnMenu);
-        }
-
-        public void OnPause()
-        {
-            _isPaused = true;
-            _canOnOff = false;
-            playerInput.enabled = false;
-            TimeScaleManager.Instance.TimeStop();
-            Sequence seq = DOTween.Sequence();
-            OnPauseMove(seq);
         }
         
         private void CanOnMenu()
