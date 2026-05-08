@@ -1,9 +1,12 @@
 using System.Xml.Schema;
+using Member.KimJoonYoung._01.Scripts.Agent;
 using UnityEngine;
 
-public class BossHealth : MonoBehaviour
+public class BossHealth : MonoBehaviour, IDamageable
 {
     [SerializeField] private int maxHealth = 20;
+    [SerializeField] private BossRenderer _renderer;
+    
     private int _bossHealth;
     public bool IsDeath { get; private set; }
     public bool IsCharge { get; private set; }
@@ -16,15 +19,17 @@ public class BossHealth : MonoBehaviour
         IsDeath = false;
     }
 
-    public void ChangeHealth(int value)
+    public void GetDamage(int damage, GameObject dealer)
     {
-        _bossHealth -= value;
+        _bossHealth -= damage;
+        _bossHealth = Mathf.Clamp(_bossHealth, 0, maxHealth);
+        _renderer.StartCoroutine("Attacked");
         if (_bossHealth <= 0) IsDeath = true;
     }
 
     public void ChargeHP(bool value)
     {
-        IsCharge = value;
+        _bossHealth = Mathf.Clamp(_bossHealth, 0, maxHealth);
         if (_canCharge <= 0) IsCharge = false;
         _canCharge--;
     }

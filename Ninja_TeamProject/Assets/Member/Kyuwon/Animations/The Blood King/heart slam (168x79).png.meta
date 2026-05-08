@@ -114,7 +114,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -169,10 +169,10 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1313
+        y: 1334
         width: 168
-        height: 109
-      alignment: 0
+        height: 88
+      alignment: 9
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -191,10 +191,10 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1204
+        y: 1246
         width: 168
-        height: 109
-      alignment: 0
+        height: 88
+      alignment: 9
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -213,10 +213,10 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1140
+        y: 1158
         width: 168
-        height: 109
-      alignment: 0
+        height: 88
+      alignment: 9
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -235,10 +235,10 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1066
+        y: 1070
         width: 168
-        height: 109
-      alignment: 0
+        height: 88
+      alignment: 9
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -256,11 +256,11 @@ TextureImporter:
       name: heart slam (168x79)_4
       rect:
         serializedVersion: 2
-        x: 3
-        y: 990
-        width: 165
-        height: 89
-      alignment: 0
+        x: 0
+        y: 982
+        width: 168
+        height: 88
+      alignment: 9
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -279,10 +279,10 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 915
+        y: 894
         width: 168
-        height: 96
-      alignment: 0
+        height: 88
+      alignment: 9
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -301,10 +301,10 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 848
+        y: 806
         width: 168
-        height: 69
-      alignment: 0
+        height: 88
+      alignment: 9
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -323,10 +323,10 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 775
+        y: 718
         width: 168
-        height: 73
-      alignment: 0
+        height: 88
+      alignment: 9
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -345,10 +345,10 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 687
+        y: 630
         width: 168
-        height: 90
-      alignment: 0
+        height: 88
+      alignment: 9
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -367,10 +367,10 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 581
+        y: 542
         width: 168
-        height: 109
-      alignment: 0
+        height: 88
+      alignment: 9
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -389,10 +389,10 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 494
+        y: 454
         width: 168
-        height: 109
-      alignment: 0
+        height: 88
+      alignment: 9
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -411,10 +411,10 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 413
+        y: 366
         width: 168
-        height: 109
-      alignment: 0
+        height: 88
+      alignment: 9
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -433,10 +433,10 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 322
+        y: 278
         width: 168
-        height: 109
-      alignment: 0
+        height: 88
+      alignment: 9
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -446,6 +446,72 @@ TextureImporter:
       bones: []
       spriteID: 6549bc33bf3fc3e50800000000000000
       internalID: 6790570598399186006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heart slam (168x79)_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 190
+        width: 168
+        height: 88
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 207870b8cad790644ae7c59d1d7f8702
+      internalID: 2061366787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heart slam (168x79)_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 102
+        width: 168
+        height: 88
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ee8c635cf541b54ca24cec0b0041c50
+      internalID: 1360604747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: heart slam (168x79)_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 14
+        width: 168
+        height: 88
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34bfdf2335ca64f4a93969a4e99d6b83
+      internalID: 1918923064
       vertices: []
       indices: 
       edges: []
@@ -464,13 +530,16 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":13.0},"gridSpriteSize":{"x":168.0,"y":109.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":16.0},"gridSpriteSize":{"x":168.0,"y":88.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":9,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       heart slam (168x79)_0: 6857840939654566363
       heart slam (168x79)_1: -1455873107887927561
       heart slam (168x79)_10: -3544217912424208651
       heart slam (168x79)_11: -8229877676438739167
       heart slam (168x79)_12: 6790570598399186006
+      heart slam (168x79)_13: 2061366787
+      heart slam (168x79)_14: 1360604747
+      heart slam (168x79)_15: 1918923064
       heart slam (168x79)_2: 3005779327339730764
       heart slam (168x79)_3: 5941240478836996903
       heart slam (168x79)_4: 7035737083386605941

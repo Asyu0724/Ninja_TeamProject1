@@ -129,7 +129,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 6
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -153,7 +153,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -207,12 +207,12 @@ TextureImporter:
       name: Dodge Charge Attack(144x32)_0
       rect:
         serializedVersion: 2
-        x: 34
-        y: 575
-        width: 30
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 576
+        width: 144
+        height: 32
+      alignment: 9
+      pivot: {x: 0.3775097, y: 0.16832733}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -229,12 +229,12 @@ TextureImporter:
       name: Dodge Charge Attack(144x32)_1
       rect:
         serializedVersion: 2
-        x: 33
-        y: 543
-        width: 30
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 544
+        width: 144
+        height: 32
+      alignment: 9
+      pivot: {x: 0.3775097, y: 0.1683273}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -251,12 +251,12 @@ TextureImporter:
       name: Dodge Charge Attack(144x32)_2
       rect:
         serializedVersion: 2
-        x: 32
-        y: 511
-        width: 31
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 512
+        width: 144
+        height: 32
+      alignment: 9
+      pivot: {x: 0.3775097, y: 0.1683273}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -273,12 +273,12 @@ TextureImporter:
       name: Dodge Charge Attack(144x32)_3
       rect:
         serializedVersion: 2
-        x: 4
-        y: 447
-        width: 47
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 480
+        width: 144
+        height: 32
+      alignment: 9
+      pivot: {x: 0.22451346, y: 0.18914413}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -295,12 +295,12 @@ TextureImporter:
       name: Dodge Charge Attack(144x32)_4
       rect:
         serializedVersion: 2
-        x: 19
-        y: 479
-        width: 32
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 448
+        width: 144
+        height: 32
+      alignment: 9
+      pivot: {x: 0.10742425, y: 0.1074243}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -317,12 +317,12 @@ TextureImporter:
       name: Dodge Charge Attack(144x32)_5
       rect:
         serializedVersion: 2
-        x: 4
-        y: 415
-        width: 48
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 416
+        width: 144
+        height: 32
+      alignment: 9
+      pivot: {x: 0.1074243, y: 0.1074243}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -339,12 +339,12 @@ TextureImporter:
       name: Dodge Charge Attack(144x32)_6
       rect:
         serializedVersion: 2
-        x: 1
-        y: 383
-        width: 51
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 384
+        width: 144
+        height: 32
+      alignment: 9
+      pivot: {x: 0.1074243, y: 0.1074243}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -361,12 +361,12 @@ TextureImporter:
       name: Dodge Charge Attack(144x32)_7
       rect:
         serializedVersion: 2
-        x: 1
-        y: 351
-        width: 29
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 352
+        width: 144
+        height: 32
+      alignment: 9
+      pivot: {x: 0.1074243, y: 0.1074243}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -383,12 +383,12 @@ TextureImporter:
       name: Dodge Charge Attack(144x32)_8
       rect:
         serializedVersion: 2
-        x: 7
-        y: 331
-        width: 10
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 320
+        width: 144
+        height: 32
+      alignment: 9
+      pivot: {x: 0.3972957, y: 0.25559616}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -405,12 +405,12 @@ TextureImporter:
       name: Dodge Charge Attack(144x32)_9
       rect:
         serializedVersion: 2
-        x: 17
-        y: 319
-        width: 89
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 288
+        width: 144
+        height: 32
+      alignment: 9
+      pivot: {x: 0.625737, y: 0.1353782}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -428,11 +428,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 319
-        width: 9
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        y: 256
+        width: 144
+        height: 32
+      alignment: 9
+      pivot: {x: 0.625737, y: 0.1353782}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -449,12 +449,12 @@ TextureImporter:
       name: Dodge Charge Attack(144x32)_11
       rect:
         serializedVersion: 2
-        x: 6
-        y: 319
-        width: 8
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 224
+        width: 144
+        height: 32
+      alignment: 9
+      pivot: {x: 0.625737, y: 0.1353782}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -471,12 +471,12 @@ TextureImporter:
       name: Dodge Charge Attack(144x32)_12
       rect:
         serializedVersion: 2
-        x: 25
-        y: 319
-        width: 12
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 192
+        width: 144
+        height: 32
+      alignment: 9
+      pivot: {x: 0.625737, y: 0.1353782}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -494,11 +494,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 223
-        width: 74
-        height: 88
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        y: 160
+        width: 144
+        height: 32
+      alignment: 9
+      pivot: {x: 0.625737, y: 0.1353782}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -515,12 +515,12 @@ TextureImporter:
       name: Dodge Charge Attack(144x32)_14
       rect:
         serializedVersion: 2
-        x: 26
-        y: 287
-        width: 10
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 128
+        width: 144
+        height: 32
+      alignment: 9
+      pivot: {x: 0.6864749, y: 0.16189909}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -537,12 +537,12 @@ TextureImporter:
       name: Dodge Charge Attack(144x32)_15
       rect:
         serializedVersion: 2
-        x: 48
-        y: 287
-        width: 61
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 96
+        width: 144
+        height: 32
+      alignment: 9
+      pivot: {x: 0.6864749, y: 0.1618991}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -559,12 +559,12 @@ TextureImporter:
       name: Dodge Charge Attack(144x32)_16
       rect:
         serializedVersion: 2
-        x: 51
-        y: 255
-        width: 63
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 64
+        width: 144
+        height: 32
+      alignment: 9
+      pivot: {x: 0.68647486, y: 0.1618991}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -581,12 +581,12 @@ TextureImporter:
       name: Dodge Charge Attack(144x32)_17
       rect:
         serializedVersion: 2
-        x: 79
-        y: 223
-        width: 37
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 32
+        width: 144
+        height: 32
+      alignment: 9
+      pivot: {x: 0.6864749, y: 0.1618991}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -603,196 +603,20 @@ TextureImporter:
       name: Dodge Charge Attack(144x32)_18
       rect:
         serializedVersion: 2
-        x: 101
-        y: 288
-        width: 8
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ba67e48af612f9050800000000000000
-      internalID: 5809398807780030123
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dodge Charge Attack(144x32)_19
-      rect:
-        serializedVersion: 2
-        x: 15
-        y: 159
-        width: 103
-        height: 52
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6ddf4e405640e7740800000000000000
-      internalID: 5151559855678750166
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dodge Charge Attack(144x32)_20
-      rect:
-        serializedVersion: 2
-        x: 78
-        y: 159
-        width: 22
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 849bab3a1341fbb60800000000000000
-      internalID: 7763946486042900808
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dodge Charge Attack(144x32)_21
-      rect:
-        serializedVersion: 2
-        x: 83
-        y: 127
-        width: 39
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cc260df77449aaf50800000000000000
-      internalID: 6893485214451917516
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dodge Charge Attack(144x32)_22
-      rect:
-        serializedVersion: 2
-        x: 83
-        y: 95
-        width: 33
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 31268639473708cb0800000000000000
-      internalID: -4863760653033643501
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dodge Charge Attack(144x32)_23
-      rect:
-        serializedVersion: 2
-        x: 114
-        y: 96
-        width: 10
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: dd1ce00973aa644e0800000000000000
-      internalID: -1997722229075426851
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dodge Charge Attack(144x32)_24
-      rect:
-        serializedVersion: 2
-        x: 83
-        y: 63
-        width: 45
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2a956662f05b9e080800000000000000
-      internalID: -9157589290607814238
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dodge Charge Attack(144x32)_25
-      rect:
-        serializedVersion: 2
-        x: 83
-        y: 31
-        width: 49
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0c6722a0a2bfeae90800000000000000
-      internalID: -7012391411792054592
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dodge Charge Attack(144x32)_26
-      rect:
-        serializedVersion: 2
-        x: 83
+        x: 0
         y: 0
-        width: 50
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 144
+        height: 32
+      alignment: 9
+      pivot: {x: 0.6864749, y: 0.1618991}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d36b4edc3e3688f30800000000000000
-      internalID: 4578018851285153341
+      spriteID: 759f54c01badbca43b39c69fda067606
+      internalID: 5809398807780030123
       vertices: []
       indices: 
       edges: []
@@ -801,7 +625,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 68ea5c787bc4bdd4eae56cf235d720f8
     internalID: 0
     vertices: []
     indices: 
@@ -809,7 +633,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":19.0},"gridSpriteSize":{"x":144.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.4507266879081726,"y":0.13537819683551789},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":9,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Dodge Charge Attack(144x32)_0: 6453648897846339906
       Dodge Charge Attack(144x32)_1: 2576476952859091119
@@ -822,15 +648,7 @@ TextureImporter:
       Dodge Charge Attack(144x32)_16: 4592799739356486084
       Dodge Charge Attack(144x32)_17: -451925316461048276
       Dodge Charge Attack(144x32)_18: 5809398807780030123
-      Dodge Charge Attack(144x32)_19: 5151559855678750166
       Dodge Charge Attack(144x32)_2: 5581476991904547308
-      Dodge Charge Attack(144x32)_20: 7763946486042900808
-      Dodge Charge Attack(144x32)_21: 6893485214451917516
-      Dodge Charge Attack(144x32)_22: -4863760653033643501
-      Dodge Charge Attack(144x32)_23: -1997722229075426851
-      Dodge Charge Attack(144x32)_24: -9157589290607814238
-      Dodge Charge Attack(144x32)_25: -7012391411792054592
-      Dodge Charge Attack(144x32)_26: 4578018851285153341
       Dodge Charge Attack(144x32)_3: 8372545145724731534
       Dodge Charge Attack(144x32)_4: 8684375481702914105
       Dodge Charge Attack(144x32)_5: -4992982309206547425

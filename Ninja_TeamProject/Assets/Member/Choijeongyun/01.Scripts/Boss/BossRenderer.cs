@@ -1,9 +1,11 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class BossRenderer : MonoBehaviour
 {
     private Animator _animator;
+    private SpriteRenderer _renderer;
     [SerializeField] private BossMover bossMove;
     [SerializeField] private BossHealth bossHP;
 
@@ -21,6 +23,7 @@ public class BossRenderer : MonoBehaviour
     private void Awake()
     {
         _animator = GetComponentInChildren<Animator>();
+        _renderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     private void FixedUpdate()
@@ -53,5 +56,35 @@ public class BossRenderer : MonoBehaviour
     public void AnimSpeed(float value)
     {
         _animator.speed = value;
+    }
+
+    public void BossDie()
+    {
+        gameObject.SetActive(false); // 임시방편
+    }
+    
+    private IEnumerator Attacked()
+    {
+        _renderer.color = Color.red;
+        Color color = _renderer.color;
+        
+        color.a = 0.7f;
+        _renderer.color = color;
+        
+        yield return new WaitForSeconds(0.1f);
+        
+        color.a = 1f;
+        _renderer.color = color;
+        
+        yield return new WaitForSeconds(0.1f);
+        
+        color.a = 0.7f;
+        _renderer.color = color;
+        
+        yield return new WaitForSeconds(0.1f);
+        
+        color.a = 1f;
+        _renderer.color = color;
+        _renderer.color = Color.white;
     }
 }

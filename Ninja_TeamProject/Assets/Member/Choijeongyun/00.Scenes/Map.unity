@@ -260,6 +260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossHealth
   maxHealth: 30
+  _renderer: {fileID: 835799491}
 --- !u!1 &334686475
 GameObject:
   m_ObjectHideFlags: 0
@@ -392,8 +393,8 @@ Transform:
   m_GameObject: {fileID: 334686475}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -5.5, z: 0}
-  m_LocalScale: {x: 18, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -6.1, z: 0}
+  m_LocalScale: {x: 21, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -463,6 +464,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 46173080967755659, guid: 9804090e1a97a8b40844cc5ec853359f, type: 3}
+      propertyPath: cantUseSkillText
+      value: 
+      objectReference: {fileID: 1269743855}
+    - target: {fileID: 46173080967755659, guid: 9804090e1a97a8b40844cc5ec853359f, type: 3}
+      propertyPath: damageLayerMask.m_Bits
+      value: 2176
+      objectReference: {fileID: 0}
     - target: {fileID: 704248584082449258, guid: 9804090e1a97a8b40844cc5ec853359f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5
@@ -511,6 +520,10 @@ PrefabInstance:
       propertyPath: <MaxHealth>k__BackingField
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 8232111490939893723, guid: 9804090e1a97a8b40844cc5ec853359f, type: 3}
+      propertyPath: skillBar
+      value: 
+      objectReference: {fileID: 1874057674}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -678,6 +691,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1060326876719982753, guid: 25cf16b7079c89f4c98ce360829accf2, type: 3}
+      propertyPath: gameOverImage
+      value: 
+      objectReference: {fileID: 1399310852}
+    - target: {fileID: 1060326876719982753, guid: 25cf16b7079c89f4c98ce360829accf2, type: 3}
+      propertyPath: <HealthUI>k__BackingField
+      value: 
+      objectReference: {fileID: 1028980549}
+    - target: {fileID: 1060326876719982753, guid: 25cf16b7079c89f4c98ce360829accf2, type: 3}
+      propertyPath: <BossHealthUI>k__BackingField
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2615902766739654722, guid: 25cf16b7079c89f4c98ce360829accf2, type: 3}
       propertyPath: m_Name
       value: UIManager
@@ -758,7 +783,83 @@ Transform:
   m_Children: []
   m_Father: {fileID: 835799489}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1069281469
+--- !u!114 &1028980549 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4163925631880165976, guid: cdd78871081b7d14e904ea56de654d91, type: 3}
+  m_PrefabInstance: {fileID: 1269743854}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80ceee2ce6fe5d341b427999e5df26bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthBarUI
+--- !u!1001 &1179432994
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2339670381873828625, guid: 0b6717f7c08d279439845d1251359058, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2100601129}
+    - target: {fileID: 4390542444566353232, guid: 0b6717f7c08d279439845d1251359058, type: 3}
+      propertyPath: m_Name
+      value: Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4390542444566353232, guid: 0b6717f7c08d279439845d1251359058, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422251996912977891, guid: 0b6717f7c08d279439845d1251359058, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.01022
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422251996912977891, guid: 0b6717f7c08d279439845d1251359058, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.66193
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422251996912977891, guid: 0b6717f7c08d279439845d1251359058, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422251996912977891, guid: 0b6717f7c08d279439845d1251359058, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422251996912977891, guid: 0b6717f7c08d279439845d1251359058, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422251996912977891, guid: 0b6717f7c08d279439845d1251359058, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422251996912977891, guid: 0b6717f7c08d279439845d1251359058, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422251996912977891, guid: 0b6717f7c08d279439845d1251359058, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422251996912977891, guid: 0b6717f7c08d279439845d1251359058, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422251996912977891, guid: 0b6717f7c08d279439845d1251359058, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0b6717f7c08d279439845d1251359058, type: 3}
+--- !u!1001 &1269743854
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -854,68 +955,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7643773584805215611, guid: cdd78871081b7d14e904ea56de654d91, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cdd78871081b7d14e904ea56de654d91, type: 3}
---- !u!1001 &1179432994
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4390542444566353232, guid: 0b6717f7c08d279439845d1251359058, type: 3}
-      propertyPath: m_Name
-      value: Manager
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422251996912977891, guid: 0b6717f7c08d279439845d1251359058, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 5.01022
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422251996912977891, guid: 0b6717f7c08d279439845d1251359058, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.66193
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422251996912977891, guid: 0b6717f7c08d279439845d1251359058, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422251996912977891, guid: 0b6717f7c08d279439845d1251359058, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422251996912977891, guid: 0b6717f7c08d279439845d1251359058, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422251996912977891, guid: 0b6717f7c08d279439845d1251359058, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422251996912977891, guid: 0b6717f7c08d279439845d1251359058, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422251996912977891, guid: 0b6717f7c08d279439845d1251359058, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422251996912977891, guid: 0b6717f7c08d279439845d1251359058, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422251996912977891, guid: 0b6717f7c08d279439845d1251359058, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0b6717f7c08d279439845d1251359058, type: 3}
+--- !u!114 &1269743855 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9044148740647969986, guid: cdd78871081b7d14e904ea56de654d91, type: 3}
+  m_PrefabInstance: {fileID: 1269743854}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &1300677371 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1705813932822153349, guid: 8fc429899a71ffc4592fb3d1c41a717a, type: 3}
@@ -987,6 +1043,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 835799489}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1399310852 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4000442244567243603, guid: cdd78871081b7d14e904ea56de654d91, type: 3}
+  m_PrefabInstance: {fileID: 1269743854}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!1 &1530005972
 GameObject:
   m_ObjectHideFlags: 0
@@ -1408,6 +1475,17 @@ MonoBehaviour:
   _jumpPower: 10
   _bossSkill: {fileID: 835799492}
   _maxHealth: 20
+--- !u!114 &1874057674 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9094787043948253524, guid: cdd78871081b7d14e904ea56de654d91, type: 3}
+  m_PrefabInstance: {fileID: 1269743854}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
 --- !u!114 &2100601129 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1778642969121242954, guid: 9804090e1a97a8b40844cc5ec853359f, type: 3}
@@ -1440,7 +1518,7 @@ SceneRoots:
   - {fileID: 1829683721}
   - {fileID: 334686478}
   - {fileID: 567243570}
-  - {fileID: 1069281469}
   - {fileID: 506515847}
   - {fileID: 1002190928}
   - {fileID: 1179432994}
+  - {fileID: 1269743854}
