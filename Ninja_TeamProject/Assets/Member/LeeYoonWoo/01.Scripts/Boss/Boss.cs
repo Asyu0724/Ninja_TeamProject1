@@ -6,6 +6,8 @@ using Debug = UnityEngine.Debug;
 
 public abstract class Boss : MonoBehaviour , IDamageable
 {
+    
+    
     public string bossName;
     public float maxHealth;
     public float currentHealth;

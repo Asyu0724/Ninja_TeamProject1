@@ -1,7 +1,6 @@
-using System.Runtime.CompilerServices;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using System.Collections;
+using Random = UnityEngine.Random;
 
 public class SBossMove : MonoBehaviour
 {
@@ -20,7 +19,7 @@ public class SBossMove : MonoBehaviour
     private float _lastChagingTime = 0;
     private float distance;
     private bool CanCharing => Time.time >= _lastChagingTime + chargingCool;
-
+    
     private void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
@@ -60,6 +59,11 @@ public class SBossMove : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void Update()
+    {
+        //bool detectPlayer = Physics2D.OverlapCircle(transform.position, attackRange, whatIsPlayer);
     }
 
     private void Move()
@@ -135,8 +139,7 @@ public class SBossMove : MonoBehaviour
             _lastChagingTime = Time.time;
         }
 
-        //yield return new WaitForSeconds(1.0f);
-        return null;
+        yield return new WaitForSeconds(1.0f);
         
         speed = 3.0f;
     }

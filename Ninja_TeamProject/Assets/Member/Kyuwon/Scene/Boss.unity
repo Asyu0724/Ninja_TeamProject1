@@ -728,6 +728,8 @@ GameObject:
   - component: {fileID: 654893121}
   - component: {fileID: 654893120}
   - component: {fileID: 654893122}
+  - component: {fileID: 654893123}
+  - component: {fileID: 654893124}
   m_Layer: 12
   m_Name: Boss
   m_TagString: Boss
@@ -744,7 +746,7 @@ Transform:
   m_GameObject: {fileID: 654893117}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.56, y: -0.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -834,6 +836,40 @@ MonoBehaviour:
   chargingCool: 7
   TelCool: 18
   faceCool: 0.5
+--- !u!114 &654893123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654893117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5ba57c99b39c83478a2e3c926d21129, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoubleSlash
+  attackRange: {x: 3.65, y: 4}
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 8192
+  animator: {fileID: 0}
+--- !u!114 &654893124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654893117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a044cffa45477d4faad8d14c28ced02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AgentMover
+  boxSize: {x: 0, y: 0}
+  offset: {x: 0, y: 0}
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &961045743
 GameObject:
   m_ObjectHideFlags: 0
@@ -1076,15 +1112,15 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -685476648212503728, guid: 96cdc7f9a60860a4bb9bcc6e2d805d01, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 24, y: 5.3333335}
+  m_Size: {x: 5.3333335, y: 5.3333335}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
 --- !u!1 &1449514078
 GameObject:
