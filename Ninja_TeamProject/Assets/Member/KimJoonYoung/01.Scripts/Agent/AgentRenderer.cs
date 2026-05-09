@@ -1,32 +1,35 @@
 using UnityEngine;
 
-public class AgentRenderer : MonoBehaviour
+namespace Member.KimJoonYoung._01.Scripts.Agent
 {
-    private Animator _animator;
-
-    private void Awake()
+    public class AgentRenderer : MonoBehaviour
     {
-        _animator = GetComponent<Animator>();
-    }
+        private Animator _animator;
 
-    public void SetFloatParam(int paramHash, float value)
-    {
-        _animator.SetFloat(paramHash, value);
-    }
+        private void Awake()
+        {
+            _animator = GetComponent<Animator>();
+        }
 
-    public void SetIntegerParam(int paramHash, int value)
-    {
-        _animator.SetInteger(paramHash, value);
-    }
+        public void SetFloatParam(int paramHash, float value)
+        {
+            _animator.SetFloat(paramHash, value);
+        }
 
-    public void SetBoolParam(int paramHash, bool value)
-    {
-        _animator.SetBool(paramHash, value);
+        public void SetIntegerParam(int paramHash, int value)
+        {
+            _animator.SetInteger(paramHash, value);
+        }
 
-    }
+        public void SetBoolParam(int paramHash, bool value)
+        {
+            _animator.SetBool(paramHash, value);
 
-    public void SetTriggerParam(int paramHash)
-    {
-        _animator.SetTrigger(paramHash);
+        }
+
+        public void SetTriggerParam(int paramHash)
+        {
+            _animator.SetTrigger(paramHash);
+        }
     }
 }

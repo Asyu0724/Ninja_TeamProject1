@@ -1,17 +1,38 @@
-using System;
 using UnityEngine;
 
-public class TimeScaleManager : MonoBehaviour
+namespace Member.KimJoonYoung._01.Scripts.Manager
 {
-    public void OnHit()
+    public class TimeScaleManager : MonoBehaviour
     {
-        Time.timeScale = 0.5f;
-        Time.fixedDeltaTime = 0.02f * Time.timeScale;
-    }
+        public static TimeScaleManager Instance;
+        [SerializeField] private float onHitTimeScale = 0.5f;
+        private bool _isPaused;
     
-    public void OffHit()
-    {
-        Time.timeScale = 1;
-        Time.fixedDeltaTime = 0.02f;
+        private void Start()
+        {
+            Instance = this;
+        }
+
+        public void OnHit()
+        {
+            Time.timeScale = onHitTimeScale;
+            Time.fixedDeltaTime = 0.02f * Time.timeScale;
+        }
+    
+        public void OffHit()
+        {
+            Time.timeScale = 1;
+            Time.fixedDeltaTime = 0.02f;
+        }
+
+        public void TimeStop()
+        {
+            Time.timeScale = 0;
+        }
+
+        public void TimeResume()
+        {
+            Time.timeScale = 1;
+        }
     }
 }

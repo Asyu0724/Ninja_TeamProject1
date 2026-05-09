@@ -1,40 +1,41 @@
 using System.Collections;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class TestEnemy : Agent
+namespace Member.KimJoonYoung._01.Scripts.TestEnemy
 {
-    private HealthSystem _healthSystem;
-    private EnemyHealthBarUI _enemyHealthBarUI;
-    private bool attacked;
-
-    // Hash
-    private int _isAttackedHash = Animator.StringToHash("Attacked");
-
-    protected override void Awake()
+    public class TestEnemy : global::Agent
     {
-        base.Awake();
-        _healthSystem = GetComponent<HealthSystem>();
-        _enemyHealthBarUI = GetComponentInChildren<EnemyHealthBarUI>();
-        _healthSystem.OnDamaged += AttackedNow;
-    }
+        private HealthSystem _healthSystem;
+        private EnemyHealthBarUI _enemyHealthBarUI;
+        private bool _attacked;
 
-    private void Update()
-    {
-        _agentRenderer.SetBoolParam(_isAttackedHash, attacked);
-    }
+        // Hash
+        private readonly int _isAttackedHash = Animator.StringToHash("Attacked");
 
-    public void AttackedNow()
-    {
-        _enemyHealthBarUI.HealthBarUpdate();
-        attacked = true;
-        StartCoroutine(Attacked());
-    }
+        protected override void Awake()
+        {
+            base.Awake();
+            _healthSystem = GetComponent<HealthSystem>();
+            _enemyHealthBarUI = GetComponentInChildren<EnemyHealthBarUI>();
+            _healthSystem.OnDamaged += AttackedNow;
+        }
 
-    IEnumerator Attacked()
-    {
-        yield return new WaitForSeconds(0.2f);
-        attacked = false;
+        private void Update()
+        {
+            _agentRenderer.SetBoolParam(_isAttackedHash, _attacked);
+        }
+
+        private void AttackedNow()
+        {
+            _enemyHealthBarUI.HealthBarUpdate();
+            _attacked = true;
+            StartCoroutine(Attacked());
+        }
+
+        IEnumerator Attacked()
+        {
+            yield return new WaitForSeconds(0.2f);
+            _attacked = false;
+        }
     }
 }

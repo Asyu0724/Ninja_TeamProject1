@@ -592,7 +592,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80ceee2ce6fe5d341b427999e5df26bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthBarUI
-  _heartPrefab: {fileID: 8823501111113228464, guid: 1e808bf95929d5f43838de9bc5086efc, type: 3}
+  heartPrefab: {fileID: 8823501111113228464, guid: 1e808bf95929d5f43838de9bc5086efc, type: 3}
 --- !u!114 &89490423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4052,6 +4052,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4163925631880165976, guid: cdd78871081b7d14e904ea56de654d91, type: 3}
+      propertyPath: heartPrefab
+      value: 
+      objectReference: {fileID: 5121043003055177688, guid: 03ac294280955fe4f8ff1974a98bbfbc, type: 3}
     - target: {fileID: 5305873381646567943, guid: cdd78871081b7d14e904ea56de654d91, type: 3}
       propertyPath: m_Name
       value: UI
