@@ -137,12 +137,9 @@ public class PlayerController : Agent
     private IEnumerator PlayerHited()
     {
         PlayerHit = true;
-        GameManager.Instance.timeScaleManager.OnHit();
-        GameManager.Instance.bloomManager.OnHit();
+        GameManager.Instance.bloomManager.OnHit(_healthSystem.Health , _healthSystem.MaxHealth);
         AudioManager.instance.PlaySfx(AudioManager.Sfx.Hit);    
         yield return new WaitForSeconds(_healthSystem.InvTime);
-        GameManager.Instance.timeScaleManager.OffHit();
-        GameManager.Instance.bloomManager.OffHit(_healthSystem.Health , _healthSystem.MaxHealth); 
         PlayerHit = false;
     }
     /*---------------------------------------------------*/ // Game method
