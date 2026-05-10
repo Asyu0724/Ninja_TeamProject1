@@ -848,7 +848,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5ba57c99b39c83478a2e3c926d21129, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoubleSlash
-  attackRange: {x: 3.65, y: 4}
+  attackRange: {x: 6.4, y: 0.3}
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 8192

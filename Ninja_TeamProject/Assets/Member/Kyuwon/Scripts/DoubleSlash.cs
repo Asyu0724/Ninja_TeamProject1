@@ -26,7 +26,6 @@ public class DoubleSlash : MonoBehaviour
         bool canSlashRange = Physics2D.OverlapBox(transform.position,attackRange, whatIsPlayer);
         if (canSlashRange && _timer >= _normalAttackCool)
         {
-            Debug.Log("공격가능");
             StartCoroutine(SlashRoutine());
             _timer = 0f;
         }
