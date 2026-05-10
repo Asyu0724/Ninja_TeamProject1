@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77bccd0fb8b51654ebce877114f5a83d, type: 3}
+  m_Name: SBossSO
+  m_EditorClassIdentifier: Assembly-CSharp::Member.Kyuwon.Scripts.SBossData
+  MaxHp: 0
+  CurrentHp: 0
+  NormalDamage: 0
+  CriticalDamage: 0
+  NormalCool: 0
+  CanNormal: 0
+  ChargingCool: 0
+  CanCharging: 0
+  FinisherCool: 0
+  CanFinisher: 0
+  TelCool: 0
+  CanTel: 0
