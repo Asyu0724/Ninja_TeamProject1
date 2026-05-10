@@ -40204,6 +40204,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5549341326705384535, guid: 9804090e1a97a8b40844cc5ec853359f, type: 3}
+      propertyPath: <InvTime>k__BackingField
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5549341326705384535, guid: 9804090e1a97a8b40844cc5ec853359f, type: 3}
       propertyPath: <MaxHealth>k__BackingField
       value: 5
       objectReference: {fileID: 0}

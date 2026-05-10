@@ -18,6 +18,12 @@ namespace Member.KimJoonYoung._01.Scripts.TestEnemy
             _healthSystem = GetComponent<HealthSystem>();
             _enemyHealthBarUI = GetComponentInChildren<EnemyHealthBarUI>();
             _healthSystem.OnDamaged += AttackedNow;
+            _healthSystem.Dead += HandlerDead;
+        }
+
+        private void HandlerDead()
+        {
+            Destroy(gameObject);
         }
 
         private void Update()
