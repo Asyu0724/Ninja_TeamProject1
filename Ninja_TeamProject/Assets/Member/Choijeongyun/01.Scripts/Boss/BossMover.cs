@@ -74,7 +74,7 @@ public class BossMover : MonoBehaviour
                 // else if(!Attack3) bossRenderer.AnimSpeed(1.5f); 
             }
         }
-        if (Mathf.Abs(_distance.x) > 6.0f && !IsSkill)
+        if (Mathf.Abs(_distance.x) > 7.0f && !IsSkill)
         {
             IsJump = true;
             // _rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
