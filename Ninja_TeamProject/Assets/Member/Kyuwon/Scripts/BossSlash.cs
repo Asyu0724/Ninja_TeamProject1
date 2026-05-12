@@ -15,12 +15,11 @@ public class BossSlash : MonoBehaviour
 
     public void Slash()
     {
-        _animator.SetTrigger("Slash");
+        Collider2D isHit = Physics2D.OverlapBox(transform.position, bossData.NormalRange, 0,whatIsPlayer);
 
-        Collider2D hit = Physics2D.OverlapBox(transform.position, bossData.NormalRange, 0f,whatIsPlayer);
-
-        if (hit != null)
+        if (isHit != null)
         {
+            _animator.SetTrigger("Slash");
             Debug.Log("데미지 드갔다 야르~~");
         }
     }

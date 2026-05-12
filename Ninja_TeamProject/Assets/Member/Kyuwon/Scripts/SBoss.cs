@@ -17,7 +17,7 @@ public class SBoss : MonoBehaviour
 
     void Update()
     {
-        bool SlashRange = Physics2D.OverlapBox(transform.position,bossData.NormalRange, 0f,whatIsPlayer);
+        bool SlashRange = Physics2D.OverlapBox(transform.position,bossData.NormalRange, 0,whatIsPlayer);
         if (SlashRange != false && isAttacking == false)
         {
             _SBossSkill = _slash.Slash; 
