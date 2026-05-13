@@ -8,6 +8,7 @@ public class BossRenderer : MonoBehaviour
     private Animator _animator;
     private SpriteRenderer _renderer;
     private SpriteRenderer _rangeRenderer;
+    private CapsuleCollider2D _collider2D;
     
     [SerializeField] private GameObject range;
     [SerializeField] private BossMover bossMove;
@@ -31,6 +32,7 @@ public class BossRenderer : MonoBehaviour
         _animator = GetComponent<Animator>();
         _renderer = GetComponent<SpriteRenderer>();
         _rangeRenderer = range.GetComponentInChildren<SpriteRenderer>();
+        _collider2D = GetComponentInParent<CapsuleCollider2D>();
     }
 
     private void FixedUpdate()
@@ -88,6 +90,17 @@ public class BossRenderer : MonoBehaviour
     public void BossDie()
     {
         gameObject.SetActive(false); // 임시방편
+    }
+
+    public IEnumerator JumpDel()
+    {
+        this._animator.speed = 0;
+        this._renderer.enabled = false;
+        Physics.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Boss"), true);
+        yield return new WaitForSeconds(1f);
+        this._animator.speed = 1;
+        this._renderer.enabled = true;
+        Physics.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Boss"), false);
     }
     
     private IEnumerator Attacked()

@@ -38,19 +38,24 @@ public class BossHealth : MonoBehaviour, IDamageable
 
     public void ChargeHP()
     {
-        StartCoroutine(HP());
         IsCharge = true;
-        if (_canCharge <= 0) IsCharge = false;
         _canCharge--;
+        StartCoroutine(HP());
     }
 
     private IEnumerator HP()
     {
-        while (_bossHealth >= maxHealth)
+        while (true)
         {
             _bossHealth += 3;
             _bossHealth = Mathf.Clamp(_bossHealth, 0, maxHealth);
-            yield return new WaitForSeconds(0.2f);
+            _healthBarUI.UpdateHealthUI(_bossHealth);
+            if (_bossHealth >= maxHealth)
+            {
+                IsCharge = false;
+                break;
+            }
+            yield return new WaitForSeconds(0.5f);
         }
     }
     
