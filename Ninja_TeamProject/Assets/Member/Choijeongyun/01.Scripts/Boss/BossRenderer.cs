@@ -96,11 +96,11 @@ public class BossRenderer : MonoBehaviour
     {
         this._animator.speed = 0;
         this._renderer.enabled = false;
-        Physics.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Boss"), true);
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Boss"), true);
         yield return new WaitForSeconds(1f);
         this._animator.speed = 1;
         this._renderer.enabled = true;
-        Physics.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Boss"), false);
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Boss"), false);
     }
     
     private IEnumerator Attacked()

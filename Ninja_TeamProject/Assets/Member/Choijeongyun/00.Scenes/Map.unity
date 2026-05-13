@@ -667,6 +667,12 @@ MonoBehaviour:
   bossMove: {fileID: 288674196}
   bossHP: {fileID: 288674197}
   player: {fileID: 2100601135}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  bossLayer:
+    serializedVersion: 2
+    m_Bits: 2048
 --- !u!114 &835799492
 MonoBehaviour:
   m_ObjectHideFlags: 0
