@@ -19,8 +19,9 @@ public class BossSlash : MonoBehaviour
 
         if (isHit != null)
         {
+            float timeStamp = Time.time;
+            
             _animator.SetTrigger("Slash");
-            Debug.Log("데미지 드갔다 야르~~");
         }
     }
 

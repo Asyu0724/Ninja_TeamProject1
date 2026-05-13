@@ -18,6 +18,7 @@ MonoBehaviour:
   CriticalDamage: 0
   NormalCool: 0
   NormalRange: {x: 6.4, y: 0.3}
+  FinisherRange: {x: 3, y: 0.4}
   CanNormal: 0
   ChargingCool: 0
   CanCharging: 0
