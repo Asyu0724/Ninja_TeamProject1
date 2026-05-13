@@ -40,6 +40,7 @@ public class BossHealth : MonoBehaviour, IDamageable
     {
         IsCharge = true;
         _canCharge--;
+        _renderer.ChargeStart();
         StartCoroutine(HP());
     }
 
@@ -53,6 +54,7 @@ public class BossHealth : MonoBehaviour, IDamageable
             if (_bossHealth >= maxHealth)
             {
                 IsCharge = false;
+                _renderer.ChargeEnd();
                 break;
             }
             yield return new WaitForSeconds(0.5f);
