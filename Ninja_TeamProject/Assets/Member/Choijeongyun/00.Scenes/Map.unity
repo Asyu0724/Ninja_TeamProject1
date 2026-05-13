@@ -261,6 +261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BossHealth
   maxHealth: 30
   _renderer: {fileID: 835799491}
+  _healthBarUI: {fileID: 1333400858}
 --- !u!1 &334686475
 GameObject:
   m_ObjectHideFlags: 0
@@ -801,7 +802,7 @@ PrefabInstance:
     - target: {fileID: 1060326876719982753, guid: 25cf16b7079c89f4c98ce360829accf2, type: 3}
       propertyPath: <BossHealthUI>k__BackingField
       value: 
-      objectReference: {fileID: 1333400855}
+      objectReference: {fileID: 0}
     - target: {fileID: 2615902766739654722, guid: 25cf16b7079c89f4c98ce360829accf2, type: 3}
       propertyPath: m_Name
       value: UIManager
@@ -1124,8 +1125,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1333400853}
   - component: {fileID: 1333400857}
+  - component: {fileID: 1333400858}
   - component: {fileID: 1333400856}
-  - component: {fileID: 1333400855}
   - component: {fileID: 1333400854}
   m_Layer: 5
   m_Name: BossHealthBar
@@ -1168,10 +1169,10 @@ MonoBehaviour:
   m_Padding:
     m_Left: 0
     m_Right: 5
-    m_Top: 0
+    m_Top: 40
     m_Bottom: 0
-  m_ChildAlignment: 5
-  m_Spacing: -10
+  m_ChildAlignment: 3
+  m_Spacing: -8
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
@@ -1179,19 +1180,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &1333400855
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1333400852}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80ceee2ce6fe5d341b427999e5df26bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HealthBarUI
-  heartPrefab: {fileID: 0}
 --- !u!114 &1333400856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1205,7 +1193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.64465404, g: 0.98576194, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1230,6 +1218,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1333400852}
   m_CullTransparentMesh: 1
+--- !u!114 &1333400858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333400852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80ceee2ce6fe5d341b427999e5df26bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Member.KimJoonYoung._01.Scripts.Hp.HealthBarUI
+  heartPrefab: {fileID: 5121043003055177688, guid: 872d41a6d6f4cf143a3d335c86cb4422, type: 3}
 --- !u!1 &1387582639
 GameObject:
   m_ObjectHideFlags: 0

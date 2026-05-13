@@ -104,7 +104,6 @@ public class BossMover : MonoBehaviour
         Attack1 = false;
         Attack2 = false;
         Attack3 = false;
-        bossHP.ChargeHP(false);
         IsJump = false;
         IsShake = false;
         // bossRenderer.AnimSpeed(1.0f);
