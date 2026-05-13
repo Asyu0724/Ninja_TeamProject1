@@ -32,7 +32,7 @@ public class SBossMove : MonoBehaviour
         if (playerTRM != null)
         {
             Move();
-            RotateBoss();
+            Rotation();
 
             int BossMove = Mathf.Abs(moveDir.x) >= 0.1f ? 1 : 0;
             animator.SetFloat("MoveX", BossMove);
@@ -68,12 +68,11 @@ public class SBossMove : MonoBehaviour
 
     private void Move()
     {
-        distance = Vector2.Distance(transform.position, playerTRM.position);
         moveDir = (playerTRM.position - transform.position).normalized;
         rigid.linearVelocityX = moveDir.x * speed;
     }
 
-    private void RotateBoss()
+    private void Rotation()
     {
         if (moveDir.x >= 0)
         {
@@ -97,50 +96,5 @@ public class SBossMove : MonoBehaviour
                 faceCool = 0.5f;
             }
         }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("UMM"))
-        {
-            //StartCoroutine(AttackRoutine());
-        }
-    }
-
-    private IEnumerator AttackRoutine()
-    {
-        speed = 0;
-        int randomValue = Random.Range(0, 5);
-
-        if (randomValue < 1)
-        {
-            Debug.Log("어류겐");
-        }
-        else
-        {
-            Debug.Log("휭");
-            animator.SetTrigger("Slash");
-        }
-
-        yield return new WaitForSeconds(1.0f);
-        speed = 3.0f;
-    }
-
-    private IEnumerator ChargeRoutine()
-    {
-        speed = 0;
-        Debug.Log("이얏");
-        animator.SetTrigger("Charging");
-        charcoolTime = true;
-
-        if (CanCharing == true)
-        {
-            charcoolTime = false;
-            _lastChagingTime = Time.time;
-        }
-
-        yield return new WaitForSeconds(1.0f);
-        
-        speed = 3.0f;
     }
 }

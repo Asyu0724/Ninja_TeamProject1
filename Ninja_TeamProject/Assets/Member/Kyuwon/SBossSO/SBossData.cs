@@ -11,6 +11,7 @@ namespace Member.Kyuwon.SBossSO
         public int CriticalDamage;
         public float NormalCool;
         public Vector2 NormalRange;
+        public Vector2 FinisherRange;
         public bool CanNormal;
         public float ChargingCool;
         public bool CanCharging;
