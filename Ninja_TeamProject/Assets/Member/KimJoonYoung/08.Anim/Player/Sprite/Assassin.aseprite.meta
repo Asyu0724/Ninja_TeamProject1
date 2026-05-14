@@ -157,7 +157,7 @@ ScriptedImporter:
     generateIndividualEvents: 1
     generateSpriteAtlas: 1
   importFileNodeState: 1
-  platformSettingsDirtyTick: 639114706349398980
+  platformSettingsDirtyTick: 639142980782387859
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -196,12 +196,33 @@ ScriptedImporter:
       height: 20
     spriteID: dcb421a2ad970ce4dba154ace410a934
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: -5, y: -8}
+      - {x: -3, y: -10}
+      - {x: 5, y: -10}
+      - {x: 7, y: -7}
+      - {x: 10, y: -9}
+      - {x: 12, y: -9}
+      - {x: 12, y: -4}
+      - {x: 9, y: -2}
+      - {x: 6, y: 3}
+      - {x: 6, y: 8}
+      - {x: 4, y: 10}
+      - {x: -3, y: 10}
+      - {x: -5, y: 8}
+      - {x: -5, y: 2}
+      - {x: -7, y: 1}
+      - {x: -8, y: -2}
+      - {x: -10, y: -4}
+      - {x: -12, y: -5}
+      - {x: -12, y: -10}
+      - {x: -10, y: -10}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 56, y: 69}
   - name: Frame_1
     originalName: 
@@ -217,12 +238,33 @@ ScriptedImporter:
       height: 20
     spriteID: 93e4a9e5f6b4ccf44816de78e6939ee9
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: -5, y: -8}
+      - {x: -3, y: -10}
+      - {x: 5, y: -10}
+      - {x: 7, y: -7}
+      - {x: 10, y: -9}
+      - {x: 12, y: -9}
+      - {x: 12, y: -4}
+      - {x: 9, y: -2}
+      - {x: 6, y: 3}
+      - {x: 6, y: 8}
+      - {x: 4, y: 10}
+      - {x: -3, y: 10}
+      - {x: -5, y: 8}
+      - {x: -5, y: 2}
+      - {x: -7, y: 1}
+      - {x: -8, y: -2}
+      - {x: -10, y: -4}
+      - {x: -12, y: -5}
+      - {x: -12, y: -10}
+      - {x: -10, y: -10}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 56, y: 97}
   - name: Frame_10
     originalName: 
@@ -238,12 +280,32 @@ ScriptedImporter:
       height: 18
     spriteID: 351ea76ec65106f4693c725025d21225
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: 10.5, y: -8}
+      - {x: 11.5, y: -8}
+      - {x: 11.5, y: -3}
+      - {x: 8.5, y: -2}
+      - {x: 9.5, y: -1}
+      - {x: 9.5, y: 2}
+      - {x: 8.5, y: 3}
+      - {x: 8.5, y: 7}
+      - {x: 6.5, y: 9}
+      - {x: -0.5, y: 9}
+      - {x: -2.5, y: 7}
+      - {x: -2.5, y: 5}
+      - {x: -6.5, y: 0}
+      - {x: -7.5, y: -2}
+      - {x: -11.5, y: -4}
+      - {x: -11.5, y: -9}
+      - {x: -6.5, y: -8}
+      - {x: -5.5, y: -9}
+      - {x: 9.5, y: -9}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 132, y: 120}
   - name: Frame_11
     originalName: 
@@ -259,12 +321,27 @@ ScriptedImporter:
       height: 16
     spriteID: 0c207ff1cbdc3f14d979fb81bd09a388
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: 10.5, y: -7}
+      - {x: 11.5, y: -7}
+      - {x: 11.5, y: -2}
+      - {x: 9.5, y: -2}
+      - {x: 8.5, y: 6}
+      - {x: 6.5, y: 8}
+      - {x: -0.5, y: 8}
+      - {x: -1.5, y: 7}
+      - {x: -2.5, y: 7}
+      - {x: -8.5, y: 1}
+      - {x: -9.5, y: -3}
+      - {x: -11.5, y: -3}
+      - {x: -11.5, y: -8}
+      - {x: 9.5, y: -8}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 132, y: 267}
   - name: Frame_12
     originalName: 
@@ -280,12 +357,31 @@ ScriptedImporter:
       height: 16
     spriteID: fcc91bdbf7b75834fb9913699e7b4090
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: 9.5, y: -6}
+      - {x: 11.5, y: -6}
+      - {x: 11.5, y: -1}
+      - {x: 10.5, y: -1}
+      - {x: 9.5, y: 1}
+      - {x: 8.5, y: 2}
+      - {x: 8.5, y: 6}
+      - {x: 6.5, y: 8}
+      - {x: -1.5, y: 8}
+      - {x: -2.5, y: 7}
+      - {x: -4.5, y: 7}
+      - {x: -9.5, y: 2}
+      - {x: -9.5, y: -2}
+      - {x: -11.5, y: -2}
+      - {x: -11.5, y: -7}
+      - {x: -7.5, y: -7}
+      - {x: -7.5, y: -8}
+      - {x: 7.5, y: -8}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 132, y: 291}
   - name: Frame_13
     originalName: 
@@ -301,12 +397,32 @@ ScriptedImporter:
       height: 19
     spriteID: 04e6acde2890ed345a2cb530e91153c5
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: 6.5, y: -8.5}
+      - {x: 7.5, y: -9.5}
+      - {x: 11.5, y: -9.5}
+      - {x: 11.5, y: -5.5}
+      - {x: 8.5, y: -3.5}
+      - {x: 8.5, y: 7.5}
+      - {x: 6.5, y: 9.5}
+      - {x: -0.5, y: 9.5}
+      - {x: -2.5, y: 7.5}
+      - {x: -2.5, y: 4.5}
+      - {x: -4.5, y: 2.5}
+      - {x: -5.5, y: 2.5}
+      - {x: -10.5, y: -2.5}
+      - {x: -10.5, y: -3.5}
+      - {x: -9.5, y: -5.5}
+      - {x: -10.5, y: -6.5}
+      - {x: -11.5, y: -6.5}
+      - {x: -11.5, y: -9.5}
+      - {x: 5.5, y: -9.5}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 56, y: 403}
   - name: Frame_14
     originalName: 
@@ -322,12 +438,28 @@ ScriptedImporter:
       height: 18
     spriteID: a2a45fdd97ee0e54b8ed295f97940ecf
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: 8.5, y: -7}
+      - {x: 9.5, y: -8}
+      - {x: 11.5, y: -8}
+      - {x: 11.5, y: -3}
+      - {x: 10.5, y: -2}
+      - {x: 10.5, y: 1}
+      - {x: 8.5, y: 3}
+      - {x: 8.5, y: 7}
+      - {x: 6.5, y: 9}
+      - {x: -0.5, y: 9}
+      - {x: -10.5, y: -1}
+      - {x: -10.5, y: -4}
+      - {x: -11.5, y: -4}
+      - {x: -11.5, y: -9}
+      - {x: 8.5, y: -9}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 132, y: 146}
   - name: Frame_15
     originalName: 
@@ -343,12 +475,34 @@ ScriptedImporter:
       height: 17
     spriteID: afa4b66dea58cac4b8c0465dbd66d1ac
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: 4.5, y: -7.5}
+      - {x: 5.5, y: -8.5}
+      - {x: 8.5, y: -8.5}
+      - {x: 9.5, y: -7.5}
+      - {x: 8.5, y: -5.5}
+      - {x: 11.5, y: -5.5}
+      - {x: 11.5, y: 1.5}
+      - {x: 8.5, y: 4.5}
+      - {x: 8.5, y: 6.5}
+      - {x: 6.5, y: 8.5}
+      - {x: -0.5, y: 8.5}
+      - {x: -1.5, y: 7.5}
+      - {x: -2.5, y: 7.5}
+      - {x: -7.5, y: 2.5}
+      - {x: -7.5, y: 1.5}
+      - {x: -10.5, y: -1.5}
+      - {x: -11.5, y: -1.5}
+      - {x: -11.5, y: -6.5}
+      - {x: -8.5, y: -6.5}
+      - {x: -8.5, y: -8.5}
+      - {x: 2.5, y: -8.5}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 132, y: 217}
   - name: Frame_16
     originalName: 
@@ -364,12 +518,31 @@ ScriptedImporter:
       height: 16
     spriteID: 379863a835019734d8870f1922410ed4
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: 10.5, y: -6}
+      - {x: 11.5, y: -6}
+      - {x: 11.5, y: -1}
+      - {x: 8.5, y: -1}
+      - {x: 8.5, y: 6}
+      - {x: 6.5, y: 8}
+      - {x: -0.5, y: 8}
+      - {x: -2.5, y: 6}
+      - {x: -2.5, y: 5}
+      - {x: -3.5, y: 4}
+      - {x: -4.5, y: 4}
+      - {x: -10.5, y: -2}
+      - {x: -11.5, y: -2}
+      - {x: -11.5, y: -7}
+      - {x: -9.5, y: -7}
+      - {x: -8.5, y: -6}
+      - {x: -7.5, y: -8}
+      - {x: 10.5, y: -8}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 132, y: 315}
   - name: Frame_17
     originalName: 
@@ -385,12 +558,34 @@ ScriptedImporter:
       height: 19
     spriteID: d53c1a405e516a548935d8c4b8604e41
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: 5.5, y: -8.5}
+      - {x: 6.5, y: -9.5}
+      - {x: 11.5, y: -9.5}
+      - {x: 11.5, y: -5.5}
+      - {x: 7.5, y: -3.5}
+      - {x: 8.5, y: -2.5}
+      - {x: 8.5, y: 0.5}
+      - {x: 7.5, y: 2.5}
+      - {x: 8.5, y: 3.5}
+      - {x: 8.5, y: 7.5}
+      - {x: 6.5, y: 9.5}
+      - {x: -0.5, y: 9.5}
+      - {x: -2.5, y: 7.5}
+      - {x: -2.5, y: 5.5}
+      - {x: -10.5, y: -2.5}
+      - {x: -10.5, y: -3.5}
+      - {x: -9.5, y: -5.5}
+      - {x: -10.5, y: -6.5}
+      - {x: -11.5, y: -6.5}
+      - {x: -11.5, y: -9.5}
+      - {x: 5.5, y: -9.5}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 56, y: 430}
   - name: Frame_18
     originalName: 
@@ -406,12 +601,35 @@ ScriptedImporter:
       height: 19
     spriteID: 73843f6d80a95c042b072ca4008eb74b
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: 6.5, y: -8.5}
+      - {x: 7.5, y: -9.5}
+      - {x: 11.5, y: -9.5}
+      - {x: 11.5, y: -5.5}
+      - {x: 7.5, y: -3.5}
+      - {x: 8.5, y: -2.5}
+      - {x: 8.5, y: 0.5}
+      - {x: 7.5, y: 2.5}
+      - {x: 8.5, y: 3.5}
+      - {x: 8.5, y: 7.5}
+      - {x: 6.5, y: 9.5}
+      - {x: -0.5, y: 9.5}
+      - {x: -2.5, y: 7.5}
+      - {x: -2.5, y: 5.5}
+      - {x: -6.5, y: -1.5}
+      - {x: -7.5, y: -0.5}
+      - {x: -10.5, y: -2.5}
+      - {x: -9.5, y: -5.5}
+      - {x: -10.5, y: -6.5}
+      - {x: -11.5, y: -6.5}
+      - {x: -11.5, y: -9.5}
+      - {x: 5.5, y: -9.5}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 56, y: 457}
   - name: Frame_19
     originalName: 
@@ -427,12 +645,34 @@ ScriptedImporter:
       height: 19
     spriteID: f5d864ee891223d468fcc2df37767b51
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: 6.5, y: -8.5}
+      - {x: 7.5, y: -9.5}
+      - {x: 11.5, y: -9.5}
+      - {x: 11.5, y: -5.5}
+      - {x: 7.5, y: -3.5}
+      - {x: 8.5, y: -2.5}
+      - {x: 8.5, y: 0.5}
+      - {x: 7.5, y: 2.5}
+      - {x: 8.5, y: 3.5}
+      - {x: 8.5, y: 7.5}
+      - {x: 6.5, y: 9.5}
+      - {x: -0.5, y: 9.5}
+      - {x: -2.5, y: 7.5}
+      - {x: -2.5, y: 5.5}
+      - {x: -7.5, y: 0.5}
+      - {x: -7.5, y: -2.5}
+      - {x: -8.5, y: -3.5}
+      - {x: -10.5, y: -6.5}
+      - {x: -11.5, y: -6.5}
+      - {x: -11.5, y: -9.5}
+      - {x: 5.5, y: -9.5}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 56, y: 484}
   - name: Frame_20
     originalName: 
@@ -448,12 +688,30 @@ ScriptedImporter:
       height: 19
     spriteID: 824a11037b6bf4e4883d89750ad1eb28
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: 6.5, y: -8.5}
+      - {x: 7.5, y: -9.5}
+      - {x: 11.5, y: -9.5}
+      - {x: 11.5, y: -5.5}
+      - {x: 8.5, y: -3.5}
+      - {x: 8.5, y: 7.5}
+      - {x: 6.5, y: 9.5}
+      - {x: -0.5, y: 9.5}
+      - {x: -2.5, y: 8.5}
+      - {x: -3.5, y: 5.5}
+      - {x: -10.5, y: -2.5}
+      - {x: -10.5, y: -3.5}
+      - {x: -9.5, y: -5.5}
+      - {x: -10.5, y: -6.5}
+      - {x: -11.5, y: -6.5}
+      - {x: -11.5, y: -9.5}
+      - {x: 5.5, y: -9.5}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 101, y: 27}
   - name: Frame_21
     originalName: 
@@ -469,12 +727,31 @@ ScriptedImporter:
       height: 19
     spriteID: 9b7b214c960582643b8edfec14785689
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: 6.5, y: -8.5}
+      - {x: 7.5, y: -9.5}
+      - {x: 11.5, y: -9.5}
+      - {x: 11.5, y: -5.5}
+      - {x: 7.5, y: -3.5}
+      - {x: 8.5, y: -2.5}
+      - {x: 8.5, y: 7.5}
+      - {x: 6.5, y: 9.5}
+      - {x: -0.5, y: 9.5}
+      - {x: -2.5, y: 8.5}
+      - {x: -3.5, y: 5.5}
+      - {x: -10.5, y: -2.5}
+      - {x: -10.5, y: -3.5}
+      - {x: -9.5, y: -5.5}
+      - {x: -10.5, y: -6.5}
+      - {x: -11.5, y: -6.5}
+      - {x: -11.5, y: -9.5}
+      - {x: 5.5, y: -9.5}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 101, y: 54}
   - name: Frame_22
     originalName: 
@@ -490,12 +767,26 @@ ScriptedImporter:
       height: 17
     spriteID: 4f812ef3a0b895d40be46effc85c9c5d
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: 10.5, y: -7.5}
+      - {x: 11.5, y: -7.5}
+      - {x: 11.5, y: -2.5}
+      - {x: 9.5, y: -2.5}
+      - {x: 10.5, y: 1.5}
+      - {x: 8.5, y: 6.5}
+      - {x: 5.5, y: 8.5}
+      - {x: -3.5, y: 8.5}
+      - {x: -8.5, y: 3.5}
+      - {x: -8.5, y: -3.5}
+      - {x: -11.5, y: -3.5}
+      - {x: -11.5, y: -8.5}
+      - {x: 9.5, y: -8.5}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 132, y: 242}
   - name: Frame_23
     originalName: 
@@ -511,12 +802,25 @@ ScriptedImporter:
       height: 16
     spriteID: 392614f09cbfe3944843e14c193baa40
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: 10.5, y: -7}
+      - {x: 11.5, y: -7}
+      - {x: 11.5, y: -2}
+      - {x: 9.5, y: -2}
+      - {x: 9.5, y: 4}
+      - {x: 6.5, y: 8}
+      - {x: -4.5, y: 8}
+      - {x: -9.5, y: 3}
+      - {x: -8.5, y: -3}
+      - {x: -11.5, y: -3}
+      - {x: -11.5, y: -8}
+      - {x: 9.5, y: -8}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 132, y: 339}
   - name: Frame_24
     originalName: 
@@ -532,12 +836,25 @@ ScriptedImporter:
       height: 16
     spriteID: 4e03f2d4eace1114b8a510325c73c7bb
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: 10.5, y: -7}
+      - {x: 11.5, y: -7}
+      - {x: 11.5, y: -2}
+      - {x: 9.5, y: -2}
+      - {x: 8.5, y: 6}
+      - {x: 6.5, y: 8}
+      - {x: -3.5, y: 8}
+      - {x: -8.5, y: 3}
+      - {x: -9.5, y: -3}
+      - {x: -11.5, y: -3}
+      - {x: -11.5, y: -8}
+      - {x: 9.5, y: -8}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 132, y: 363}
   - name: Frame_25
     originalName: 
@@ -553,12 +870,25 @@ ScriptedImporter:
       height: 16
     spriteID: ad5237e3b44eb7d4483b5c929caae34d
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: 10.5, y: -7}
+      - {x: 11.5, y: -7}
+      - {x: 11.5, y: -2}
+      - {x: 9.5, y: -2}
+      - {x: 8.5, y: 6}
+      - {x: 6.5, y: 8}
+      - {x: -4.5, y: 8}
+      - {x: -7.5, y: 5}
+      - {x: -8.5, y: -3}
+      - {x: -11.5, y: -3}
+      - {x: -11.5, y: -8}
+      - {x: 9.5, y: -8}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 132, y: 387}
   - name: Frame_34
     originalName: 
@@ -574,12 +904,34 @@ ScriptedImporter:
       height: 20
     spriteID: 360af314e4928034d97c8c1fa1c2e6fd
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: -4.5, y: -9}
+      - {x: -3.5, y: -10}
+      - {x: 1.5, y: -10}
+      - {x: 3.5, y: -7}
+      - {x: 4.5, y: -8}
+      - {x: 9.5, y: -9}
+      - {x: 15.5, y: -3}
+      - {x: 15.5, y: 8}
+      - {x: 13.5, y: 10}
+      - {x: -0.5, y: 10}
+      - {x: -1.5, y: 9}
+      - {x: -2.5, y: 10}
+      - {x: -7.5, y: 10}
+      - {x: -10.5, y: 7}
+      - {x: -10.5, y: 4}
+      - {x: -15.5, y: -1}
+      - {x: -15.5, y: -8}
+      - {x: -14.5, y: -9}
+      - {x: -11.5, y: -8}
+      - {x: -10.5, y: -10}
+      - {x: -5.5, y: -10}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 4, y: 73}
   - name: Frame_35
     originalName: 
@@ -595,12 +947,55 @@ ScriptedImporter:
       height: 19
     spriteID: ab72cb714781131419ac878f2c715825
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: 1.5, y: -7.5}
+      - {x: 2.5, y: -6.5}
+      - {x: 3.5, y: -7.5}
+      - {x: 8.5, y: -8.5}
+      - {x: 10.5, y: -5.5}
+      - {x: 11.5, y: -5.5}
+      - {x: 14.5, y: -2.5}
+      - {x: 14.5, y: -0.5}
+      - {x: 15.5, y: -0.5}
+      - {x: 15.5, y: 5.5}
+      - {x: 13.5, y: 5.5}
+      - {x: 11.5, y: 3.5}
+      - {x: 11.5, y: 1.5}
+      - {x: 10.5, y: 1.5}
+      - {x: 6.5, y: -0.5}
+      - {x: 5.5, y: -2.5}
+      - {x: 4.5, y: -2.5}
+      - {x: 1.5, y: -0.5}
+      - {x: 1.5, y: 0.5}
+      - {x: -0.5, y: 2.5}
+      - {x: -0.5, y: 7.5}
+      - {x: -2.5, y: 9.5}
+      - {x: -9.5, y: 9.5}
+      - {x: -11.5, y: 7.5}
+      - {x: -11.5, y: 2.5}
+      - {x: -13.5, y: 1.5}
+      - {x: -14.5, y: -1.5}
+      - {x: -15.5, y: -3.5}
+      - {x: -15.5, y: -8.5}
+      - {x: -12.5, y: -7.5}
+      - {x: -11.5, y: -9.5}
+      - {x: 1.5, y: -9.5}
+    - outline:
+      - {x: 12.5, y: 5.5}
+      - {x: 12.5, y: 8.5}
+      - {x: 11.5, y: 9.5}
+      - {x: 4.5, y: 9.5}
+      - {x: 3.5, y: 8.5}
+      - {x: 3.5, y: 6.5}
+      - {x: 5.5, y: 4.5}
+      - {x: 8.5, y: 3.5}
+      - {x: 10.5, y: 3.5}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 4, y: 101}
   - name: Frame_36
     originalName: 
@@ -616,12 +1011,52 @@ ScriptedImporter:
       height: 19
     spriteID: 839bc6e0102538f4bb7e49f6b68a7573
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: 1.5, y: -6.5}
+      - {x: 5.5, y: -7.5}
+      - {x: 6.5, y: -8.5}
+      - {x: 8.5, y: -8.5}
+      - {x: 12.5, y: -3.5}
+      - {x: 12.5, y: -1.5}
+      - {x: 9.5, y: 1.5}
+      - {x: 6.5, y: 1.5}
+      - {x: 5.5, y: -2.5}
+      - {x: 1.5, y: -0.5}
+      - {x: 1.5, y: 0.5}
+      - {x: -0.5, y: 2.5}
+      - {x: -0.5, y: 7.5}
+      - {x: -2.5, y: 9.5}
+      - {x: -9.5, y: 9.5}
+      - {x: -11.5, y: 7.5}
+      - {x: -11.5, y: 2.5}
+      - {x: -14.5, y: -0.5}
+      - {x: -14.5, y: -2.5}
+      - {x: -15.5, y: -3.5}
+      - {x: -15.5, y: -8.5}
+      - {x: -12.5, y: -7.5}
+      - {x: -11.5, y: -9.5}
+      - {x: 1.5, y: -9.5}
+    - outline:
+      - {x: 12.5, y: 5.5}
+      - {x: 12.5, y: 7.5}
+      - {x: 10.5, y: 9.5}
+      - {x: 8.5, y: 9.5}
+      - {x: 5.5, y: 6.5}
+      - {x: 5.5, y: 3.5}
+      - {x: 7.5, y: 2.5}
+      - {x: 11.5, y: 2.5}
+    - outline:
+      - {x: 15.5, y: 4.5}
+      - {x: 13.5, y: 4.5}
+      - {x: 12.5, y: 1.5}
+      - {x: 14.5, y: -0.5}
+      - {x: 15.5, y: -0.5}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 4, y: 128}
   - name: Frame_37
     originalName: 
@@ -637,12 +1072,47 @@ ScriptedImporter:
       height: 19
     spriteID: 25233e99aa0423f4dbd6763eb6f98183
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: 4, y: -6.5}
+      - {x: 8, y: -7.5}
+      - {x: 9, y: -8.5}
+      - {x: 11, y: -8.5}
+      - {x: 13, y: -6.5}
+      - {x: 12, y: -3.5}
+      - {x: 13, y: -3.5}
+      - {x: 13, y: 1.5}
+      - {x: 12, y: 2.5}
+      - {x: 9, y: 1.5}
+      - {x: 9, y: -1.5}
+      - {x: 10.5, y: -3}
+      - {x: 6, y: -1.5}
+      - {x: 2, y: 2.5}
+      - {x: 2, y: 7.5}
+      - {x: 0, y: 9.5}
+      - {x: -7, y: 9.5}
+      - {x: -9, y: 7.5}
+      - {x: -9, y: 2.5}
+      - {x: -11, y: 1.5}
+      - {x: -12, y: -1.5}
+      - {x: -13, y: -3.5}
+      - {x: -13, y: -8.5}
+      - {x: -10, y: -7.5}
+      - {x: -9, y: -9.5}
+      - {x: 4, y: -9.5}
+    - outline:
+      - {x: 13, y: 6.5}
+      - {x: 12, y: 9.5}
+      - {x: 9, y: 9.5}
+      - {x: 7, y: 7.5}
+      - {x: 7, y: 5.5}
+      - {x: 9, y: 3.5}
+      - {x: 10, y: 3.5}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 4, y: 450}
   - name: Frame_38
     originalName: 
@@ -658,12 +1128,37 @@ ScriptedImporter:
       height: 19
     spriteID: f4ea9fa6beafa1a4fb57f850fd2b9280
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: 2, y: -3.5}
+      - {x: 11, y: -6.5}
+      - {x: 11, y: -5.5}
+      - {x: 2, y: -2.5}
+      - {x: -1, y: 3.5}
+      - {x: 0, y: 6.5}
+      - {x: -2, y: 8.5}
+      - {x: -5, y: 8.5}
+      - {x: -7, y: 6.5}
+      - {x: -6, y: 3.5}
+      - {x: -6, y: 2.5}
+      - {x: -10, y: -2.5}
+      - {x: -9, y: -3.5}
+      - {x: -13, y: -5.5}
+      - {x: -13, y: -6.5}
+      - {x: -9, y: -4.5}
+      - {x: -8, y: -5.5}
+      - {x: -8, y: -7.5}
+      - {x: 1, y: -7.5}
+    - outline:
+      - {x: -6, y: 2.5}
+      - {x: -6, y: 2.5}
+      - {x: -6, y: 2.5}
+      - {x: -6, y: 2.5}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 4, y: 477}
   - name: Frame_2
     originalName: 
@@ -679,12 +1174,33 @@ ScriptedImporter:
       height: 20
     spriteID: 1420ead219f67d34aa19f52e5ceccafd
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: -5, y: -8}
+      - {x: -3, y: -10}
+      - {x: 5, y: -10}
+      - {x: 7, y: -7}
+      - {x: 10, y: -9}
+      - {x: 12, y: -9}
+      - {x: 12, y: -4}
+      - {x: 9, y: -2}
+      - {x: 6, y: 3}
+      - {x: 6, y: 8}
+      - {x: 4, y: 10}
+      - {x: -3, y: 10}
+      - {x: -5, y: 8}
+      - {x: -5, y: 2}
+      - {x: -7, y: 1}
+      - {x: -8, y: -2}
+      - {x: -10, y: -4}
+      - {x: -12, y: -5}
+      - {x: -12, y: -10}
+      - {x: -10, y: -10}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 56, y: 125}
   - name: Frame_3
     originalName: 
@@ -700,12 +1216,33 @@ ScriptedImporter:
       height: 20
     spriteID: e74e19e96e5447d42b045805d58c64e9
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: -5.5, y: -7}
+      - {x: -3.5, y: -10}
+      - {x: 4.5, y: -10}
+      - {x: 6.5, y: -7}
+      - {x: 9.5, y: -9}
+      - {x: 9.5, y: -10}
+      - {x: 12.5, y: -10}
+      - {x: 12.5, y: -4}
+      - {x: 8.5, y: -2}
+      - {x: 5.5, y: 3}
+      - {x: 5.5, y: 8}
+      - {x: 3.5, y: 10}
+      - {x: -3.5, y: 10}
+      - {x: -5.5, y: 8}
+      - {x: -5.5, y: 2}
+      - {x: -7.5, y: 1}
+      - {x: -10.5, y: -4}
+      - {x: -12.5, y: -5}
+      - {x: -12.5, y: -10}
+      - {x: -10.5, y: -10}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 4, y: 254}
   - name: Frame_4
     originalName: 
@@ -721,12 +1258,33 @@ ScriptedImporter:
       height: 20
     spriteID: e0f45cee0c068de41b48af8c04f10b5a
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: -5.5, y: -7}
+      - {x: -3.5, y: -10}
+      - {x: 4.5, y: -10}
+      - {x: 6.5, y: -7}
+      - {x: 9.5, y: -9}
+      - {x: 9.5, y: -10}
+      - {x: 12.5, y: -10}
+      - {x: 12.5, y: -4}
+      - {x: 8.5, y: -2}
+      - {x: 5.5, y: 3}
+      - {x: 5.5, y: 8}
+      - {x: 3.5, y: 10}
+      - {x: -3.5, y: 10}
+      - {x: -5.5, y: 8}
+      - {x: -5.5, y: 2}
+      - {x: -7.5, y: 1}
+      - {x: -10.5, y: -4}
+      - {x: -12.5, y: -5}
+      - {x: -12.5, y: -10}
+      - {x: -10.5, y: -10}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 4, y: 282}
   - name: Frame_5
     originalName: 
@@ -742,12 +1300,33 @@ ScriptedImporter:
       height: 20
     spriteID: c030fc107750ad4428fd872709cefbcb
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: -5.5, y: -7}
+      - {x: -3.5, y: -10}
+      - {x: 2.5, y: -10}
+      - {x: 6.5, y: -7}
+      - {x: 9.5, y: -9}
+      - {x: 9.5, y: -10}
+      - {x: 12.5, y: -10}
+      - {x: 12.5, y: -4}
+      - {x: 8.5, y: -2}
+      - {x: 5.5, y: 3}
+      - {x: 5.5, y: 8}
+      - {x: 3.5, y: 10}
+      - {x: -3.5, y: 10}
+      - {x: -5.5, y: 8}
+      - {x: -5.5, y: 2}
+      - {x: -7.5, y: 1}
+      - {x: -10.5, y: -4}
+      - {x: -12.5, y: -5}
+      - {x: -12.5, y: -10}
+      - {x: -10.5, y: -10}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 4, y: 310}
   - name: Frame_6
     originalName: 
@@ -763,12 +1342,33 @@ ScriptedImporter:
       height: 20
     spriteID: a3ba2bab7207c42448609d689137b600
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: -5.5, y: -7}
+      - {x: -3.5, y: -10}
+      - {x: 2.5, y: -10}
+      - {x: 6.5, y: -7}
+      - {x: 9.5, y: -9}
+      - {x: 9.5, y: -10}
+      - {x: 12.5, y: -10}
+      - {x: 12.5, y: -4}
+      - {x: 8.5, y: -2}
+      - {x: 5.5, y: 3}
+      - {x: 5.5, y: 8}
+      - {x: 3.5, y: 10}
+      - {x: -3.5, y: 10}
+      - {x: -5.5, y: 8}
+      - {x: -5.5, y: 3}
+      - {x: -8.5, y: -2}
+      - {x: -10.5, y: -4}
+      - {x: -12.5, y: -5}
+      - {x: -12.5, y: -10}
+      - {x: -10.5, y: -10}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 4, y: 338}
   - name: Frame_7
     originalName: 
@@ -784,12 +1384,34 @@ ScriptedImporter:
       height: 20
     spriteID: b8e7249ecf7f7f84fa5c9a9d9770a7fb
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: -7, y: -8}
+      - {x: -5, y: -8}
+      - {x: -3, y: -10}
+      - {x: 3, y: -10}
+      - {x: 6, y: -7}
+      - {x: 10, y: -9}
+      - {x: 12, y: -9}
+      - {x: 12, y: -4}
+      - {x: 9, y: -2}
+      - {x: 6, y: 3}
+      - {x: 6, y: 8}
+      - {x: 4, y: 10}
+      - {x: -3, y: 10}
+      - {x: -5, y: 8}
+      - {x: -5, y: 3}
+      - {x: -7, y: 1}
+      - {x: -7, y: -1}
+      - {x: -10, y: -4}
+      - {x: -12, y: -5}
+      - {x: -12, y: -10}
+      - {x: -10, y: -10}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 56, y: 153}
   - name: Frame_8
     originalName: 
@@ -805,12 +1427,34 @@ ScriptedImporter:
       height: 20
     spriteID: 08d1ad1f8fbf47345989fdf4f2af6ee8
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: -7.5, y: -8}
+      - {x: -5.5, y: -8}
+      - {x: -3.5, y: -10}
+      - {x: 2.5, y: -10}
+      - {x: 5.5, y: -7}
+      - {x: 9.5, y: -9}
+      - {x: 9.5, y: -10}
+      - {x: 12.5, y: -10}
+      - {x: 12.5, y: -4}
+      - {x: 8.5, y: -2}
+      - {x: 5.5, y: 3}
+      - {x: 5.5, y: 8}
+      - {x: 3.5, y: 10}
+      - {x: -3.5, y: 10}
+      - {x: -5.5, y: 8}
+      - {x: -5.5, y: 3}
+      - {x: -7.5, y: 1}
+      - {x: -8.5, y: -3}
+      - {x: -12.5, y: -5}
+      - {x: -12.5, y: -10}
+      - {x: -10.5, y: -10}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 4, y: 366}
   - name: Frame_9
     originalName: 
@@ -826,12 +1470,35 @@ ScriptedImporter:
       height: 20
     spriteID: 26d0f9a168a4d8146a25ec3552ebb163
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: -7.5, y: -8}
+      - {x: -5.5, y: -8}
+      - {x: -3.5, y: -10}
+      - {x: 2.5, y: -10}
+      - {x: 5.5, y: -7}
+      - {x: 9.5, y: -9}
+      - {x: 9.5, y: -10}
+      - {x: 12.5, y: -10}
+      - {x: 12.5, y: -4}
+      - {x: 8.5, y: -2}
+      - {x: 8.5, y: -1}
+      - {x: 5.5, y: 3}
+      - {x: 5.5, y: 8}
+      - {x: 3.5, y: 10}
+      - {x: -3.5, y: 10}
+      - {x: -5.5, y: 8}
+      - {x: -5.5, y: 2}
+      - {x: -8.5, y: -1}
+      - {x: -8.5, y: -3}
+      - {x: -12.5, y: -5}
+      - {x: -12.5, y: -10}
+      - {x: -10.5, y: -10}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 4, y: 394}
   - name: Frame_26
     originalName: 
@@ -847,12 +1514,28 @@ ScriptedImporter:
       height: 14
     spriteID: 1cbfc3a6f34b46c48a226bfacf2c00f5
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: -1.5, y: -6}
+      - {x: -0.5, y: -7}
+      - {x: 14.5, y: -7}
+      - {x: 14.5, y: 1}
+      - {x: 11.5, y: 1}
+      - {x: 8.5, y: 4}
+      - {x: 8.5, y: 5}
+      - {x: 6.5, y: 7}
+      - {x: -0.5, y: 7}
+      - {x: -6.5, y: 1}
+      - {x: -14.5, y: 0}
+      - {x: -14.5, y: -5}
+      - {x: -10.5, y: -5}
+      - {x: -9.5, y: -7}
+      - {x: -2.5, y: -7}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 132, y: 172}
   - name: Frame_27
     originalName: 
@@ -868,12 +1551,35 @@ ScriptedImporter:
       height: 15
     spriteID: 87b2c4da83b1e62488f21664c92943b4
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: 9.5, y: -5.5}
+      - {x: 10.5, y: -7.5}
+      - {x: 14.5, y: -7.5}
+      - {x: 14.5, y: -3.5}
+      - {x: 13.5, y: -3.5}
+      - {x: 14.5, y: -2.5}
+      - {x: 14.5, y: 1.5}
+      - {x: 11.5, y: 1.5}
+      - {x: 8.5, y: 3.5}
+      - {x: 8.5, y: 5.5}
+      - {x: 6.5, y: 7.5}
+      - {x: -0.5, y: 7.5}
+      - {x: -6.5, y: 1.5}
+      - {x: -14.5, y: 0.5}
+      - {x: -14.5, y: -4.5}
+      - {x: -10.5, y: -4.5}
+      - {x: -11.5, y: -5.5}
+      - {x: -10.5, y: -7.5}
+      - {x: 8.5, y: -7.5}
+      - {x: 9.5, y: -2.5}
+      - {x: 10.5, y: -3.5}
+      - {x: 11.5, y: -3.5}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 132, y: 27}
   - name: Frame_28
     originalName: 
@@ -889,12 +1595,36 @@ ScriptedImporter:
       height: 15
     spriteID: 1a056fcd683ad7c42bef8484bfcb0316
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: 9.5, y: -5.5}
+      - {x: 9.5, y: -3.5}
+      - {x: 12.5, y: -4.5}
+      - {x: 11.5, y: -5.5}
+      - {x: 12.5, y: -7.5}
+      - {x: 14.5, y: -7.5}
+      - {x: 14.5, y: 0.5}
+      - {x: 11.5, y: 0.5}
+      - {x: 8.5, y: 3.5}
+      - {x: 8.5, y: 5.5}
+      - {x: 6.5, y: 7.5}
+      - {x: -0.5, y: 7.5}
+      - {x: -2.5, y: 5.5}
+      - {x: -2.5, y: 3.5}
+      - {x: -5.5, y: 1.5}
+      - {x: -6.5, y: 0.5}
+      - {x: -9.5, y: 0.5}
+      - {x: -10.5, y: -0.5}
+      - {x: -14.5, y: -0.5}
+      - {x: -14.5, y: -5.5}
+      - {x: -11.5, y: -5.5}
+      - {x: -10.5, y: -7.5}
+      - {x: 7.5, y: -7.5}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 132, y: 50}
   - name: Frame_29
     originalName: 
@@ -910,12 +1640,36 @@ ScriptedImporter:
       height: 15
     spriteID: 0c135d8309635874086b3cf587e32dff
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: 9.5, y: -5.5}
+      - {x: 9.5, y: -3.5}
+      - {x: 12.5, y: -4.5}
+      - {x: 11.5, y: -5.5}
+      - {x: 12.5, y: -7.5}
+      - {x: 14.5, y: -7.5}
+      - {x: 14.5, y: 0.5}
+      - {x: 11.5, y: 0.5}
+      - {x: 8.5, y: 3.5}
+      - {x: 8.5, y: 5.5}
+      - {x: 6.5, y: 7.5}
+      - {x: -0.5, y: 7.5}
+      - {x: -2.5, y: 5.5}
+      - {x: -2.5, y: 3.5}
+      - {x: -5.5, y: 0.5}
+      - {x: -14.5, y: -0.5}
+      - {x: -14.5, y: -5.5}
+      - {x: -9.5, y: -5.5}
+      - {x: -8.5, y: -4.5}
+      - {x: -6.5, y: -4.5}
+      - {x: -8.5, y: -6.5}
+      - {x: -8.5, y: -7.5}
+      - {x: 7.5, y: -7.5}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 132, y: 73}
   - name: Frame_30
     originalName: 
@@ -931,12 +1685,34 @@ ScriptedImporter:
       height: 20
     spriteID: 2a41d4fee8e2e024488972938938d15c
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: -4, y: -9}
+      - {x: -3, y: -10}
+      - {x: 1, y: -10}
+      - {x: 2, y: -9}
+      - {x: 12, y: 2}
+      - {x: 12, y: 9}
+      - {x: 11, y: 10}
+      - {x: 9, y: 10}
+      - {x: 1, y: 6}
+      - {x: -2, y: 10}
+      - {x: -9, y: 10}
+      - {x: -11, y: 8}
+      - {x: -11, y: 2}
+      - {x: -12, y: 1}
+      - {x: -12, y: -10}
+      - {x: -5, y: -10}
+    - outline:
+      - {x: 9, y: -8}
+      - {x: 6, y: -7}
+      - {x: 4, y: -10}
+      - {x: 9, y: -10}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 56, y: 181}
   - name: Frame_31
     originalName: 
@@ -952,12 +1728,40 @@ ScriptedImporter:
       height: 20
     spriteID: 946491ca99f3b814287526da441e26a7
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: -3.5, y: -9}
+      - {x: -2.5, y: -9}
+      - {x: -1.5, y: -10}
+      - {x: 1.5, y: -10}
+      - {x: 2.5, y: -9}
+      - {x: 2.5, y: -7}
+      - {x: 4.5, y: -5}
+      - {x: 6.5, y: -5}
+      - {x: 9.5, y: -2}
+      - {x: 9.5, y: 0}
+      - {x: 11.5, y: 0}
+      - {x: 11.5, y: 7}
+      - {x: 9.5, y: 9}
+      - {x: 7.5, y: 9}
+      - {x: 1.5, y: 6}
+      - {x: -1.5, y: 10}
+      - {x: -8.5, y: 10}
+      - {x: -10.5, y: 8}
+      - {x: -10.5, y: 3}
+      - {x: -11.5, y: 1}
+      - {x: -11.5, y: -10}
+      - {x: -4.5, y: -10}
+    - outline:
+      - {x: 9.5, y: -8}
+      - {x: 6.5, y: -7}
+      - {x: 4.5, y: -10}
+      - {x: 9.5, y: -10}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 56, y: 237}
   - name: Frame_32
     originalName: 
@@ -973,12 +1777,38 @@ ScriptedImporter:
       height: 20
     spriteID: ac396e535e89f9a468f69535ac177fe3
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: 3, y: -7}
+      - {x: 5, y: -5}
+      - {x: 5, y: -2}
+      - {x: 7, y: -4}
+      - {x: 8, y: -4}
+      - {x: 10, y: -2}
+      - {x: 10, y: 0}
+      - {x: 9, y: 1}
+      - {x: 11, y: 2}
+      - {x: 11, y: 8}
+      - {x: 10, y: 9}
+      - {x: 8, y: 9}
+      - {x: 2, y: 6}
+      - {x: -1, y: 10}
+      - {x: -8, y: 10}
+      - {x: -10, y: 8}
+      - {x: -10, y: 3}
+      - {x: -11, y: 2}
+      - {x: -11, y: -10}
+      - {x: 3, y: -10}
+    - outline:
+      - {x: 10, y: -8}
+      - {x: 7, y: -7}
+      - {x: 5, y: -10}
+      - {x: 10, y: -10}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 56, y: 319}
   - name: Frame_33
     originalName: 
@@ -994,12 +1824,46 @@ ScriptedImporter:
       height: 20
     spriteID: 996fbd5d823332d4c950facfaadafdb3
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: -3, y: -9}
+      - {x: -2, y: -9}
+      - {x: -1, y: -10}
+      - {x: 2, y: -10}
+      - {x: 4, y: -6}
+      - {x: 4, y: 1}
+      - {x: 8, y: 3}
+      - {x: 10, y: 1}
+      - {x: 11, y: 1}
+      - {x: 11, y: 8}
+      - {x: 10, y: 9}
+      - {x: 8, y: 9}
+      - {x: 2, y: 6}
+      - {x: -1, y: 10}
+      - {x: -8, y: 10}
+      - {x: -10, y: 8}
+      - {x: -10, y: 4}
+      - {x: -11, y: 3}
+      - {x: -11, y: -9}
+      - {x: -10, y: -9}
+      - {x: -9, y: -10}
+      - {x: -4, y: -10}
+    - outline:
+      - {x: 9, y: -3}
+      - {x: 9, y: 0}
+      - {x: 6, y: 1}
+      - {x: 4, y: -1}
+      - {x: 6, y: -4}
+    - outline:
+      - {x: 10, y: -8}
+      - {x: 7, y: -7}
+      - {x: 5, y: -10}
+      - {x: 10, y: -10}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 56, y: 347}
   - name: Frame_39
     originalName: 
@@ -1015,12 +1879,37 @@ ScriptedImporter:
       height: 20
     spriteID: b58ec46efb407ff42933a132b079ede4
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: 4, y: -9}
+      - {x: 5, y: -10}
+      - {x: 7, y: -9}
+      - {x: 8, y: -10}
+      - {x: 12, y: -10}
+      - {x: 12, y: -7}
+      - {x: 11, y: -7}
+      - {x: 8, y: -4}
+      - {x: 8, y: -2}
+      - {x: 5, y: 2}
+      - {x: 6, y: 4}
+      - {x: 6, y: 7}
+      - {x: 4, y: 10}
+      - {x: -3, y: 10}
+      - {x: -5, y: 8}
+      - {x: -5, y: 3}
+      - {x: -6, y: 2}
+      - {x: -7, y: 3}
+      - {x: -9, y: 3}
+      - {x: -12, y: 0}
+      - {x: -12, y: -9}
+      - {x: -10, y: -8}
+      - {x: -9, y: -10}
+      - {x: 3, y: -10}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 56, y: 209}
   - name: Frame_40
     originalName: 
@@ -1036,12 +1925,38 @@ ScriptedImporter:
       height: 20
     spriteID: e41960141547eb24a8920ce2455be7ce
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: 3, y: -9}
+      - {x: 3, y: -8}
+      - {x: 4, y: -7}
+      - {x: 4, y: -9}
+      - {x: 5, y: -10}
+      - {x: 11, y: -10}
+      - {x: 11, y: -3}
+      - {x: 9, y: -3}
+      - {x: 6.5, y: -4.5}
+      - {x: 7, y: -4}
+      - {x: 8, y: 0}
+      - {x: 4, y: 3}
+      - {x: 4, y: 8}
+      - {x: 3, y: 10}
+      - {x: -4, y: 10}
+      - {x: -6, y: 8}
+      - {x: -6, y: 4}
+      - {x: -9, y: 4}
+      - {x: -11, y: 2}
+      - {x: -11, y: -3}
+      - {x: -9, y: -3}
+      - {x: -9, y: -6}
+      - {x: -11, y: -6}
+      - {x: -11, y: -10}
+      - {x: 2, y: -10}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 56, y: 375}
   - name: Frame_41
     originalName: 
@@ -1057,12 +1972,48 @@ ScriptedImporter:
       height: 20
     spriteID: 0613333d3cd123647bfbaa0e917e1f9a
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: 3.5, y: -8}
+      - {x: 4.5, y: -10}
+      - {x: 8.5, y: -10}
+      - {x: 9.5, y: -9}
+      - {x: 8.5, y: -6}
+      - {x: 5.5, y: -6}
+      - {x: 6.5, y: -5}
+      - {x: 6.5, y: -2}
+      - {x: 7.5, y: -3}
+      - {x: 10.5, y: -2}
+      - {x: 10.5, y: 0}
+      - {x: 6.5, y: 4}
+      - {x: 4.5, y: 4}
+      - {x: 5.5, y: 5}
+      - {x: 5.5, y: 8}
+      - {x: 3.5, y: 10}
+      - {x: -3.5, y: 10}
+      - {x: -5.5, y: 8}
+      - {x: -5.5, y: 6}
+      - {x: -6.5, y: 5}
+      - {x: -7.5, y: 5}
+      - {x: -10.5, y: 8}
+      - {x: -11.5, y: 8}
+      - {x: -12.5, y: 7}
+      - {x: -12.5, y: -1}
+      - {x: -7.5, y: -6}
+      - {x: -7.5, y: -9}
+      - {x: -6.5, y: -10}
+      - {x: 3.5, y: -10}
+    - outline:
+      - {x: -8.5, y: -7}
+      - {x: -11.5, y: -6}
+      - {x: -12.5, y: -7}
+      - {x: -12.5, y: -10}
+      - {x: -8.5, y: -10}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 4, y: 422}
   - name: Frame_42
     originalName: 
@@ -1078,12 +2029,41 @@ ScriptedImporter:
       height: 20
     spriteID: 2f3fac09466117c4d8e52b7e962a9f95
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: 9, y: -8}
+      - {x: 6, y: -6}
+      - {x: 7, y: -2}
+      - {x: 5, y: 2}
+      - {x: 6, y: 3}
+      - {x: 6, y: 8}
+      - {x: 4, y: 10}
+      - {x: -3, y: 10}
+      - {x: -5, y: 9}
+      - {x: -6, y: 5}
+      - {x: -10, y: 9}
+      - {x: -12, y: 9}
+      - {x: -14, y: 4}
+      - {x: -12, y: 2}
+      - {x: -14, y: 2}
+      - {x: -14, y: -4}
+      - {x: -13, y: -5}
+      - {x: -9, y: -4}
+      - {x: -7, y: -6}
+      - {x: -7, y: -9}
+      - {x: -6, y: -10}
+      - {x: 9, y: -10}
+    - outline:
+      - {x: 13, y: -3}
+      - {x: 13, y: 0}
+      - {x: 10, y: 1}
+      - {x: 8, y: -1}
+      - {x: 10, y: -4}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 4, y: 155}
   - name: Frame_43
     originalName: 
@@ -1099,12 +2079,35 @@ ScriptedImporter:
       height: 20
     spriteID: f07f493b79ba4d645bd0b57e8dba2988
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: 4.5, y: -9}
+      - {x: 5.5, y: -1}
+      - {x: 4.5, y: 0}
+      - {x: 5.5, y: 3}
+      - {x: 5.5, y: 8}
+      - {x: 3.5, y: 10}
+      - {x: -3.5, y: 10}
+      - {x: -6.5, y: 6}
+      - {x: -9.5, y: 9}
+      - {x: -10.5, y: 9}
+      - {x: -13.5, y: 7}
+      - {x: -13.5, y: 4}
+      - {x: -12.5, y: 3}
+      - {x: -13.5, y: 3}
+      - {x: -13.5, y: -2}
+      - {x: -12.5, y: -3}
+      - {x: -10.5, y: -2}
+      - {x: -9.5, y: -6}
+      - {x: -7.5, y: -7}
+      - {x: -7.5, y: -9}
+      - {x: -6.5, y: -10}
+      - {x: 3.5, y: -10}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 4, y: 204}
   - name: Frame_44
     originalName: 
@@ -1120,12 +2123,51 @@ ScriptedImporter:
       height: 15
     spriteID: 42b9a802ba2beef489e1d2c613371082
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: 31.5, y: -6.5}
+      - {x: 33.5, y: -6.5}
+      - {x: 34.5, y: -5.5}
+      - {x: 35.5, y: -7.5}
+      - {x: 37.5, y: -7.5}
+      - {x: 37.5, y: 2.5}
+      - {x: 32.5, y: 2.5}
+      - {x: 31.5, y: 3.5}
+      - {x: 31.5, y: 5.5}
+      - {x: 29.5, y: 7.5}
+      - {x: 22.5, y: 7.5}
+      - {x: 20.5, y: 6.5}
+      - {x: 17.5, y: 5.5}
+      - {x: 14.5, y: 1.5}
+      - {x: 1.5, y: 1.5}
+      - {x: -2.5, y: 3.5}
+      - {x: -6.5, y: 3.5}
+      - {x: -7.5, y: 4.5}
+      - {x: -13.5, y: 5.5}
+      - {x: -14.5, y: 6.5}
+      - {x: -21.5, y: 6.5}
+      - {x: -23.5, y: 4.5}
+      - {x: -23.5, y: 2.5}
+      - {x: -20.5, y: -0.5}
+      - {x: -18.5, y: -0.5}
+      - {x: -10.5, y: -4.5}
+      - {x: -4.5, y: -4.5}
+      - {x: -3.5, y: -5.5}
+      - {x: 1.5, y: -5.5}
+      - {x: 2.5, y: -6.5}
+      - {x: 14.5, y: -6.5}
+      - {x: 14.5, y: -7.5}
+      - {x: 30.5, y: -7.5}
+    - outline:
+      - {x: -34.5, y: 1.5}
+      - {x: -34.5, y: 4.5}
+      - {x: -37.5, y: 5.5}
+      - {x: -37.5, y: 0.5}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 4, y: 4}
   - name: Frame_45
     originalName: 
@@ -1141,12 +2183,63 @@ ScriptedImporter:
       height: 15
     spriteID: 050152788b159f64e988d798e484bbf8
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: -3, y: -5.5}
+      - {x: 2, y: -5.5}
+      - {x: 3, y: -4.5}
+      - {x: 5, y: -4.5}
+      - {x: 3, y: -6.5}
+      - {x: 3, y: -7.5}
+      - {x: 9, y: -7.5}
+      - {x: 10, y: -6.5}
+      - {x: 11, y: -7.5}
+      - {x: 19, y: -7.5}
+      - {x: 21, y: -4.5}
+      - {x: 22, y: -4.5}
+      - {x: 24, y: -7.5}
+      - {x: 27, y: -7.5}
+      - {x: 28, y: -6.5}
+      - {x: 28, y: 0.5}
+      - {x: 23, y: 0.5}
+      - {x: 23, y: 1.5}
+      - {x: 18, y: 7.5}
+      - {x: 11, y: 7.5}
+      - {x: 10, y: 6.5}
+      - {x: 9, y: 6.5}
+      - {x: 4, y: 2.5}
+      - {x: 3, y: 0.5}
+      - {x: 2, y: 0.5}
+      - {x: 1, y: -0.5}
+      - {x: -3, y: -0.5}
+      - {x: -4, y: -1.5}
+      - {x: -9, y: -1.5}
+      - {x: -11, y: -3.5}
+      - {x: -11, y: -5.5}
+      - {x: -9, y: -7.5}
+      - {x: -5, y: -7.5}
+    - outline:
+      - {x: -24, y: -2.5}
+      - {x: -24, y: -0.5}
+      - {x: -27, y: 2.5}
+      - {x: -28, y: 2.5}
+      - {x: -28, y: -2.5}
+      - {x: -27, y: -3.5}
+    - outline:
+      - {x: -11, y: -3.5}
+      - {x: -11, y: -1.5}
+      - {x: -13, y: 0.5}
+      - {x: -20, y: 0.5}
+      - {x: -21, y: -1.5}
+      - {x: -21, y: -4.5}
+      - {x: -20, y: -5.5}
+      - {x: -17, y: -6.5}
+      - {x: -14, y: -6.5}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 152, y: 4}
   - name: Frame_46
     originalName: 
@@ -1162,12 +2255,60 @@ ScriptedImporter:
       height: 15
     spriteID: 478d8921e714a9c4e9ef3d58f536fc9e
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: 9.5, y: -6.5}
+      - {x: 10.5, y: -7.5}
+      - {x: 18.5, y: -7.5}
+      - {x: 21.5, y: -4.5}
+      - {x: 23.5, y: -4.5}
+      - {x: 22.5, y: -6.5}
+      - {x: 23.5, y: -7.5}
+      - {x: 28.5, y: -7.5}
+      - {x: 28.5, y: -0.5}
+      - {x: 22.5, y: 0.5}
+      - {x: 21.5, y: 1.5}
+      - {x: 21.5, y: 2.5}
+      - {x: 17.5, y: 7.5}
+      - {x: 10.5, y: 7.5}
+      - {x: 3.5, y: 0.5}
+      - {x: 1.5, y: 0.5}
+      - {x: 0.5, y: -0.5}
+      - {x: -3.5, y: -0.5}
+      - {x: -5.5, y: -1.5}
+      - {x: -6.5, y: -0.5}
+      - {x: -8.5, y: -0.5}
+      - {x: -10.5, y: -2.5}
+      - {x: -10.5, y: -4.5}
+      - {x: -8.5, y: -6.5}
+      - {x: -6.5, y: -6.5}
+      - {x: -4.5, y: -4.5}
+      - {x: -3.5, y: -5.5}
+      - {x: 1.5, y: -5.5}
+      - {x: 2.5, y: -4.5}
+      - {x: 5.5, y: -4.5}
+      - {x: 2.5, y: -6.5}
+      - {x: 2.5, y: -7.5}
+      - {x: 8.5, y: -7.5}
+    - outline:
+      - {x: -25.5, y: -1.5}
+      - {x: -25.5, y: 1.5}
+      - {x: -28.5, y: 2.5}
+      - {x: -28.5, y: -2.5}
+    - outline:
+      - {x: -11.5, y: -4.5}
+      - {x: -11.5, y: -0.5}
+      - {x: -12.5, y: 1.5}
+      - {x: -15.5, y: 1.5}
+      - {x: -18.5, y: -1.5}
+      - {x: -18.5, y: -3.5}
+      - {x: -16.5, y: -5.5}
+      - {x: -14.5, y: -5.5}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 87, y: 4}
   - name: Frame_47
     originalName: 
@@ -1183,12 +2324,49 @@ ScriptedImporter:
       height: 15
     spriteID: fe8ccdac11b11e14899725c294bd5fc0
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: 14, y: -3.5}
+      - {x: 17, y: -4.5}
+      - {x: 16, y: -5.5}
+      - {x: 17, y: -7.5}
+      - {x: 20, y: -7.5}
+      - {x: 22, y: -6.5}
+      - {x: 22, y: -0.5}
+      - {x: 16, y: 0.5}
+      - {x: 13, y: 3.5}
+      - {x: 13, y: 5.5}
+      - {x: 11, y: 7.5}
+      - {x: 4, y: 7.5}
+      - {x: -3, y: 0.5}
+      - {x: -5, y: 0.5}
+      - {x: -6, y: -0.5}
+      - {x: -10, y: -0.5}
+      - {x: -12, y: -1.5}
+      - {x: -13, y: -0.5}
+      - {x: -16, y: -1.5}
+      - {x: -16, y: -4.5}
+      - {x: -13, y: -5.5}
+      - {x: -12, y: -4.5}
+      - {x: -10, y: -5.5}
+      - {x: -5, y: -5.5}
+      - {x: -4, y: -4.5}
+      - {x: -2, y: -4.5}
+      - {x: -4, y: -6.5}
+      - {x: -4, y: -7.5}
+      - {x: 13, y: -7.5}
+    - outline:
+      - {x: -18, y: -3.5}
+      - {x: -18, y: -1.5}
+      - {x: -21, y: 1.5}
+      - {x: -22, y: 1.5}
+      - {x: -22, y: -3.5}
+      - {x: -21, y: -4.5}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 4, y: 27}
   - name: Frame_48
     originalName: 
@@ -1204,12 +2382,53 @@ ScriptedImporter:
       height: 15
     spriteID: 4c2165d9f34d1854792d149cf1889623
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: 14, y: -5.5}
+      - {x: 14, y: -3.5}
+      - {x: 17, y: -4.5}
+      - {x: 16, y: -5.5}
+      - {x: 17, y: -7.5}
+      - {x: 20, y: -7.5}
+      - {x: 21, y: -6.5}
+      - {x: 21, y: -1.5}
+      - {x: 20, y: -1.5}
+      - {x: 18, y: 0.5}
+      - {x: 16, y: 0.5}
+      - {x: 13, y: 3.5}
+      - {x: 13, y: 5.5}
+      - {x: 11, y: 7.5}
+      - {x: 4, y: 7.5}
+      - {x: 2, y: 5.5}
+      - {x: 2, y: 3.5}
+      - {x: -1, y: 1.5}
+      - {x: -2, y: 0.5}
+      - {x: -5, y: 0.5}
+      - {x: -6, y: -0.5}
+      - {x: -10, y: -0.5}
+      - {x: -11, y: -1.5}
+      - {x: -13, y: 0.5}
+      - {x: -14, y: 0.5}
+      - {x: -16, y: -1.5}
+      - {x: -14, y: -4.5}
+      - {x: -12, y: -3.5}
+      - {x: -10, y: -5.5}
+      - {x: -5, y: -5.5}
+      - {x: -4, y: -4.5}
+      - {x: -2, y: -4.5}
+      - {x: -4, y: -6.5}
+      - {x: -4, y: -7.5}
+      - {x: 12, y: -7.5}
+    - outline:
+      - {x: -18, y: -2.5}
+      - {x: -18, y: 0.5}
+      - {x: -21, y: 1.5}
+      - {x: -21, y: -3.5}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 4, y: 50}
   - name: Frame_49
     originalName: 
@@ -1225,12 +2444,34 @@ ScriptedImporter:
       height: 13
     spriteID: 2c07cd33726c7cb4a97ce9f3554aaffa
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: 21.5, y: -5.5}
+      - {x: 21.5, y: 0.5}
+      - {x: 19.5, y: 2.5}
+      - {x: 13.5, y: 3.5}
+      - {x: 12.5, y: 4.5}
+      - {x: 8.5, y: 4.5}
+      - {x: 7.5, y: 5.5}
+      - {x: 2.5, y: 5.5}
+      - {x: 1.5, y: 4.5}
+      - {x: -0.5, y: 6.5}
+      - {x: -8.5, y: 6.5}
+      - {x: -10.5, y: 4.5}
+      - {x: -14.5, y: 4.5}
+      - {x: -15.5, y: 5.5}
+      - {x: -18.5, y: 5.5}
+      - {x: -20.5, y: 3.5}
+      - {x: -20.5, y: 2.5}
+      - {x: -16.5, y: -1.5}
+      - {x: -21.5, y: -1.5}
+      - {x: -21.5, y: -6.5}
+      - {x: 20.5, y: -6.5}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 4, y: 183}
   - name: Frame_50
     originalName: 
@@ -1246,12 +2487,54 @@ ScriptedImporter:
       height: 13
     spriteID: b43b43479a931c44baea842976b744f7
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: 2.5, y: -5.5}
+      - {x: 2.5, y: -0.5}
+      - {x: 3.5, y: 0.5}
+      - {x: 5.5, y: 0.5}
+      - {x: 6.5, y: 3.5}
+      - {x: 4.5, y: 5.5}
+      - {x: 0.5, y: 4.5}
+      - {x: -0.5, y: 6.5}
+      - {x: -8.5, y: 6.5}
+      - {x: -10.5, y: 4.5}
+      - {x: -14.5, y: 4.5}
+      - {x: -15.5, y: 5.5}
+      - {x: -18.5, y: 5.5}
+      - {x: -18.5, y: 0.5}
+      - {x: -16.5, y: 0.5}
+      - {x: -17.5, y: -0.5}
+      - {x: -17.5, y: -2.5}
+      - {x: -14.5, y: -6.5}
+      - {x: 1.5, y: -6.5}
+    - outline:
+      - {x: 7.5, y: -4.5}
+      - {x: 10.5, y: -2.5}
+      - {x: 12.5, y: -2.5}
+      - {x: 15.5, y: 0.5}
+      - {x: 15.5, y: 2.5}
+      - {x: 12.5, y: 5.5}
+      - {x: 9.5, y: 5.5}
+      - {x: 7.5, y: 3.5}
+      - {x: 7.5, y: 1.5}
+      - {x: 5.5, y: -1.5}
+      - {x: 6.5, y: -3.5}
+      - {x: 3.5, y: -5.5}
+      - {x: 3.5, y: -6.5}
+      - {x: 8.5, y: -6.5}
+    - outline:
+      - {x: 18.5, y: -0.5}
+      - {x: 16.5, y: -0.5}
+      - {x: 12.5, y: -3.5}
+      - {x: 12.5, y: -5.5}
+      - {x: 13.5, y: -6.5}
+      - {x: 18.5, y: -6.5}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 56, y: 27}
   - name: Frame_51
     originalName: 
@@ -1267,12 +2550,51 @@ ScriptedImporter:
       height: 13
     spriteID: b41dc0c05153b2b4da854336c3819e67
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: 2.5, y: -5.5}
+      - {x: 2.5, y: -1.5}
+      - {x: 1.5, y: -0.5}
+      - {x: 6.5, y: 2.5}
+      - {x: 5.5, y: 5.5}
+      - {x: 2.5, y: 5.5}
+      - {x: 1.5, y: 4.5}
+      - {x: -0.5, y: 6.5}
+      - {x: -8.5, y: 6.5}
+      - {x: -10.5, y: 4.5}
+      - {x: -14.5, y: 4.5}
+      - {x: -15.5, y: 5.5}
+      - {x: -18.5, y: 5.5}
+      - {x: -18.5, y: 0.5}
+      - {x: -16.5, y: 0.5}
+      - {x: -14.5, y: -0.5}
+      - {x: -15.5, y: -1.5}
+      - {x: -15.5, y: -4.5}
+      - {x: -14.5, y: -6.5}
+      - {x: 1.5, y: -6.5}
+    - outline:
+      - {x: 7.5, y: -4.5}
+      - {x: 10.5, y: -2.5}
+      - {x: 10.5, y: -1.5}
+      - {x: 14.5, y: 1.5}
+      - {x: 13.5, y: 4.5}
+      - {x: 8.5, y: 4.5}
+      - {x: 5.5, y: -2.5}
+      - {x: 3.5, y: -5.5}
+      - {x: 3.5, y: -6.5}
+      - {x: 8.5, y: -6.5}
+    - outline:
+      - {x: 18.5, y: 0.5}
+      - {x: 16.5, y: 0.5}
+      - {x: 14.5, y: -1.5}
+      - {x: 14.5, y: -3.5}
+      - {x: 17.5, y: -6.5}
+      - {x: 18.5, y: -6.5}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 56, y: 48}
   - name: Frame_52
     originalName: 
@@ -1288,12 +2610,52 @@ ScriptedImporter:
       height: 14
     spriteID: 3fe254f3d8bf2c54ba360290ca51e41f
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: 3.5, y: -6}
+      - {x: 2.5, y: -4}
+      - {x: 2.5, y: -1}
+      - {x: 1.5, y: 0}
+      - {x: 6.5, y: 3}
+      - {x: 5.5, y: 6}
+      - {x: 2.5, y: 6}
+      - {x: 1.5, y: 5}
+      - {x: -0.5, y: 7}
+      - {x: -8.5, y: 7}
+      - {x: -10.5, y: 5}
+      - {x: -14.5, y: 5}
+      - {x: -15.5, y: 6}
+      - {x: -18.5, y: 6}
+      - {x: -18.5, y: 1}
+      - {x: -12.5, y: 0}
+      - {x: -14.5, y: -7}
+      - {x: 2.5, y: -7}
+    - outline:
+      - {x: 7.5, y: -5}
+      - {x: 10.5, y: -4}
+      - {x: 12.5, y: -3}
+      - {x: 15.5, y: 0}
+      - {x: 14.5, y: 3}
+      - {x: 10.5, y: 3}
+      - {x: 9.5, y: -1}
+      - {x: 8.5, y: 0}
+      - {x: 5.5, y: -2}
+      - {x: 6.5, y: -4}
+      - {x: 3.5, y: -6}
+      - {x: 3.5, y: -7}
+      - {x: 8.5, y: -7}
+    - outline:
+      - {x: 18.5, y: -2}
+      - {x: 17.5, y: -1}
+      - {x: 15.5, y: -1}
+      - {x: 14.5, y: -4}
+      - {x: 17.5, y: -7}
+      - {x: 18.5, y: -7}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 4, y: 232}
   - name: Frame_53
     originalName: 
@@ -1309,12 +2671,46 @@ ScriptedImporter:
       height: 14
     spriteID: d8fa94e80cefd5747bb18503bc0028f3
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: 5, y: -1}
+      - {x: 4, y: 0}
+      - {x: 9, y: 3}
+      - {x: 8, y: 6}
+      - {x: 5, y: 6}
+      - {x: 4, y: 5}
+      - {x: 2, y: 7}
+      - {x: -6, y: 7}
+      - {x: -8, y: 5}
+      - {x: -12, y: 5}
+      - {x: -13, y: 6}
+      - {x: -16, y: 6}
+      - {x: -16, y: 1}
+      - {x: -10, y: 0}
+      - {x: -10, y: -2}
+      - {x: -11, y: -3}
+      - {x: -12, y: -7}
+      - {x: 5, y: -7}
+    - outline:
+      - {x: 16, y: 2}
+      - {x: 14, y: 2}
+      - {x: 13, y: -1}
+      - {x: 15, y: -3}
+      - {x: 16, y: -3}
+    - outline:
+      - {x: 10, y: -5}
+      - {x: 13, y: -3}
+      - {x: 13, y: -1}
+      - {x: 10, y: 0}
+      - {x: 8, y: -2}
+      - {x: 6, y: -6}
+      - {x: 6, y: -7}
+      - {x: 11, y: -7}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 216, y: 4}
   - name: Frame_54
     originalName: 
@@ -1330,12 +2726,33 @@ ScriptedImporter:
       height: 19
     spriteID: 0b3f8dda5657ed848a3a1b4d9f370e19
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: 6, y: -6.5}
+      - {x: 7, y: -7.5}
+      - {x: 12, y: -8.5}
+      - {x: 12, y: -3.5}
+      - {x: 8, y: -2.5}
+      - {x: 5, y: -0.5}
+      - {x: 5, y: 0.5}
+      - {x: 3, y: 2.5}
+      - {x: 3, y: 7.5}
+      - {x: 1, y: 9.5}
+      - {x: -6, y: 9.5}
+      - {x: -8, y: 7.5}
+      - {x: -8, y: 2.5}
+      - {x: -10, y: 1.5}
+      - {x: -11, y: -1.5}
+      - {x: -12, y: -3.5}
+      - {x: -12, y: -8.5}
+      - {x: -9, y: -7.5}
+      - {x: -8, y: -9.5}
+      - {x: 5, y: -9.5}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 56, y: 265}
   - name: Frame_55
     originalName: 
@@ -1351,12 +2768,34 @@ ScriptedImporter:
       height: 19
     spriteID: 0ba83b34f734c914798657d9263d7c94
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: 5, y: -6.5}
+      - {x: 9, y: -7.5}
+      - {x: 10, y: -8.5}
+      - {x: 12, y: -8.5}
+      - {x: 12, y: -3.5}
+      - {x: 8, y: -2.5}
+      - {x: 5, y: -0.5}
+      - {x: 5, y: 0.5}
+      - {x: 3, y: 2.5}
+      - {x: 3, y: 7.5}
+      - {x: 1, y: 9.5}
+      - {x: -6, y: 9.5}
+      - {x: -8, y: 7.5}
+      - {x: -8, y: 2.5}
+      - {x: -11, y: -0.5}
+      - {x: -11, y: -2.5}
+      - {x: -12, y: -3.5}
+      - {x: -12, y: -8.5}
+      - {x: -9, y: -7.5}
+      - {x: -8, y: -9.5}
+      - {x: 5, y: -9.5}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 56, y: 292}
   - name: Frame_56
     originalName: 
@@ -1372,12 +2811,33 @@ ScriptedImporter:
       height: 19
     spriteID: 11a59cd147183004f8da1f935f70e075
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: 3.5, y: -8.5}
+      - {x: 4.5, y: -7.5}
+      - {x: 6.5, y: -8.5}
+      - {x: 11.5, y: -9.5}
+      - {x: 11.5, y: -4.5}
+      - {x: 7.5, y: -3.5}
+      - {x: 5.5, y: -2.5}
+      - {x: 5.5, y: -0.5}
+      - {x: 4.5, y: 2.5}
+      - {x: 1.5, y: 4.5}
+      - {x: 1.5, y: 7.5}
+      - {x: -0.5, y: 9.5}
+      - {x: -7.5, y: 9.5}
+      - {x: -9.5, y: 7.5}
+      - {x: -9.5, y: 2.5}
+      - {x: -10.5, y: 1.5}
+      - {x: -10.5, y: -0.5}
+      - {x: -11.5, y: -2.5}
+      - {x: -11.5, y: -9.5}
+      - {x: 3.5, y: -9.5}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 101, y: 81}
   - name: Frame_57
     originalName: 
@@ -1393,12 +2853,31 @@ ScriptedImporter:
       height: 16
     spriteID: ba02d2e7463c05b4ebc06709b3b08ac1
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: 9, y: -7}
+      - {x: 11, y: -8}
+      - {x: 13, y: -8}
+      - {x: 13, y: -3}
+      - {x: 8, y: -1}
+      - {x: 5, y: 1}
+      - {x: 5, y: 2}
+      - {x: 0, y: 8}
+      - {x: -7, y: 8}
+      - {x: -9, y: 6}
+      - {x: -9, y: 5}
+      - {x: -12, y: 2}
+      - {x: -12, y: 0}
+      - {x: -11, y: -1}
+      - {x: -12, y: -3}
+      - {x: -13, y: -3}
+      - {x: -13, y: -8}
+      - {x: 8, y: -8}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 132, y: 96}
   - name: Frame_58
     originalName: 
@@ -1414,12 +2893,25 @@ ScriptedImporter:
       height: 15
     spriteID: 00290a1f788175844bb8f477719edebe
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: 13.5, y: -3.5}
+      - {x: 8.5, y: -1.5}
+      - {x: 5.5, y: 0.5}
+      - {x: 5.5, y: 1.5}
+      - {x: 0.5, y: 7.5}
+      - {x: -6.5, y: 7.5}
+      - {x: -12.5, y: 1.5}
+      - {x: -12.5, y: -1.5}
+      - {x: -11.5, y: -2.5}
+      - {x: -13.5, y: -3.5}
+      - {x: -13.5, y: -7.5}
+      - {x: 13.5, y: -7.5}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 132, y: 194}
   - name: Frame_59
     originalName: 
@@ -1435,12 +2927,27 @@ ScriptedImporter:
       height: 12
     spriteID: 9fb9be6a347a01f4ea0703e2df650241
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: 14, y: -2}
+      - {x: 10, y: -2}
+      - {x: 7, y: 0}
+      - {x: 3, y: 3}
+      - {x: 3, y: 4}
+      - {x: 1, y: 6}
+      - {x: -7, y: 6}
+      - {x: -10, y: 5}
+      - {x: -10, y: 1}
+      - {x: -12, y: -1}
+      - {x: -12, y: -3}
+      - {x: -14, y: -2}
+      - {x: -14, y: -6}
+      - {x: 14, y: -6}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 132, y: 411}
   - name: Frame_60
     originalName: 
@@ -1456,12 +2963,25 @@ ScriptedImporter:
       height: 9
     spriteID: 763fb338badfff44f84f39fbe05708ea
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: 14, y: -0.5}
+      - {x: 9, y: -0.5}
+      - {x: 6, y: 1.5}
+      - {x: 3, y: 1.5}
+      - {x: 1, y: 3.5}
+      - {x: -1, y: 3.5}
+      - {x: -2, y: 4.5}
+      - {x: -12, y: 4.5}
+      - {x: -12, y: 0.5}
+      - {x: -14, y: 0.5}
+      - {x: -14, y: -4.5}
+      - {x: 14, y: -4.5}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 132, y: 448}
   - name: Frame_61
     originalName: 
@@ -1477,12 +2997,25 @@ ScriptedImporter:
       height: 9
     spriteID: f66b3faa8e58225429a10f2142876a2e
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: 14.5, y: -0.5}
+      - {x: 9.5, y: -0.5}
+      - {x: 6.5, y: 1.5}
+      - {x: 3.5, y: 1.5}
+      - {x: 1.5, y: 3.5}
+      - {x: -4.5, y: 4.5}
+      - {x: -9.5, y: 4.5}
+      - {x: -9.5, y: 2.5}
+      - {x: -12.5, y: -0.5}
+      - {x: -14.5, y: -0.5}
+      - {x: -14.5, y: -4.5}
+      - {x: 14.5, y: -4.5}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 132, y: 431}
   - name: Frame_62
     originalName: 
@@ -1498,12 +3031,25 @@ ScriptedImporter:
       height: 9
     spriteID: f880f35479a85b84ca85e154a98e7f20
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: 15, y: -0.5}
+      - {x: 10, y: -0.5}
+      - {x: 7, y: 1.5}
+      - {x: 4, y: 1.5}
+      - {x: 2, y: 3.5}
+      - {x: -1, y: 4.5}
+      - {x: -10, y: 4.5}
+      - {x: -10, y: 1.5}
+      - {x: -13, y: -1.5}
+      - {x: -15, y: -0.5}
+      - {x: -15, y: -4.5}
+      - {x: 15, y: -4.5}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 169, y: 27}
   - name: Frame_63
     originalName: 
@@ -1519,12 +3065,24 @@ ScriptedImporter:
       height: 9
     spriteID: f3ecdf34612b34149ad811173ebc826d
     spriteBone: []
-    spriteOutline: []
+    spriteOutline:
+    - outline:
+      - {x: 13, y: -0.5}
+      - {x: 8, y: -0.5}
+      - {x: 5, y: 1.5}
+      - {x: 2, y: 1.5}
+      - {x: 0, y: 3.5}
+      - {x: -3, y: 4.5}
+      - {x: -12, y: 4.5}
+      - {x: -12, y: 1.5}
+      - {x: -13, y: 0.5}
+      - {x: -13, y: -4.5}
+      - {x: 13, y: -4.5}
     vertices: []
     spritePhysicsOutline: []
     indices: 
     edges: []
-    tessellationDetail: 0
+    tessellationDetail: 1
     uvTransform: {x: 132, y: 465}
   spriteSheetImportData: []
   tileSetImportData:
