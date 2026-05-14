@@ -26,7 +26,7 @@ TagManager:
   - Boss
   - KINGWANGJJANGKYUWON
   - GODKYUWON
-  - 
+  - Charge_Lay
   - 
   - 
   - 
@@ -50,6 +50,9 @@ TagManager:
     locked: 0
   - name: BackProb
     uniqueID: 356559819
+    locked: 0
+  - name: InGameUI
+    uniqueID: 3914009943
     locked: 0
   - name: Default
     uniqueID: 0
