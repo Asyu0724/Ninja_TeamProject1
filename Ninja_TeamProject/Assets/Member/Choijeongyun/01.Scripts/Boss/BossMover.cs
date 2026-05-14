@@ -68,7 +68,7 @@ public class BossMover : MonoBehaviour
         if (Mathf.Abs(_distance.x) < 2.0f)
         {
             _moveDir.x = 0;
-            if (_distance.y > 0.4f)
+            if (_distance.y > 0.45f)
             {
                 if (!IsSkill) Attack3 = true;
                 // else if(!Attack3) bossRenderer.AnimSpeed(1.5f); 
@@ -104,7 +104,6 @@ public class BossMover : MonoBehaviour
         Attack1 = false;
         Attack2 = false;
         Attack3 = false;
-        bossHP.ChargeHP(false);
         IsJump = false;
         IsShake = false;
         // bossRenderer.AnimSpeed(1.0f);
