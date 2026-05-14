@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using UnityEngine;
 using Member.Kyuwon.SBossSO;
 
@@ -20,9 +22,14 @@ public class BossCharge : MonoBehaviour
         if (isHit != null)
         {
             float timeStamp = Time.time;
-            
             _animator.SetTrigger("Charger");
+            StartCoroutine(CanAttack());
         }
+    }
+
+    IEnumerator CanAttack()
+    {
+        yield return new WaitForSeconds(1.0f);
     }
     
     private void OnDrawGizmos()

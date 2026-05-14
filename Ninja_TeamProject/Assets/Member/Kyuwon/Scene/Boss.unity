@@ -902,11 +902,11 @@ GameObject:
   - component: {fileID: 654893119}
   - component: {fileID: 654893121}
   - component: {fileID: 654893120}
-  - component: {fileID: 654893122}
   - component: {fileID: 654893126}
   - component: {fileID: 654893127}
   - component: {fileID: 654893128}
   - component: {fileID: 654893130}
+  - component: {fileID: 654893131}
   - component: {fileID: 654893129}
   m_Layer: 12
   m_Name: Boss
@@ -995,22 +995,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.5, y: 1.5}
   m_Direction: 0
---- !u!114 &654893122
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 654893117}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f076847d617fc2e4f8fbcdd665c818c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SBossMove
-  rigid: {fileID: 0}
-  playerTRM: {fileID: 0}
-  moveDir: {x: 0, y: 0}
-  animator: {fileID: 0}
 --- !u!114 &654893126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1091,6 +1075,19 @@ MonoBehaviour:
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 8192
+--- !u!114 &654893131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654893117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e509ddb08c5ec8e4fb185131bf62411d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BossMove
+  bossData: {fileID: 11400000, guid: d2d43bd33b118bc4cbafeb376de47026, type: 2}
 --- !u!1 &694612451
 GameObject:
   m_ObjectHideFlags: 0
@@ -1628,7 +1625,7 @@ GameObject:
   - component: {fileID: 1529393957}
   - component: {fileID: 1529393958}
   m_Layer: 13
-  m_Name: Square
+  m_Name: exSquare
   m_TagString: UMM
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

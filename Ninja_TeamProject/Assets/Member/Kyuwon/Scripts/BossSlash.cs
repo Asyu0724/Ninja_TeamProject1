@@ -1,10 +1,11 @@
 using UnityEngine;
+using System.Collections;
 using Member.Kyuwon.SBossSO;
 
 public class BossSlash : MonoBehaviour
 {
     public SBossData bossData;
-    
+
     private Animator _animator;
     [SerializeField] private LayerMask whatIsPlayer;
 
@@ -22,7 +23,13 @@ public class BossSlash : MonoBehaviour
             float timeStamp = Time.time;
             
             _animator.SetTrigger("Slash");
+            StartCoroutine(CanAttack());
         }
+    }
+    
+    IEnumerator CanAttack()
+    {
+        yield return new WaitForSeconds(1.0f);
     }
 
     private void OnDrawGizmos()
