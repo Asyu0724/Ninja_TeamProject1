@@ -19,10 +19,28 @@ public class BossMove : MonoBehaviour
         _animator = GetComponentInChildren<Animator>();
         rigid = GetComponent<Rigidbody2D>();
     }
-
+    
     private void Update()
     {
-        MoveDir = (playerTRM.position - transform.position).normalized;
+        float tempDir = (playerTRM.position.x - transform.position.x);
+        tempDir = Mathf.Sign(tempDir);
+        MoveDir = new Vector2(tempDir, 0f);
         rigid.linearVelocityX = bossData.speed * MoveDir.x;
+        
+        _animator.SetFloat("MoveX", MoveDir.x);
+        _animator.SetFloat("MoveX", Mathf.Abs(MoveDir.x));
+        Flip();
+    }
+    
+    private void Flip()
+    {
+        if (MoveDir.x > 0)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+        else if (MoveDir.x < 0)
+        {
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
     }
 }
