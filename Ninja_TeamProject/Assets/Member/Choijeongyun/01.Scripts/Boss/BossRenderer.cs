@@ -107,12 +107,14 @@ public class BossRenderer : MonoBehaviour
     public void ChargeStart()
     {
         _chargeRenderer.enabled = true;
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Charge_Lay"), false);
     }
 
     public void ChargeEnd()
     {
         _chargeRenderer.enabled = false;
         _animator.speed = 1;
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Charge_Lay"), true);
     }
 
     public void ChargeAnimeEnd()

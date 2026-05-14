@@ -1730,7 +1730,7 @@ GameObject:
   - component: {fileID: 2096504747}
   - component: {fileID: 2096504748}
   - component: {fileID: 2096504749}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Charge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
