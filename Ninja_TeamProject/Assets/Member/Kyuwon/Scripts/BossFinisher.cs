@@ -40,6 +40,8 @@ public class BossFinisher : MonoBehaviour
     IEnumerator CanAttack()
     {
         yield return new WaitForSeconds(1.0f);
+        SBoss sboss = GetComponent<SBoss>();
+        sboss.isAttacking = false;
     }
     
     private void OnDrawGizmos()
