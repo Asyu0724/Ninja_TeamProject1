@@ -5,6 +5,7 @@ namespace Member.KimJoonYoung._01.Scripts.TestEnemy
 {
     public class TestEnemy : global::Agent
     {
+        [SerializeField] private ParticleSystem particle;
         private HealthSystem _healthSystem;
         private EnemyHealthBarUI _enemyHealthBarUI;
         private bool _attacked;
@@ -18,12 +19,6 @@ namespace Member.KimJoonYoung._01.Scripts.TestEnemy
             _healthSystem = GetComponent<HealthSystem>();
             _enemyHealthBarUI = GetComponentInChildren<EnemyHealthBarUI>();
             _healthSystem.OnDamaged += AttackedNow;
-            _healthSystem.Dead += HandlerDead;
-        }
-
-        private void HandlerDead()
-        {
-            Destroy(gameObject);
         }
 
         private void Update()
@@ -33,6 +28,7 @@ namespace Member.KimJoonYoung._01.Scripts.TestEnemy
 
         private void AttackedNow()
         {
+            particle.Play();
             _enemyHealthBarUI.HealthBarUpdate();
             _attacked = true;
             StartCoroutine(Attacked());
