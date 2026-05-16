@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Ninja_TeamProject/Assets/Member/Kyuwon/Map/Statement Pieces/Foreground/Bottom1.png.meta
 guid: fcdf6ea24057f0c42af0df6c0a83886f
-TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -4243463113685668982
-    second: Bottom1_0
-========
-guid: d14f2460d4790054bb8186b857c0d5d2
 TextureImporter:
   internalIDToNameTable:
   - first:
       213: -3768926477129051327
     second: layer 1_0
->>>>>>>> Kimminseo:Ninja_TeamProject/Assets/Member/Kimminseo/02.Assets/Boss Room/layer 1.png.meta
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -60,11 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-<<<<<<<< HEAD:Ninja_TeamProject/Assets/Member/Kyuwon/Map/Statement Pieces/Foreground/Bottom1.png.meta
-  spritePixelsToUnits: 100
-========
   spritePixelsToUnits: 27
->>>>>>>> Kimminseo:Ninja_TeamProject/Assets/Member/Kimminseo/02.Assets/Boss Room/layer 1.png.meta
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -139,22 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-<<<<<<<< HEAD:Ninja_TeamProject/Assets/Member/Kyuwon/Map/Statement Pieces/Foreground/Bottom1.png.meta
-      name: Bottom1_0
-========
       name: layer 1_0
->>>>>>>> Kimminseo:Ninja_TeamProject/Assets/Member/Kimminseo/02.Assets/Boss Room/layer 1.png.meta
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-<<<<<<<< HEAD:Ninja_TeamProject/Assets/Member/Kyuwon/Map/Statement Pieces/Foreground/Bottom1.png.meta
-        width: 700
-        height: 52
-========
         width: 480
         height: 270
->>>>>>>> Kimminseo:Ninja_TeamProject/Assets/Member/Kimminseo/02.Assets/Boss Room/layer 1.png.meta
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,13 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-<<<<<<<< HEAD:Ninja_TeamProject/Assets/Member/Kyuwon/Map/Statement Pieces/Foreground/Bottom1.png.meta
-      spriteID: a8bea4be7c03c15c0800000000000000
-      internalID: -4243463113685668982
-========
       spriteID: 1439822765512bbc0800000000000000
       internalID: -3768926477129051327
->>>>>>>> Kimminseo:Ninja_TeamProject/Assets/Member/Kimminseo/02.Assets/Boss Room/layer 1.png.meta
       vertices: []
       indices: 
       edges: []
@@ -188,11 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-<<<<<<<< HEAD:Ninja_TeamProject/Assets/Member/Kyuwon/Map/Statement Pieces/Foreground/Bottom1.png.meta
-      Bottom1_0: -4243463113685668982
-========
       layer 1_0: -3768926477129051327
->>>>>>>> Kimminseo:Ninja_TeamProject/Assets/Member/Kimminseo/02.Assets/Boss Room/layer 1.png.meta
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Ninja_TeamProject/Assets/Member/KimJoonYoung/02.Sprites/Map/Inv.png.meta
 guid: c9f4d2c8e4b8bcd419d6754f60b2a5c7
-========
-guid: 1615d4557f080914e8f9ed6251d94cb3
->>>>>>>> Kimminseo:Ninja_TeamProject/Assets/Member/Kimminseo/02.Assets/Boss Room/Flatten Background.png.meta
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -41,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -55,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 27
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
