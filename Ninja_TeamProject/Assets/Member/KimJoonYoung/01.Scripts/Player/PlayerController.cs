@@ -1,176 +1,176 @@
-using System;
 using System.Collections;
 using Member.KimJoonYoung._01.Scripts.Agent;
-using Member.KimJoonYoung._01.Scripts.Interface;
 using Member.KimJoonYoung._01.Scripts.UI.PauseMenu;
-using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
-using UnityEditor.Tilemaps;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
-using UnityEngine.TextCore;
 
-public class PlayerController : Agent 
+namespace Member.KimJoonYoung._01.Scripts.Player
 {
-    // Player Setting
-
-    [Header("PlayerSetting")]
-    [SerializeField] private float _speed;
-    [SerializeField] private int _jumpPower;
-    [SerializeField] private int _jumpCount;
-    private int _currentJumpCount;
-    private float _lastMoveDir = 1;
-    private bool _isGrounded;
-    private Vector2 _moveDir;
-    public float Speed => _agentMover._rb.linearVelocityX / _speed;
-    public bool PlayerHit {get; private set;}
-    public bool PlayerIsDead {get; private set;}
-
-    // Scripts
-    private HealthSystem _healthSystem;
-    private PlayerAttackManager _playerAttackManager;
-
-    // Hash
-    private readonly int _xMoveHash = Animator.StringToHash("X_Move");
-    private readonly int _yVelocityHash = Animator.StringToHash("Y_Velocity");
-    private readonly int _isGroundedHash = Animator.StringToHash("IsGrounded");
-    private readonly int _playerHitedHash = Animator.StringToHash("PlayerHited");
-    private readonly int _deadHash = Animator.StringToHash("Dead");
-
-    private bool _skillUse;
-
-    /*---------------------------------------------------*/ // Initialization
-    protected override void Awake()
+    public class PlayerController : global::Agent 
     {
-        base.Awake();
-        _currentJumpCount = _jumpCount;
-        _healthSystem = GetComponent<HealthSystem>();
-        _playerAttackManager = GetComponent<PlayerAttackManager>();
-    }
+        public UnityEvent OnPlayerHit;
+        
+        // Player Setting
+        [Header("PlayerSetting")]
+        [SerializeField] private float _speed;
+        [SerializeField] private int _jumpPower;
+        [SerializeField] private int _jumpCount;
+        private int _currentJumpCount;
+        private float _lastMoveDir = 1;
+        private bool _isGrounded;
+        private Vector2 _moveDir;
+        public float Speed => _agentMover._rb.linearVelocityX / _speed;
+        public bool PlayerHit {get; private set;}
+        public bool PlayerIsDead {get; private set;}
 
-    private void Start()
-    {
-        UIManager.Instance.HealthUI.InitHealthUI(_healthSystem.Health);
-        _healthSystem.OnDamaged += UpdateHealthUI;
-        _healthSystem.OnDamaged += HandlerPlayerHit;
-        _healthSystem.Dead += HandlerDead;
-        PauseMenuManager.Instance.OnPauseAction += HandlerInputDisable;
-        PauseMenuManager.Instance.OffPauseAction += HandlerInputEnable;
-    }
+        // Scripts
+        private HealthSystem _healthSystem;
+        private PlayerAttackManager _playerAttackManager;
 
+        // Hash
+        private readonly int _xMoveHash = Animator.StringToHash("X_Move");
+        private readonly int _yVelocityHash = Animator.StringToHash("Y_Velocity");
+        private readonly int _isGroundedHash = Animator.StringToHash("IsGrounded");
+        private readonly int _playerHitedHash = Animator.StringToHash("PlayerHited");
+        private readonly int _deadHash = Animator.StringToHash("Dead");
 
-    private void HandlerInputDisable()
-    {
-        gameObject.GetComponent<PlayerInput>().enabled = false;
-    }
-    private void HandlerInputEnable()
-    {
-        gameObject.GetComponent<PlayerInput>().enabled = true;
-        _moveDir.x = 0;
-    }
+        private bool _skillUse;
 
-
-    /*---------------------------------------------------*/ // Physics 
-
-    private void FixedUpdate()
-    {
-        _isGrounded = _agentMover.CheckGround();
-        Move();
-    }
-
-    private void Move()
-    {
-        if (!_skillUse && !PlayerIsDead)
+        /*---------------------------------------------------*/ // Initialization
+        protected override void Awake()
         {
-            _agentMover.Move(_moveDir.x * _speed);
-            if (_isGrounded && _agentMover._rb.linearVelocityY <= 0)
-                _currentJumpCount = _jumpCount;
-
-            /*_agentMover._rb.linearVelocityX = _moveDir * _speed;*/
-
-            Flip();
-            _agentAttack.Flip(_lastMoveDir);
+            base.Awake();
+            _currentJumpCount = _jumpCount;
+            _healthSystem = GetComponent<HealthSystem>();
+            _playerAttackManager = GetComponent<PlayerAttackManager>();
         }
-    }
 
-    /*---------------------------------------------------*/ // Input event
-
-    private void OnMove(InputValue value)
-    {
-        if (!PlayerIsDead)
+        private void Start()
         {
-            _moveDir.x = value.Get<Vector2>().x;
-            if (_moveDir.x != 0)
-                _lastMoveDir = value.Get<Vector2>().x;
+            UIManager.Instance.HealthUI.InitHealthUI(_healthSystem.Health);
+            _healthSystem.OnDamaged += UpdateHealthUI;
+            _healthSystem.OnDamaged += HandlerPlayerHit;
+            _healthSystem.Dead += HandlerDead;
+            PauseMenuManager.Instance.OnPauseAction += HandlerInputDisable;
+            PauseMenuManager.Instance.OffPauseAction += HandlerInputEnable;
         }
-    }
-    
-    private void OnJump(InputValue value)
-    {
-        if (!_skillUse && !PlayerIsDead)
-        {
-            if (_currentJumpCount < 1) return;
 
-            if (_currentJumpCount > 0)
+
+        private void HandlerInputDisable()
+        {
+            gameObject.GetComponent<PlayerInput>().enabled = false;
+        }
+        private void HandlerInputEnable()
+        {
+            gameObject.GetComponent<PlayerInput>().enabled = true;
+            _moveDir.x = 0;
+        }
+
+
+        /*---------------------------------------------------*/ // Physics 
+
+        private void FixedUpdate()
+        {
+            _isGrounded = _agentMover.CheckGround();
+            Move();
+        }
+
+        private void Move()
+        {
+            if (!_skillUse && !PlayerIsDead)
             {
-                _agentMover.Jump(_jumpPower);
-                _currentJumpCount--;
+                _agentMover.Move(_moveDir.x * _speed);
+                if (_isGrounded && _agentMover._rb.linearVelocityY <= 0)
+                    _currentJumpCount = _jumpCount;
+
+                /*_agentMover._rb.linearVelocityX = _moveDir * _speed;*/
+
+                Flip();
+                _agentAttack.Flip(_lastMoveDir);
             }
         }
-    }
-    /*---------------------------------------------------*/ // Game logic
 
-    private void Update()
-    {
-        _agentRenderer.SetBoolParam(_isGroundedHash, _isGrounded);
-        if (!PlayerIsDead)
+        /*---------------------------------------------------*/ // Input event
+
+        private void OnMove(InputValue value)
         {
-            _agentRenderer.SetFloatParam(_xMoveHash, Mathf.Abs(_moveDir.x));
-            _agentRenderer.SetFloatParam(_yVelocityHash, _agentMover._rb.linearVelocityY);
-            _agentRenderer.SetBoolParam(_playerHitedHash, PlayerHit);
-
-            _skillUse = _playerAttackManager.QSkillUse;
+            if (!PlayerIsDead)
+            {
+                _moveDir.x = value.Get<Vector2>().x;
+                if (_moveDir.x != 0)
+                    _lastMoveDir = value.Get<Vector2>().x;
+            }
         }
-    }
-
-    /*---------------------------------------------------*/ // Inumerator
-    private IEnumerator PlayerHited()
-    {
-        PlayerHit = true;
-        GameManager.Instance.bloomManager.OnHit(_healthSystem.Health , _healthSystem.MaxHealth);
-        AudioManager.instance.PlaySfx(AudioManager.Sfx.Hit);    
-        yield return new WaitForSeconds(_healthSystem.InvTime);
-        PlayerHit = false;
-    }
-    /*---------------------------------------------------*/ // Game method
-
-    private void Flip()
-    {
-        if (0 != _lastMoveDir)
-        {
-            transform.rotation = Quaternion.Euler(0, _lastMoveDir > 0 ? 0 : 180f, 0f); // 플립
-        }
-    }
-
-    private void HandlerPlayerHit()
-    {
-        if (!PlayerHit && !PlayerIsDead)
-        {
-            StartCoroutine(PlayerHited());
-        }
-    }
-
-    private void UpdateHealthUI()
-    {
-        UIManager.Instance.HealthUI.UpdateHealthUI(_healthSystem.Health);
-    }
     
-    private void HandlerDead()
-    {
-        _healthSystem.OnDamaged -= UpdateHealthUI;
-        PlayerIsDead = true;
-        UIManager.Instance.Dead();
-        _agentMover._rb.linearVelocityX = 0;
-        _agentRenderer.SetBoolParam(_deadHash , PlayerIsDead);
+        private void OnJump(InputValue value)
+        {
+            if (!_skillUse && !PlayerIsDead)
+            {
+                if (_currentJumpCount < 1) return;
+
+                if (_currentJumpCount > 0)
+                {
+                    _agentMover.Jump(_jumpPower);
+                    _currentJumpCount--;
+                }
+            }
+        }
+        /*---------------------------------------------------*/ // Game logic
+
+        private void Update()
+        {
+            _agentRenderer.SetBoolParam(_isGroundedHash, _isGrounded);
+            if (!PlayerIsDead)
+            {
+                _agentRenderer.SetFloatParam(_xMoveHash, Mathf.Abs(_moveDir.x));
+                _agentRenderer.SetFloatParam(_yVelocityHash, _agentMover._rb.linearVelocityY);
+                _agentRenderer.SetBoolParam(_playerHitedHash, PlayerHit);
+
+                _skillUse = _playerAttackManager.QSkillUse;
+            }
+        }
+
+        /*---------------------------------------------------*/ // Inumerator
+        private IEnumerator PlayerHited()
+        {
+            PlayerHit = true;
+            GameManager.Instance.bloomManager.OnHit(_healthSystem.Health , _healthSystem.MaxHealth);
+            AudioManager.instance.PlaySfx(AudioManager.Sfx.Hit);    
+            yield return new WaitForSeconds(_healthSystem.InvTime);
+            PlayerHit = false;
+        }
+        /*---------------------------------------------------*/ // Game method
+
+        private void Flip()
+        {
+            if (0 != _lastMoveDir)
+            {
+                transform.rotation = Quaternion.Euler(0, _lastMoveDir > 0 ? 0 : 180f, 0f); // 플립
+            }
+        }
+
+        private void HandlerPlayerHit()
+        {
+            if (!PlayerHit && !PlayerIsDead)
+            {
+                OnPlayerHit?.Invoke();
+                StartCoroutine(PlayerHited());
+            }
+        }
+
+        private void UpdateHealthUI()
+        {
+            UIManager.Instance.HealthUI.UpdateHealthUI(_healthSystem.Health);
+        }
+    
+        private void HandlerDead()
+        {
+            _healthSystem.OnDamaged -= UpdateHealthUI;
+            PlayerIsDead = true;
+            UIManager.Instance.Dead();
+            _agentMover._rb.linearVelocityX = 0;
+            _agentRenderer.SetBoolParam(_deadHash , PlayerIsDead);
+        }
     }
 }
