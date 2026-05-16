@@ -1,3 +1,4 @@
+using Member.Choijeongyun._01.Scripts.Func;
 using Member.KimJoonYoung._01.Scripts.Player;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -10,7 +11,7 @@ public class BossMover : MonoBehaviour
     private Vector2 _moveDir;
     private Vector2 _distance;
 
-    public PlayerController player;
+    [SerializeField] private PlayerController player;
 
     // 범위제한
     private float _minLimit;
@@ -34,9 +35,17 @@ public class BossMover : MonoBehaviour
     [SerializeField] private BossHealth bossHP;
     [SerializeField] private BossSkill bossSkill;
     [SerializeField] private BossRenderer bossRenderer;
+    [SerializeField] private CJY_AudioManager bossAudio;
 
-
+    private bool _isPlaySound = false;
+    
     private bool IsSkill => Attack1 || Attack2 || bossHP.IsCharge || IsJump || Attack3;
+
+    public bool NotOtherSkill
+    {
+        get => Attack1 || Attack2 || IsJump || Attack3;
+        set => NotOtherSkill = value;
+    } 
 
     public float LastAttackTime { get; private set; }
     // public bool _isGrounded { get; private set; }
@@ -71,17 +80,40 @@ public class BossMover : MonoBehaviour
             _moveDir.x = 0;
             if (_distance.y > 0.45f)
             {
-                if (!IsSkill) Attack3 = true;
+                if (!IsSkill)
+                {
+                    bossAudio.PlaySFX(5, 0.2f);
+                    Attack3 = true;
+                }
                 // else if(!Attack3) bossRenderer.AnimSpeed(1.5f); 
             }
         }
-        if (Mathf.Abs(_distance.x) > 7.0f && !IsSkill)
+        if (Mathf.Abs(_distance.x) > 9.0f && !IsSkill)
         {
             IsJump = true;
+            bossAudio.PlaySFX(1,0.1f);   
             // _rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
         }
 
-        if(!IsSkill) _rigid.linearVelocityX = _moveDir.x * speed;
+        if(!IsSkill)
+        {
+            _rigid.linearVelocityX = _moveDir.x * speed;
+            if (_moveDir.x != 0 && !_isPlaySound)
+            {
+                bossAudio.PlayLoop(0);
+                _isPlaySound = true;
+            }
+            else if (_moveDir.x == 0 && _isPlaySound) 
+            {
+                bossAudio.StopLoop();
+                _isPlaySound = false;
+            }
+        }
+        else
+        {
+            bossAudio.StopLoop();
+            _isPlaySound = false;
+        }
 
         CheckOverlap();
 
@@ -94,8 +126,16 @@ public class BossMover : MonoBehaviour
     private void StartAttack()
     {
         int random = Random.Range(0, 2);
-        if (random == 0) Attack1 = true;
-        else if (random == 1) Attack2 = true;
+        if (random == 0)
+        {
+            bossAudio.PlaySFX(3,0.2f);
+            Attack1 = true;
+        }
+        else if (random == 1)
+        {
+            bossAudio.PlaySFX(4,0.4f);
+            Attack2 = true;
+        }
 
         LastAttackTime = 2f;
     }
@@ -116,6 +156,7 @@ public class BossMover : MonoBehaviour
         newPos.x = player.transform.position.x;
         transform.position = newPos;
         IsShake = true;
+        bossAudio.PlaySFX(2, 0.1f);
     }
 
     private void Update() 

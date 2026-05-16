@@ -58,7 +58,7 @@ public class BossRenderer : MonoBehaviour
     {
         if (bossMove.IsJump)
         {
-            Vector2 playerPos = new Vector2(player.transform.position.x, -5.5f);
+            Vector2 playerPos = new Vector2(player.transform.position.x, -7.9f);
             range.transform.position = playerPos;
         }
     }
