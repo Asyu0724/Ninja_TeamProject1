@@ -1,4 +1,5 @@
 using Member.Choijeongyun._01.Scripts.Func;
+using Member.KimJoonYoung._01.Scripts.Player;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
