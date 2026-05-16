@@ -39,7 +39,15 @@ public class GolemBoss : Boss
     {
         StartCoroutine(BossThinkRoutine());
     }
-    
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Wall"))
+        {
+            _rb.linearVelocityX = 0;
+        }
+    }
+
     public void AttackEnd()
     {
         anim.SetBool(spinAttackEndHash, false);
@@ -143,7 +151,7 @@ public class GolemBoss : Boss
         anim.SetBool(noDamageSpinAttackHash, false);
         anim.SetBool(spinAttackHash, true);
         _rb.linearVelocityX = dir * 4.3f;
-        yield return new WaitForSeconds(3.5f);
+        yield return new WaitForSeconds(3.4f);
         Debug.Log("공격 4 끝");
         _rb.linearVelocityX = 0;
         anim.SetBool(spinAttackHash, false);
