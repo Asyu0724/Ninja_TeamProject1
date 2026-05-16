@@ -1,5 +1,6 @@
 using System;
 using Member.KimJoonYoung._01.Scripts.Manager;
+using Member.KimJoonYoung._01.Scripts.Player;
 using Unity.Cinemachine;
 using UnityEditor.Search;
 using UnityEngine;

@@ -1,10 +1,11 @@
 using UnityEngine;
+using System.Collections;
 using Member.Kyuwon.SBossSO;
 
 public class BossSlash : MonoBehaviour
 {
     public SBossData bossData;
-    
+
     private Animator _animator;
     [SerializeField] private LayerMask whatIsPlayer;
 
@@ -19,9 +20,18 @@ public class BossSlash : MonoBehaviour
 
         if (isHit != null)
         {
+            float timeStamp = Time.time;
+            
             _animator.SetTrigger("Slash");
-            Debug.Log("데미지 드갔다 야르~~");
+            StartCoroutine(CanAttack());
         }
+    }
+    
+    IEnumerator CanAttack()
+    {
+        yield return new WaitForSeconds(1.0f);
+        SBoss sboss = GetComponent<SBoss>();
+        sboss.isAttacking = false;
     }
 
     private void OnDrawGizmos()

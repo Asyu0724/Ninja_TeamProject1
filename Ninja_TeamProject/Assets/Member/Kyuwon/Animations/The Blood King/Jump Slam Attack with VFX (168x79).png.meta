@@ -180,12 +180,12 @@ TextureImporter:
       name: Jump Slam Attack with VFX (168x79)_0
       rect:
         serializedVersion: 2
-        x: 91
-        y: 947
-        width: 30
-        height: 19
+        x: 92
+        y: 948
+        width: 28
+        height: 17
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -202,12 +202,12 @@ TextureImporter:
       name: Jump Slam Attack with VFX (168x79)_1
       rect:
         serializedVersion: 2
-        x: 97
-        y: 877
-        width: 28
-        height: 71
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 98
+        y: 878
+        width: 26
+        height: 69
+      alignment: 9
+      pivot: {x: 0.33047983, y: 0.27962327}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -224,12 +224,12 @@ TextureImporter:
       name: Jump Slam Attack with VFX (168x79)_2
       rect:
         serializedVersion: 2
-        x: 96
-        y: 843
-        width: 27
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 97
+        y: 844
+        width: 25
+        height: 24
+      alignment: 9
+      pivot: {x: 0.39421937, y: 0.28880563}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -246,12 +246,12 @@ TextureImporter:
       name: Jump Slam Attack with VFX (168x79)_3
       rect:
         serializedVersion: 2
-        x: 92
-        y: 766
-        width: 30
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 93
+        y: 767
+        width: 28
+        height: 22
+      alignment: 9
+      pivot: {x: 0.48520198, y: 0.28341398}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -268,12 +268,12 @@ TextureImporter:
       name: Jump Slam Attack with VFX (168x79)_4
       rect:
         serializedVersion: 2
-        x: 90
-        y: 688
-        width: 32
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 91
+        y: 689
+        width: 30
+        height: 22
+      alignment: 9
+      pivot: {x: 0.485202, y: 0.283414}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -290,12 +290,12 @@ TextureImporter:
       name: Jump Slam Attack with VFX (168x79)_5
       rect:
         serializedVersion: 2
-        x: 85
-        y: 553
-        width: 34
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 86
+        y: 554
+        width: 32
+        height: 78
+      alignment: 9
+      pivot: {x: 0.56068563, y: 0.36168417}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -312,12 +312,12 @@ TextureImporter:
       name: Jump Slam Attack with VFX (168x79)_6
       rect:
         serializedVersion: 2
-        x: 82
-        y: 501
-        width: 9
-        height: 19
+        x: 83
+        y: 502
+        width: 7
+        height: 17
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -334,12 +334,12 @@ TextureImporter:
       name: Jump Slam Attack with VFX (168x79)_7
       rect:
         serializedVersion: 2
-        x: 84
-        y: 485
-        width: 6
-        height: 11
+        x: 85
+        y: 486
+        width: 4
+        height: 9
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -356,12 +356,12 @@ TextureImporter:
       name: Jump Slam Attack with VFX (168x79)_8
       rect:
         serializedVersion: 2
-        x: 89
-        y: 473
-        width: 27
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 90
+        y: 474
+        width: 25
+        height: 22
+      alignment: 9
+      pivot: {x: 0.6355899, y: 0.21557201}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -378,12 +378,12 @@ TextureImporter:
       name: Jump Slam Attack with VFX (168x79)_9
       rect:
         serializedVersion: 2
-        x: 79
-        y: 400
-        width: 9
-        height: 30
+        x: 80
+        y: 401
+        width: 7
+        height: 28
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -400,12 +400,12 @@ TextureImporter:
       name: Jump Slam Attack with VFX (168x79)_10
       rect:
         serializedVersion: 2
-        x: 89
-        y: 394
-        width: 30
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 90
+        y: 395
+        width: 28
+        height: 20
+      alignment: 9
+      pivot: {x: 0.6355899, y: 0.215572}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -422,12 +422,12 @@ TextureImporter:
       name: Jump Slam Attack with VFX (168x79)_11
       rect:
         serializedVersion: 2
-        x: 77
-        y: 322
-        width: 8
-        height: 26
+        x: 78
+        y: 323
+        width: 6
+        height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -444,19 +444,19 @@ TextureImporter:
       name: Jump Slam Attack with VFX (168x79)_12
       rect:
         serializedVersion: 2
-        x: 85
-        y: 315
-        width: 9
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 90
+        y: 316
+        width: 31
+        height: 20
+      alignment: 9
+      pivot: {x: 0.6355899, y: 0.215572}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 667bb3fe8507a15c0800000000000000
+      spriteID: e3e946d96a190dd42a568b7996003b64
       internalID: -4243956171570170010
       vertices: []
       indices: 
@@ -466,19 +466,19 @@ TextureImporter:
       name: Jump Slam Attack with VFX (168x79)_13
       rect:
         serializedVersion: 2
-        x: 89
-        y: 315
-        width: 33
-        height: 22
+        x: 86
+        y: 316
+        width: 7
+        height: 6
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d799d9d7116554ef0800000000000000
+      spriteID: 3c6bb5e85ed9b3443ba388eb1d2e1e04
       internalID: -124598781560907395
       vertices: []
       indices: 
@@ -488,19 +488,19 @@ TextureImporter:
       name: Jump Slam Attack with VFX (168x79)_14
       rect:
         serializedVersion: 2
-        x: 75
-        y: 236
-        width: 49
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 76
+        y: 237
+        width: 47
+        height: 30
+      alignment: 9
+      pivot: {x: 0.6355899, y: 0.215572}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 73713f109a49088f0800000000000000
+      spriteID: b22cc0e6575c3d24e936ce8b4833a15c
       internalID: -540268501681367241
       vertices: []
       indices: 
@@ -510,19 +510,19 @@ TextureImporter:
       name: Jump Slam Attack with VFX (168x79)_15
       rect:
         serializedVersion: 2
-        x: 74
-        y: 157
-        width: 57
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 75
+        y: 158
+        width: 55
+        height: 19
+      alignment: 9
+      pivot: {x: 0.6355899, y: 0.215572}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 4c9069065b1083ee0800000000000000
+      spriteID: 658a1045e61babe458269f1ec138a257
       internalID: -1281272215465752124
       vertices: []
       indices: 
@@ -532,19 +532,19 @@ TextureImporter:
       name: Jump Slam Attack with VFX (168x79)_16
       rect:
         serializedVersion: 2
-        x: 78
-        y: 78
-        width: 37
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 79
+        y: 79
+        width: 35
+        height: 14
+      alignment: 9
+      pivot: {x: 0.6355899, y: 0.215572}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 99b55c4b74748fb10800000000000000
+      spriteID: 0b2ec17f5d71cb54db0748825a5625dd
       internalID: 2015439206549379993
       vertices: []
       indices: 
@@ -554,19 +554,19 @@ TextureImporter:
       name: Jump Slam Attack with VFX (168x79)_17
       rect:
         serializedVersion: 2
-        x: 77
+        x: 78
         y: 0
-        width: 38
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 36
+        height: 14
+      alignment: 9
+      pivot: {x: 0.6355899, y: 0.215572}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: c66f4b5ed862fa4f0800000000000000
+      spriteID: 35bcb643f0a0aa843929101586760647
       internalID: -815390616644684180
       vertices: []
       indices: 
@@ -576,7 +576,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: cefa3c1868c9a27448167a03270069f7
     internalID: 0
     vertices: []
     indices: 
@@ -584,7 +584,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":168.0,"y":85.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Jump Slam Attack with VFX (168x79)_0: -4962246330612393216
       Jump Slam Attack with VFX (168x79)_1: -598442335762352027

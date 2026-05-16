@@ -1,20 +1,28 @@
+using System;
+using System.Collections;
 using System.Xml.Schema;
+using Member.Choijeongyun._01.Scripts.Func;
 using Member.KimJoonYoung._01.Scripts.Agent;
+using Member.KimJoonYoung._01.Scripts.Hp;
 using UnityEngine;
 
 public class BossHealth : MonoBehaviour, IDamageable
 {
-    [SerializeField] private int maxHealth = 20;
-    [SerializeField] private BossRenderer _renderer;
-    
+    [SerializeField] private int maxHealth = 30;
+    [SerializeField] private BossRenderer bossRenderer;
+    [SerializeField] private HealthBarUI healthBarUI;
+    [SerializeField] private BossMover bossMover;
+    [SerializeField] private CJY_AudioManager bossAudio;
+
     private int _bossHealth;
     public bool IsDeath { get; private set; }
     public bool IsCharge { get; private set; }
-    private int _canCharge = 10;
+    private int _canCharge = 2;
 
 
     private void Start()
     {
+        healthBarUI.InitHealthUI(maxHealth);
         _bossHealth = maxHealth;
         IsDeath = false;
     }
@@ -23,15 +31,61 @@ public class BossHealth : MonoBehaviour, IDamageable
     {
         _bossHealth -= damage;
         _bossHealth = Mathf.Clamp(_bossHealth, 0, maxHealth);
-        _renderer.StartCoroutine("Attacked");
-        if (_bossHealth <= 0) IsDeath = true;
+        healthBarUI.UpdateHealthUI(_bossHealth);
+        bossRenderer.StartCoroutine("Attacked");
+        if (_bossHealth <= 10 && _canCharge > 0)
+        {
+            ChargeHP();
+        }
+
+        if (_bossHealth <= 0)
+        {
+            bossAudio.PlaySFX(7,0.1f);
+            IsDeath = true;
+        }
     }
 
-    public void ChargeHP(bool value)
+    public void ChargeHP()
     {
-        _bossHealth = Mathf.Clamp(_bossHealth, 0, maxHealth);
-        if (_canCharge <= 0) IsCharge = false;
-        _canCharge--;
+        StartCoroutine(ChargeHPCorutine());
     }
+
+    public IEnumerator ChargeHPCorutine()
+    {
+        if (bossMover.NotOtherSkill) 
+            yield return StartCoroutine(OtherSkill());
+        bossAudio.PlaySFX(6,0);
+        IsCharge = true;
+        _canCharge--;
+        bossRenderer.ChargeStart();
+        StartCoroutine(HP());
+    }
+
+    private IEnumerator HP()
+    {
+        while (true)
+        {
+            _bossHealth += 3;
+            _bossHealth = Mathf.Clamp(_bossHealth, 0, maxHealth);
+            healthBarUI.UpdateHealthUI(_bossHealth);
+            if (_bossHealth >= maxHealth)
+            {
+                IsCharge = false;
+                bossRenderer.ChargeEnd();
+                break;
+            }
+
+            yield return new WaitForSeconds(0.5f);
+        }
+    }
+
+    private IEnumerator OtherSkill()
+    {
+        Debug.Log("노놉! 지금은 충전 못한다!");
+        yield return new WaitUntil(() => bossMover.NotOtherSkill == false);
+    }
+
+
+
 
 }
