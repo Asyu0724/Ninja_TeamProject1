@@ -1,3 +1,4 @@
+using Member.KimJoonYoung._01.Scripts.Player;
 using UnityEngine;
 
 public class StoneUp : MonoBehaviour

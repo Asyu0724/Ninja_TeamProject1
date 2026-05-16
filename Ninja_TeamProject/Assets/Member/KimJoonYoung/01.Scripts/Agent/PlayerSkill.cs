@@ -1,4 +1,5 @@
 using System.Collections;
+using Member.KimJoonYoung._01.Scripts.Player;
 using Member.KimJoonYoung._01.Scripts.UI;
 using UnityEngine;
 using UnityEngine.InputSystem;

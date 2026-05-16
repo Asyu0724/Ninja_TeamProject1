@@ -14,6 +14,7 @@ namespace Member.KimJoonYoung._01.Scripts.UI
     {
         [SerializeField] private int sceneNumber;
         private Image _sceneChangeImage;
+        private bool _changingNow = false;
 
         private void Awake()
         {
@@ -22,6 +23,8 @@ namespace Member.KimJoonYoung._01.Scripts.UI
 
         public void ChangeScene()
         {
+            if (_changingNow) return;
+            _changingNow = true;
             StartCoroutine(SceneChange());
             Sequence s = DOTween.Sequence();
             s.SetUpdate(true);

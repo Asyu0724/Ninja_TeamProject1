@@ -1,6 +1,7 @@
 using System.Collections;
 using Member.KimJoonYoung._01.Scripts.Agent;
 using Member.KimJoonYoung._01.Scripts.Interface;
+using Member.KimJoonYoung._01.Scripts.Player;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
