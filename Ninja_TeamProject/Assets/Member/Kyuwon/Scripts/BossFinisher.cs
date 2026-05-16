@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using Member.Kyuwon.SBossSO;
 
 public class BossFinisher : MonoBehaviour
@@ -26,12 +27,21 @@ public class BossFinisher : MonoBehaviour
             if (Skill < 3)
             {
                 _animator.SetTrigger("Finisher");
+                StartCoroutine(CanAttack());
             }
             else
             {
                 _animator.SetTrigger("SFinisher");
+                StartCoroutine(CanAttack());
             }
         }
+    }
+    
+    IEnumerator CanAttack()
+    {
+        yield return new WaitForSeconds(1.0f);
+        SBoss sboss = GetComponent<SBoss>();
+        sboss.isAttacking = false;
     }
     
     private void OnDrawGizmos()

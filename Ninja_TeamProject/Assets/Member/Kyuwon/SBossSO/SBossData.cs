@@ -5,8 +5,7 @@ namespace Member.Kyuwon.SBossSO
     [CreateAssetMenu(fileName = "SBossSO", menuName = "SBossSO")]
     public class SBossData : ScriptableObject
     {
-        public int MaxHp;
-        public int CurrentHp;
+        public float speed;
         public int NormalDamage;
         public int CriticalDamage;
         public Vector2 NormalRange;
