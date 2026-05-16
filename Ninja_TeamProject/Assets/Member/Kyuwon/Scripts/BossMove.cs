@@ -12,12 +12,14 @@ public class BossMove : MonoBehaviour
     private Rigidbody2D rigid;
     private Vector2 MoveDir; 
     private Transform playerTRM;
+    private float MoveSpeed;
     
     private void Awake()
     {
         playerTRM = GameObject.Find("exSquare").transform;
         _animator = GetComponentInChildren<Animator>();
         rigid = GetComponent<Rigidbody2D>();
+        MoveSpeed = bossData.speed;
     }
     
     private void Update()
@@ -25,7 +27,7 @@ public class BossMove : MonoBehaviour
         float tempDir = (playerTRM.position.x - transform.position.x);
         tempDir = Mathf.Sign(tempDir);
         MoveDir = new Vector2(tempDir, 0f);
-        rigid.linearVelocityX = bossData.speed * MoveDir.x;
+        rigid.linearVelocityX = MoveSpeed * MoveDir.x;
         
         _animator.SetFloat("MoveX", MoveDir.x);
         _animator.SetFloat("MoveX", Mathf.Abs(MoveDir.x));
@@ -37,10 +39,19 @@ public class BossMove : MonoBehaviour
         if (MoveDir.x > 0)
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);
+            StartCoroutine(FlipCool());
         }
         else if (MoveDir.x < 0)
         {
             transform.rotation = Quaternion.Euler(0, 180, 0);
+            StartCoroutine(FlipCool());
         }
+    }
+
+    IEnumerator FlipCool()
+    {
+        MoveSpeed = 0f;
+        yield return new WaitForSeconds(0.5f);
+        MoveSpeed = 3.0f;
     }
 }
