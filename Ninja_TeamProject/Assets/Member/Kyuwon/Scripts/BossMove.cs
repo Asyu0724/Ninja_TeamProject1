@@ -24,14 +24,27 @@ public class BossMove : MonoBehaviour
     
     private void Update()
     {
-        float tempDir = (playerTRM.position.x - transform.position.x);
-        tempDir = Mathf.Sign(tempDir);
-        MoveDir = new Vector2(tempDir, 0f);
-        rigid.linearVelocityX = MoveSpeed * MoveDir.x;
+        float PlayerDistance = Vector2.Distance(transform.position, playerTRM.position);
+        float StopDistance = 0.4f;
+
+        if (PlayerDistance > StopDistance)
+        {
+            float tempDir = (playerTRM.position.x - transform.position.x);
+            tempDir = Mathf.Sign(tempDir);
+            MoveDir = new Vector2(tempDir, 0f);
         
-        _animator.SetFloat("MoveX", MoveDir.x);
-        _animator.SetFloat("MoveX", Mathf.Abs(MoveDir.x));
-        Flip();
+            rigid.linearVelocityX = MoveSpeed * MoveDir.x;
+        
+            _animator.SetFloat("MoveX", MoveDir.x);
+            _animator.SetFloat("MoveX", Mathf.Abs(MoveDir.x));
+            Flip();
+        }
+        else
+        {
+            rigid.linearVelocityX = 0f;
+            
+            _animator.SetFloat("MoveX", 0f);
+        }
     }
     
     private void Flip()
@@ -39,19 +52,10 @@ public class BossMove : MonoBehaviour
         if (MoveDir.x > 0)
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);
-            StartCoroutine(FlipCool());
         }
         else if (MoveDir.x < 0)
         {
             transform.rotation = Quaternion.Euler(0, 180, 0);
-            StartCoroutine(FlipCool());
         }
-    }
-
-    IEnumerator FlipCool()
-    {
-        MoveSpeed = 0f;
-        yield return new WaitForSeconds(0.5f);
-        MoveSpeed = 3.0f;
     }
 }
