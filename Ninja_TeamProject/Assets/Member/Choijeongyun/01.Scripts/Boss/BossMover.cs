@@ -1,4 +1,5 @@
 using Member.Choijeongyun._01.Scripts.Func;
+using Member.KimJoonYoung._01.Scripts.Player;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -10,7 +11,7 @@ public class BossMover : MonoBehaviour
     private Vector2 _moveDir;
     private Vector2 _distance;
 
-    public PlayerController player;
+    [SerializeField] private PlayerController player;
 
     // 범위제한
     private float _minLimit;
@@ -62,12 +63,12 @@ public class BossMover : MonoBehaviour
         _rigid = GetComponent<Rigidbody2D>();
     }
 
-    private void Start()
+    /*private void Start()
     {
         _minLimit = Camera.main.ViewportToWorldPoint(new Vector2(0, 0)).x;
         _maxLimit = Camera.main.ViewportToWorldPoint(new Vector2(1, 1)).x;
 
-    }
+    }*/
 
     private void FixedUpdate()
     {
@@ -194,8 +195,8 @@ public class BossMover : MonoBehaviour
     }
 
 
-    private void LateUpdate()
+    /*private void LateUpdate()
     {
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, _minLimit + _offset, _maxLimit - _offset), transform.position.y, transform.position.z);
-    }
+    }*/
 }
