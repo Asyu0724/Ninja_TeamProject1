@@ -63,12 +63,12 @@ public class BossMover : MonoBehaviour
         _rigid = GetComponent<Rigidbody2D>();
     }
 
-    /*private void Start()
+    private void Start()
     {
         _minLimit = Camera.main.ViewportToWorldPoint(new Vector2(0, 0)).x;
         _maxLimit = Camera.main.ViewportToWorldPoint(new Vector2(1, 1)).x;
 
-    }*/
+    }
 
     private void FixedUpdate()
     {
@@ -88,7 +88,7 @@ public class BossMover : MonoBehaviour
                 // else if(!Attack3) bossRenderer.AnimSpeed(1.5f); 
             }
         }
-        if (Mathf.Abs(_distance.x) > 7.0f && !IsSkill)
+        if (Mathf.Abs(_distance.x) > 9.0f && !IsSkill)
         {
             IsJump = true;
             bossAudio.PlaySFX(1,0.1f);   
@@ -195,8 +195,8 @@ public class BossMover : MonoBehaviour
     }
 
 
-    /*private void LateUpdate()
+    private void LateUpdate()
     {
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, _minLimit + _offset, _maxLimit - _offset), transform.position.y, transform.position.z);
-    }*/
+    }
 }
