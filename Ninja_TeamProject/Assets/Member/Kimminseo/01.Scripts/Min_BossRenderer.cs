@@ -7,6 +7,7 @@ public class Min_BossRenderer : MonoBehaviour
 {
     
     public Min_BossMover bossmover;
+    public Min_BossHealth bossHealth;
     private Animator _anim;
     private SpriteRenderer _spriter;
     private int skill;
@@ -21,6 +22,7 @@ public class Min_BossRenderer : MonoBehaviour
     private int HashAttack3Fin = Animator.StringToHash("Attack3Finish");
     private int HashTeleport = Animator.StringToHash("Teleport");
     private int HashTeleportFinish = Animator.StringToHash("TeleportFinish");
+    private int HashDie = Animator.StringToHash("Die");
 
     private void Awake()
     {
@@ -38,6 +40,8 @@ public class Min_BossRenderer : MonoBehaviour
         float distanceX = transform.position.x - _playertrm.position.x;
         if (Mathf.Abs(distanceX) > 1f)
             _spriter.flipX = distanceX > 0f;
+        if (bossHealth.IsDeath == true)
+            _anim.SetBool(HashDie,true);
     }
 
     private IEnumerator AttackRoutine()
