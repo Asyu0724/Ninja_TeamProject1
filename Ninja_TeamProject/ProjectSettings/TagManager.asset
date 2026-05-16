@@ -51,6 +51,9 @@ TagManager:
   - name: BackProb
     uniqueID: 356559819
     locked: 0
+  - name: InGameUI
+    uniqueID: 3914009943
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

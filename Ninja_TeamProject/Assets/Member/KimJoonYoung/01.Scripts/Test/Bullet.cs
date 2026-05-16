@@ -1,5 +1,7 @@
+using System.Collections;
 using Member.KimJoonYoung._01.Scripts.Agent;
 using Member.KimJoonYoung._01.Scripts.Interface;
+using Member.KimJoonYoung._01.Scripts.Player;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -14,6 +16,7 @@ public class Bullet : MonoBehaviour
 
     private void Start()
     {
+        StartCoroutine(LifeCycle());
         if (GameObject.FindGameObjectWithTag("Player").transform.position.x > transform.position.x)
         {
             _rb.linearVelocityX = speed;
@@ -23,7 +26,7 @@ public class Bullet : MonoBehaviour
             _rb.linearVelocityX = -speed;
         }
     }
-    public void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.TryGetComponent(out PlayerController player))
         {
@@ -34,5 +37,11 @@ public class Bullet : MonoBehaviour
             }
             
         }
+    }
+
+    private IEnumerator LifeCycle()
+    {
+        yield return new WaitForSeconds(3f);
+        Destroy(gameObject);
     }
 }

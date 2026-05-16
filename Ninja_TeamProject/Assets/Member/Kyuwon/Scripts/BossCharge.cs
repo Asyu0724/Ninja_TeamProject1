@@ -1,9 +1,12 @@
+using System;
+using System.Collections;
 using UnityEngine;
 using Member.Kyuwon.SBossSO;
 
 public class BossCharge : MonoBehaviour
 {
     public SBossData bossData;
+    
     
     private Animator _animator;
     [SerializeField] private LayerMask whatIsPlayer;
@@ -20,9 +23,16 @@ public class BossCharge : MonoBehaviour
         if (isHit != null)
         {
             float timeStamp = Time.time;
-            
             _animator.SetTrigger("Charger");
+            StartCoroutine(CanAttack());
         }
+    }
+
+    IEnumerator CanAttack()
+    {
+        yield return new WaitForSeconds(1.5f);
+        SBoss sboss = GetComponent<SBoss>();
+        sboss.isAttacking = false;
     }
     
     private void OnDrawGizmos()
