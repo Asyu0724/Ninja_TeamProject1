@@ -4,13 +4,14 @@ using System.Xml.Schema;
 using Member.Choijeongyun._01.Scripts.Func;
 using Member.KimJoonYoung._01.Scripts.Agent;
 using Member.KimJoonYoung._01.Scripts.Hp;
+using Member.KimJoonYoung._01.Scripts.UI.Boss;
 using UnityEngine;
 
 public class BossHealth : MonoBehaviour, IDamageable
 {
     [SerializeField] private int maxHealth = 30;
     [SerializeField] private BossRenderer bossRenderer;
-    [SerializeField] private HealthBarUI healthBarUI;
+    [SerializeField] private SpiderHealthBar healthBarUI;
     [SerializeField] private BossMover bossMover;
     [SerializeField] private CJY_AudioManager bossAudio;
 
@@ -22,7 +23,7 @@ public class BossHealth : MonoBehaviour, IDamageable
 
     private void Start()
     {
-        healthBarUI.InitHealthUI(maxHealth);
+        healthBarUI.InitHealthUI(_bossHealth, maxHealth);
         _bossHealth = maxHealth;
         IsDeath = false;
     }
