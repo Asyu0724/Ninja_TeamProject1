@@ -78,7 +78,7 @@ public class BossMover : MonoBehaviour
         if (Mathf.Abs(_distance.x) < 2.0f)
         {
             _moveDir.x = 0;
-            if (_distance.y > 0.45f)
+            if (_distance.y > 0.2f)
             {
                 if (!IsSkill)
                 {
