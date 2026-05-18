@@ -16,7 +16,7 @@ public class BossMove : MonoBehaviour
     
     private void Awake()
     {
-        playerTRM = GameObject.Find("exSquare").transform;
+        playerTRM = GameObject.Find("Player").transform;
         _animator = GetComponentInChildren<Animator>();
         rigid = GetComponent<Rigidbody2D>();
         MoveSpeed = bossData.speed;
