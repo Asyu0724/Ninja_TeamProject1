@@ -40,7 +40,15 @@ public class GolemBoss : Boss
     {
         StartCoroutine(BossThinkRoutine());
     }
-    
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Wall"))
+        {
+            _rb.linearVelocityX = 0;
+        }
+    }
+
     public void AttackEnd()
     {
         anim.SetBool(spinAttackEndHash, false);
@@ -71,7 +79,7 @@ public class GolemBoss : Boss
 
         if (distanceToPlayer <= closeAttackRange)
         {
-            int randomPattern = UnityEngine.Random.Range(0, 4);
+            int randomPattern = UnityEngine.Random.Range(3, 4);
             if (randomPattern == 0) yield return Pattern1_BigCloud();
             if (randomPattern == 1) yield return Pattern2_SmallCloud();
             if (randomPattern == 2) yield return Pattern3_ShockWave();
@@ -80,7 +88,7 @@ public class GolemBoss : Boss
 
         else
         {
-            int randomPattern = UnityEngine.Random.Range(2, 4);
+            int randomPattern = UnityEngine.Random.Range(3, 4);
             if (randomPattern == 2) yield return Pattern3_ShockWave();
             if (randomPattern == 3) yield return Pattern4_SpinAttack();
         }
@@ -93,13 +101,13 @@ public class GolemBoss : Boss
         {
             anim.SetTrigger(turnLeftHash);
             yield return new WaitForSeconds(1.82489f);
-            this.transform.localScale = Vector3.one;
+            this.transform.localScale = new Vector3(1.75f, 1.75f, 1.75f);
         }
         else if (dir < 0 && transform.localScale.x > 0)
         {
             anim.SetTrigger(turnLeftHash);
             yield return new WaitForSeconds(1.82489f);
-            this.transform.localScale = new Vector3(-1, 1, 1);
+            this.transform.localScale = new Vector3(-1.75f, 1.75f, 1.75f);
         }
     }
     public void TurnRight()
@@ -144,7 +152,7 @@ public class GolemBoss : Boss
         anim.SetBool(noDamageSpinAttackHash, false);
         anim.SetBool(spinAttackHash, true);
         _rb.linearVelocityX = dir * 4.3f;
-        yield return new WaitForSeconds(3.5f);
+        yield return new WaitForSeconds(3.4f);
         Debug.Log("공격 4 끝");
         _rb.linearVelocityX = 0;
         anim.SetBool(spinAttackHash, false);
@@ -167,7 +175,7 @@ public class GolemBoss : Boss
         Gizmos.DrawWireCube((transform.position + Vector3.right * 3.3f * dir + Vector3.down * 0.2f), new Vector3(4f, 1.5f, 0));
 
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position+Vector3.up*0.3f+Vector3.left*0.1f, 1.5f);
+        Gizmos.DrawWireSphere(transform.position+Vector3.up*0.3f+Vector3.left*0.1f, 2f);
     }
     //기즈모--------------------------------------------------------
     
@@ -200,7 +208,7 @@ public class GolemBoss : Boss
     {
         Vector3 center = transform.position + Vector3.up * 0.3f + Vector3.left * 0.1f;
 
-        Collider2D hit = Physics2D.OverlapCircle(center, 1.5f, playerLayer);
+        Collider2D hit = Physics2D.OverlapCircle(center, 2f, playerLayer);
 
         Debug.Log("플레이어 맞음 : SpinAttack");
         hit?.GetComponent<IDamageable>().GetDamage(bossData.spinAttackDamage, gameObject);

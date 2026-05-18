@@ -11,6 +11,7 @@ TagManager:
   - Stone
   - UnderGround
   - UMM
+  - Wall
   layers:
   - Default
   - TransparentFX
