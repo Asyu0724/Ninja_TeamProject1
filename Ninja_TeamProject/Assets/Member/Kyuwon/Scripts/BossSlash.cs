@@ -16,27 +16,26 @@ public class BossSlash : MonoBehaviour
 
     public void Slash()
     {
-        Collider2D isHit = Physics2D.OverlapBox(transform.position, bossData.NormalRange, 0,whatIsPlayer);
+        float offsetDistance = bossData.NormalRange.x * 0.5f;
+        Vector2 SlashPosition = (Vector2)transform.position + ((Vector2)transform.right * offsetDistance);
+        
+        Collider2D isHit = Physics2D.OverlapBox(SlashPosition, bossData.NormalRange, 0,whatIsPlayer);
 
         if (isHit != null)
         {
             float timeStamp = Time.time;
             
             _animator.SetTrigger("Slash");
-            StartCoroutine(CanAttack());
         }
-    }
-    
-    IEnumerator CanAttack()
-    {
-        yield return new WaitForSeconds(1.0f);
-        SBoss sboss = GetComponent<SBoss>();
-        sboss.isAttacking = false;
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(transform.position, bossData.NormalRange);
+        
+        float offsetDistance = bossData.NormalRange.x * 0.5f;
+        Vector2 SlashPosition = (Vector2)transform.position + ((Vector2)transform.right * offsetDistance);
+        
+        Gizmos.DrawWireCube(SlashPosition, bossData.NormalRange);
     }
 }

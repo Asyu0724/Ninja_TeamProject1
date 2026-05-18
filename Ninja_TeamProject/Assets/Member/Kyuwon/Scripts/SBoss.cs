@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using System.Collections;
 using Member.Kyuwon.SBossSO;
 
 public class SBoss : MonoBehaviour
@@ -18,35 +19,77 @@ public class SBoss : MonoBehaviour
         _slash = GetComponent<BossSlash>();
         _charge = GetComponent<BossCharge>();
         _finisher = GetComponent<BossFinisher>();
+        bossData.CanCharging = true;
+        bossData.CanFinisher = true;
+        bossData.CanNormal = true;
     }
 
     void Update()
     {
-        bool SlashRange = Physics2D.OverlapBox(transform.position,bossData.NormalRange, 0,whatIsPlayer);
-        bool FinisherRange = Physics2D.OverlapBox(transform.position,bossData.FinisherRange, 0,whatIsPlayer);
-        bool ChargeRange = Physics2D.OverlapBox(transform.position, bossData.ChargeRange, 0, whatIsPlayer);
+        float SlashDistance = bossData.NormalRange.x * 0.5f;
+        Vector2 SlashPosition = (Vector2)transform.position + ((Vector2)transform.right * SlashDistance);
         
-        if (FinisherRange != false && isAttacking == false)
+        float ChargeDistance = bossData.ChargeRange.x * 0.5f;
+        Vector2 ChargePosition = (Vector2)transform.position + ((Vector2)transform.right * ChargeDistance);
+        
+        bool SlashRange = Physics2D.OverlapBox(SlashPosition,bossData.NormalRange, 0,whatIsPlayer);
+        bool FinisherRange = Physics2D.OverlapBox(transform.position,bossData.FinisherRange, 0,whatIsPlayer);
+        bool ChargeRange = Physics2D.OverlapBox(ChargePosition, bossData.ChargeRange, 0, whatIsPlayer);
+
+        if (FinisherRange != false && isAttacking == false && bossData.CanFinisher == true)
         {
             _SBossSkill = _finisher.Finisher;
-            _bossSkills();
             isAttacking = true;
+            bossData.CanFinisher = false;
+            _bossSkills();
+            StartCoroutine(IsAttacking());
+            StartCoroutine(FinisherCool());
         }
         
-        if (SlashRange != false && isAttacking == false)
+        if (SlashRange != false && isAttacking == false && bossData.CanNormal == true)
         {
             _SBossSkill = _slash.Slash;
-            _bossSkills();
             isAttacking = true;
+            bossData.CanNormal = false;
+            _bossSkills();
+            StartCoroutine(IsAttacking());
+            StartCoroutine(NormalCool());
         }
 
-        if (ChargeRange != false && isAttacking == false)
+        if (ChargeRange != false && isAttacking == false && bossData.CanCharging == true)
         {
             _SBossSkill = _charge.Charge;
-            _bossSkills();
             isAttacking = true;
+            bossData.CanCharging = false;
+            _bossSkills();
+            StartCoroutine(IsAttacking());
+            StartCoroutine(ChargingCool());
         }
         
+    }
+
+    IEnumerator IsAttacking()
+    {
+        yield return new WaitForSeconds(1.5f);
+        isAttacking = false;
+    }
+    
+    IEnumerator FinisherCool()
+    {
+        yield return new WaitForSeconds(bossData.FinisherCool);
+        bossData.CanFinisher = true;
+    }
+    
+    IEnumerator NormalCool()
+    {
+        yield return new WaitForSeconds(bossData.NormalCool);
+        bossData.CanNormal = true;
+    }
+
+    IEnumerator ChargingCool()
+    {
+        yield return new WaitForSeconds(bossData.ChargingCool);
+        bossData.CanCharging = true;
     }
     
     public void _bossSkills()

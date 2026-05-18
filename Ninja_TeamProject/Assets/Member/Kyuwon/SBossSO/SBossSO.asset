@@ -15,14 +15,14 @@ MonoBehaviour:
   speed: 3
   NormalDamage: 0
   CriticalDamage: 0
-  NormalRange: {x: 6.4, y: 0.3}
-  FinisherRange: {x: 2.8, y: 0.4}
-  ChargeRange: {x: 9.4, y: 0.2}
-  NormalCool: 0
-  CanNormal: 0
-  ChargingCool: 0
-  CanCharging: 0
-  FinisherCool: 0
-  CanFinisher: 0
+  NormalRange: {x: 6.4, y: 1}
+  FinisherRange: {x: 4, y: 0.4}
+  ChargeRange: {x: 10, y: 0.5}
+  NormalCool: 4.5
+  CanNormal: 1
+  ChargingCool: 8.5
+  CanCharging: 1
+  FinisherCool: 5.5
+  CanFinisher: 1
   TelCool: 0
   CanTel: 0

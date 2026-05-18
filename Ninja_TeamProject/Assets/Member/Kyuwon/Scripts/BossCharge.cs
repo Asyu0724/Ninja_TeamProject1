@@ -18,26 +18,25 @@ public class BossCharge : MonoBehaviour
 
     public void Charge()
     {
-        Collider2D isHit = Physics2D.OverlapBox(transform.position, bossData.ChargeRange, 0,whatIsPlayer);
+        float offsetDistance = bossData.ChargeRange.x * 0.5f;
+        Vector2 ChargePosition = (Vector2)transform.position + ((Vector2)transform.right * offsetDistance);
+        
+        Collider2D isHit = Physics2D.OverlapBox(ChargePosition, bossData.ChargeRange, 0,whatIsPlayer);
 
         if (isHit != null)
         {
             float timeStamp = Time.time;
             _animator.SetTrigger("Charger");
-            StartCoroutine(CanAttack());
         }
-    }
-
-    IEnumerator CanAttack()
-    {
-        yield return new WaitForSeconds(1.5f);
-        SBoss sboss = GetComponent<SBoss>();
-        sboss.isAttacking = false;
     }
     
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.cornflowerBlue;
-        Gizmos.DrawWireCube(transform.position, bossData.ChargeRange);
+        
+        float offsetDistance = bossData.ChargeRange.x * 0.5f;
+        Vector2 ChargePosition = (Vector2)transform.position + ((Vector2)transform.right * offsetDistance);
+
+        Gizmos.DrawWireCube(ChargePosition, bossData.ChargeRange);
     }
 }
