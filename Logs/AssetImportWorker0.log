@@ -114,3 +114,4 @@ Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.11f1/
 [Licensing::Module] Successfully launched the LicensingClient (PId: 52220)
 Starting IPC server.
 Waiting for clients to connect on \\.\pipe\Unity-LicenseClient-minse-6000.3.11, press Ctrl-C to exit.
+Shut down.
