@@ -29,7 +29,7 @@ namespace Member.KimJoonYoung._01.Scripts.UI
             Sequence s = DOTween.Sequence();
             s.SetUpdate(true);
             s.SetLink(gameObject);
-            s.PrependInterval(0.1f);
+            s.AppendInterval(0.1f);
             s.Append(_sceneChangeImage.transform.DOLocalMoveY(1350, 0.5f).SetEase(Ease.InOutCubic));
             s.AppendInterval(0.5f);
         }
