@@ -58,7 +58,7 @@ public class BossRenderer : MonoBehaviour
     {
         if (bossMove.IsJump)
         {
-            Vector2 playerPos = new Vector2(player.transform.position.x, -7.9f);
+            Vector2 playerPos = new Vector2(player.transform.position.x, -6.9f);
             range.transform.position = playerPos;
         }
     }
@@ -93,7 +93,7 @@ public class BossRenderer : MonoBehaviour
         gameObject.SetActive(false); // 임시방편
     }
 
-    public IEnumerator JumpDel()
+    public IEnumerator JumpDel() 
     {
         this._animator.speed = 0;
         this._renderer.enabled = false;
