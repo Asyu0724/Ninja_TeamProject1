@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Linq.Expressions;
+using Member.KimJoonYoung._01.Scripts.Agent;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -11,6 +12,7 @@ public class Min_BossRenderer : MonoBehaviour
     private Animator _anim;
     private SpriteRenderer _spriter;
     private int skill;
+    [SerializeField] private AgentRenderer agentRenderer;
 
     [SerializeField] private Transform _playertrm;
 
@@ -41,14 +43,25 @@ public class Min_BossRenderer : MonoBehaviour
         if (Mathf.Abs(distanceX) > 1f)
             _spriter.flipX = distanceX > 0f;
         if (bossHealth.IsDeath == true)
-            _anim.SetBool(HashDie,true);
+        {
+            StartCoroutine(Dead());
+        }
+    }
+
+    private IEnumerator Dead()
+    {
+        _anim.SetTrigger(HashDie);
+        yield return new WaitForSeconds(_anim.GetCurrentAnimatorStateInfo(0).length);
+        yield return new WaitForSeconds(1);
+        _anim.speed = 1.0f;
+        _anim.speed = 0.0f;
     }
 
     private IEnumerator AttackRoutine()
     {
         while (true)
         {
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(0.5f);
 
             ResetAll();
 
@@ -68,8 +81,11 @@ public class Min_BossRenderer : MonoBehaviour
             }
 
             ResetAll();
+            if (bossHealth.IsDeath == true)
+                break;
         }
     }
+
 
     private IEnumerator Teleport()
     {

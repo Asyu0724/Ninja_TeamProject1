@@ -1,3 +1,4 @@
+using MoreMountains.Feedbacks;
 using UnityEngine;
 
 public class Min_BossMover : MonoBehaviour
@@ -11,18 +12,17 @@ public class Min_BossMover : MonoBehaviour
         [SerializeField] private Vector2 _Attack2Boxsize;
         [SerializeField]private Vector3 _Attack2Boxoffset;
         [SerializeField] private LayerMask _playerlayer;
+        [SerializeField] private Min_BossHealth BossHealth;
         private Vector2 minLimit;
         private Vector2 maxLimit;
-        [SerializeField] private Min_BossRenderer bossrenderer;
         public bool Attack2move;
-    
         public bool attack1start{ private get; set; }
         public bool attack3start{ private get; set; }
     
         private void Awake()
         {
             _rb = GetComponent<Rigidbody2D>();
-            bossrenderer = GetComponent<Min_BossRenderer>();
+            BossHealth = GetComponent<Min_BossHealth>();
         }
         private void Start()
         {
@@ -53,11 +53,23 @@ public class Min_BossMover : MonoBehaviour
             {
                 _rb.linearVelocityX = Vector2.zero.x;
             }
+
+            if (BossHealth.IsDeath == true)
+            {
+                if (Attack2move == true)
+                {
+                    Attack2move = false;
+                }
+            }
         }
         
         private void OnDrawGizmos()
         {
             Gizmos.color = Color.blue;
             Gizmos.DrawWireCube(transform.position + (Vector3)_Attack2Boxoffset, _Attack2Boxsize);
+        }
+        private void OnTriggerStay2D(Collider2D other)
+        {
+            Debug.Log("트리거 감지됨: " + other.gameObject.name);
         }
 }
