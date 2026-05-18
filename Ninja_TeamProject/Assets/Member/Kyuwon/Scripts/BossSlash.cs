@@ -28,14 +28,4 @@ public class BossSlash : MonoBehaviour
             _animator.SetTrigger("Slash");
         }
     }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        
-        float offsetDistance = bossData.NormalRange.x * 0.5f;
-        Vector2 SlashPosition = (Vector2)transform.position + ((Vector2)transform.right * offsetDistance);
-        
-        Gizmos.DrawWireCube(SlashPosition, bossData.NormalRange);
-    }
 }

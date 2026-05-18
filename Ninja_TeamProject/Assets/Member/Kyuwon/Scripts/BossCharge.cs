@@ -29,14 +29,4 @@ public class BossCharge : MonoBehaviour
             _animator.SetTrigger("Charger");
         }
     }
-    
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.cornflowerBlue;
-        
-        float offsetDistance = bossData.ChargeRange.x * 0.5f;
-        Vector2 ChargePosition = (Vector2)transform.position + ((Vector2)transform.right * offsetDistance);
-
-        Gizmos.DrawWireCube(ChargePosition, bossData.ChargeRange);
-    }
 }

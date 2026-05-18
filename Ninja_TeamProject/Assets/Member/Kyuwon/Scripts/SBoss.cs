@@ -41,7 +41,8 @@ public class SBoss : MonoBehaviour
             _SBossSkill = _finisher.Finisher;
             isAttacking = true;
             bossData.CanFinisher = false;
-            _bossSkills();
+            FinisherGizmos();
+            StartCoroutine(Wait());
             StartCoroutine(IsAttacking());
             StartCoroutine(FinisherCool());
         }
@@ -51,7 +52,8 @@ public class SBoss : MonoBehaviour
             _SBossSkill = _slash.Slash;
             isAttacking = true;
             bossData.CanNormal = false;
-            _bossSkills();
+            SlashGizmos();
+            StartCoroutine(Wait());
             StartCoroutine(IsAttacking());
             StartCoroutine(NormalCool());
         }
@@ -61,16 +63,23 @@ public class SBoss : MonoBehaviour
             _SBossSkill = _charge.Charge;
             isAttacking = true;
             bossData.CanCharging = false;
-            _bossSkills();
+            ChargeGizmos();
+            StartCoroutine(Wait());
             StartCoroutine(IsAttacking());
             StartCoroutine(ChargingCool());
         }
         
     }
 
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(1.0f);
+        _bossSkills();
+    }
+    
     IEnumerator IsAttacking()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2.0f);
         isAttacking = false;
     }
     
@@ -98,5 +107,43 @@ public class SBoss : MonoBehaviour
         {
             _SBossSkill?.Invoke();
         }
+    }
+    
+    IEnumerator SlashGizmos()
+    {
+        Gizmos.color = new Color(1f, 0f, 0f, 1f);
+        
+        float offsetDistance = bossData.NormalRange.x * 0.5f;
+        Vector2 SlashPosition = (Vector2)transform.position + ((Vector2)transform.right * offsetDistance);
+        
+        Gizmos.DrawWireCube(SlashPosition, bossData.NormalRange);
+        
+        yield return new WaitForSeconds(1.0f);
+        
+        Gizmos.color = new Color(0f, 0f, 0f, 0f);
+    }
+    
+    IEnumerator ChargeGizmos()
+    {
+        Gizmos.color = new Color(1f, 0f, 0f, 1f);
+        
+        float offsetDistance = bossData.ChargeRange.x * 0.5f;
+        Vector2 ChargePosition = (Vector2)transform.position + ((Vector2)transform.right * offsetDistance);
+
+        Gizmos.DrawWireCube(ChargePosition, bossData.ChargeRange);
+        
+        yield return new WaitForSeconds(1.0f);
+        
+        Gizmos.color = new Color(0f, 0f, 0f, 0f);
+    }
+    
+    IEnumerator FinisherGizmos()
+    {
+        Gizmos.color = new Color(1f, 0f, 0f, 1f);
+        Gizmos.DrawWireCube(transform.position, bossData.FinisherRange);
+        
+        yield return new WaitForSeconds(1.0f);
+        
+        Gizmos.color = new Color(0f, 0f, 0f, 0f);
     }
 }
