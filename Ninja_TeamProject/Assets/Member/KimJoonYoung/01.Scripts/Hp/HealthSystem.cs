@@ -19,6 +19,11 @@ public class HealthSystem : MonoBehaviour, IDamageable
 
     private void Awake()
     {
+        InitHealth();
+    }
+
+    private void InitHealth()
+    {
         Health = MaxHealth;
     }
 
