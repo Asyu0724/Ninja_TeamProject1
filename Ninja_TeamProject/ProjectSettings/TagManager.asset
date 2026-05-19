@@ -11,6 +11,7 @@ TagManager:
   - Stone
   - UnderGround
   - UMM
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -56,6 +57,9 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Charge
+    uniqueID: 54978863
     locked: 0
   - name: Bossbar
     uniqueID: 2568343899

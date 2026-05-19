@@ -58,7 +58,7 @@ public class BossRenderer : MonoBehaviour
     {
         if (bossMove.IsJump)
         {
-            Vector2 playerPos = new Vector2(player.transform.position.x, -7.9f);
+            Vector2 playerPos = new Vector2(player.transform.position.x, -6.9f);
             range.transform.position = playerPos;
         }
     }
@@ -93,28 +93,24 @@ public class BossRenderer : MonoBehaviour
         gameObject.SetActive(false); // 임시방편
     }
 
-    public IEnumerator JumpDel()
+    public IEnumerator JumpDel() 
     {
         this._animator.speed = 0;
         this._renderer.enabled = false;
-        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Boss"), true);
         yield return new WaitForSeconds(1f);
         this._animator.speed = 1;
         this._renderer.enabled = true;
-        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Boss"), false);
     }
 
     public void ChargeStart()
     {
         _chargeRenderer.enabled = true;
-        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Charge_Lay"), false);
     }
 
     public void ChargeEnd()
     {
         _chargeRenderer.enabled = false;
         _animator.speed = 1;
-        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Charge_Lay"), true);
     }
 
     public void ChargeAnimeEnd()

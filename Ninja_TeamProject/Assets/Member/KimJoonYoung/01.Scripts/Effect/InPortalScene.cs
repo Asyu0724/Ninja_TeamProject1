@@ -1,5 +1,6 @@
     using DG.Tweening;
-using Member.KimJoonYoung._01.Scripts.UI.Portal;
+    using Member.KimJoonYoung._01.Scripts.UI;
+    using Member.KimJoonYoung._01.Scripts.UI.Portal;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -8,6 +9,7 @@ namespace Member.KimJoonYoung._01.Scripts.Effect
 {
     public class InPortalScene : MonoBehaviour
     {
+        [SerializeField] private SceneChangeManager _sceneChangeManager;
         [SerializeField] private Image blackScreenImage;
         public UnityEvent OnEvent;
 
@@ -30,6 +32,8 @@ namespace Member.KimJoonYoung._01.Scripts.Effect
             seq.Append(blackScreenImage.DOColor(Color.white, 0).SetEase(Ease.OutCubic));
             seq.AppendInterval(0.1f);
             seq.Append(blackScreenImage.DOColor(Color.black, 0).SetEase(Ease.OutCubic));
+            seq.AppendInterval(1.5f);
+            seq.OnComplete(_sceneChangeManager.ChangeScene);
         }
 
         private void Event()
