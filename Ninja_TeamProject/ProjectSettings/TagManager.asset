@@ -58,6 +58,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Charge
+    uniqueID: 54978863
+    locked: 0
   - name: Bossbar
     uniqueID: 2568343899
     locked: 0
