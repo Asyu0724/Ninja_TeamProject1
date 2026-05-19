@@ -59,7 +59,7 @@ Material:
     m_Floats:
     - _EnableExternalAlpha: 0
     - _GlowSize: 0.09
-    - _SplitValue: 0.9961327
+    - _SplitValue: 0.9990991
     - _Split_Value: 0
     - _ZWrite: 0
     m_Colors:

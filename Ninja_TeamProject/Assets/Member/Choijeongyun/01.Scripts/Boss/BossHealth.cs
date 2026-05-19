@@ -6,6 +6,7 @@ using Member.KimJoonYoung._01.Scripts.Agent;
 using Member.KimJoonYoung._01.Scripts.Hp;
 using Member.KimJoonYoung._01.Scripts.UI.Boss;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class BossHealth : MonoBehaviour, IDamageable
 {
@@ -14,6 +15,7 @@ public class BossHealth : MonoBehaviour, IDamageable
     [SerializeField] private SpiderHealthBar healthBarUI;
     [SerializeField] private BossMover bossMover;
     [SerializeField] private CJY_AudioManager bossAudio;
+    public UnityEvent OnDamage;
 
     private int _bossHealth;
     public bool IsDeath { get; private set; }
@@ -31,6 +33,7 @@ public class BossHealth : MonoBehaviour, IDamageable
     public void GetDamage(int damage, GameObject dealer)
     {
         _bossHealth -= damage;
+        OnDamage?.Invoke();
         _bossHealth = Mathf.Clamp(_bossHealth, 0, maxHealth);
         healthBarUI.UpdateHealthUI(_bossHealth);
         bossRenderer.StartCoroutine("Attacked");
@@ -64,12 +67,14 @@ public class BossHealth : MonoBehaviour, IDamageable
 
     private IEnumerator HP()
     {
+        float chargeTime = 0;
         while (true)
         {
             _bossHealth += 3;
+            chargeTime += 0.5f;
             _bossHealth = Mathf.Clamp(_bossHealth, 0, maxHealth);
             healthBarUI.UpdateHealthUI(_bossHealth);
-            if (_bossHealth >= maxHealth)
+            if (chargeTime >= 3)
             {
                 IsCharge = false;
                 bossRenderer.ChargeEnd();
