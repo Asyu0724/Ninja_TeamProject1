@@ -4,6 +4,7 @@ using Member.KimJoonYoung._01.Scripts.SO;
 using Member.KimJoonYoung._01.Scripts.UI;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using Random = UnityEngine.Random;
 
@@ -14,6 +15,8 @@ namespace Member.KimJoonYoung._01.Scripts.Agent
         [SerializeField] private LayerMask damageLayerMask;
         private PlayerController _playerController;
         private bool _playerHited;
+        public UnityEvent onAttackHit;
+        public UnityEvent onSkillHit;
 
         // Attack Setting
         [field:SerializeField] public PlayerAttackDataSO PlayerAttackData { get; private set; }
@@ -143,7 +146,10 @@ namespace Member.KimJoonYoung._01.Scripts.Agent
             foreach (Collider2D collider in collider2Ds)
             {
                 if (collider.TryGetComponent(out IDamageable damageable))
-                    damageable.GetDamage(_attackDamageAmount,gameObject);
+                {
+                    onAttackHit?.Invoke();
+                    damageable.GetDamage(_attackDamageAmount, gameObject);
+                }
             }
         }
 
@@ -157,7 +163,10 @@ namespace Member.KimJoonYoung._01.Scripts.Agent
             foreach (Collider2D collider in collider2Ds)
             {
                 if (collider.TryGetComponent(out IDamageable damageable))
+                {
+                    onSkillHit?.Invoke();
                     damageable.GetDamage(_qSkillDamageAmount, gameObject);
+                }
             }
             _agentAttack.FirstBoxSize(); 
             _agentAttack.FirstOffset();
