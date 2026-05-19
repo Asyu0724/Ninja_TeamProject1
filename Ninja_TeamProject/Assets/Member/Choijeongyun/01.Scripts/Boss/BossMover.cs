@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Diagnostics;
 using Member.Choijeongyun._01.Scripts.Func;
 using Member.KimJoonYoung._01.Scripts.Player;
 using Unity.VisualScripting;
@@ -11,6 +12,7 @@ public class BossMover : MonoBehaviour
     private Rigidbody2D _rigid;
     private Vector2 _moveDir;
     private Vector2 _distance;
+    private Vector2 _dashDir;
 
     [SerializeField] private PlayerController player;
 
@@ -21,7 +23,7 @@ public class BossMover : MonoBehaviour
 
     [SerializeField] private float speed;
     [SerializeField] private float jumpPower;
-    [SerializeField] private float movePower;
+    [SerializeField] private float dashPower;
 
     // 보스가 공격을 할수 있는지 체크
     private bool _isCanAttack;
@@ -78,6 +80,7 @@ public class BossMover : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         _rigid.linearVelocity = Vector2.zero;  
         IsDash = false;
+        yield return  new WaitForSeconds(0.5f);
     }
 
     private void FixedUpdate()
@@ -91,8 +94,9 @@ public class BossMover : MonoBehaviour
             if(!IsSkill)
             {
                 IsDash = true;
-                _moveDir.x = transform.position.x > 0 ? -1f : 1f;
-                _rigid.linearVelocity = _moveDir * movePower;
+                _dashDir.x = transform.position.x > 0 ? -1f : 1f;
+                bossRenderer.StartSFX();
+                _rigid.linearVelocity = _dashDir * dashPower;
                 StartCoroutine(DashEnd());
             }
             
@@ -100,7 +104,7 @@ public class BossMover : MonoBehaviour
             {
                 if (!IsSkill)
                 {
-                    bossAudio.PlaySFX(5, 0.2f);
+                    //bossAudio.PlaySFX(5, 0.2f);
                     Attack3 = true;
                 }
                 // else if(!Attack3) bossRenderer.AnimSpeed(1.5f); 
@@ -112,10 +116,10 @@ public class BossMover : MonoBehaviour
                 bossAudio.PlaySFX(1,0.1f);   
             }*/
         }
-        if (Mathf.Abs(_distance.x) > 9.0f && !IsSkill)
+        if (Mathf.Abs(_distance.x) > 7.0f && !IsSkill)
         {
             IsJump = true;
-            bossAudio.PlaySFX(1,0.1f);   
+            //bossAudio.PlaySFX(1,0.1f);   
             // _rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
         }
 
@@ -152,12 +156,12 @@ public class BossMover : MonoBehaviour
         int random = Random.Range(0, 2);
         if (random == 0)
         {
-            bossAudio.PlaySFX(3,0.2f);
+            //bossAudio.PlaySFX(3,0.2f);
             Attack1 = true;
         }
         else if (random == 1)
         {
-            bossAudio.PlaySFX(4,0.4f);
+            //bossAudio.PlaySFX(4,0.4f);
             Attack2 = true;
         }
 
@@ -180,7 +184,7 @@ public class BossMover : MonoBehaviour
         newPos.x = player.transform.position.x;
         transform.position = newPos;
         IsShake = true;
-        bossAudio.PlaySFX(2, 0.1f);
+        //bossAudio.PlaySFX(2, 0.1f);
     }
 
     private void Update() 
@@ -216,6 +220,11 @@ public class BossMover : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(transform.position + (Vector3)boxOffset, boxSize);
         // Gizmos.DrawWireCube(transform.position + (Vector3)groundOffset, groundBoxSize);
+    }
+    
+    public void StartBossSFX(int value)
+    {
+        bossAudio.PlaySFX(value, 0);
     }
 
 
