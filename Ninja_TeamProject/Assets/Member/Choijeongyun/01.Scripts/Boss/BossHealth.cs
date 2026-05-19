@@ -20,6 +20,7 @@ public class BossHealth : MonoBehaviour, IDamageable
     private int _bossHealth;
     public bool IsDeath { get; private set; }
     public bool IsCharge { get; private set; }
+    
     private int _canCharge = 2;
 
 
@@ -32,6 +33,7 @@ public class BossHealth : MonoBehaviour, IDamageable
 
     public void GetDamage(int damage, GameObject dealer)
     {
+        if (IsDeath || IsCharge || bossMover.IsJump) return;
         _bossHealth -= damage;
         OnDamage?.Invoke();
         _bossHealth = Mathf.Clamp(_bossHealth, 0, maxHealth);
