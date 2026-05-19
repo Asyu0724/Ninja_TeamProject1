@@ -79,7 +79,7 @@ public class GolemBoss : Boss
 
         if (distanceToPlayer <= closeAttackRange)
         {
-            int randomPattern = UnityEngine.Random.Range(3, 4);
+            int randomPattern = UnityEngine.Random.Range(0, 4);
             if (randomPattern == 0) yield return Pattern1_BigCloud();
             if (randomPattern == 1) yield return Pattern2_SmallCloud();
             if (randomPattern == 2) yield return Pattern3_ShockWave();
