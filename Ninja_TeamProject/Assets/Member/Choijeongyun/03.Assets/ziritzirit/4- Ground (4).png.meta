@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8cc29d5c53195b348b6103d526a7bcd7
+guid: 01f44262ddbb1114e8a6adc44724fdf6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7734598097886259956
-    second: 2 -Background - Mountains (2)_0
+      213: -4441644294366821845
+    second: 4- Ground (4)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,17 +109,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 2 -Background - Mountains (2)_0
+      name: 4- Ground (4)_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 576
-        height: 90
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c05d317720039a490800000000000000
-      internalID: -7734598097886259956
+      spriteID: b2200af0c0c1c52c0800000000000000
+      internalID: -4441644294366821845
       vertices: []
       indices: 
       edges: []
@@ -148,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      2 -Background - Mountains (2)_0: -7734598097886259956
+      4- Ground (4)_0: -4441644294366821845
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

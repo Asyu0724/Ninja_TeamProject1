@@ -18,11 +18,11 @@ MonoBehaviour:
   NormalRange: {x: 6.4, y: 1}
   FinisherRange: {x: 4, y: 0.4}
   ChargeRange: {x: 10, y: 0.5}
-  NormalCool: 4.5
-  CanNormal: 1
-  ChargingCool: 8.5
-  CanCharging: 1
-  FinisherCool: 5.5
-  CanFinisher: 1
+  NormalCool: 5
+  CanNormal: 0
+  ChargingCool: 9
+  CanCharging: 0
+  FinisherCool: 6
+  CanFinisher: 0
   TelCool: 0
   CanTel: 0

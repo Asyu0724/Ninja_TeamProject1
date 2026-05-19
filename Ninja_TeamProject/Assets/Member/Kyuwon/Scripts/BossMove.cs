@@ -25,24 +25,23 @@ public class BossMove : MonoBehaviour
     private void Update()
     {
         float PlayerDistance = Vector2.Distance(transform.position, playerTRM.position);
-        float StopDistance = 0.4f;
-
+        float StopDistance = 2f;
+        
         if (PlayerDistance > StopDistance)
         {
             float tempDir = (playerTRM.position.x - transform.position.x);
             tempDir = Mathf.Sign(tempDir);
             MoveDir = new Vector2(tempDir, 0f);
-        
+            
             rigid.linearVelocityX = MoveSpeed * MoveDir.x;
-        
-            _animator.SetFloat("MoveX", MoveDir.x);
+            
+            //_animator.SetFloat("MoveX", MoveDir.x);
             _animator.SetFloat("MoveX", Mathf.Abs(MoveDir.x));
             Flip();
         }
         else
         {
             rigid.linearVelocityX = 0f;
-            
             _animator.SetFloat("MoveX", 0f);
         }
     }

@@ -112,7 +112,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -126,7 +126,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -184,6 +184,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -191,12 +204,12 @@ TextureImporter:
       name: Hanger Dude 2 15x80_0
       rect:
         serializedVersion: 2
-        x: 2
+        x: 0
         y: 0
-        width: 12
+        width: 15
         height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -213,12 +226,12 @@ TextureImporter:
       name: Hanger Dude 2 15x80_1
       rect:
         serializedVersion: 2
-        x: 18
+        x: 15
         y: 0
-        width: 12
+        width: 15
         height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -235,12 +248,12 @@ TextureImporter:
       name: Hanger Dude 2 15x80_2
       rect:
         serializedVersion: 2
-        x: 33
+        x: 30
         y: 0
-        width: 12
+        width: 15
         height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -257,12 +270,12 @@ TextureImporter:
       name: Hanger Dude 2 15x80_3
       rect:
         serializedVersion: 2
-        x: 49
+        x: 45
         y: 0
-        width: 12
+        width: 15
         height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -279,12 +292,12 @@ TextureImporter:
       name: Hanger Dude 2 15x80_4
       rect:
         serializedVersion: 2
-        x: 64
+        x: 60
         y: 0
-        width: 12
+        width: 15
         height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -301,12 +314,12 @@ TextureImporter:
       name: Hanger Dude 2 15x80_5
       rect:
         serializedVersion: 2
-        x: 79
+        x: 75
         y: 0
-        width: 12
+        width: 15
         height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -323,12 +336,12 @@ TextureImporter:
       name: Hanger Dude 2 15x80_6
       rect:
         serializedVersion: 2
-        x: 94
+        x: 90
         y: 0
-        width: 12
+        width: 15
         height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -345,12 +358,12 @@ TextureImporter:
       name: Hanger Dude 2 15x80_7
       rect:
         serializedVersion: 2
-        x: 109
+        x: 105
         y: 0
-        width: 12
+        width: 15
         height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -367,12 +380,12 @@ TextureImporter:
       name: Hanger Dude 2 15x80_8
       rect:
         serializedVersion: 2
-        x: 124
+        x: 120
         y: 0
-        width: 12
+        width: 15
         height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -389,12 +402,12 @@ TextureImporter:
       name: Hanger Dude 2 15x80_9
       rect:
         serializedVersion: 2
-        x: 139
+        x: 135
         y: 0
-        width: 12
+        width: 15
         height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -411,12 +424,12 @@ TextureImporter:
       name: Hanger Dude 2 15x80_10
       rect:
         serializedVersion: 2
-        x: 154
+        x: 150
         y: 0
-        width: 12
+        width: 15
         height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -433,12 +446,12 @@ TextureImporter:
       name: Hanger Dude 2 15x80_11
       rect:
         serializedVersion: 2
-        x: 168
+        x: 165
         y: 0
-        width: 12
+        width: 15
         height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -455,12 +468,12 @@ TextureImporter:
       name: Hanger Dude 2 15x80_12
       rect:
         serializedVersion: 2
-        x: 183
+        x: 180
         y: 0
-        width: 12
+        width: 15
         height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -477,12 +490,12 @@ TextureImporter:
       name: Hanger Dude 2 15x80_13
       rect:
         serializedVersion: 2
-        x: 197
+        x: 195
         y: 0
-        width: 12
+        width: 15
         height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -499,12 +512,12 @@ TextureImporter:
       name: Hanger Dude 2 15x80_14
       rect:
         serializedVersion: 2
-        x: 212
+        x: 210
         y: 0
-        width: 12
+        width: 15
         height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -521,12 +534,12 @@ TextureImporter:
       name: Hanger Dude 2 15x80_15
       rect:
         serializedVersion: 2
-        x: 226
+        x: 225
         y: 0
-        width: 12
+        width: 15
         height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -545,10 +558,10 @@ TextureImporter:
         serializedVersion: 2
         x: 240
         y: 0
-        width: 13
+        width: 15
         height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -567,10 +580,10 @@ TextureImporter:
         serializedVersion: 2
         x: 255
         y: 0
-        width: 12
+        width: 15
         height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -589,10 +602,10 @@ TextureImporter:
         serializedVersion: 2
         x: 270
         y: 0
-        width: 12
+        width: 15
         height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -609,12 +622,12 @@ TextureImporter:
       name: Hanger Dude 2 15x80_19
       rect:
         serializedVersion: 2
-        x: 284
+        x: 285
         y: 0
-        width: 13
+        width: 15
         height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -631,12 +644,12 @@ TextureImporter:
       name: Hanger Dude 2 15x80_20
       rect:
         serializedVersion: 2
-        x: 299
+        x: 300
         y: 0
-        width: 13
+        width: 15
         height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -653,12 +666,12 @@ TextureImporter:
       name: Hanger Dude 2 15x80_21
       rect:
         serializedVersion: 2
-        x: 314
+        x: 315
         y: 0
-        width: 13
+        width: 15
         height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -675,12 +688,12 @@ TextureImporter:
       name: Hanger Dude 2 15x80_22
       rect:
         serializedVersion: 2
-        x: 329
+        x: 330
         y: 0
-        width: 13
+        width: 15
         height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -699,10 +712,10 @@ TextureImporter:
         serializedVersion: 2
         x: 345
         y: 0
-        width: 12
+        width: 15
         height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -721,10 +734,10 @@ TextureImporter:
         serializedVersion: 2
         x: 360
         y: 0
-        width: 13
+        width: 15
         height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -741,12 +754,12 @@ TextureImporter:
       name: Hanger Dude 2 15x80_25
       rect:
         serializedVersion: 2
-        x: 376
+        x: 375
         y: 0
-        width: 12
+        width: 15
         height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -763,7 +776,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: da590260ad3b887439f64deb6f378c09
     internalID: 0
     vertices: []
     indices: 
@@ -771,7 +784,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":26.0,"y":1.0},"gridSpriteSize":{"x":15.0,"y":80.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":1.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":2,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Hanger Dude 2 15x80_0: -5320101487269634020
       Hanger Dude 2 15x80_1: -975110502957814945

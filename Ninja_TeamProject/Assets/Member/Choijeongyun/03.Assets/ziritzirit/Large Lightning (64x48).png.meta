@@ -1,61 +1,61 @@
 fileFormatVersion: 2
-guid: e9f3bfbea763de046840e305738d29ec
+guid: 8a7fc2d29a9c45d4e85ea71190aa4773
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5915941020873496922
-    second: Distant Lightning (32x32)_0
+      213: -2005930958421177655
+    second: Large Lightning (64x48)_0
   - first:
-      213: -8346524597428173130
-    second: Distant Lightning (32x32)_1
+      213: -2029717970447961021
+    second: Large Lightning (64x48)_1
   - first:
-      213: 4352589595817508720
-    second: Distant Lightning (32x32)_2
+      213: -9034782782153938739
+    second: Large Lightning (64x48)_2
   - first:
-      213: -3900665396449661286
-    second: Distant Lightning (32x32)_3
+      213: 2167847233110416877
+    second: Large Lightning (64x48)_3
   - first:
-      213: 4414620537397325188
-    second: Distant Lightning (32x32)_4
+      213: -7807966939943432988
+    second: Large Lightning (64x48)_4
   - first:
-      213: -6109906404671050906
-    second: Distant Lightning (32x32)_5
+      213: 6826680953037773457
+    second: Large Lightning (64x48)_5
   - first:
-      213: -2246182325712829900
-    second: Distant Lightning (32x32)_6
+      213: -135833235566784026
+    second: Large Lightning (64x48)_6
   - first:
-      213: 8651575292973469849
-    second: Distant Lightning (32x32)_7
+      213: 3878331991080231670
+    second: Large Lightning (64x48)_7
   - first:
-      213: 5417244389620661277
-    second: Distant Lightning (32x32)_8
+      213: 1929130711795476921
+    second: Large Lightning (64x48)_8
   - first:
-      213: 8300162765159827318
-    second: Distant Lightning (32x32)_9
+      213: 732430451407694715
+    second: Large Lightning (64x48)_9
   - first:
-      213: -4744796095794829171
-    second: Distant Lightning (32x32)_10
+      213: -1409469104696750012
+    second: Large Lightning (64x48)_10
   - first:
-      213: 792775841159546362
-    second: Distant Lightning (32x32)_11
+      213: 3782911082602084347
+    second: Large Lightning (64x48)_11
   - first:
-      213: 9169977039653837751
-    second: Distant Lightning (32x32)_12
+      213: 7272641164241487542
+    second: Large Lightning (64x48)_12
   - first:
-      213: -1337401301372423593
-    second: Distant Lightning (32x32)_13
+      213: 56678944905846471
+    second: Large Lightning (64x48)_13
   - first:
-      213: 5071852258230355652
-    second: Distant Lightning (32x32)_14
+      213: -851660039041746098
+    second: Large Lightning (64x48)_14
   - first:
-      213: -5326982260318172828
-    second: Distant Lightning (32x32)_15
+      213: -3372823408056321013
+    second: Large Lightning (64x48)_15
   - first:
-      213: -4900061525050987444
-    second: Distant Lightning (32x32)_16
+      213: -3916853127305258957
+    second: Large Lightning (64x48)_16
   - first:
-      213: -2702334934265451416
-    second: Distant Lightning (32x32)_17
+      213: -157777425793356108
+    second: Large Lightning (64x48)_17
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -160,17 +160,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Distant Lightning (32x32)_0
+      name: Large Lightning (64x48)_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 543
-        width: 32
-        height: 30
+        y: 815
+        width: 64
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +192,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6a66caa4cfa56eda0800000000000000
-      internalID: -5915941020873496922
+      spriteID: 9cac853db608924e0800000000000000
+      internalID: -2005930958421177655
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Distant Lightning (32x32)_1
+      name: Large Lightning (64x48)_1
       rect:
         serializedVersion: 2
         x: 0
-        y: 511
-        width: 32
-        height: 30
+        y: 767
+        width: 64
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -201,20 +214,130 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6b6cb35b9103b2c80800000000000000
-      internalID: -8346524597428173130
+      spriteID: 344f831824ef4d3e0800000000000000
+      internalID: -2029717970447961021
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Distant Lightning (32x32)_2
+      name: Large Lightning (64x48)_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 719
+        width: 64
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc826ee8de00e9280800000000000000
+      internalID: -9034782782153938739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Large Lightning (64x48)_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 671
+        width: 64
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ded1cd0a29db51e10800000000000000
+      internalID: 2167847233110416877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Large Lightning (64x48)_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 623
+        width: 64
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ec8daebf6784a390800000000000000
+      internalID: -7807966939943432988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Large Lightning (64x48)_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 575
+        width: 64
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19addb0582e3dbe50800000000000000
+      internalID: 6826680953037773457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Large Lightning (64x48)_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 527
+        width: 64
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e19955546c6d1ef0800000000000000
+      internalID: -135833235566784026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Large Lightning (64x48)_7
       rect:
         serializedVersion: 2
         x: 0
         y: 479
-        width: 32
-        height: 30
+        width: 64
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -223,20 +346,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 07f73c72d21876c30800000000000000
-      internalID: 4352589595817508720
+      spriteID: 6f2ee59c56a92d530800000000000000
+      internalID: 3878331991080231670
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Distant Lightning (32x32)_3
+      name: Large Lightning (64x48)_8
       rect:
         serializedVersion: 2
         x: 0
-        y: 447
-        width: 32
-        height: 30
+        y: 431
+        width: 64
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -245,42 +368,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a9ea5f01d7d0ed9c0800000000000000
-      internalID: -3900665396449661286
+      spriteID: 9b9add15926a5ca10800000000000000
+      internalID: 1929130711795476921
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Distant Lightning (32x32)_4
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 415
-        width: 32
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 48d26b53df1e34d30800000000000000
-      internalID: 4414620537397325188
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Distant Lightning (32x32)_5
+      name: Large Lightning (64x48)_9
       rect:
         serializedVersion: 2
         x: 0
         y: 383
-        width: 32
-        height: 30
+        width: 64
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -289,20 +390,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 66ba2b22f70453ba0800000000000000
-      internalID: -6109906404671050906
+      spriteID: b7ba5de6d9d1a2a00800000000000000
+      internalID: 732430451407694715
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Distant Lightning (32x32)_6
+      name: Large Lightning (64x48)_10
       rect:
         serializedVersion: 2
         x: 0
-        y: 351
-        width: 32
-        height: 30
+        y: 335
+        width: 64
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -311,20 +412,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 43240275315f3d0e0800000000000000
-      internalID: -2246182325712829900
+      spriteID: 44099a4215f807ce0800000000000000
+      internalID: -1409469104696750012
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Distant Lightning (32x32)_7
+      name: Large Lightning (64x48)_11
       rect:
         serializedVersion: 2
         x: 0
-        y: 319
-        width: 32
-        height: 30
+        y: 286
+        width: 64
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -333,20 +434,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 990da3514e1901870800000000000000
-      internalID: 8651575292973469849
+      spriteID: bf7b26f36999f7430800000000000000
+      internalID: 3782911082602084347
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Distant Lightning (32x32)_8
+      name: Large Lightning (64x48)_12
       rect:
         serializedVersion: 2
         x: 0
-        y: 287
-        width: 32
-        height: 30
+        y: 239
+        width: 64
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -355,64 +456,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d1c31d0121bed2b40800000000000000
-      internalID: 5417244389620661277
+      spriteID: 6b64f755b9c9de460800000000000000
+      internalID: 7272641164241487542
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Distant Lightning (32x32)_9
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 255
-        width: 32
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 677864b0f0a103370800000000000000
-      internalID: 8300162765159827318
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Distant Lightning (32x32)_10
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 223
-        width: 32
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d882d720719172eb0800000000000000
-      internalID: -4744796095794829171
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Distant Lightning (32x32)_11
+      name: Large Lightning (64x48)_13
       rect:
         serializedVersion: 2
         x: 0
         y: 191
-        width: 32
-        height: 30
+        width: 64
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -421,20 +478,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: af583de5d61800b00800000000000000
-      internalID: 792775841159546362
+      spriteID: 7ce5b59333d59c000800000000000000
+      internalID: 56678944905846471
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Distant Lightning (32x32)_12
+      name: Large Lightning (64x48)_14
       rect:
         serializedVersion: 2
         x: 0
-        y: 158
-        width: 32
-        height: 33
+        y: 143
+        width: 64
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -443,42 +500,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7bb1e0f688d424f70800000000000000
-      internalID: 9169977039653837751
+      spriteID: e4b758fe4bb4e24f0800000000000000
+      internalID: -851660039041746098
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Distant Lightning (32x32)_13
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 127
-        width: 32
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7523d8d2a98907de0800000000000000
-      internalID: -1337401301372423593
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Distant Lightning (32x32)_14
+      name: Large Lightning (64x48)_15
       rect:
         serializedVersion: 2
         x: 0
         y: 95
-        width: 32
-        height: 30
+        width: 64
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -487,20 +522,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4c6451dc1c6d26640800000000000000
-      internalID: 5071852258230355652
+      spriteID: b0c3ea8faf25131d0800000000000000
+      internalID: -3372823408056321013
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Distant Lightning (32x32)_15
+      name: Large Lightning (64x48)_16
       rect:
         serializedVersion: 2
         x: 0
-        y: 63
-        width: 32
-        height: 30
+        y: 47
+        width: 64
+        height: 49
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -509,42 +544,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4698de89bd1c216b0800000000000000
-      internalID: -5326982260318172828
+      spriteID: 338979545da84a9c0800000000000000
+      internalID: -3916853127305258957
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Distant Lightning (32x32)_16
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 31
-        width: 32
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c4ce6cd210c7ffbb0800000000000000
-      internalID: -4900061525050987444
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Distant Lightning (32x32)_17
+      name: Large Lightning (64x48)_17
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 29
+        width: 64
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -553,8 +566,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 86caaf2e1b06f7ad0800000000000000
-      internalID: -2702334934265451416
+      spriteID: 4bee20664467fcdf0800000000000000
+      internalID: -157777425793356108
       vertices: []
       indices: 
       edges: []
@@ -573,24 +586,24 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Distant Lightning (32x32)_0: -5915941020873496922
-      Distant Lightning (32x32)_1: -8346524597428173130
-      Distant Lightning (32x32)_10: -4744796095794829171
-      Distant Lightning (32x32)_11: 792775841159546362
-      Distant Lightning (32x32)_12: 9169977039653837751
-      Distant Lightning (32x32)_13: -1337401301372423593
-      Distant Lightning (32x32)_14: 5071852258230355652
-      Distant Lightning (32x32)_15: -5326982260318172828
-      Distant Lightning (32x32)_16: -4900061525050987444
-      Distant Lightning (32x32)_17: -2702334934265451416
-      Distant Lightning (32x32)_2: 4352589595817508720
-      Distant Lightning (32x32)_3: -3900665396449661286
-      Distant Lightning (32x32)_4: 4414620537397325188
-      Distant Lightning (32x32)_5: -6109906404671050906
-      Distant Lightning (32x32)_6: -2246182325712829900
-      Distant Lightning (32x32)_7: 8651575292973469849
-      Distant Lightning (32x32)_8: 5417244389620661277
-      Distant Lightning (32x32)_9: 8300162765159827318
+      Large Lightning (64x48)_0: -2005930958421177655
+      Large Lightning (64x48)_1: -2029717970447961021
+      Large Lightning (64x48)_10: -1409469104696750012
+      Large Lightning (64x48)_11: 3782911082602084347
+      Large Lightning (64x48)_12: 7272641164241487542
+      Large Lightning (64x48)_13: 56678944905846471
+      Large Lightning (64x48)_14: -851660039041746098
+      Large Lightning (64x48)_15: -3372823408056321013
+      Large Lightning (64x48)_16: -3916853127305258957
+      Large Lightning (64x48)_17: -157777425793356108
+      Large Lightning (64x48)_2: -9034782782153938739
+      Large Lightning (64x48)_3: 2167847233110416877
+      Large Lightning (64x48)_4: -7807966939943432988
+      Large Lightning (64x48)_5: 6826680953037773457
+      Large Lightning (64x48)_6: -135833235566784026
+      Large Lightning (64x48)_7: 3878331991080231670
+      Large Lightning (64x48)_8: 1929130711795476921
+      Large Lightning (64x48)_9: 732430451407694715
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

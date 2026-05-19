@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 01f44262ddbb1114e8a6adc44724fdf6
+guid: 027ed4dc33a9f164ab377da64868e655
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4441644294366821845
-    second: 4- Ground (4)_0
+      213: 5586551072322462062
+    second: Small Lightning (32x32)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,17 +109,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 4- Ground (4)_0
+      name: Small Lightning (32x32)_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 3
         y: 0
-        width: 576
-        height: 32
+        width: 29
+        height: 576
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b2200af0c0c1c52c0800000000000000
-      internalID: -4441644294366821845
+      spriteID: e61ab59f99a678d40800000000000000
+      internalID: 5586551072322462062
       vertices: []
       indices: 
       edges: []
@@ -148,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      4- Ground (4)_0: -4441644294366821845
+      Small Lightning (32x32)_0: 5586551072322462062
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

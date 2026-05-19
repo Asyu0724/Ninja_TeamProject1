@@ -28,6 +28,8 @@ public class BossRenderer : MonoBehaviour
 
     private float _moveX;
 
+    public bool IsAttacked = false;
+
     private void Awake()
     {
         _animator = GetComponent<Animator>();
@@ -58,7 +60,7 @@ public class BossRenderer : MonoBehaviour
     {
         if (bossMove.IsJump)
         {
-            Vector2 playerPos = new Vector2(player.transform.position.x, -7.9f);
+            Vector2 playerPos = new Vector2(player.transform.position.x, -6.9f);
             range.transform.position = playerPos;
         }
     }
@@ -93,37 +95,56 @@ public class BossRenderer : MonoBehaviour
         gameObject.SetActive(false); // 임시방편
     }
 
-    public IEnumerator JumpDel()
+    public IEnumerator JumpDel() 
     {
         this._animator.speed = 0;
         this._renderer.enabled = false;
-        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Boss"), true);
         yield return new WaitForSeconds(1f);
         this._animator.speed = 1;
         this._renderer.enabled = true;
-        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Boss"), false);
     }
 
     public void ChargeStart()
     {
         _chargeRenderer.enabled = true;
-        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Charge_Lay"), false);
     }
 
     public void ChargeEnd()
     {
         _chargeRenderer.enabled = false;
         _animator.speed = 1;
-        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Charge_Lay"), true);
     }
 
     public void ChargeAnimeEnd()
     {
         _animator.speed = 0;
     }
+
+    public void StartSFX()
+    {
+        int value = 0;
+        if (bossMove.IsShake) value = 2;
+        else if (bossMove.IsJump) value = 1;
+        
+        else if(IsAttacked) value = 9;
+        
+        else if (bossMove.IsDash) value = 8;
+        
+        else if (bossMove.Attack1) value = 3;
+        else if (bossMove.Attack2) value = 4;
+        else if (bossMove.Attack3) value = 5;
+        
+        else if (bossHP.IsCharge) value = 6;
+        
+        else if (bossHP.IsDeath) value = 7;
+        
+        bossMove.StartBossSFX(value);
+    }
     
     private IEnumerator Attacked()
     {
+        IsAttacked = true;
+        StartSFX();
         _renderer.color = Color.red;
         Color color = _renderer.color;
         
@@ -145,5 +166,6 @@ public class BossRenderer : MonoBehaviour
         color.a = 1f;
         _renderer.color = color;
         _renderer.color = Color.white;
+        IsAttacked = false;
     }
 }

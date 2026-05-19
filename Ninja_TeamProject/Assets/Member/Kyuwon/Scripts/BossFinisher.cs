@@ -21,7 +21,6 @@ public class BossFinisher : MonoBehaviour
 
         if (isHit != null)
         {
-            float timeStamp = Time.time;
             Skill = Random.Range(0, 5);
 
             if (Skill < 3)
@@ -35,9 +34,4 @@ public class BossFinisher : MonoBehaviour
         }
     }
     
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireCube(transform.position, bossData.FinisherRange);
-    }
 }

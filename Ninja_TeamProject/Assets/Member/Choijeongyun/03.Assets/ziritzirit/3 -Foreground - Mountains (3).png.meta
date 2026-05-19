@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 027ed4dc33a9f164ab377da64868e655
+guid: a56195851d899aa4da29b0b081309ad6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5586551072322462062
-    second: Small Lightning (32x32)_0
+      213: 1971649184236713948
+    second: 3 -Foreground - Mountains (3)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,17 +109,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Small Lightning (32x32)_0
+      name: 3 -Foreground - Mountains (3)_0
       rect:
         serializedVersion: 2
-        x: 3
+        x: 0
         y: 0
-        width: 29
-        height: 576
+        width: 576
+        height: 77
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e61ab59f99a678d40800000000000000
-      internalID: 5586551072322462062
+      spriteID: cd73e10ac74bc5b10800000000000000
+      internalID: 1971649184236713948
       vertices: []
       indices: 
       edges: []
@@ -148,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Small Lightning (32x32)_0: 5586551072322462062
+      3 -Foreground - Mountains (3)_0: 1971649184236713948
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
