@@ -1,3 +1,4 @@
+using System.Collections;
 using Member.Choijeongyun._01.Scripts.Func;
 using Member.KimJoonYoung._01.Scripts.Player;
 using Unity.VisualScripting;
@@ -20,6 +21,7 @@ public class BossMover : MonoBehaviour
 
     [SerializeField] private float speed;
     [SerializeField] private float jumpPower;
+    [SerializeField] private float movePower;
 
     // 보스가 공격을 할수 있는지 체크
     private bool _isCanAttack;
@@ -39,11 +41,11 @@ public class BossMover : MonoBehaviour
 
     private bool _isPlaySound = false;
     
-    private bool IsSkill => Attack1 || Attack2 || bossHP.IsCharge || IsJump || Attack3;
+    private bool IsSkill => Attack1 || Attack2 || bossHP.IsCharge || IsJump || Attack3 || IsDash;
 
     public bool NotOtherSkill
     {
-        get => Attack1 || Attack2 || IsJump || Attack3;
+        get => Attack1 || Attack2 || IsJump || Attack3 || IsDash;
         set => NotOtherSkill = value;
     } 
 
@@ -56,6 +58,7 @@ public class BossMover : MonoBehaviour
     public bool IsJump { get; private set; }
 
     public bool IsShake { get; private set; }
+    public bool IsDash { get; private set; }
 
 
     private void Awake()
@@ -63,11 +66,18 @@ public class BossMover : MonoBehaviour
         _rigid = GetComponent<Rigidbody2D>();
     }
 
-    private void Start()
+    /*private void Start()
     {
         _minLimit = Camera.main.ViewportToWorldPoint(new Vector2(0, 0)).x;
         _maxLimit = Camera.main.ViewportToWorldPoint(new Vector2(1, 1)).x;
 
+    }*/
+    
+    private IEnumerator DashEnd()
+    {
+        yield return new WaitForSeconds(0.1f);
+        _rigid.linearVelocity = Vector2.zero;  
+        IsDash = false;
     }
 
     private void FixedUpdate()
@@ -77,7 +87,15 @@ public class BossMover : MonoBehaviour
         
         if (Mathf.Abs(_distance.x) < 2.0f)
         {
-            _moveDir.x = 0;
+            // _moveDir.x = 0;
+            if(!IsSkill)
+            {
+                IsDash = true;
+                _moveDir.x = transform.position.x > 0 ? -1f : 1f;
+                _rigid.linearVelocity = _moveDir * movePower;
+                StartCoroutine(DashEnd());
+            }
+            
             if (_distance.y > 0.2f)
             {
                 if (!IsSkill)
@@ -87,6 +105,12 @@ public class BossMover : MonoBehaviour
                 }
                 // else if(!Attack3) bossRenderer.AnimSpeed(1.5f); 
             }
+
+            /*if (!IsSkill) // 가까워 지면 점프 
+            {
+                IsJump = true;
+                bossAudio.PlaySFX(1,0.1f);   
+            }*/
         }
         if (Mathf.Abs(_distance.x) > 9.0f && !IsSkill)
         {
@@ -195,8 +219,8 @@ public class BossMover : MonoBehaviour
     }
 
 
-    private void LateUpdate()
+    /*private void LateUpdate()
     {
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, _minLimit + _offset, _maxLimit - _offset), transform.position.y, transform.position.z);
-    }
+    }*/
 }
