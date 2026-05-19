@@ -37,6 +37,7 @@ public class Min_BossMover : MonoBehaviour
                 Vector3 currentPos = transform.position;
                 transform.position = new Vector3(playerTrm.position.x, currentPos.y, currentPos.z);
                 attack1start = false;
+                
             }
     
             if (attack3start == true)

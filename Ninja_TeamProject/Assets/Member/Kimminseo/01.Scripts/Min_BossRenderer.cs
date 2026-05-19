@@ -7,6 +7,7 @@ using Random = UnityEngine.Random;
 public class Min_BossRenderer : MonoBehaviour
 {
     
+    [SerializeField]private Collider2D _collider;
     public Min_BossMover bossmover;
     public Min_BossHealth bossHealth;
     private Animator _anim;
@@ -156,6 +157,23 @@ public class Min_BossRenderer : MonoBehaviour
     public void Attack2Start()
     {
         bossmover.Attack2move = true;
+    }
+    public void MoveColliderAttackStart()
+    {
+        _collider.offset = new Vector2(0, -3);
+    }
+
+    public void MoveColliderAttackEnd()
+    {
+        _collider.offset = new Vector2(0, -2);
+    }
+    public void MoveColliderAttack2Start()
+    {
+        _collider.offset = new Vector2(0, 1.4f);
+    }
+    public void Disappear()
+    {
+        _collider.offset = new Vector2(0, -10);
     }
 }
 
