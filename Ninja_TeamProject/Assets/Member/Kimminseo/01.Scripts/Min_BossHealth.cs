@@ -24,8 +24,6 @@ public class Min_BossHealth : MonoBehaviour, IDamageable
         _bossHealth -= damage;
         _bossHealth = Mathf.Clamp(_bossHealth, 0, maxHealth);
         _healthBarUI.UpdateHealthUI(_bossHealth);
-        
-        Debug.Log(_bossHealth); 
 
         if (_bossHealth <= 0)
         {
