@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Diagnostics;
+using DG.Tweening;
 using Member.Choijeongyun._01.Scripts.Func;
 using Member.KimJoonYoung._01.Scripts.Player;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
+using Sequence = DG.Tweening.Sequence;
 
 public class BossMover : MonoBehaviour
 {
@@ -42,6 +44,8 @@ public class BossMover : MonoBehaviour
     [SerializeField] private CJY_AudioManager bossAudio;
 
     private bool _isPlaySound = false;
+    private bool _dashIsCoolT;
+    private bool _isGrounded;
     
     private bool IsSkill => Attack1 || Attack2 || bossHP.IsCharge || IsJump || Attack3 || IsDash;
 
@@ -75,12 +79,23 @@ public class BossMover : MonoBehaviour
 
     }*/
     
+    private bool CheckGround() // 그라운드 감지
+    {
+        _isGrounded = Physics2D.OverlapBox(transform.position + (Vector3)groundOffset, groundBoxSize, 0, isGround);
+        return _isGrounded;
+    }
+    
     private IEnumerator DashEnd()
     {
-        yield return new WaitForSeconds(0.1f);
-        _rigid.linearVelocity = Vector2.zero;  
+        yield return new WaitForSeconds(0.25f);
         IsDash = false;
-        yield return  new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(3f);
+        _dashIsCoolT = false;
+    }
+
+    private void StartDashCo()
+    {
+        StartCoroutine(DashEnd());
     }
 
     private void FixedUpdate()
@@ -91,16 +106,18 @@ public class BossMover : MonoBehaviour
         if (Mathf.Abs(_distance.x) < 2.0f)
         {
             // _moveDir.x = 0;
-            if(!IsSkill)
+            if(!IsSkill && !_dashIsCoolT && _isGrounded)
             {
-                IsDash = true;
-                _dashDir.x = transform.position.x > 0 ? -1f : 1f;
+                IsDash = true; 
+                _dashIsCoolT = true;
+                Sequence seq =  DOTween.Sequence();
+                _dashDir.x = transform.position.x >= 0 ? -1f : 1f;
                 bossRenderer.StartSFX();
-                _rigid.linearVelocity = _dashDir * dashPower;
-                StartCoroutine(DashEnd());
+                seq.Prepend(_rigid.DOMoveX(transform.position.x + _moveDir.x * dashPower, 0.5f).SetEase(Ease.OutQuart));
+                seq.OnComplete(StartDashCo);
             }
             
-            if (_distance.y > 0.2f)
+            if (_distance.y < 0.2f && _isGrounded)
             {
                 if (!IsSkill)
                 {
@@ -189,8 +206,8 @@ public class BossMover : MonoBehaviour
 
     private void Update() 
     {
+        CheckGround();
         LastAttackTime -= Time.deltaTime;
-
         if (!IsSkill) // 회전
         {
             if (_moveDir.x > 0)
@@ -219,7 +236,7 @@ public class BossMover : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(transform.position + (Vector3)boxOffset, boxSize);
-        // Gizmos.DrawWireCube(transform.position + (Vector3)groundOffset, groundBoxSize);
+        Gizmos.DrawWireCube(transform.position + (Vector3)groundOffset, groundBoxSize);
     }
     
     public void StartBossSFX(int value)
