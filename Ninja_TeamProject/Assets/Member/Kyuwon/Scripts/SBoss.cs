@@ -10,6 +10,9 @@ public class SBoss : MonoBehaviour
     private BossSlash _slash;
     private BossCharge _charge;
     private BossFinisher _finisher;
+
+    private WaitForSeconds attacking = new WaitForSeconds(2.0f);
+
     private BossMove _bossMove;
     [SerializeField] private LayerMask whatIsPlayer;
     public SBossData bossData;
@@ -43,7 +46,6 @@ public class SBoss : MonoBehaviour
             _SBossSkill = _finisher.Finisher;
             isAttacking = true;
             bossData.CanFinisher = false;
-            StartCoroutine(Wait());
             StartCoroutine(IsAttacking());
             StartCoroutine(FinisherCool());
         }
@@ -53,8 +55,7 @@ public class SBoss : MonoBehaviour
             _SBossSkill = _slash.Slash;
             isAttacking = true;
             bossData.CanNormal = false;
-            StartCoroutine(Wait());
-            StartCoroutine(IsAttacking());
+            StartCoroutine(IsSlashing());
             StartCoroutine(NormalCool());
         }
 
@@ -63,23 +64,22 @@ public class SBoss : MonoBehaviour
             _SBossSkill = _charge.Charge;
             isAttacking = true;
             bossData.CanCharging = false;
-            StartCoroutine(Wait());
             StartCoroutine(IsAttacking());
             StartCoroutine(ChargingCool());
         }
         
     }
-
-    IEnumerator Wait()
-    {
-        yield return new WaitForSeconds(1.0f);
-        _bossSkills();
-        BossMove.instance.MoveSpeed = bossData.speed;
-    }
     
     IEnumerator IsAttacking()
     {
-        yield return new WaitForSeconds(2.0f);
+        yield return attacking;
+        _bossSkills();
+        isAttacking = false;
+        BossMove.instance.MoveSpeed = bossData.speed;
+    }
+    IEnumerator IsSlashing()
+    {
+        yield return attacking;
         isAttacking = false;
         BossMove.instance.MoveSpeed = bossData.speed;
     }

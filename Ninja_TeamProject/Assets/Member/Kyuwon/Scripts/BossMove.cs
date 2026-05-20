@@ -7,7 +7,7 @@ using UnityEngine.Splines.ExtrusionShapes;
 public class BossMove : MonoBehaviour
 {
     public SBossData bossData;
-
+    [field: SerializeField] public SBoss _sBoss;
     private Animator _animator;
     private Rigidbody2D rigid;
     private Vector2 MoveDir; 
