@@ -1,16 +1,12 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BossHealthUI : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] private Slider bossHealthBar;
 
-    // Update is called once per frame
-    void Update()
+    public void UpdateBossHealthBar()
     {
-        
+        bossHealthBar.value = BossHealthSystem.instance.health / (float)BossHealthSystem.instance.maxHealth;
     }
 }

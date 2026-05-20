@@ -36,6 +36,7 @@ public class BossFinisher : MonoBehaviour
 
     public void FinisherOverLap()
     {
+        BossMove.instance.MoveSpeed = 0f;
         Debug.Log("Finisher");
     }
 }

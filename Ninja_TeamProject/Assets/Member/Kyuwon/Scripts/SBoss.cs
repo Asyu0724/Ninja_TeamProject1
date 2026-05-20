@@ -43,7 +43,6 @@ public class SBoss : MonoBehaviour
             _SBossSkill = _finisher.Finisher;
             isAttacking = true;
             bossData.CanFinisher = false;
-            StartCoroutine(FinisherGizmos());
             StartCoroutine(Wait());
             StartCoroutine(IsAttacking());
             StartCoroutine(FinisherCool());
@@ -54,7 +53,6 @@ public class SBoss : MonoBehaviour
             _SBossSkill = _slash.Slash;
             isAttacking = true;
             bossData.CanNormal = false;
-            StartCoroutine(SlashGizmos());
             StartCoroutine(Wait());
             StartCoroutine(IsAttacking());
             StartCoroutine(NormalCool());
@@ -65,7 +63,6 @@ public class SBoss : MonoBehaviour
             _SBossSkill = _charge.Charge;
             isAttacking = true;
             bossData.CanCharging = false;
-            StartCoroutine(ChargeGizmos());
             StartCoroutine(Wait());
             StartCoroutine(IsAttacking());
             StartCoroutine(ChargingCool());
@@ -77,12 +74,14 @@ public class SBoss : MonoBehaviour
     {
         yield return new WaitForSeconds(1.0f);
         _bossSkills();
+        BossMove.instance.MoveSpeed = bossData.speed;
     }
     
     IEnumerator IsAttacking()
     {
         yield return new WaitForSeconds(2.0f);
         isAttacking = false;
+        BossMove.instance.MoveSpeed = bossData.speed;
     }
     
     IEnumerator FinisherCool()

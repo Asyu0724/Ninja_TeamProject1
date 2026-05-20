@@ -12,7 +12,8 @@ public class BossMove : MonoBehaviour
     private Rigidbody2D rigid;
     private Vector2 MoveDir; 
     private Transform playerTRM;
-    private float MoveSpeed;
+    public float MoveSpeed;
+    public static BossMove instance;
     
     private void Awake()
     {
@@ -20,6 +21,7 @@ public class BossMove : MonoBehaviour
         _animator = GetComponentInChildren<Animator>();
         rigid = GetComponent<Rigidbody2D>();
         MoveSpeed = bossData.speed;
+        instance = this;
     }
     
     private void Update()
@@ -60,6 +62,7 @@ public class BossMove : MonoBehaviour
 
     public void ChargeChange()
     {
+        BossMove.instance.MoveSpeed = 0f;
         Debug.Log("위치 이동");
     }
 }
