@@ -73,4 +73,25 @@ public class Min_BossMover : MonoBehaviour
         {
             Debug.Log("트리거 감지됨: " + other.gameObject.name);
         }
+
+        public void Attack1OverLap()
+        {
+            //Collider2D hit = Physics2D.OverlapBox(transform.position + _Attack2Boxoffset, _Attack2Boxsize, 0f, _playerlayer);
+            Debug.Log("Yaho!");
+            //hit?.GetComponent<IDamageable>().GetDamage(1, gameObject);
+        }
+        
+        public void Attack2OverLap()
+        {
+            //Collider2D hit = Physics2D.OverlapBox(transform.position + _Attack2Boxoffset, _Attack2Boxsize, 0f, _playerlayer);
+            Debug.Log("Oh Yeah!");
+            //hit?.GetComponent<IDamageable>().GetDamage(1, gameObject);
+        }
+        
+        public void Attack3OverLap()
+        {
+            //Collider2D hit = Physics2D.OverlapBox(transform.position + _Attack2Boxoffset, _Attack2Boxsize, 0f, _playerlayer);
+            Debug.Log("HiYa!");
+            //hit?.GetComponent<IDamageable>().GetDamage(1, gameObject);
+        }
 }
