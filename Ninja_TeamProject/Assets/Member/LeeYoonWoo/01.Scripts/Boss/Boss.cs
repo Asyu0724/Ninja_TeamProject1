@@ -18,7 +18,7 @@ public abstract class Boss : MonoBehaviour , IDamageable
 
     int hitCount = 0;
     [SerializeField] protected BossDataSO bossData;
-    [SerializeField] int hitsPerHp = 4;
+    [SerializeField] int hitsPerHp = 1;
 
     protected virtual void Awake()
     {
@@ -52,7 +52,7 @@ public abstract class Boss : MonoBehaviour , IDamageable
     
     protected virtual void Die()
     {
-        Destroy(gameObject);
+        
     }
 
     protected Collider2D[] CheckCircleOverlap(Vector2 position, float range)
