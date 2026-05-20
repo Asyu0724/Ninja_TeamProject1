@@ -29,4 +29,9 @@ public class BossCharge : MonoBehaviour
             _animator.SetTrigger("Charger");
         }
     }
+
+    public void ChargeOverLap()
+    {
+        Debug.Log("Charge");
+    }
 }

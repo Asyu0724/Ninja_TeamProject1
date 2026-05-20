@@ -57,4 +57,9 @@ public class BossMove : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 180, 0);
         }
     }
+
+    public void ChargeChange()
+    {
+        Debug.Log("위치 이동");
+    }
 }
