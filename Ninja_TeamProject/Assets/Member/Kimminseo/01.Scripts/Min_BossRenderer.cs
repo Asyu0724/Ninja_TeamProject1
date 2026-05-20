@@ -1,21 +1,24 @@
 using System.Collections;
-using System.Linq.Expressions;
 using Member.KimJoonYoung._01.Scripts.Agent;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class Min_BossRenderer : MonoBehaviour
 {
-    
-    [SerializeField]private Collider2D _collider;
+    [SerializeField] private Collider2D _collider;
     public Min_BossMover bossmover;
     public Min_BossHealth bossHealth;
     private Animator _anim;
     private SpriteRenderer _spriter;
     private int skill;
     [SerializeField] private AgentRenderer agentRenderer;
-
     [SerializeField] private Transform _playertrm;
+
+    /*
+    [SerializeField] private GameObject attack1Preview;
+    [SerializeField] private GameObject attack2Preview;
+    [SerializeField] private GameObject attack3Preview;
+    [SerializeField] private GameObject[] attack3Knives; */
 
     private int HashAttack1    = Animator.StringToHash("Attack1");
     private int HashAttack2    = Animator.StringToHash("Attack2");
@@ -36,6 +39,15 @@ public class Min_BossRenderer : MonoBehaviour
     private void Start()
     {
         StartCoroutine(AttackRoutine());
+        
+        /*
+        if(attack1Preview) attack1Preview.SetActive(false);
+        if(attack2Preview) attack2Preview.SetActive(false);
+        if(attack3Preview) attack3Preview.SetActive(false);
+        foreach (var knife in attack3Knives)
+        {
+            if(knife) knife.SetActive(false);
+        }*/
     }
 
     private void Update()
@@ -105,7 +117,11 @@ public class Min_BossRenderer : MonoBehaviour
     }
 
     private IEnumerator DoAttack1()
-    {
+    {/*
+        attack1Preview.SetActive(true); 
+        yield return new WaitForSeconds(1.5f);
+        attack1Preview.SetActive(false); */
+        
         _anim.SetBool(HashAttack1, true);
         yield return null;
         yield return new WaitForSeconds(_anim.GetCurrentAnimatorStateInfo(0).length);
@@ -117,17 +133,29 @@ public class Min_BossRenderer : MonoBehaviour
     }
     
     private IEnumerator DoAttack2()
-    {
+    {/*
+        attack2Preview.SetActive(true); 
+        yield return new WaitForSeconds(1.5f);
+        attack2Preview.SetActive(false); */
+        
         _anim.SetBool(HashAttack2, true);
         yield return null;
-        yield return new WaitUntil(() => _anim.GetBool(HashAttack2Fin));
+        yield return new WaitForSeconds(_anim.GetCurrentAnimatorStateInfo(0).length); // 안전장치 추가
         bossmover.Attack2move = false;
         _anim.SetBool(HashAttack2, false);
         _anim.SetBool(HashAttack2Fin, false);
     }
 
     private IEnumerator DoAttack3()
-    {
+    {/*
+        attack3Preview.SetActive(true);
+        foreach (var knife in attack3Knives) knife.SetActive(true);
+        
+        yield return new WaitForSeconds(1.5f);
+        
+        attack3Preview.SetActive(false);
+        foreach (var knife in attack3Knives) knife.SetActive(false);*/
+        
         _anim.SetBool(HashAttack3, true);
         yield return null;
         yield return new WaitForSeconds(_anim.GetCurrentAnimatorStateInfo(0).length);
@@ -176,4 +204,3 @@ public class Min_BossRenderer : MonoBehaviour
         _collider.offset = new Vector2(0, -10);
     }
 }
-

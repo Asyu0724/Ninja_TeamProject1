@@ -16,8 +16,8 @@ public class Min_BossMover : MonoBehaviour
         private Vector2 minLimit;
         private Vector2 maxLimit;
         public bool Attack2move;
-        public bool attack1start{ private get; set; }
-        public bool attack3start{ private get; set; }
+        public bool attack1start;
+        public bool attack3start;
     
         private void Awake()
         {
