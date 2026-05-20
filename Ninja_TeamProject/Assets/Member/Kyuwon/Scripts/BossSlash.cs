@@ -28,4 +28,9 @@ public class BossSlash : MonoBehaviour
             _animator.SetTrigger("Slash");
         }
     }
+    
+    public void SlashOverLap()
+    {
+        Debug.Log("Slash");
+    }
 }

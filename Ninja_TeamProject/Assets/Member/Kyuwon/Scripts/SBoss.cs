@@ -10,12 +10,14 @@ public class SBoss : MonoBehaviour
     private BossSlash _slash;
     private BossCharge _charge;
     private BossFinisher _finisher;
+    private BossMove _bossMove;
     [SerializeField] private LayerMask whatIsPlayer;
     public SBossData bossData;
     public bool isAttacking = false;
 
     void Awake()
     {
+        _bossMove = GetComponent<BossMove>();
         _slash = GetComponent<BossSlash>();
         _charge = GetComponent<BossCharge>();
         _finisher = GetComponent<BossFinisher>();
@@ -41,7 +43,7 @@ public class SBoss : MonoBehaviour
             _SBossSkill = _finisher.Finisher;
             isAttacking = true;
             bossData.CanFinisher = false;
-            FinisherGizmos();
+            StartCoroutine(FinisherGizmos());
             StartCoroutine(Wait());
             StartCoroutine(IsAttacking());
             StartCoroutine(FinisherCool());
@@ -52,7 +54,7 @@ public class SBoss : MonoBehaviour
             _SBossSkill = _slash.Slash;
             isAttacking = true;
             bossData.CanNormal = false;
-            SlashGizmos();
+            StartCoroutine(SlashGizmos());
             StartCoroutine(Wait());
             StartCoroutine(IsAttacking());
             StartCoroutine(NormalCool());
@@ -63,7 +65,7 @@ public class SBoss : MonoBehaviour
             _SBossSkill = _charge.Charge;
             isAttacking = true;
             bossData.CanCharging = false;
-            ChargeGizmos();
+            StartCoroutine(ChargeGizmos());
             StartCoroutine(Wait());
             StartCoroutine(IsAttacking());
             StartCoroutine(ChargingCool());
@@ -145,5 +147,25 @@ public class SBoss : MonoBehaviour
         yield return new WaitForSeconds(1.0f);
         
         Gizmos.color = new Color(0f, 0f, 0f, 0f);
+    }
+
+    public void SlashOverlap()
+    {
+        _slash.SlashOverLap();
+    }
+
+    public void FinisherOverLap()
+    {
+        _finisher.FinisherOverLap();
+    }
+
+    public void ChargeOverLap()
+    {
+        _charge.ChargeOverLap();
+    }
+
+    public void ChargeChange()
+    {
+        _bossMove.ChargeChange();
     }
 }

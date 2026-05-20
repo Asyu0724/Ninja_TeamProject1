@@ -33,5 +33,9 @@ public class BossFinisher : MonoBehaviour
             }
         }
     }
-    
+
+    public void FinisherOverLap()
+    {
+        Debug.Log("Finisher");
+    }
 }

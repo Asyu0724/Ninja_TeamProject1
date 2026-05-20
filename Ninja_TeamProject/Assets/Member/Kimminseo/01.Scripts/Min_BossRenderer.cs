@@ -175,5 +175,20 @@ public class Min_BossRenderer : MonoBehaviour
     {
         _collider.offset = new Vector2(0, -10);
     }
+
+    public void DamageAttack1()
+    {
+        bossmover.Attack1OverLap();
+    }
+    
+    public void DamageAttack2()
+    {
+        bossmover.Attack2OverLap();
+    }
+    
+    public void DamageAttack3()
+    {
+        bossmover.Attack3OverLap();
+    }
 }
 

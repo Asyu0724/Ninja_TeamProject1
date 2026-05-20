@@ -3,31 +3,26 @@ using UnityEngine;
 
 public class Min_BossMover : MonoBehaviour
 {
-            private Rigidbody2D _rb;
+        private Rigidbody2D _rb;
         [SerializeField] private float speed = 10f;
         private Vector2 moveDir;
         [SerializeField]private Vector2 offset;
         private Vector2 currentPos;
+        
         [SerializeField]private Transform playerTrm;
         [SerializeField] private Vector2 _Attack2Boxsize;
         [SerializeField]private Vector3 _Attack2Boxoffset;
         [SerializeField] private LayerMask _playerlayer;
         [SerializeField] private Min_BossHealth BossHealth;
-        private Vector2 minLimit;
-        private Vector2 maxLimit;
+        
         public bool Attack2move;
-        public bool attack1start{ private get; set; }
-        public bool attack3start{ private get; set; }
+        public bool attack1start;
+        public bool attack3start;
     
         private void Awake()
         {
             _rb = GetComponent<Rigidbody2D>();
             BossHealth = GetComponent<Min_BossHealth>();
-        }
-        private void Start()
-        {
-            minLimit = Camera.main.ViewportToWorldPoint(new Vector2(0, 0));
-            maxLimit = Camera.main.ViewportToWorldPoint(new Vector2(1, 1));
         }
     
         private void Update()
@@ -72,5 +67,26 @@ public class Min_BossMover : MonoBehaviour
         private void OnTriggerStay2D(Collider2D other)
         {
             Debug.Log("트리거 감지됨: " + other.gameObject.name);
+        }
+
+        public void Attack1OverLap()
+        {
+            //Collider2D hit = Physics2D.OverlapBox(transform.position + _Attack2Boxoffset, _Attack2Boxsize, 0f, _playerlayer);
+            Debug.Log("Yaho!");
+            //hit?.GetComponent<IDamageable>().GetDamage(1, gameObject);
+        }
+        
+        public void Attack2OverLap()
+        {
+            //Collider2D hit = Physics2D.OverlapBox(transform.position + _Attack2Boxoffset, _Attack2Boxsize, 0f, _playerlayer);
+            Debug.Log("Oh Yeah!");
+            //hit?.GetComponent<IDamageable>().GetDamage(1, gameObject);
+        }
+        
+        public void Attack3OverLap()
+        {
+            //Collider2D hit = Physics2D.OverlapBox(transform.position + _Attack2Boxoffset, _Attack2Boxsize, 0f, _playerlayer);
+            Debug.Log("HiYa!");
+            //hit?.GetComponent<IDamageable>().GetDamage(1, gameObject);
         }
 }
