@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using Member.KimJoonYoung._01.Scripts.Player;
+using Member.KimJoonYoung._01.Scripts.UI.Boss;
 using Member.LeeYoonWoo.SO;
 using Unity.Mathematics;
 using Unity.VisualScripting;
@@ -14,7 +15,8 @@ public class ParticleGroup
 {
     public ParticleSystem[] particles;
 }
-public class GolemBoss : Boss 
+
+public class GolemBoss : Boss
 {
     public float patternDelay = 5f;
     public float closeAttackRange = 5.0f;
@@ -47,10 +49,12 @@ public class GolemBoss : Boss
         _rb = GetComponent<Rigidbody2D>();
     }
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         StartCoroutine(BossThinkRoutine());
     }
+    
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -172,7 +176,7 @@ public class GolemBoss : Boss
         anim.SetBool(bigCloudHash, true);
         foreach (var main in particles[2].particles)
         {
-            main.Play();
+            main?.Play();
         }
         yield return new WaitForSeconds(2f/timeOffset);
         yield return new WaitForSeconds(3f/timeOffset);
@@ -184,7 +188,7 @@ public class GolemBoss : Boss
         anim.SetBool(smallCloudHash, true);
         foreach (var main in particles[2].particles)
         {
-            main.Play();
+            main?.Play();
         }
         yield return new WaitForSeconds(2f/timeOffset);
     }
@@ -194,7 +198,7 @@ public class GolemBoss : Boss
         Debug.Log("공격 3");
         foreach (var main in particles[1].particles)
         {
-            main.Play();
+            main?.Play();
         }
         anim.SetBool(shockWaveHash, true);
         yield return new WaitForSeconds(3f/timeOffset);
@@ -211,7 +215,7 @@ public class GolemBoss : Boss
         {
             var particle = main.main;
             particle.startRotationY = isFacingRight ? 0f : 180f * Mathf.Deg2Rad;
-            main.Play();
+            main?.Play();
         }
         yield return new WaitForSeconds(1.9f);
         anim.SetBool(noDamageSpinAttackHash, false);

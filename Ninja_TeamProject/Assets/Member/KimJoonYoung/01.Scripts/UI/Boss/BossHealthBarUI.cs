@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace Member.KimJoonYoung._01.Scripts.UI.Boss
 {
-    public class SpiderHealthBar : MonoBehaviour
+    public class BossHealthBarUI : MonoBehaviour
     {
         private Slider _slider;
         private float health;

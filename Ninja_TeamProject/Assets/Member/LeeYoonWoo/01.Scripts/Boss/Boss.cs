@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using JetBrains.Annotations;
+using Member.KimJoonYoung._01.Scripts.UI.Boss;
 using Member.LeeYoonWoo.SO;
 using UnityEngine;
 using Debug = UnityEngine.Debug;
@@ -17,8 +18,9 @@ public abstract class Boss : MonoBehaviour , IDamageable
     protected Animator anim;
 
     int hitCount = 0;
+    [SerializeField] private BossHealthBarUI bossHealthSlider;
     [SerializeField] protected BossDataSO bossData;
-    [SerializeField] int hitsPerHp = 1;
+    // [SerializeField] int hitsPerHp = 1;
 
     protected virtual void Awake()
     {
@@ -26,30 +28,34 @@ public abstract class Boss : MonoBehaviour , IDamageable
         currentHealth = maxHealth;
         anim = GetComponentInChildren<Animator>();
 
-        UIManager.Instance.BossHealthUI.InitHealthUI((int)maxHealth);
+        // UIManager.Instance.BossHealthUI.InitHealthUI((int)maxHealth);
+    }
+
+    protected virtual void Start()
+    {
+        bossHealthSlider.InitHealthUI(currentHealth ,maxHealth);
     }
 
     public void TakeDamage(float damageAmount)
     {
+        // hitCount += (int)damageAmount;
+
+        // UIManager.Instance.BossHealthUI.Shake();
+
+        // if (hitCount >= hitsPerHp)
+        // {
+        //     hitCount = 0;
+        // UIManager.Instance.BossHealthUI.UpdateHealthUI((int)currentHealth);
         Debug.Log(damageAmount);
-        hitCount += (int)damageAmount;
 
-        UIManager.Instance.BossHealthUI.Shake();
-
-        if (hitCount >= hitsPerHp)
+        currentHealth--;
+        bossHealthSlider.UpdateHealthUI(currentHealth);
+        if (currentHealth <= 0)
         {
-            hitCount = 0;
-            currentHealth--;
-
-            UIManager.Instance.BossHealthUI.UpdateHealthUI((int)currentHealth);
-
-            if (currentHealth <= 0)
-            {
-                Die();
-            }
+            Die();
         }
     }
-    
+
     protected virtual void Die()
     {
         

@@ -12,7 +12,7 @@ public class BossHealth : MonoBehaviour, IDamageable
 {
     [SerializeField] private int maxHealth = 30;
     [SerializeField] private BossRenderer bossRenderer;
-    [SerializeField] private SpiderHealthBar healthBarUI;
+    [SerializeField] private BossHealthBarUI healthBarUIUI;
     [SerializeField] private BossMover bossMover;
     [SerializeField] private CJY_AudioManager bossAudio;
     public UnityEvent OnDamage;
@@ -26,7 +26,7 @@ public class BossHealth : MonoBehaviour, IDamageable
 
     private void Start()
     {
-        healthBarUI.InitHealthUI(_bossHealth, maxHealth);
+        healthBarUIUI.InitHealthUI(_bossHealth, maxHealth);
         _bossHealth = maxHealth;
         IsDeath = false;
     }
@@ -37,7 +37,7 @@ public class BossHealth : MonoBehaviour, IDamageable
         _bossHealth -= damage;
         OnDamage?.Invoke();
         _bossHealth = Mathf.Clamp(_bossHealth, 0, maxHealth);
-        healthBarUI.UpdateHealthUI(_bossHealth);
+        healthBarUIUI.UpdateHealthUI(_bossHealth);
         bossRenderer.StartCoroutine("Attacked");
         if (_bossHealth <= 10 && _canCharge > 0)
         {
@@ -75,7 +75,7 @@ public class BossHealth : MonoBehaviour, IDamageable
             _bossHealth += 3;
             chargeTime += 0.5f;
             _bossHealth = Mathf.Clamp(_bossHealth, 0, maxHealth);
-            healthBarUI.UpdateHealthUI(_bossHealth);
+            healthBarUIUI.UpdateHealthUI(_bossHealth);
             if (chargeTime >= 3)
             {
                 IsCharge = false;
