@@ -32,6 +32,7 @@ public class BossCharge : MonoBehaviour
 
     public void ChargeOverLap()
     {
+        BossMove.instance.MoveSpeed = 0f;
         Debug.Log("Charge");
     }
 }
