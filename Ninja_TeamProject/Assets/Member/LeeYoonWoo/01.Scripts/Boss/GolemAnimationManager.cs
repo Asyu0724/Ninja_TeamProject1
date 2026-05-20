@@ -43,6 +43,11 @@ public class GolemAnimationManage : MonoBehaviour
         boss.SpinAttackOverLap();
     }
 
+    public void DieEvent()
+    {
+        boss.DieEvent();
+    }
+
     public void CameraShake()
     {
         cs.Shake(0.1f, 0.1f);
