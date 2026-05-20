@@ -31,7 +31,6 @@ public class BossSlash : MonoBehaviour
     
     public void SlashOverLap()
     {
-        BossMove.instance.MoveSpeed = 0f;
         Debug.Log("Slash");
     }
 }

@@ -22,7 +22,7 @@ MonoBehaviour:
   CanNormal: 0
   ChargingCool: 9
   CanCharging: 0
-  FinisherCool: 6
+  FinisherCool: 2
   CanFinisher: 0
   TelCool: 0
   CanTel: 0
