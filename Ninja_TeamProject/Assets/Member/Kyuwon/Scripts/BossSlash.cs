@@ -25,7 +25,9 @@ public class BossSlash : MonoBehaviour
     public void Slash()
     {
         float timeStamp = Time.time;
-        
+
+        BossCharge.instance._dontFlip = true;
+
         foreach (var main in particles[0].particles)
         {
             var particle = main.main;
@@ -54,5 +56,7 @@ public class BossSlash : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         _animator.SetTrigger("Slash");
+        yield return new WaitForSeconds(1f);
+        BossCharge.instance._dontFlip = false;
     }
 }

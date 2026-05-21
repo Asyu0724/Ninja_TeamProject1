@@ -10,8 +10,15 @@ public class BossCharge : MonoBehaviour
     public SBossData bossData;
     [SerializeField] private bool isFacingRight;
     [SerializeField] public List<ParticleGroup> particles;
+    public static BossCharge instance;
     private Animator _animator;
+    public bool _dontFlip;
     [SerializeField] private LayerMask whatIsPlayer;
+
+    private void Start()
+    {
+        _dontFlip = false;
+    }
 
     void FixedUpdate()
     {
@@ -20,22 +27,26 @@ public class BossCharge : MonoBehaviour
     private void Awake()
     {
         _animator = GetComponentInChildren<Animator>();
+        instance = this;
     }
 
     public void Charge()
     {
         float timeStamp = Time.time;
-            
+        
+        _dontFlip = true;
+
         foreach (var main in particles[0].particles)
         {
-                var particle = main.main;
-                particle.startRotationY = isFacingRight ? 0f : 180f * Mathf.Deg2Rad;
-                main?.Play();
+            var particle = main.main;
+            particle.startRotationY = isFacingRight ? 0f : 180f * Mathf.Deg2Rad;
+            main?.Play();
         }
 
         StartCoroutine(ChargeTrigger());
-            
+
         BossMove.instance.MoveSpeed = 0f;
+
         _animator.SetFloat("MoveX", 0f);
         
     }
@@ -56,5 +67,8 @@ public class BossCharge : MonoBehaviour
     {
         yield return new WaitForSeconds(0.6f);
         _animator.SetTrigger("Charger");
+        yield return new WaitForSeconds(1f);
+        _dontFlip = false;
+        BossMove.instance.MoveSpeed = 3f;
     }
 }
