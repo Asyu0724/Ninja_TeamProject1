@@ -1,12 +1,8 @@
 using System.Collections;
-using System.Diagnostics;
 using DG.Tweening;
 using Member.Choijeongyun._01.Scripts.Func;
 using Member.KimJoonYoung._01.Scripts.Player;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.Serialization;
 using Sequence = DG.Tweening.Sequence;
 
 public class BossMover : MonoBehaviour
@@ -243,6 +239,7 @@ public class BossMover : MonoBehaviour
     {
         bossAudio.PlaySFX(value, 0);
     }
+
 
 
     /*private void LateUpdate()

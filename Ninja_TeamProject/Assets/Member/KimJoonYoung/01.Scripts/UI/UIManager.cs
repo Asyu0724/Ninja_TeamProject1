@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using Member.KimJoonYoung._01.Scripts.Hp;
 using UnityEngine;
-using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
