@@ -17,12 +17,12 @@ MonoBehaviour:
   CriticalDamage: 0
   NormalRange: {x: 6.4, y: 1}
   FinisherRange: {x: 4, y: 0.4}
-  ChargeRange: {x: 10, y: 0.5}
+  ChargeRange: {x: 8, y: 0.5}
   NormalCool: 5
   CanNormal: 0
   ChargingCool: 9
   CanCharging: 0
   FinisherCool: 2
-  CanFinisher: 0
+  CanFinisher: 1
   TelCool: 0
   CanTel: 0

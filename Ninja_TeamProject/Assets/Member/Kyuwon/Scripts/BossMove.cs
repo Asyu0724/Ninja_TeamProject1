@@ -62,6 +62,14 @@ public class BossMove : MonoBehaviour
 
     public void ChargeChange()
     {
+        Vector2 bossLook = transform.right; 
+        
+        float ChargePoint = bossData.ChargeRange.x; 
+        
+        Vector2 ChargeEnd = (Vector2)transform.position + (bossLook * ChargePoint);
+        
+        transform.position = ChargeEnd;
+        
         BossMove.instance.MoveSpeed = 0f;
         Debug.Log("위치 이동");
     }

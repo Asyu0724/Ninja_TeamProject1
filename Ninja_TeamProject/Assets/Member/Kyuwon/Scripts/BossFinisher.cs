@@ -26,17 +26,26 @@ public class BossFinisher : MonoBehaviour
             if (Skill < 3)
             {
                 _animator.SetTrigger("Finisher");
+                
+                BossMove.instance.MoveSpeed = 0f;
+                _animator.SetFloat("MoveX", 0f);
             }
             else
             {
                 _animator.SetTrigger("SFinisher");
+                
+                BossMove.instance.MoveSpeed = 0f;
+                _animator.SetFloat("MoveX", 0f);
             }
         }
     }
 
     public void FinisherOverLap()
     {
-        BossMove.instance.MoveSpeed = 0f;
+        Collider2D Hit = Physics2D.OverlapBox(transform.position, bossData.FinisherRange, 0,whatIsPlayer);
+        
+        Hit?.GetComponent<IDamageable>()?.GetDamage(1, gameObject);
+        
         Debug.Log("Finisher");
     }
 }

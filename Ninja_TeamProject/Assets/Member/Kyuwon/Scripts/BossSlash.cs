@@ -26,11 +26,20 @@ public class BossSlash : MonoBehaviour
             float timeStamp = Time.time;
             
             _animator.SetTrigger("Slash");
+            
+            BossMove.instance.MoveSpeed = 0f;
+            _animator.SetFloat("MoveX", 0f);
         }
     }
     
     public void SlashOverLap()
     {
-        Debug.Log("Slash");
+        
+        float offsetDistance = bossData.NormalRange.x * 0.5f;
+        Vector2 SlashPosition = (Vector2)transform.position + ((Vector2)transform.right * offsetDistance);
+        
+        Collider2D Hit = Physics2D.OverlapBox(SlashPosition, bossData.NormalRange, 0,whatIsPlayer);
+        
+        Hit?.GetComponent<IDamageable>()?.GetDamage(1, gameObject);
     }
 }
