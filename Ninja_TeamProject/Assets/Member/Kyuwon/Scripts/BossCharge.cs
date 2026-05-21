@@ -24,26 +24,20 @@ public class BossCharge : MonoBehaviour
 
     public void Charge()
     {
-        float offsetDistance = bossData.ChargeRange.x * 0.5f;
-        Vector2 ChargePosition = (Vector2)transform.position + ((Vector2)transform.right * offsetDistance);
-        
-        Collider2D isHit = Physics2D.OverlapBox(ChargePosition, bossData.ChargeRange, 0,whatIsPlayer);
-
-        if (isHit != null)
-        {
-            float timeStamp = Time.time;
+        float timeStamp = Time.time;
             
-            foreach (var main in particles[0].particles)
-            {
+        foreach (var main in particles[0].particles)
+        {
                 var particle = main.main;
                 particle.startRotationY = isFacingRight ? 0f : 180f * Mathf.Deg2Rad;
                 main?.Play();
-            }
-            _animator.SetTrigger("Charger");
-            
-            BossMove.instance.MoveSpeed = 0f;
-            _animator.SetFloat("MoveX", 0f);
         }
+
+        StartCoroutine(ChargeTrigger());
+            
+        BossMove.instance.MoveSpeed = 0f;
+        _animator.SetFloat("MoveX", 0f);
+        
     }
 
     public void ChargeOverLap()
@@ -56,5 +50,11 @@ public class BossCharge : MonoBehaviour
         Hit?.GetComponent<IDamageable>()?.GetDamage(1, gameObject);
         
         Debug.Log("Charge");
+    }
+
+    private IEnumerator ChargeTrigger()
+    {
+        yield return new WaitForSeconds(0.6f);
+        _animator.SetTrigger("Charger");
     }
 }

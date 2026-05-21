@@ -1,11 +1,13 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using Member.Kyuwon.SBossSO;
 
 public class BossFinisher : MonoBehaviour
 {
     public SBossData bossData;
-
+    [SerializeField] private bool isFacingRight;
+    [SerializeField] public List<ParticleGroup> particles;
     private int Skill;
     private Animator _animator;
     [SerializeField] private LayerMask whatIsPlayer;
@@ -15,24 +17,40 @@ public class BossFinisher : MonoBehaviour
         _animator = GetComponentInChildren<Animator>();
     }
     
+    private void FixedUpdate()
+    {
+        isFacingRight = transform.rotation.y == 0 ? true : false;
+    }
+    
     public void Finisher()
     {
-        Collider2D isHit = Physics2D.OverlapBox(transform.position, bossData.FinisherRange, 0,whatIsPlayer);
-
-        if (isHit != null)
         {
             Skill = Random.Range(0, 5);
 
             if (Skill < 3)
             {
-                _animator.SetTrigger("Finisher");
+                foreach (var main in particles[0].particles)
+                {
+                    var particle = main.main;
+                    particle.startRotationY = isFacingRight ? 0f : 180f * Mathf.Deg2Rad;
+                    main?.Play();
+                }
+
+                StartCoroutine(FinisherTrigger());
                 
                 BossMove.instance.MoveSpeed = 0f;
                 _animator.SetFloat("MoveX", 0f);
             }
             else
             {
-                _animator.SetTrigger("SFinisher");
+                foreach (var main in particles[0].particles)
+                {
+                    var particle = main.main;
+                    particle.startRotationY = isFacingRight ? 0f : 180f * Mathf.Deg2Rad;
+                    main?.Play();
+                }
+
+                StartCoroutine(SFinisherTrigger());
                 
                 BossMove.instance.MoveSpeed = 0f;
                 _animator.SetFloat("MoveX", 0f);
@@ -42,10 +60,22 @@ public class BossFinisher : MonoBehaviour
 
     public void FinisherOverLap()
     {
-        Collider2D Hit = Physics2D.OverlapBox(transform.position, bossData.FinisherRange, 0,whatIsPlayer);
+        Collider2D Hit = Physics2D.OverlapBox(transform.position, bossData.FinisherRange + bossData.FinisherRange, 0,whatIsPlayer);
         
         Hit?.GetComponent<IDamageable>()?.GetDamage(1, gameObject);
         
         Debug.Log("Finisher");
+    }
+    
+    private IEnumerator FinisherTrigger()
+    {
+        yield return new WaitForSeconds(0.6f);
+        _animator.SetTrigger("Finisher");
+    }
+    
+    private IEnumerator SFinisherTrigger()
+    {
+        yield return new WaitForSeconds(0.5f);
+        _animator.SetTrigger("SFinisher");
     }
 }
