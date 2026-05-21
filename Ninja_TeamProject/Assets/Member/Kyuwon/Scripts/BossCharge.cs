@@ -27,12 +27,21 @@ public class BossCharge : MonoBehaviour
         {
             float timeStamp = Time.time;
             _animator.SetTrigger("Charger");
+            
+            BossMove.instance.MoveSpeed = 0f;
+            _animator.SetFloat("MoveX", 0f);
         }
     }
 
     public void ChargeOverLap()
     {
-        BossMove.instance.MoveSpeed = 0f;
+        float offsetDistance = bossData.ChargeRange.x * 0.5f;
+        Vector2 ChargePosition = (Vector2)transform.position + ((Vector2)transform.right * offsetDistance);
+        
+        Collider2D Hit = Physics2D.OverlapBox(ChargePosition, bossData.ChargeRange, 0,whatIsPlayer);
+        
+        Hit?.GetComponent<IDamageable>()?.GetDamage(1, gameObject);
+        
         Debug.Log("Charge");
     }
 }
