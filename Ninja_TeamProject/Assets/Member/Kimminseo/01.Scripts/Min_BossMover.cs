@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Min_BossMover : MonoBehaviour
 {
-            private Rigidbody2D _rb;
+        private Rigidbody2D _rb;
         [SerializeField] private float speed = 10f;
         private Vector2 moveDir;
         [SerializeField]private Vector2 offset;
@@ -37,7 +37,6 @@ public class Min_BossMover : MonoBehaviour
                 Vector3 currentPos = transform.position;
                 transform.position = new Vector3(playerTrm.position.x, currentPos.y, currentPos.z);
                 attack1start = false;
-                
             }
     
             if (attack3start == true)
@@ -76,14 +75,14 @@ public class Min_BossMover : MonoBehaviour
 
         public void Attack1OverLap()
         {
-            //Collider2D hit = Physics2D.OverlapBox(transform.position + _Attack2Boxoffset, _Attack2Boxsize, 0f, _playerlayer);
+            /*Collider2D hit = Physics2D.OverlapBox(transform.position + _Attack2Boxoffset, _Attack2Boxsize, 0f, _playerlayer);*/
             Debug.Log("Yaho!");
-            //hit?.GetComponent<IDamageable>().GetDamage(1, gameObject);
+            /*hit?.GetComponent<IDamageable>().GetDamage(1, gameObject);*/
         }
         
         public void Attack2OverLap()
         {
-            //Collider2D hit = Physics2D.OverlapBox(transform.position + _Attack2Boxoffset, _Attack2Boxsize, 0f, _playerlayer);
+            /*Collider2D hit = Physics2D.OverlapBox(transform.position + _Attack2Boxoffset, _Attack2Boxsize, 0f, _playerlayer);*/
             Debug.Log("Oh Yeah!");
             //hit?.GetComponent<IDamageable>().GetDamage(1, gameObject);
         }
