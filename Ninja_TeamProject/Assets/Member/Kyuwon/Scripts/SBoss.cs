@@ -86,19 +86,19 @@ public class SBoss : MonoBehaviour
     
     IEnumerator FinisherCool()
     {
-        yield return new WaitForSeconds(bossData.FinisherCool);
+        yield return bossData.FinisherCool;
         bossData.CanFinisher = true;
     }
     
     IEnumerator NormalCool()
     {
-        yield return new WaitForSeconds(bossData.NormalCool);
+        yield return bossData.NormalCool;
         bossData.CanNormal = true;
     }
 
     IEnumerator ChargingCool()
     {
-        yield return new WaitForSeconds(bossData.ChargingCool);
+        yield return bossData.ChargingCool;
         bossData.CanCharging = true;
     }
     
