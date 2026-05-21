@@ -56,4 +56,27 @@ public class GolemAnimationManage : MonoBehaviour
             t.StoneForce();
         }
     }
+
+    public void PlaySpinAttackSound()
+    {
+        BossAudioManager.instance.PlaySfx(BossAudioManager.Sfx.spinAttack);
+    }
+    
+    public void PlayCloudAttackSound()
+    {
+        BossAudioManager.instance.PlaySfx(BossAudioManager.Sfx.cloudAttack1);
+
+    }
+    
+    public void PlayCloudAttack2Sound()
+    {
+        BossAudioManager.instance.PlaySfx(BossAudioManager.Sfx.cloudAttack2);
+
+    }
+    
+    public void EarthQuakeSound()
+    {
+        BossAudioManager.instance.PlaySfx(BossAudioManager.Sfx.EarthQuake);
+        
+    }
 }
