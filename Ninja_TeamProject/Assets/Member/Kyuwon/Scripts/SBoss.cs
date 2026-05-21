@@ -80,12 +80,6 @@ public class SBoss : MonoBehaviour
         isAttacking = false;
         BossMove.instance.MoveSpeed = bossData.speed;
     }
-    /*IEnumerator IsSlashing()
-    {
-        yield return attacking;
-        isAttacking = false;
-        BossMove.instance.MoveSpeed = bossData.speed;
-    }*/
     
     IEnumerator FinisherCool()
     {
