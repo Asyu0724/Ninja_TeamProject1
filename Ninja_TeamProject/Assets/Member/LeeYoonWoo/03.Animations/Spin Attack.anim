@@ -98,6 +98,13 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 0
+    functionName: PlaySpinAttackSound
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 0.025
     functionName: SpinAttackOverLap
     data: 
@@ -126,6 +133,13 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 0.1
+    functionName: PlaySpinAttackSound
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 0.125
     functionName: SpinAttackOverLap
     data: 
@@ -134,7 +148,7 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 0.15
-    functionName: SpinAttackOverLap
+    functionName: PlaySpinAttackSound
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
