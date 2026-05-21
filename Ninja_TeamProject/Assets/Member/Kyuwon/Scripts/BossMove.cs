@@ -7,12 +7,13 @@ using UnityEngine.Splines.ExtrusionShapes;
 public class BossMove : MonoBehaviour
 {
     public SBossData bossData;
-
+    [field: SerializeField] public SBoss _sBoss;
     private Animator _animator;
     private Rigidbody2D rigid;
     private Vector2 MoveDir; 
     private Transform playerTRM;
-    private float MoveSpeed;
+    public float MoveSpeed;
+    public static BossMove instance;
     
     private void Awake()
     {
@@ -20,6 +21,7 @@ public class BossMove : MonoBehaviour
         _animator = GetComponentInChildren<Animator>();
         rigid = GetComponent<Rigidbody2D>();
         MoveSpeed = bossData.speed;
+        instance = this;
     }
     
     private void Update()
@@ -60,6 +62,15 @@ public class BossMove : MonoBehaviour
 
     public void ChargeChange()
     {
+        Vector2 bossLook = transform.right; 
+        
+        float ChargePoint = bossData.ChargeRange.x; 
+        
+        Vector2 ChargeEnd = (Vector2)transform.position + (bossLook * ChargePoint);
+        
+        transform.position = ChargeEnd;
+        
+        BossMove.instance.MoveSpeed = 0f;
         Debug.Log("위치 이동");
     }
 }
