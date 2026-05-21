@@ -883,6 +883,13 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 0.083333336
+    functionName: AttackStart
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.083333336
     functionName: DoAttack1
     data: 
     objectReferenceParameter: {fileID: 0}
@@ -890,21 +897,7 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 0.083333336
-    functionName: DamageAttack1
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 0.083333336
     functionName: 
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 0.083333336
-    functionName: AttackStart
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
@@ -918,6 +911,20 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 0.5
+    functionName: DamageAttack1
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.5
+    functionName: AttackFin
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.5833333
     functionName: AttackFin
     data: 
     objectReferenceParameter: {fileID: 0}
