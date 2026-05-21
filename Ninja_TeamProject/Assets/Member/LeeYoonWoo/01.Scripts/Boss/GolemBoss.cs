@@ -1,13 +1,6 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 using Member.KimJoonYoung._01.Scripts.Player;
-using Member.KimJoonYoung._01.Scripts.UI.Boss;
-using Member.LeeYoonWoo.SO;
-using Unity.Mathematics;
-using Unity.VisualScripting;
-using UnityEditor.Search;
 using UnityEngine;
 
 [System.Serializable]
@@ -206,9 +199,9 @@ public class GolemBoss : Boss
     }
     private IEnumerator Pattern4_SpinAttack()
     {
+        float dir = (playerPos.position - transform.position).normalized.x;
         yield return StartCoroutine(TurnAround());
         Debug.Log("공격 4 시작");
-        float dir = (playerPos.position - transform.position).normalized.x;
         anim.SetBool(noDamageSpinAttackHash, true);
         yield return new WaitForSeconds(1.9f);
         foreach (var main in particles[0].particles)
