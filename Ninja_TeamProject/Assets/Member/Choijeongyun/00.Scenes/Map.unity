@@ -5062,7 +5062,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BossHealth
   maxHealth: 80
   bossRenderer: {fileID: 835799491}
-  healthBarUI: {fileID: 389192994}
+  healthBarUIUI: {fileID: 389192994}
   bossMover: {fileID: 288674196}
   bossAudio: {fileID: 1994717924}
   OnDamage:
@@ -5111,7 +5111,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!43 &320030638
+--- !u!43 &378221294
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
