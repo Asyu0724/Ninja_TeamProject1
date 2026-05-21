@@ -26,13 +26,10 @@ public class Min_BossRenderer : MonoBehaviour
     private int HashTeleport = Animator.StringToHash("Teleport");
     private int HashTeleportFinish = Animator.StringToHash("TeleportFinish");
     private int HashDie = Animator.StringToHash("Die");
-    public GameObject[] attackPreViews;
     
 
     private void Awake()
     {
-        for(int i = 0;i<attackPreViews.Length;i++)
-            attackPreViews[i].SetActive(false);
         _anim    = GetComponent<Animator>();
         _spriter = GetComponent<SpriteRenderer>();
     }
@@ -111,9 +108,7 @@ public class Min_BossRenderer : MonoBehaviour
 
     private IEnumerator DoAttack1()
     {
-        attackPreViews[0].SetActive(true);
         StartCoroutine(Previewtime());
-        attackPreViews[0].SetActive(false);
         _anim.SetBool(HashAttack1, true);
         yield return null;
         yield return new WaitForSeconds(_anim.GetCurrentAnimatorStateInfo(0).length);
@@ -126,9 +121,7 @@ public class Min_BossRenderer : MonoBehaviour
     
     private IEnumerator DoAttack2()
     {
-        attackPreViews[1].SetActive(true);
         StartCoroutine(Previewtime());
-        attackPreViews[1].SetActive(false);
         _anim.SetBool(HashAttack2, true);
         yield return null;
         yield return new WaitUntil(() => _anim.GetBool(HashAttack2Fin));
@@ -139,15 +132,7 @@ public class Min_BossRenderer : MonoBehaviour
 
     private IEnumerator DoAttack3()
     {
-        attackPreViews[2].SetActive(true);
-        attackPreViews[3].SetActive(true);
-        attackPreViews[4].SetActive(true);
-        attackPreViews[5].SetActive(true);
         StartCoroutine(Previewtime());
-        attackPreViews[2].SetActive(false);
-        attackPreViews[3].SetActive(false);
-        attackPreViews[4].SetActive(false);
-        attackPreViews[5].SetActive(false);
         _anim.SetBool(HashAttack3, true);
         yield return null;
         yield return new WaitForSeconds(_anim.GetCurrentAnimatorStateInfo(0).length);
