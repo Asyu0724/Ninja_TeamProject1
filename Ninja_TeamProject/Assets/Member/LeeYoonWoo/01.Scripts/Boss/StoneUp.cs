@@ -26,13 +26,13 @@ public class StoneUp : MonoBehaviour
     {
         if (_rb.position.y <= minY && _rb.linearVelocity.y < 0)
         {
-            _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, 0f);
+            _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, 0f); 
             _rb.position = new Vector2(_rb.position.x, minY);
         }
     }
 
     public void StoneForce()
     {
-        _rb.AddForce(Vector2.up * 10f, ForceMode2D.Impulse);
+        _rb.AddForce(Vector2.up * Random.Range(10.5f,13f), ForceMode2D.Impulse);
     }
 }
