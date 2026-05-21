@@ -14,6 +14,7 @@ public class BossSkill : MonoBehaviour
     [SerializeField] private Transform areaStart;
     [SerializeField] private Transform areaEnd;
 
+    [SerializeField] private Transform gasParticle; 
 
     // 보스 범위 공격 (오버랩 박스)
     /*[SerializeField] private LayerMask playerLayer;
@@ -101,6 +102,7 @@ public class BossSkill : MonoBehaviour
     
     public void Atk3Event()
     {
+        gasParticle.position = transform.parent.position;
         onAtk3?.Invoke();
     }
 }

@@ -1,12 +1,16 @@
+using System;
 using System.Collections;
 using DG.Tweening;
 using Member.Choijeongyun._01.Scripts.Func;
 using Member.KimJoonYoung._01.Scripts.Player;
+using Member.KimJoonYoung._01.Scripts.Rb_;
 using UnityEngine;
+using Random = UnityEngine.Random;
 using Sequence = DG.Tweening.Sequence;
 
 public class BossMover : MonoBehaviour
 {
+    private SpiderSpawn _spiderSpawn;
     private Rigidbody2D _rigid;
     private Vector2 _moveDir;
     private Vector2 _distance;
@@ -66,6 +70,12 @@ public class BossMover : MonoBehaviour
     private void Awake()
     {
         _rigid = GetComponent<Rigidbody2D>();
+        _spiderSpawn = GetComponent<SpiderSpawn>();
+        _spiderSpawn.OnBossSpawn += HandlerInitVelocity;
+    }
+
+    private void Start()
+    {
     }
 
     /*private void Start()
@@ -85,7 +95,7 @@ public class BossMover : MonoBehaviour
     {
         yield return new WaitForSeconds(0.25f);
         IsDash = false;
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         _dashIsCoolT = false;
     }
 
@@ -122,6 +132,10 @@ public class BossMover : MonoBehaviour
                 }
                 // else if(!Attack3) bossRenderer.AnimSpeed(1.5f); 
             }
+            
+            if (Mathf.Abs(_distance.x) < 0.5f)
+                _rigid.linearVelocityX = 0;
+
 
             /*if (!IsSkill) // 가까워 지면 점프 
             {
@@ -240,7 +254,11 @@ public class BossMover : MonoBehaviour
         bossAudio.PlaySFX(value, 0);
     }
 
-
+    private void HandlerInitVelocity()
+    {
+        _rigid.linearVelocityY = 0;
+        enabled = false;
+    }
 
     /*private void LateUpdate()
     {

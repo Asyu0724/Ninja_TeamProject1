@@ -10,12 +10,14 @@ using UnityEngine.Events;
 
 public class BossHealth : MonoBehaviour, IDamageable
 {
+    [SerializeField] private Transform bloodParticle; 
     [SerializeField] private int maxHealth = 30;
     [SerializeField] private BossRenderer bossRenderer;
     [SerializeField] private BossHealthBarUI healthBarUI;
     [SerializeField] private BossMover bossMover;
     [SerializeField] private CJY_AudioManager bossAudio;
     public UnityEvent OnDamage;
+    public UnityEvent OnDeath;
 
     private int _bossHealth;
     public bool IsDeath { get; private set; }
@@ -35,6 +37,7 @@ public class BossHealth : MonoBehaviour, IDamageable
     {
         if (IsDeath || IsCharge || bossMover.IsJump) return;
         _bossHealth -= damage;
+        bloodParticle.position = transform.position;
         OnDamage?.Invoke();
         _bossHealth = Mathf.Clamp(_bossHealth, 0, maxHealth);
         healthBarUI.UpdateHealthUI(_bossHealth);
@@ -47,6 +50,7 @@ public class BossHealth : MonoBehaviour, IDamageable
         if (_bossHealth <= 0)
         {
             bossAudio.PlaySFX(7,0.1f);
+            OnDeath?.Invoke();
             IsDeath = true;
         }
     }
