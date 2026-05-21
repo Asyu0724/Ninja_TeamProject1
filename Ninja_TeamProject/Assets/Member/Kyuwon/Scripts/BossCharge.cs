@@ -25,7 +25,7 @@ public class BossCharge : MonoBehaviour
     public void Charge()
     {
         float timeStamp = Time.time;
-            
+        
         foreach (var main in particles[0].particles)
         {
                 var particle = main.main;
@@ -34,7 +34,7 @@ public class BossCharge : MonoBehaviour
         }
 
         StartCoroutine(ChargeTrigger());
-            
+        
         BossMove.instance.MoveSpeed = 0f;
         _animator.SetFloat("MoveX", 0f);
         
@@ -56,5 +56,11 @@ public class BossCharge : MonoBehaviour
     {
         yield return new WaitForSeconds(0.6f);
         _animator.SetTrigger("Charger");
+        StartCoroutine(NotUse());
+    }
+    
+    IEnumerator NotUse()
+    {
+        yield return new WaitForSeconds(1f);
     }
 }
