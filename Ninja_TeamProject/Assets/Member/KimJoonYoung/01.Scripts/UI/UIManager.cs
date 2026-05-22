@@ -1,13 +1,13 @@
 using System;
 using System.Collections;
+using DG.Tweening;
 using Member.KimJoonYoung._01.Scripts.Hp;
 using UnityEngine;
-using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    [field:SerializeField] public HealthBarUI HealthUI {  get; private set; }
+    [field:SerializeField] public PlayerHealthSlider HealthUI {  get; private set; }
     [field: SerializeField] public HealthBarUI BossHealthUI { get; private set; }
     [SerializeField] private Image gameOverImage;
     public event Action OnGameOver;
@@ -23,24 +23,16 @@ public class UIManager : MonoBehaviour
     
     public void Dead()
     {
+        Sequence seq = DOTween.Sequence();
         gameOverImage.gameObject.SetActive(true);
-        StartCoroutine(CoFade());
+        seq.Prepend(gameOverImage.DOFade(1f, 2f));
+        seq.OnComplete(GameOver);
     }
 
-    IEnumerator CoFade()
+    private void GameOver()
     {
-        float elapsedTime = 0f; // 누적 경과 시간
-        float fadedTime = 2f; // 총 소요 시간
-
-        while (elapsedTime <= fadedTime)
-        {
-            gameOverImage.GetComponent<CanvasRenderer>().SetAlpha(Mathf.Lerp(0f, 1f, elapsedTime / fadedTime));
-            
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
         OnGameOver?.Invoke();
-        yield break;
+
     }
 }
 

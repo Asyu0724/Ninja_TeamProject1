@@ -50,6 +50,8 @@ public class BossMove : MonoBehaviour
     
     private void Flip()
     {
+        if (BossCharge.instance._dontFlip) return;
+
         if (MoveDir.x > 0)
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);
@@ -62,6 +64,8 @@ public class BossMove : MonoBehaviour
 
     public void ChargeChange()
     {
+        MoveSpeed = 0f;
+
         Vector2 bossLook = transform.right; 
         
         float ChargePoint = bossData.ChargeRange.x; 
@@ -70,7 +74,6 @@ public class BossMove : MonoBehaviour
         
         transform.position = ChargeEnd;
         
-        BossMove.instance.MoveSpeed = 0f;
         Debug.Log("위치 이동");
     }
 }

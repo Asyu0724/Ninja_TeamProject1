@@ -1,9 +1,7 @@
-using System;
 using System.Collections;
 using DG.Tweening;
 using Member.KimJoonYoung._01.Scripts.Manager;
 using UnityEngine;
-using UnityEngine.Analytics;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Sequence = DG.Tweening.Sequence;
@@ -20,7 +18,7 @@ namespace Member.KimJoonYoung._01.Scripts.UI
         {
             _sceneChangeImage = GetComponent<Image>();
         }
-
+        
         public void ChangeScene()
         {
             if (_changingNow) return;
