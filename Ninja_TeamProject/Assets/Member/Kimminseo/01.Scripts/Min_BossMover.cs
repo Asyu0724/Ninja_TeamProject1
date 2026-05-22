@@ -59,7 +59,7 @@ public class Min_BossMover : MonoBehaviour
                     Attack2Skill();
                     break;
                 case 2:
-                    Attack3 = true;
+                    Attack3Skill();
                     break;
                     
             }
@@ -76,10 +76,13 @@ public class Min_BossMover : MonoBehaviour
         private void Attack2Skill()
         {
             Attack2 = true;
-            while (Attack2)
-            {
-                _rb.linearVelocityX = _moveDir.x * speed;
-            }
+            _rb.linearVelocityX = _moveDir.x * speed;
+        }
+
+        private void Attack3Skill()
+        {
+            Attack3 = true;
+            Tp = true;
         }
 
         private void Update()
