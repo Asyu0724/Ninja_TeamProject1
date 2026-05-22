@@ -26474,17 +26474,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 835799489}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1028980549 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4163925631880165976, guid: cdd78871081b7d14e904ea56de654d91, type: 3}
-  m_PrefabInstance: {fileID: 1269743854}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80ceee2ce6fe5d341b427999e5df26bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HealthBarUI
 --- !u!1001 &1045360530
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26508,7 +26497,7 @@ PrefabInstance:
     - target: {fileID: 4599721562988065142, guid: 0b6717f7c08d279439845d1251359058, type: 3}
       propertyPath: <HealthUI>k__BackingField
       value: 
-      objectReference: {fileID: 1028980549}
+      objectReference: {fileID: 1269743855}
     - target: {fileID: 4599721562988065142, guid: 0b6717f7c08d279439845d1251359058, type: 3}
       propertyPath: <BossHealthUI>k__BackingField
       value: 
@@ -26919,44 +26908,28 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 997364681265848951, guid: cdd78871081b7d14e904ea56de654d91, type: 3}
+    - target: {fileID: 2255868515478766123, guid: cdd78871081b7d14e904ea56de654d91, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2255868515478766123, guid: cdd78871081b7d14e904ea56de654d91, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2255868515478766123, guid: cdd78871081b7d14e904ea56de654d91, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -850
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 997364681265848951, guid: cdd78871081b7d14e904ea56de654d91, type: 3}
+    - target: {fileID: 2255868515478766123, guid: cdd78871081b7d14e904ea56de654d91, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 750
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2054960628805369328, guid: cdd78871081b7d14e904ea56de654d91, type: 3}
+    - target: {fileID: 2497709055600219915, guid: cdd78871081b7d14e904ea56de654d91, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2054960628805369328, guid: cdd78871081b7d14e904ea56de654d91, type: 3}
+    - target: {fileID: 2497709055600219915, guid: cdd78871081b7d14e904ea56de654d91, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2054960628805369328, guid: cdd78871081b7d14e904ea56de654d91, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2054960628805369328, guid: cdd78871081b7d14e904ea56de654d91, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2255868515478766123, guid: cdd78871081b7d14e904ea56de654d91, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2255868515478766123, guid: cdd78871081b7d14e904ea56de654d91, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2255868515478766123, guid: cdd78871081b7d14e904ea56de654d91, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2255868515478766123, guid: cdd78871081b7d14e904ea56de654d91, type: 3}
-      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2672268061398570416, guid: cdd78871081b7d14e904ea56de654d91, type: 3}
@@ -27022,10 +26995,6 @@ PrefabInstance:
     - target: {fileID: 5305873381646567943, guid: cdd78871081b7d14e904ea56de654d91, type: 3}
       propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5374728233136193012, guid: cdd78871081b7d14e904ea56de654d91, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -650
       objectReference: {fileID: 0}
     - target: {fileID: 5622928556684873304, guid: cdd78871081b7d14e904ea56de654d91, type: 3}
       propertyPath: m_Pivot.x
@@ -27176,6 +27145,17 @@ PrefabInstance:
       addedObject: {fileID: 1333400853}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cdd78871081b7d14e904ea56de654d91, type: 3}
+--- !u!114 &1269743855 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1204447536346755284, guid: cdd78871081b7d14e904ea56de654d91, type: 3}
+  m_PrefabInstance: {fileID: 1269743854}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 226189220f028924b8fec8fa69cfba1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Member.KimJoonYoung._01.Scripts.Hp.PlayerHealthSlider
 --- !u!1 &1333400852
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    [field:SerializeField] public HealthBarUI HealthUI {  get; private set; }
+    [field:SerializeField] public PlayerHealthSlider HealthUI {  get; private set; }
     [field: SerializeField] public HealthBarUI BossHealthUI { get; private set; }
     [SerializeField] private Image gameOverImage;
     public event Action OnGameOver;

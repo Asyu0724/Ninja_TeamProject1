@@ -48,7 +48,7 @@ namespace Member.KimJoonYoung._01.Scripts.Player
 
         private void Start()
         {
-            UIManager.Instance.HealthUI.InitHealthUI(_healthSystem.Health);
+            UIManager.Instance.HealthUI.InitHealthUI(_healthSystem.MaxHealth);
             _healthSystem.OnDamaged += UpdateHealthUI;
             _healthSystem.OnDamaged += HandlerPlayerHit;
             _healthSystem.Dead += HandlerDead;
@@ -161,7 +161,7 @@ namespace Member.KimJoonYoung._01.Scripts.Player
 
         private void UpdateHealthUI()
         {
-            UIManager.Instance.HealthUI.UpdateHealthUI(_healthSystem.Health);
+            UIManager.Instance.HealthUI.UpdateHealthUI(_healthSystem.Health , _healthSystem.MaxHealth);
         }
     
         private void HandlerDead()
