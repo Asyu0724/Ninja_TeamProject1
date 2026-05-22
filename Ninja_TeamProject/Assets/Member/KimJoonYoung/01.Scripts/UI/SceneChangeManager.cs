@@ -18,7 +18,7 @@ namespace Member.KimJoonYoung._01.Scripts.UI
         {
             _sceneChangeImage = GetComponent<Image>();
         }
-
+        
         public void ChangeScene()
         {
             if (_changingNow) return;
