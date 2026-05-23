@@ -2,6 +2,7 @@ using System.Collections;
 using System.Linq.Expressions;
 using Member.KimJoonYoung._01.Scripts.Agent;
 using UnityEngine;
+using UnityEngine.Events;
 using Random = UnityEngine.Random;
 
 public class Min_BossRenderer : MonoBehaviour
@@ -14,6 +15,9 @@ public class Min_BossRenderer : MonoBehaviour
     
     [SerializeField] private AgentRenderer agentRenderer;
     [SerializeField] private Transform playerTrm;
+
+    public UnityEvent OnFall;
+    public UnityEvent OnRealDeath;
 
     private int _hashAttack1 = Animator.StringToHash("Attack1");
     private int _hashAttack2 = Animator.StringToHash("Attack2");
@@ -54,6 +58,16 @@ public class Min_BossRenderer : MonoBehaviour
         int ch = int.Parse(split[1]);
         var currentSfx = (AudioManager.Sfx)sfx;
         AudioManager.instance.PlaySfx(currentSfx , ch);
+    }
+
+    public void Fall()
+    {
+        OnFall?.Invoke();
+    }
+
+    public void RealDeath()
+    {
+        OnRealDeath?.Invoke();
     }
 }
 

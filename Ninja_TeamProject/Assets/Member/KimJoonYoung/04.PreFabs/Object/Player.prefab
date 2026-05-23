@@ -464,7 +464,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HealthSystem
   <InvTime>k__BackingField: 0.5
   <Health>k__BackingField: 5
-  <MaxHealth>k__BackingField: 5
+  <MaxHealth>k__BackingField: 30
 --- !u!114 &1778642969121242954
 MonoBehaviour:
   m_ObjectHideFlags: 0

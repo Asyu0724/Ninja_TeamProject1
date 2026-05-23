@@ -1,5 +1,6 @@
 using Member.KimJoonYoung._01.Scripts.Player;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GolemAnimationManage : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class GolemAnimationManage : MonoBehaviour
     GameObject[] stones;
     StoneUp[] su;
     private int _i = 0;
+    public UnityEvent OnRealDead;
+    
     void Start()
     {
         boss = GetComponentInParent<GolemBoss>();
@@ -45,7 +48,7 @@ public class GolemAnimationManage : MonoBehaviour
 
     public void DieEvent()
     {
-        boss.DieEvent();
+        OnRealDead?.Invoke();
     }
 
     public void CameraShake()
@@ -56,27 +59,13 @@ public class GolemAnimationManage : MonoBehaviour
             t.StoneForce();
         }
     }
-
-    public void PlaySpinAttackSound()
-    {
-        BossAudioManager.instance.PlaySfx(BossAudioManager.Sfx.spinAttack);
-    }
     
-    public void PlayCloudAttackSound()
+    public void StartSFX(string SFX)
     {
-        BossAudioManager.instance.PlaySfx(BossAudioManager.Sfx.cloudAttack1);
-
-    }
-    
-    public void PlayCloudAttack2Sound()
-    {
-        BossAudioManager.instance.PlaySfx(BossAudioManager.Sfx.cloudAttack2);
-
-    }
-    
-    public void EarthQuakeSound()
-    {
-        BossAudioManager.instance.PlaySfx(BossAudioManager.Sfx.EarthQuake);
-        
+        string[] split = SFX.Split(',');
+        int sfx = int.Parse(split[0]);
+        int ch = int.Parse(split[1]);
+        var currentSfx = (AudioManager.Sfx)sfx;
+        AudioManager.instance.PlaySfx(currentSfx , ch);
     }
 }

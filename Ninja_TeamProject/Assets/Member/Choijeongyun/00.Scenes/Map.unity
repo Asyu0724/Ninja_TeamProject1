@@ -26853,10 +26853,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5549341326705384535, guid: 9804090e1a97a8b40844cc5ec853359f, type: 3}
-      propertyPath: <MaxHealth>k__BackingField
-      value: 30
-      objectReference: {fileID: 0}
     - target: {fileID: 6543277121451884432, guid: 9804090e1a97a8b40844cc5ec853359f, type: 3}
       propertyPath: ImpulseDefinition.ImpulseShape
       value: 1

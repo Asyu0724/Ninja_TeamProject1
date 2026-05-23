@@ -33,6 +33,6 @@ public class StoneUp : MonoBehaviour
 
     public void StoneForce()
     {
-        _rb.AddForce(Vector2.up * Random.Range(10.5f,13f), ForceMode2D.Impulse);
+        _rb.AddForce(Vector2.up * Random.Range(9.5f,11f), ForceMode2D.Impulse);
     }
 }

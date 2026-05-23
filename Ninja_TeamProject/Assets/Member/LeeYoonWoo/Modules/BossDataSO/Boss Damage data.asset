@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73064336e647410da71904fc7384ba54, type: 3}
   m_Name: Boss Damage data
   m_EditorClassIdentifier: Assembly-CSharp::Member.LeeYoonWoo.SO.BossDamageDataSO
-  maxHealth: 120
-  bigCloudDamage: 1
-  smallCloudDamage: 1
-  spinAttackDamage: 1
+  maxHealth: 400
+  bigCloudDamage: 7
+  smallCloudDamage: 5
+  spinAttackDamage: 2

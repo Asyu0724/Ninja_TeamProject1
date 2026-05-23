@@ -48,6 +48,7 @@ MonoBehaviour:
   bgmClips:
   - {fileID: 8300000, guid: 8c75d254d97479843b5247dc3c4edbf8, type: 3}
   - {fileID: 8300000, guid: 84c87bc6710f31f4385d17f7806a76b2, type: 3}
+  - {fileID: 8300000, guid: 9e4bdc37d2d2fd4428cd9923f5966aa3, type: 3}
   bgmVolume: 1
   sfxclips:
   - {fileID: 8300000, guid: 112c9629eddd2fc48abf1220e5f77d78, type: 3}
@@ -71,5 +72,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 319070412e2e64045a446cb198a9670c, type: 3}
   - {fileID: 8300000, guid: 357392c89e368364c969a5319dd8bb84, type: 3}
   - {fileID: 8300000, guid: 5c6aa7109981e83459483b1487943f20, type: 3}
+  - {fileID: 8300000, guid: bef4f3a6d6882ba468bbefc1917cd8b5, type: 3}
+  - {fileID: 8300000, guid: 97c088a0276ddc64fa3bb0c241a12b11, type: 3}
+  - {fileID: 8300000, guid: 9974110889d3cc24cbf0d48cb3f55084, type: 3}
+  - {fileID: 8300000, guid: 995731f7c4d84194a9481f0e0148b287, type: 3}
+  - {fileID: 8300000, guid: 678afe1319133884e9f735bdbbe3c303, type: 3}
   sfxVolume: 1
   channels: 16

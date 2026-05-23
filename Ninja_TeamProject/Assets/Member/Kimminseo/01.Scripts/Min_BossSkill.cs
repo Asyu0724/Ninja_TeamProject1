@@ -47,7 +47,7 @@ public class Min_BossSkill : MonoBehaviour
                 {
                     if (!_isAttackFin)
                     {
-                        healthSystem.GetDamage(2, this.gameObject);
+                        healthSystem.GetDamage(1, this.gameObject);
                         // if(bossMover.스킬이름) healthSystem.GetDamage(3, this.gameObject);
                         
                         _isAttackFin = true;
@@ -67,7 +67,7 @@ public class Min_BossSkill : MonoBehaviour
                 {
                     if (!_isAttackFin)
                     {
-                        healthSystem.GetDamage(2, this.gameObject);
+                        healthSystem.GetDamage(1, this.gameObject);
                         // if(bossMover.스킬이름) healthSystem.GetDamage(3, this.gameObject);
                         
                         _isAttackFin = true;

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Member.KimJoonYoung._01.Scripts.Player;
 using UnityEngine;
+using UnityEngine.Events;
 
 [System.Serializable]
 public class ParticleGroup
@@ -21,6 +22,7 @@ public class GolemBoss : Boss
     [SerializeField] public List<ParticleGroup> particles;
     [SerializeField] private float timeOffset;
     private bool isAttacking = false;
+    public UnityEvent OnStart;
 
     Rigidbody2D _rb;
 
@@ -45,6 +47,7 @@ public class GolemBoss : Boss
     protected override void Start()
     {
         base.Start();
+        OnStart?.Invoke();
         StartCoroutine(BossThinkRoutine());
     }
     

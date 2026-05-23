@@ -19,6 +19,7 @@ namespace Member.KimJoonYoung._01.Scripts.UI.Portal
         {
             if (Keyboard.current.eKey.wasPressedThisFrame)
             {
+                AudioManager.instance.PlaySfx(AudioManager.Sfx.Crack , 14);
                 OnButtonPress?.Invoke();
                 gameObject.SetActive(false);
             }

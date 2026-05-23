@@ -22,26 +22,26 @@ AnimationClip:
     curve:
     - time: 0
       value: {fileID: 2783375582729792462, guid: a4e4888f66e43184e8551ec4215a9fcc, type: 3}
-    - time: 0.025
-      value: {fileID: -7523110581836350871, guid: a4e4888f66e43184e8551ec4215a9fcc, type: 3}
     - time: 0.05
-      value: {fileID: 7278209965553460276, guid: a4e4888f66e43184e8551ec4215a9fcc, type: 3}
-    - time: 0.075
-      value: {fileID: -198884459482251385, guid: a4e4888f66e43184e8551ec4215a9fcc, type: 3}
+      value: {fileID: -7523110581836350871, guid: a4e4888f66e43184e8551ec4215a9fcc, type: 3}
     - time: 0.1
-      value: {fileID: -3339818168340898128, guid: a4e4888f66e43184e8551ec4215a9fcc, type: 3}
-    - time: 0.125
-      value: {fileID: 8374729214551258218, guid: a4e4888f66e43184e8551ec4215a9fcc, type: 3}
+      value: {fileID: 7278209965553460276, guid: a4e4888f66e43184e8551ec4215a9fcc, type: 3}
     - time: 0.15
+      value: {fileID: -198884459482251385, guid: a4e4888f66e43184e8551ec4215a9fcc, type: 3}
+    - time: 0.2
+      value: {fileID: -3339818168340898128, guid: a4e4888f66e43184e8551ec4215a9fcc, type: 3}
+    - time: 0.25
+      value: {fileID: 8374729214551258218, guid: a4e4888f66e43184e8551ec4215a9fcc, type: 3}
+    - time: 0.3
       value: {fileID: 7837820631774977650, guid: a4e4888f66e43184e8551ec4215a9fcc, type: 3}
-    - time: 0.175
+    - time: 0.35
       value: {fileID: 7073568552139097190, guid: a4e4888f66e43184e8551ec4215a9fcc, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
     flags: 2
-  m_SampleRate: 40
+  m_SampleRate: 20
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -71,7 +71,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.2
+    m_StopTime: 0.4
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -99,15 +99,8 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 0
-    functionName: PlaySpinAttackSound
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 0.025
-    functionName: SpinAttackOverLap
-    data: 
+    functionName: StartSFX
+    data: 26,9
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
@@ -119,28 +112,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.075
-    functionName: SpinAttackOverLap
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
   - time: 0.1
-    functionName: SpinAttackOverLap
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 0.1
-    functionName: PlaySpinAttackSound
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 0.125
     functionName: SpinAttackOverLap
     data: 
     objectReferenceParameter: {fileID: 0}
@@ -148,13 +120,27 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 0.15
-    functionName: PlaySpinAttackSound
+    functionName: SpinAttackOverLap
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.175
+  - time: 0.2
+    functionName: SpinAttackOverLap
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.25
+    functionName: SpinAttackOverLap
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.35
     functionName: SpinAttackOverLap
     data: 
     objectReferenceParameter: {fileID: 0}

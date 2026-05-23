@@ -3,17 +3,17 @@ using JetBrains.Annotations;
 using Member.KimJoonYoung._01.Scripts.UI.Boss;
 using Member.LeeYoonWoo.SO;
 using UnityEngine;
+using UnityEngine.Events;
 using Debug = UnityEngine.Debug;
 
 public abstract class Boss : MonoBehaviour , IDamageable
 {
-    
-    
     public string bossName;
     public float maxHealth;
     public float currentHealth;
 
     public LayerMask playerLayer;
+    public UnityEvent OnHit;
 
     protected Animator anim;
 
@@ -38,17 +38,10 @@ public abstract class Boss : MonoBehaviour , IDamageable
 
     public void TakeDamage(float damageAmount)
     {
-        // hitCount += (int)damageAmount;
-
-        // UIManager.Instance.BossHealthUI.Shake();
-
-        // if (hitCount >= hitsPerHp)
-        // {
-        //     hitCount = 0;
-        // UIManager.Instance.BossHealthUI.UpdateHealthUI((int)currentHealth);
         Debug.Log(damageAmount);
-
-        currentHealth--;
+        OnHit?.Invoke();
+        AudioManager.instance.PlaySfx(AudioManager.Sfx.GolemDamage , 6);
+        currentHealth-=damageAmount;
         bossHealthSlider.UpdateHealthUI(currentHealth);
         if (currentHealth <= 0)
         {

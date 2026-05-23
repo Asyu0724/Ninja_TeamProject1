@@ -15,6 +15,12 @@ EditorBuildSettings:
     path: Assets/Member/KimJoonYoung/00.Scene/Test.unity
     guid: 57f3fc8dd49f49e47861997e24e8046a
   - enabled: 1
+    path: Assets/Member/Kimminseo/00.Scenes/boss.unity
+    guid: 6b4738ba29bc0ae4db990fbd47d03bfa
+  - enabled: 1
+    path: Assets/Member/LeeYoonWoo/00.Scene/Boss.unity
+    guid: 7db2a055128e7b6428c7b35770cdda3f
+  - enabled: 1
     path: Assets/Member/Choijeongyun/00.Scenes/Map.unity
     guid: 53a5a2402ba8d32448df821355a329d1
   m_configObjects:
