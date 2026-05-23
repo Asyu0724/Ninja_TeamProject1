@@ -28,6 +28,7 @@ namespace Member.KimJoonYoung._01.Scripts.TestEnemy
 
         private void AttackedNow()
         {
+            AudioManager.instance.PlaySfx(AudioManager.Sfx.Attacked , 6);
             particle.Play();
             _enemyHealthBarUI.HealthBarUpdate();
             _attacked = true;

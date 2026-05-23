@@ -136,7 +136,7 @@ namespace Member.KimJoonYoung._01.Scripts.Player
         {
             PlayerHit = true;
             GameManager.Instance.bloomManager.OnHit(_healthSystem.Health , _healthSystem.MaxHealth);
-            AudioManager.instance.PlaySfx(AudioManager.Sfx.Hit);    
+            AudioManager.instance.PlaySfx(AudioManager.Sfx.Hit , 0);    
             yield return new WaitForSeconds(_healthSystem.InvTime);
             PlayerHit = false;
         }
