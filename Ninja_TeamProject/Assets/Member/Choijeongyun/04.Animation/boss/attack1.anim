@@ -658,7 +658,7 @@ AnimationClip:
     messageOptions: 0
   - time: 0.25
     functionName: StartSFX
-    data: 
+    data: 12,9
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0

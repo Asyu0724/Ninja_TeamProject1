@@ -1,7 +1,5 @@
-using System;
 using System.Collections;
 using DG.Tweening;
-using Member.Choijeongyun._01.Scripts.Func;
 using Member.KimJoonYoung._01.Scripts.Player;
 using Member.KimJoonYoung._01.Scripts.Rb_;
 using UnityEngine;
@@ -41,7 +39,6 @@ public class BossMover : MonoBehaviour
     [SerializeField] private BossHealth bossHP;
     [SerializeField] private BossSkill bossSkill;
     [SerializeField] private BossRenderer bossRenderer;
-    [SerializeField] private CJY_AudioManager bossAudio;
 
     private bool _isPlaySound = false;
     private bool _dashIsCoolT;
@@ -118,7 +115,7 @@ public class BossMover : MonoBehaviour
                 _dashIsCoolT = true;
                 Sequence seq =  DOTween.Sequence();
                 _dashDir.x = transform.position.x >= 0 ? -1f : 1f;
-                bossRenderer.StartSFX();
+                AudioManager.instance.PlaySfx(AudioManager.Sfx.BossDash , 9);
                 seq.Prepend(_rigid.DOMoveX(transform.position.x + _moveDir.x * dashPower, 0.5f).SetEase(Ease.OutQuart));
                 seq.OnComplete(StartDashCo);
             }
@@ -155,18 +152,16 @@ public class BossMover : MonoBehaviour
             _rigid.linearVelocityX = _moveDir.x * speed;
             if (_moveDir.x != 0 && !_isPlaySound)
             {
-                bossAudio.PlayLoop(0);
+                AudioManager.instance.PlaySfx(AudioManager.Sfx.BossWalk , 7);
                 _isPlaySound = true;
             }
             else if (_moveDir.x == 0 && _isPlaySound) 
             {
-                bossAudio.StopLoop();
                 _isPlaySound = false;
             }
         }
         else
         {
-            bossAudio.StopLoop();
             _isPlaySound = false;
         }
 
@@ -247,11 +242,6 @@ public class BossMover : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(transform.position + (Vector3)boxOffset, boxSize);
         Gizmos.DrawWireCube(transform.position + (Vector3)groundOffset, groundBoxSize);
-    }
-    
-    public void StartBossSFX(int value)
-    {
-        bossAudio.PlaySFX(value, 0);
     }
 
     private void HandlerInitVelocity()

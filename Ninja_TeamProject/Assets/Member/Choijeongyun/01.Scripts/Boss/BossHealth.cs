@@ -1,28 +1,22 @@
-using System;
 using System.Collections;
-using System.Xml.Schema;
-using Member.Choijeongyun._01.Scripts.Func;
-using Member.KimJoonYoung._01.Scripts.Agent;
-using Member.KimJoonYoung._01.Scripts.Hp;
 using Member.KimJoonYoung._01.Scripts.UI.Boss;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class BossHealth : MonoBehaviour, IDamageable
 {
-    [SerializeField] private Transform bloodParticle; 
-    [SerializeField] private int maxHealth = 30;
+    [SerializeField] private Transform bloodParticle;
+    [SerializeField] private int maxHealth;
     [SerializeField] private BossRenderer bossRenderer;
     [SerializeField] private BossHealthBarUI healthBarUI;
     [SerializeField] private BossMover bossMover;
-    [SerializeField] private CJY_AudioManager bossAudio;
     public UnityEvent OnDamage;
     public UnityEvent OnDeath;
 
     private int _bossHealth;
     public bool IsDeath { get; private set; }
     public bool IsCharge { get; private set; }
-    
+
     private int _canCharge = 2;
 
 
@@ -42,14 +36,19 @@ public class BossHealth : MonoBehaviour, IDamageable
         _bossHealth = Mathf.Clamp(_bossHealth, 0, maxHealth);
         healthBarUI.UpdateHealthUI(_bossHealth);
         bossRenderer.StartCoroutine("Attacked");
-        if (_bossHealth <= 10 && _canCharge > 0)
+        if ((float)_bossHealth / maxHealth <= 0.3f && _canCharge > 1 && !IsCharge)
         {
+            IsCharge = true;
+            ChargeHP();
+        }
+        else if ((float)_bossHealth / maxHealth <= 0.15f && _canCharge > 0 && !IsCharge)
+        {
+            IsCharge = true;
             ChargeHP();
         }
 
         if (_bossHealth <= 0)
         {
-            bossAudio.PlaySFX(7,0.1f);
             OnDeath?.Invoke();
             IsDeath = true;
         }
@@ -62,11 +61,9 @@ public class BossHealth : MonoBehaviour, IDamageable
 
     public IEnumerator ChargeHPCorutine()
     {
-        if (bossMover.NotOtherSkill) 
+        if (bossMover.NotOtherSkill)
             yield return StartCoroutine(OtherSkill());
-        bossAudio.PlaySFX(6,0);
-        IsCharge = true;
-        _canCharge--;
+        AudioManager.instance.PlaySfx(AudioManager.Sfx.BossCharge, 9);
         bossRenderer.ChargeStart();
         StartCoroutine(HP());
     }
@@ -76,7 +73,7 @@ public class BossHealth : MonoBehaviour, IDamageable
         float chargeTime = 0;
         while (true)
         {
-            _bossHealth += 3;
+            _bossHealth += 6 * _canCharge;
             chargeTime += 0.5f;
             _bossHealth = Mathf.Clamp(_bossHealth, 0, maxHealth);
             healthBarUI.UpdateHealthUI(_bossHealth);
@@ -84,6 +81,8 @@ public class BossHealth : MonoBehaviour, IDamageable
             {
                 IsCharge = false;
                 bossRenderer.ChargeEnd();
+                _canCharge--;
+                
                 break;
             }
 
@@ -96,8 +95,5 @@ public class BossHealth : MonoBehaviour, IDamageable
         Debug.Log("노놉! 지금은 충전 못한다!");
         yield return new WaitUntil(() => bossMover.NotOtherSkill == false);
     }
-
-
-
-
 }
+    

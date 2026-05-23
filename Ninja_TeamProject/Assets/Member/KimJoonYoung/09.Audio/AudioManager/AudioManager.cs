@@ -24,8 +24,12 @@ public class AudioManager : MonoBehaviour
     AudioSource[] sfxPlayers;
     int channelIndex;
 
-    public enum Sfx { avgAtk0, avgAtk1, avgAtk2, QSkill , Hit , Step1 , Step2 , Step3 , Crack , Tick , Majestic , Attacked}
-    public enum Bgm { main }
+    public enum Sfx
+    {
+        avgAtk0, avgAtk1, avgAtk2, QSkill , Hit , Step1 , Step2 , Step3 , Crack , Tick , Majestic , Attacked ,
+        BossAtk1 , BossAtk2 , BossAtk3 , BossCharge , BossDash , BossDeath , BossJump , BossLand, BossWalk
+    }
+    public enum Bgm { main , spiderBoss}
 
     private void Awake()
     {

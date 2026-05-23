@@ -97,11 +97,11 @@ public class BossRenderer : MonoBehaviour
 
     public IEnumerator JumpDel() 
     {
-        this._animator.speed = 0;
-        this._renderer.enabled = false;
+        _animator.speed = 0;
+        _renderer.enabled = false;
         yield return new WaitForSeconds(1f);
-        this._animator.speed = 1;
-        this._renderer.enabled = true;
+        _animator.speed = 1;
+        _renderer.enabled = true;
     }
 
     public void ChargeStart()
@@ -119,32 +119,11 @@ public class BossRenderer : MonoBehaviour
     {
         _animator.speed = 0;
     }
-
-    public void StartSFX()
-    {
-        int value = 0;
-        if (bossMove.IsShake) value = 2;
-        else if (bossMove.IsJump) value = 1;
-        
-        else if(IsAttacked) value = 9;
-        
-        else if (bossMove.IsDash) value = 8;
-        
-        else if (bossMove.Attack1) value = 3;
-        else if (bossMove.Attack2) value = 4;
-        else if (bossMove.Attack3) value = 5;
-        
-        else if (bossHP.IsCharge) value = 6;
-        
-        else if (bossHP.IsDeath) value = 7;
-        
-        bossMove.StartBossSFX(value);
-    }
     
     private IEnumerator Attacked()
     {
         IsAttacked = true;
-        StartSFX();
+        AudioManager.instance.PlaySfx(AudioManager.Sfx.Attacked , 8);
         _renderer.color = Color.red;
         Color color = _renderer.color;
         
@@ -167,5 +146,14 @@ public class BossRenderer : MonoBehaviour
         _renderer.color = color;
         _renderer.color = Color.white;
         IsAttacked = false;
+    }
+
+    public void StartSFX(string SFX)
+    {
+        string[] split = SFX.Split(',');
+        int sfx = int.Parse(split[0]);
+        int ch = int.Parse(split[1]);
+        var currentSfx = (AudioManager.Sfx)sfx;
+        AudioManager.instance.PlaySfx(currentSfx , ch);
     }
 }
