@@ -27,6 +27,9 @@ public class Min_BossMover : MonoBehaviour
         public bool Tp { get; private set; }
         public float LastAttackTime { get; private set; }
 
+        private bool _attack2Cool = false;
+        
+
         private bool IsSkill => Attack1 || Attack2 || Attack3 || Tp;
         
         private Vector2 _moveDir;
@@ -45,7 +48,7 @@ public class Min_BossMover : MonoBehaviour
             _moveDir.x = _distance.x > 0 ? 1f : -1f;
             MoveX = Mathf.Abs(_rb.linearVelocityX);
 
-            if (Mathf.Abs(_distance.x) < 8.0f && !IsSkill)
+            if (Mathf.Abs(_distance.x) < 8.0f && !IsSkill && !_attack2Cool)
             {
                 Attack2Skill();
             }
@@ -93,11 +96,19 @@ public class Min_BossMover : MonoBehaviour
             yield return new WaitUntil(() => !Attack1);
         }
 
+        private IEnumerator Attack2CoolTime()
+        {
+            _attack2Cool = true;
+            yield return new WaitForSeconds(1f);
+            _attack2Cool = false;
+        }
+
         private void Attack2Skill()
         {
             Attack2 = true;
             _rb.linearVelocityX = _moveDir.x * speed;
             MoveX = Mathf.Abs(_moveDir.x);
+            StartCoroutine(Attack2CoolTime());
         }
 
         private IEnumerator Attack3Skill()
