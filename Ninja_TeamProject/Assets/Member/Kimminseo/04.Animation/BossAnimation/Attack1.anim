@@ -876,21 +876,14 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.083333336
-    functionName: AttackStart
+    functionName: DamageStart
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 0.5
-    functionName: AttackFin
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 0.5833333
-    functionName: AttackFin
+    functionName: DamageFin
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

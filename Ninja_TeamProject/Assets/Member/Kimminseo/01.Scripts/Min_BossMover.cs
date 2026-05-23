@@ -12,7 +12,7 @@ public class Min_BossMover : MonoBehaviour
         [SerializeField] private Min_BossHealth bossHealth;
         [SerializeField] private PlayerController player;
         
-        [SerializeField] private float speed = 10f;
+        [SerializeField] private float speed;
         [SerializeField] private Vector2 offset;
         
         [SerializeField]private Transform playerTrm;
@@ -23,6 +23,7 @@ public class Min_BossMover : MonoBehaviour
         public bool Attack1 { get; private set; }
         public bool Attack2 { get; private set; }
         public bool Attack3 { get; private set; }
+        public float MoveX { get; private set; }
         public bool Tp { get; private set; }
         public float LastAttackTime { get; private set; }
 
@@ -42,69 +43,85 @@ public class Min_BossMover : MonoBehaviour
         {
             _distance = player.transform.position - transform.position;
             _moveDir.x = _distance.x > 0 ? 1f : -1f;
+            MoveX = Mathf.Abs(_rb.linearVelocityX);
+
+            if (Mathf.Abs(_distance.x) < 8.0f && !IsSkill)
+            {
+                Attack2Skill();
+            }
             
-            if (!IsSkill && LastAttackTime <= 0) StartAttack();
+            if (!IsSkill && LastAttackTime <= 0)
+            {
+                LastAttackTime = 2f;
+                StartCoroutine(StartAttack());
+            }
 
         }
-
-        private void StartAttack()
+        
+        private void Update()
         {
-            int random = Random.Range(0, 3);
+            LastAttackTime -= Time.deltaTime;
+            if (_moveDir.x > 0)
+            {
+                transform.rotation = Quaternion.Euler(0, 0, 0);
+            }
+            else if (_moveDir.x < 0)
+            {
+                transform.rotation = Quaternion.Euler(0, 180, 0);
+            }
+            
+        }
+
+        private IEnumerator StartAttack()
+        {
+            int random = Random.Range(0, 2);
             switch (random)
             {
                 case 0:
-                    Attack1Skill();
+                    yield return StartCoroutine(Attack1Skill());
                     break;
                 case 1:
-                    Attack2Skill();
+                    yield return StartCoroutine(Attack3Skill());
                     break;
-                case 2:
-                    Attack3Skill();
-                    break;
-                    
             }
-
-            LastAttackTime = 2f;
         }
 
-        private void Attack1Skill()
+        private IEnumerator Attack1Skill()
         {
+            yield return StartCoroutine(TeleportRoutine());
             Attack1 = true;
-            Tp = true;
+            yield return new WaitUntil(() => !Attack1);
         }
 
         private void Attack2Skill()
         {
             Attack2 = true;
             _rb.linearVelocityX = _moveDir.x * speed;
+            MoveX = Mathf.Abs(_moveDir.x);
         }
 
-        private void Attack3Skill()
+        private IEnumerator Attack3Skill()
         {
+            yield return StartCoroutine(TeleportRoutine());
             Attack3 = true;
-            Tp = true;
+            yield return new WaitUntil(() => !Attack3);
         }
 
-        private void Update()
+        private IEnumerator TeleportRoutine()
         {
-            LastAttackTime -= Time.deltaTime;
-            if (!IsSkill) 
-            {
-                if (_moveDir.x > 0)
-                {
-                    transform.rotation = Quaternion.Euler(0, 0, 0);
-                }
-                else if (_moveDir.x < 0)
-                {
-                    transform.rotation = Quaternion.Euler(0, 180, 0);
-                }
-            }
+            Tp = true;
+            yield return new WaitUntil(() => !Tp);
             
         }
 
-        public void Teleport()
+        /*private void Teleport()
         {
-            transform.position = playerTrm.position;
+            Tp = true;
+        }*/
+
+        public void MoveToPlayer()
+        {
+            transform.position = new Vector2(playerTrm.position.x, transform.position.y);
         }
 
         public void SkillOff()
