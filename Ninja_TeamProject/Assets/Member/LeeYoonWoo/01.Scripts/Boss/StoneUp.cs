@@ -18,7 +18,7 @@ public class StoneUp : MonoBehaviour
     {
         if (collision.TryGetComponent(out IDamageable damageable))
         {
-            damageable.GetDamage(1 , gameObject);
+            damageable.GetDamage(8, gameObject);
         }
     }
 

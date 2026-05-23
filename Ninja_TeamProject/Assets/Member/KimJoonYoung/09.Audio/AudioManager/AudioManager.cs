@@ -63,6 +63,7 @@ public class AudioManager : MonoBehaviour
         bgmPlayers = bgmObject.AddComponent<AudioSource>();
         bgmObject.GetComponent<AudioSource>().outputAudioMixerGroup = mixer.FindMatchingGroups("BGM")[0];
         bgmPlayers.playOnAwake = false;
+        bgmPlayers.loop = true;
         bgmPlayers.volume = bgmVolume;
     }
 

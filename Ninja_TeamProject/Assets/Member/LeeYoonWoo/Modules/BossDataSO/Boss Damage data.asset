@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Boss Damage data
   m_EditorClassIdentifier: Assembly-CSharp::Member.LeeYoonWoo.SO.BossDamageDataSO
   maxHealth: 400
-  bigCloudDamage: 7
-  smallCloudDamage: 5
-  spinAttackDamage: 2
+  bigCloudDamage: 15
+  smallCloudDamage: 10
+  spinAttackDamage: 3

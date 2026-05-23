@@ -23,6 +23,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Member/Choijeongyun/00.Scenes/Map.unity
     guid: 53a5a2402ba8d32448df821355a329d1
+  - enabled: 1
+    path: Assets/Member/KimJoonYoung/00.Scene/Ending.unity
+    guid: fc59daf5af840a243a8d3db1d404af13
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
