@@ -27,12 +27,15 @@ public class AudioManager : MonoBehaviour
     public enum Sfx
     {
         avgAtk0, avgAtk1, avgAtk2, QSkill , Hit , Step1 , Step2 , Step3 , Crack , Tick , Majestic , Attacked ,
-        BossAtk1 , BossAtk2 , BossAtk3 , BossCharge , BossDash , BossDeath , BossJump , BossLand, BossWalk
+        BossAtk1 , BossAtk2 , BossAtk3 , BossCharge , BossDash , BossDeath , BossJump , BossLand, BossWalk ,
+        MinBossAtk1 , MinBossAtk2 , MinBossAtk3
     }
     public enum Bgm { main , spiderBoss , minBoss}
 
     private void Awake()
     {
+        if (instance != null && instance != this)
+            Destroy(instance.gameObject);
         instance = this;
         Init();
     }

@@ -46,46 +46,14 @@ public class Min_BossRenderer : MonoBehaviour
     {
         bossMover.MoveToPlayer();
     }
-    // 규원 킴의 찌꺼기
-    /*public void SetAttack2Fin()
-    {
-        _anim.SetBool(_hashAttack2Fin, true);
-    }
-    public void Attack2Start()
-    {
-        bossMover.Attack2 = true;
-    }
-    public void MoveColliderAttackStart()
-    {
-        _collider.offset = new Vector2(0, -3);
-    }
-
-    public void MoveColliderAttackEnd()
-    {
-        _collider.offset = new Vector2(0, -2);    }
-    public void MoveColliderAttack2Start()
-    {
-        _collider.offset = new Vector2(0, 1.4f);
-    }
-    public void Disappear()
-    {
-        _collider.offset = new Vector2(0, -10);
-    }
-
-    public void DamageAttack1()
-    {
-        bossMover.Attack1OverLap();
-    }
     
-    public void DamageAttack2()
+    public void StartSFX(string SFX)
     {
-        bossMover.Attack2OverLap();
+        string[] split = SFX.Split(',');
+        int sfx = int.Parse(split[0]);
+        int ch = int.Parse(split[1]);
+        var currentSfx = (AudioManager.Sfx)sfx;
+        AudioManager.instance.PlaySfx(currentSfx , ch);
     }
-    
-    public void DamageAttack3()
-    {
-        bossMover.Attack3OverLap();
-    }*/
-
 }
 

@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5272845693231087128}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -47,6 +47,7 @@ MonoBehaviour:
   mixer: {fileID: 24100000, guid: 88550631d61a7354dac9fb9990a26ff5, type: 2}
   bgmClips:
   - {fileID: 8300000, guid: 8c75d254d97479843b5247dc3c4edbf8, type: 3}
+  - {fileID: 8300000, guid: 84c87bc6710f31f4385d17f7806a76b2, type: 3}
   bgmVolume: 1
   sfxclips:
   - {fileID: 8300000, guid: 112c9629eddd2fc48abf1220e5f77d78, type: 3}
@@ -61,5 +62,14 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a69de2cccf5b1a446a81d338c9c28c60, type: 3}
   - {fileID: 8300000, guid: 68e1d000b11115f47853ea7c03610d4f, type: 3}
   - {fileID: 8300000, guid: 3b87a7d9093516d46bae90c790336c58, type: 3}
+  - {fileID: 8300000, guid: c11e9c97a16789d43a1fbcb94e2b422e, type: 3}
+  - {fileID: 8300000, guid: 5a377c45ba5832f4e856e687ef2921f2, type: 3}
+  - {fileID: 8300000, guid: 2e9277aaa3b4b6547aaa7613fa788b6b, type: 3}
+  - {fileID: 8300000, guid: 0f3f24407f78c1347b511b13dd0a828b, type: 3}
+  - {fileID: 8300000, guid: cef4d8e98c9357c409871400a02c83e9, type: 3}
+  - {fileID: 8300000, guid: a781c11397064144984d02f5c00b37f7, type: 3}
+  - {fileID: 8300000, guid: 319070412e2e64045a446cb198a9670c, type: 3}
+  - {fileID: 8300000, guid: 357392c89e368364c969a5319dd8bb84, type: 3}
+  - {fileID: 8300000, guid: 5c6aa7109981e83459483b1487943f20, type: 3}
   sfxVolume: 1
   channels: 16

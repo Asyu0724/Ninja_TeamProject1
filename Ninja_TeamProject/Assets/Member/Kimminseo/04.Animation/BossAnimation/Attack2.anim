@@ -514,6 +514,13 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 0.16666667
+    functionName: StartSFX
+    data: 22,9
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 0.5
     functionName: DamageFin
     data: 
@@ -524,6 +531,13 @@ AnimationClip:
   - time: 0.75
     functionName: DamageStart
     data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.75
+    functionName: StartSFX
+    data: 22,9
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0

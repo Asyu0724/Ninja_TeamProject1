@@ -59820,58 +59820,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
-    - target: {fileID: 7370992620308723731, guid: a07780d3513a78a4094f2c905023dda0, type: 3}
-      propertyPath: bgmClips.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7370992620308723731, guid: a07780d3513a78a4094f2c905023dda0, type: 3}
-      propertyPath: sfxclips.Array.size
-      value: 21
-      objectReference: {fileID: 0}
-    - target: {fileID: 7370992620308723731, guid: a07780d3513a78a4094f2c905023dda0, type: 3}
-      propertyPath: 'bgmClips.Array.data[1]'
-      value: 
-      objectReference: {fileID: 8300000, guid: 84c87bc6710f31f4385d17f7806a76b2, type: 3}
-    - target: {fileID: 7370992620308723731, guid: a07780d3513a78a4094f2c905023dda0, type: 3}
-      propertyPath: 'sfxclips.Array.data[12]'
-      value: 
-      objectReference: {fileID: 8300000, guid: c11e9c97a16789d43a1fbcb94e2b422e, type: 3}
-    - target: {fileID: 7370992620308723731, guid: a07780d3513a78a4094f2c905023dda0, type: 3}
-      propertyPath: 'sfxclips.Array.data[13]'
-      value: 
-      objectReference: {fileID: 8300000, guid: 5a377c45ba5832f4e856e687ef2921f2, type: 3}
-    - target: {fileID: 7370992620308723731, guid: a07780d3513a78a4094f2c905023dda0, type: 3}
-      propertyPath: 'sfxclips.Array.data[14]'
-      value: 
-      objectReference: {fileID: 8300000, guid: 2e9277aaa3b4b6547aaa7613fa788b6b, type: 3}
-    - target: {fileID: 7370992620308723731, guid: a07780d3513a78a4094f2c905023dda0, type: 3}
-      propertyPath: 'sfxclips.Array.data[15]'
-      value: 
-      objectReference: {fileID: 8300000, guid: 0f3f24407f78c1347b511b13dd0a828b, type: 3}
-    - target: {fileID: 7370992620308723731, guid: a07780d3513a78a4094f2c905023dda0, type: 3}
-      propertyPath: 'sfxclips.Array.data[16]'
-      value: 
-      objectReference: {fileID: 8300000, guid: cef4d8e98c9357c409871400a02c83e9, type: 3}
-    - target: {fileID: 7370992620308723731, guid: a07780d3513a78a4094f2c905023dda0, type: 3}
-      propertyPath: 'sfxclips.Array.data[17]'
-      value: 
-      objectReference: {fileID: 8300000, guid: a781c11397064144984d02f5c00b37f7, type: 3}
-    - target: {fileID: 7370992620308723731, guid: a07780d3513a78a4094f2c905023dda0, type: 3}
-      propertyPath: 'sfxclips.Array.data[18]'
-      value: 
-      objectReference: {fileID: 8300000, guid: 319070412e2e64045a446cb198a9670c, type: 3}
-    - target: {fileID: 7370992620308723731, guid: a07780d3513a78a4094f2c905023dda0, type: 3}
-      propertyPath: 'sfxclips.Array.data[19]'
-      value: 
-      objectReference: {fileID: 8300000, guid: 357392c89e368364c969a5319dd8bb84, type: 3}
-    - target: {fileID: 7370992620308723731, guid: a07780d3513a78a4094f2c905023dda0, type: 3}
-      propertyPath: 'sfxclips.Array.data[20]'
-      value: 
-      objectReference: {fileID: 8300000, guid: 5c6aa7109981e83459483b1487943f20, type: 3}
-    - target: {fileID: 7370992620308723731, guid: a07780d3513a78a4094f2c905023dda0, type: 3}
-      propertyPath: 'sfxclips.Array.data[21]'
-      value: 
-      objectReference: {fileID: 8300000, guid: 5c6aa7109981e83459483b1487943f20, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

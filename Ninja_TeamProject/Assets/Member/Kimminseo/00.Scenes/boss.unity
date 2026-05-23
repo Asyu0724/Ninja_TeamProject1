@@ -4379,7 +4379,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.548
+  m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -4527,7 +4527,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Min_BossHealth
   maxHealth: 10
-  _healthBarUI: {fileID: 0}
+  _healthBarUI: {fileID: 2132493303}
 --- !u!1001 &880889809
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4931,7 +4931,38 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 109}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!43 &1133439012
+--- !u!1 &1223970888
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1223970889}
+  m_Layer: 0
+  m_Name: areaEnd2
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1223970889
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1223970888}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 243071568}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!43 &1238702345
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5109,37 +5140,6 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
---- !u!1 &1223970888
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1223970889}
-  m_Layer: 0
-  m_Name: areaEnd2
-  m_TagString: Untagged
-  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1223970889
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1223970888}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 243071568}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1333131160
 GameObject:
   m_ObjectHideFlags: 0
@@ -7679,6 +7679,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7370992620308723731, guid: a07780d3513a78a4094f2c905023dda0, type: 3}
+      propertyPath: sfxclips.Array.size
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 7370992620308723731, guid: a07780d3513a78a4094f2c905023dda0, type: 3}
       propertyPath: 'bgmClips.Array.data[1]'
       value: 
       objectReference: {fileID: 8300000, guid: 84c87bc6710f31f4385d17f7806a76b2, type: 3}
@@ -7686,6 +7690,18 @@ PrefabInstance:
       propertyPath: 'bgmClips.Array.data[2]'
       value: 
       objectReference: {fileID: 8300000, guid: 9e4bdc37d2d2fd4428cd9923f5966aa3, type: 3}
+    - target: {fileID: 7370992620308723731, guid: a07780d3513a78a4094f2c905023dda0, type: 3}
+      propertyPath: 'sfxclips.Array.data[21]'
+      value: 
+      objectReference: {fileID: 8300000, guid: bef4f3a6d6882ba468bbefc1917cd8b5, type: 3}
+    - target: {fileID: 7370992620308723731, guid: a07780d3513a78a4094f2c905023dda0, type: 3}
+      propertyPath: 'sfxclips.Array.data[22]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 97c088a0276ddc64fa3bb0c241a12b11, type: 3}
+    - target: {fileID: 7370992620308723731, guid: a07780d3513a78a4094f2c905023dda0, type: 3}
+      propertyPath: 'sfxclips.Array.data[23]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 9974110889d3cc24cbf0d48cb3f55084, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7806,7 +7822,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.548
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
