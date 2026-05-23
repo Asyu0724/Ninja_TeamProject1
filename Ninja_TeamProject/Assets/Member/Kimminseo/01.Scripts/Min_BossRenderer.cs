@@ -7,6 +7,7 @@ using Random = UnityEngine.Random;
 public class Min_BossRenderer : MonoBehaviour
 {
     [SerializeField] private Min_BossMover bossMover;
+    [SerializeField] private Min_BossSkill bossSkill;
     [SerializeField] private Min_BossHealth bossHealth;
     
     private Animator _anim;
@@ -45,6 +46,7 @@ public class Min_BossRenderer : MonoBehaviour
     {
         bossMover.MoveToPlayer();
     }
+
     
     // 규원 킴의 찌꺼기
     /*public void SetAttack2Fin()
@@ -86,5 +88,6 @@ public class Min_BossRenderer : MonoBehaviour
     {
         bossMover.Attack3OverLap();
     }*/
+
 }
 
