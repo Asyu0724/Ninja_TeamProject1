@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d89f56c36c5e4f8385c0d30e28bfa105, type: 3}
   m_Name: Player Skill data
   m_EditorClassIdentifier: Assembly-CSharp::Member.KimJoonYoung._01.Scripts.SO.PlayerSkillDataSO
-  skillCoolTime: 3
-  skillDamageAmount: 12
+  skillCoolTime: 6
+  skillDamageAmount: 10
   skillBoxSize: {x: 5, y: 1}
   skillBoxOffset: {x: 2.5, y: 0}

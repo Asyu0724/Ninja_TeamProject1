@@ -10,12 +10,14 @@ using UnityEngine.Events;
 
 public class BossHealth : MonoBehaviour, IDamageable
 {
+    [SerializeField] private Transform bloodParticle; 
     [SerializeField] private int maxHealth = 30;
     [SerializeField] private BossRenderer bossRenderer;
-    [SerializeField] private BossHealthBarUI healthBarUIUI;
+    [SerializeField] private BossHealthBarUI healthBarUI;
     [SerializeField] private BossMover bossMover;
     [SerializeField] private CJY_AudioManager bossAudio;
     public UnityEvent OnDamage;
+    public UnityEvent OnDeath;
 
     private int _bossHealth;
     public bool IsDeath { get; private set; }
@@ -26,7 +28,7 @@ public class BossHealth : MonoBehaviour, IDamageable
 
     private void Start()
     {
-        healthBarUIUI.InitHealthUI(_bossHealth, maxHealth);
+        healthBarUI.InitHealthUI(_bossHealth, maxHealth);
         _bossHealth = maxHealth;
         IsDeath = false;
     }
@@ -35,9 +37,10 @@ public class BossHealth : MonoBehaviour, IDamageable
     {
         if (IsDeath || IsCharge || bossMover.IsJump) return;
         _bossHealth -= damage;
+        bloodParticle.position = transform.position;
         OnDamage?.Invoke();
         _bossHealth = Mathf.Clamp(_bossHealth, 0, maxHealth);
-        healthBarUIUI.UpdateHealthUI(_bossHealth);
+        healthBarUI.UpdateHealthUI(_bossHealth);
         bossRenderer.StartCoroutine("Attacked");
         if (_bossHealth <= 10 && _canCharge > 0)
         {
@@ -47,6 +50,7 @@ public class BossHealth : MonoBehaviour, IDamageable
         if (_bossHealth <= 0)
         {
             bossAudio.PlaySFX(7,0.1f);
+            OnDeath?.Invoke();
             IsDeath = true;
         }
     }
@@ -75,7 +79,7 @@ public class BossHealth : MonoBehaviour, IDamageable
             _bossHealth += 3;
             chargeTime += 0.5f;
             _bossHealth = Mathf.Clamp(_bossHealth, 0, maxHealth);
-            healthBarUIUI.UpdateHealthUI(_bossHealth);
+            healthBarUI.UpdateHealthUI(_bossHealth);
             if (chargeTime >= 3)
             {
                 IsCharge = false;

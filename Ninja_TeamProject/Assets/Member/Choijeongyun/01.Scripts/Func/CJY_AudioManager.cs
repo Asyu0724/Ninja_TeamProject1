@@ -47,6 +47,5 @@ namespace Member.Choijeongyun._01.Scripts.Func
         {
             _loopAudio.Stop();
         }
-        
     }
 }

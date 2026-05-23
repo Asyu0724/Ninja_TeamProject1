@@ -1,7 +1,7 @@
 using System.Collections;
 using Member.KimJoonYoung._01.Scripts.Player;
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class BossSkill : MonoBehaviour
 {
@@ -14,6 +14,7 @@ public class BossSkill : MonoBehaviour
     [SerializeField] private Transform areaStart;
     [SerializeField] private Transform areaEnd;
 
+    [SerializeField] private Transform gasParticle; 
 
     // 보스 범위 공격 (오버랩 박스)
     /*[SerializeField] private LayerMask playerLayer;
@@ -25,6 +26,8 @@ public class BossSkill : MonoBehaviour
     private bool _isAttackFin;
 
     public bool IsKnockBack { get; private set; } 
+    public UnityEvent onAtk3;
+    
 
     private Vector2 _knockBackDir; // 넉백 방향
     [SerializeField] private float speed = 5f; // 넉백 세기
@@ -95,5 +98,11 @@ public class BossSkill : MonoBehaviour
     private void AttackFin()
     {
         _isAttackFin = true;
+    }
+    
+    public void Atk3Event()
+    {
+        gasParticle.position = transform.parent.position;
+        onAtk3?.Invoke();
     }
 }
