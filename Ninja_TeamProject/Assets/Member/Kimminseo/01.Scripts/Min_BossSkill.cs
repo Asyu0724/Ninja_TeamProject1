@@ -82,5 +82,4 @@ public class Min_BossSkill : MonoBehaviour
     {
         _isAttackFin = true;
     }
-    
 }
