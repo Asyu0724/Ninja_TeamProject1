@@ -17,7 +17,7 @@ public class SBoss : MonoBehaviour
     [SerializeField] private LayerMask whatIsPlayer;
     public SBossData bossData;
     public bool isAttacking = false;
-
+    
     void Awake()
     {
         _bossMove = GetComponent<BossMove>();

@@ -14,6 +14,7 @@ public class BossMove : MonoBehaviour
     private Transform playerTRM;
     public float MoveSpeed;
     public static BossMove instance;
+    [SerializeField] private LayerMask whatIsWall;
     
     private void Awake()
     {
@@ -67,13 +68,23 @@ public class BossMove : MonoBehaviour
         MoveSpeed = 0f;
 
         Vector2 bossLook = transform.right; 
-        
         float ChargePoint = bossData.ChargeRange.x; 
         
-        Vector2 ChargeEnd = (Vector2)transform.position + (bossLook * ChargePoint);
+        Vector2 startPos = (Vector2)transform.position + (bossLook * 0.5f);
         
+        RaycastHit2D hit = Physics2D.Raycast(startPos, bossLook, ChargePoint, whatIsWall);
+        Vector2 ChargeEnd;
+
+        if (hit.collider != null)
+        {
+            ChargeEnd = hit.point - (bossLook * 0.5f);
+        }
+        else
+        {
+            ChargeEnd = (Vector2)transform.position + (bossLook * ChargePoint);
+        }
         transform.position = ChargeEnd;
         
-        Debug.Log("위치 이동");
+        Debug.Log("위치 이동 완료");
     }
 }
