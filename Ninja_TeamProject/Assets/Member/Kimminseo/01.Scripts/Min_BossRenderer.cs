@@ -46,8 +46,6 @@ public class Min_BossRenderer : MonoBehaviour
     {
         bossMover.MoveToPlayer();
     }
-
-    
     // 규원 킴의 찌꺼기
     /*public void SetAttack2Fin()
     {
