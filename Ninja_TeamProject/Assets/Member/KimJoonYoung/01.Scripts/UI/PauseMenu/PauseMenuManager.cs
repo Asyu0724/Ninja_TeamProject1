@@ -3,6 +3,7 @@ using DG.Tweening;
 using Member.KimJoonYoung._01.Scripts.Manager;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
@@ -18,6 +19,7 @@ namespace Member.KimJoonYoung._01.Scripts.UI.PauseMenu
         private bool _isPaused;
         private bool _canOnOff = true;
         public static PauseMenuManager Instance;
+        public UnityEvent OffPauseEvent;
         public Action OnPauseAction;
         public Action OffPauseAction;
         
@@ -67,6 +69,7 @@ namespace Member.KimJoonYoung._01.Scripts.UI.PauseMenu
         public void OffPause()
         {
             Sequence seq = DOTween.Sequence();
+            OffPauseEvent?.Invoke();
             OffPauseAction?.Invoke();
             _isPaused = false;
             _canOnOff = false;

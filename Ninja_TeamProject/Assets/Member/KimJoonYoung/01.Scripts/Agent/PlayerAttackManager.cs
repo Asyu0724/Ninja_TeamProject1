@@ -94,13 +94,13 @@ namespace Member.KimJoonYoung._01.Scripts.Agent
                 switch (Random.Range(0, 3))
                 {
                     case 0:
-                        AudioManager.instance.PlaySfx(AudioManager.Sfx.avgAtk0);
+                        AudioManager.instance.PlaySfx(AudioManager.Sfx.avgAtk0 , 4);
                         break;
                     case 1:
-                        AudioManager.instance.PlaySfx(AudioManager.Sfx.avgAtk1);
+                        AudioManager.instance.PlaySfx(AudioManager.Sfx.avgAtk1 , 4);
                         break;
                     case 2:
-                        AudioManager.instance.PlaySfx(AudioManager.Sfx.avgAtk2);
+                        AudioManager.instance.PlaySfx(AudioManager.Sfx.avgAtk2 , 4);
                         break;
                 }
 
@@ -226,7 +226,7 @@ namespace Member.KimJoonYoung._01.Scripts.Agent
         IEnumerator QSkillAttackSound()
         {
             yield return new WaitForSeconds(0.3f);
-            AudioManager.instance.PlaySfx(AudioManager.Sfx.QSkill); 
+            AudioManager.instance.PlaySfx(AudioManager.Sfx.QSkill , 3); 
         }
         IEnumerator CanQSkill()
         {
@@ -242,7 +242,7 @@ namespace Member.KimJoonYoung._01.Scripts.Agent
         IEnumerator QSkillText()
         {
             cantUseSkillText.text = "Can't Use Q Skill";
-            yield return new WaitForSeconds(3);
+            yield return new WaitForSeconds(2);
             cantUseSkillText.text = null;
         }
     

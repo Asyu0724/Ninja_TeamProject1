@@ -1,10 +1,11 @@
 using Member.KimJoonYoung._01.Scripts.Hp;
+using Member.KimJoonYoung._01.Scripts.UI.Boss;
 using UnityEngine;
 
 public class Min_BossHealth : MonoBehaviour, IDamageable
 {
     [SerializeField] private int maxHealth = 30;
-    [SerializeField] private HealthBarUI _healthBarUI;
+    [SerializeField] private BossHealthBarUI _healthBarUI;
     
     private int _bossHealth;
     public bool IsDeath { get; private set; }
@@ -13,7 +14,7 @@ public class Min_BossHealth : MonoBehaviour, IDamageable
     {
         _bossHealth = maxHealth;
         IsDeath = false;
-        _healthBarUI.InitHealthUI(maxHealth);
+        _healthBarUI.InitHealthUI(_bossHealth , maxHealth);
         _healthBarUI.UpdateHealthUI(_bossHealth);
     }
 

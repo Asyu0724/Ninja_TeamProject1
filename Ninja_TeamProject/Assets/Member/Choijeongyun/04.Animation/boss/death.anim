@@ -108,7 +108,7 @@ AnimationClip:
   m_Events:
   - time: 0
     functionName: StartSFX
-    data: 
+    data: 17,9
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
