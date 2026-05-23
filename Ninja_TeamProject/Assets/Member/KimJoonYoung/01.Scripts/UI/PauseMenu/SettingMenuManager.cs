@@ -1,8 +1,5 @@
-using System;
 using DG.Tweening;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 namespace Member.KimJoonYoung._01.Scripts.UI.PauseMenu
 {

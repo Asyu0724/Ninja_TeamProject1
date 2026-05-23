@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Linq.Expressions;
 using Member.KimJoonYoung._01.Scripts.Agent;
 using UnityEngine;
 using UnityEngine.Events;
-using Random = UnityEngine.Random;
 
 public class Min_BossRenderer : MonoBehaviour
 {

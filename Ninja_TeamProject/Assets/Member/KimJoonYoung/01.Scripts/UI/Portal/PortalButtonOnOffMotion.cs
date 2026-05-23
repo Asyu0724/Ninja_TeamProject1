@@ -1,7 +1,5 @@
-using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Member.KimJoonYoung._01.Scripts.UI.Portal
 {

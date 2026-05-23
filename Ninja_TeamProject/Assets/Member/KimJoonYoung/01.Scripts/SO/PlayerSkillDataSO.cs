@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace Member.KimJoonYoung._01.Scripts.SO

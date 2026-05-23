@@ -1,4 +1,3 @@
-using Member.KimJoonYoung._01.Scripts.Hp;
 using Member.KimJoonYoung._01.Scripts.UI.Boss;
 using UnityEngine;
 using UnityEngine.Events;

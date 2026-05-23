@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using Member.KimJoonYoung._01.Scripts.SO;
 using TMPro;

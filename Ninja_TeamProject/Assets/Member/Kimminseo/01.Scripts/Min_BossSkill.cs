@@ -1,6 +1,5 @@
 using System.Collections;
 using Member.KimJoonYoung._01.Scripts.Player;
-using Unity.Cinemachine;
 using UnityEngine;
 
 public class Min_BossSkill : MonoBehaviour

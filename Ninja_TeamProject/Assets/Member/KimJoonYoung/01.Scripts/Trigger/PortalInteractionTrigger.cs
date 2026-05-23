@@ -1,9 +1,6 @@
-using System;
 using Member.KimJoonYoung._01.Scripts.Interface;
-using Member.KimJoonYoung._01.Scripts.UI;
 using Member.KimJoonYoung._01.Scripts.UI.Portal;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 namespace Member.KimJoonYoung._01.Scripts.Trigger
 {

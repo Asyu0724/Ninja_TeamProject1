@@ -1,4 +1,3 @@
-using System;
 using Member.KimJoonYoung._01.Scripts.SO;
 using TMPro;
 using UnityEngine;

@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using DG.Tweening;
 using Member.KimJoonYoung._01.Scripts.Hp;
 using UnityEngine;

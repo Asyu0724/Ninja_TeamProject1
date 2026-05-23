@@ -1,5 +1,3 @@
-using System;
-using Member.KimJoonYoung._01.Scripts.SO;
 using UnityEngine;
 using UnityEngine.Events;
 
