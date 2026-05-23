@@ -15,7 +15,8 @@ public class Min_BossRenderer : MonoBehaviour
     [SerializeField] private Transform playerTrm;
 
     private int _hashAttack1 = Animator.StringToHash("Attack1");
-    private int _hashAttack2 = Animator.StringToHash("Attack2");
+    // private int _hashAttack2 = Animator.StringToHash("Attack2");
+    private int _hashMoveX = Animator.StringToHash("moveX");
     private int _hashAttack3 = Animator.StringToHash("Attack3");
     private int _hashTeleport = Animator.StringToHash("Teleport");
     private int _hashDie = Animator.StringToHash("Die");
@@ -28,9 +29,9 @@ public class Min_BossRenderer : MonoBehaviour
     private void Update()
     {
         _anim.SetBool(_hashAttack1, bossMover.Attack1);
-        _anim.SetBool(_hashAttack2, bossMover.Attack2);
+        _anim.SetFloat(_hashMoveX, bossMover.MoveX);
         _anim.SetBool(_hashAttack3, bossMover.Attack3);
-        _anim.SetBool(_hashTeleport, bossMover.Attack1);
+        _anim.SetBool(_hashTeleport, bossMover.Tp);
         _anim.SetBool(_hashDie, bossHealth.IsDeath);
     }
 
@@ -38,11 +39,12 @@ public class Min_BossRenderer : MonoBehaviour
     {
         bossMover.SkillOff();
     }
-
-    public void Teleport()
+    
+    public void MoveToPlayer()
     {
-        bossMover.Teleport();
+        bossMover.MoveToPlayer();
     }
+    
     
     // 규원 킴의 찌꺼기
     /*public void SetAttack2Fin()
@@ -60,8 +62,7 @@ public class Min_BossRenderer : MonoBehaviour
 
     public void MoveColliderAttackEnd()
     {
-        _collider.offset = new Vector2(0, -2);
-    }
+        _collider.offset = new Vector2(0, -2);    }
     public void MoveColliderAttack2Start()
     {
         _collider.offset = new Vector2(0, 1.4f);

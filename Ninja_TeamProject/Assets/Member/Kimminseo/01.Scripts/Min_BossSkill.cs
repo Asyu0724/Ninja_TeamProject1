@@ -17,7 +17,7 @@ public class Min_BossSkill : MonoBehaviour
     
     private bool _isAttackFin;
 
-    private void AttackStart()
+    private void DamageStart()
     {
         _isAttackFin = false;
         StartCoroutine(AttackRoutine());
@@ -78,7 +78,7 @@ public class Min_BossSkill : MonoBehaviour
         }
     }
     
-    private void AttackFin()
+    private void DamageFin()
     {
         _isAttackFin = true;
     }
