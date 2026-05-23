@@ -30,7 +30,7 @@ public class Min_BossMover : MonoBehaviour
         private bool _attack2Cool = false;
         
 
-        private bool IsSkill => Attack1 || Attack2 || Attack3 || Tp;
+        private bool IsSkill => Attack1 || Attack3 || Tp;
         
         private Vector2 _moveDir;
         private Vector2 _distance;
@@ -47,13 +47,22 @@ public class Min_BossMover : MonoBehaviour
             _distance = player.transform.position - transform.position;
             _moveDir.x = _distance.x > 0 ? 1f : -1f;
             MoveX = Mathf.Abs(_rb.linearVelocityX);
+            
+            if (_moveDir.x > 0)
+            {
+                transform.rotation = Quaternion.Euler(0, 0, 0);
+            }
+            else if (_moveDir.x < 0)
+            {
+                transform.rotation = Quaternion.Euler(0, 180, 0);
+            }
 
-            if (Mathf.Abs(_distance.x) < 8.0f && !IsSkill && !_attack2Cool)
+            if (Mathf.Abs(_distance.x) <= 7.0f && !IsSkill && !_attack2Cool)
             {
                 Attack2Skill();
             }
             
-            if (!IsSkill && LastAttackTime <= 0)
+            if (Mathf.Abs(_distance.x) > 7.0f && !IsSkill && LastAttackTime <= 0)
             {
                 LastAttackTime = 2f;
                 StartCoroutine(StartAttack());
@@ -64,15 +73,6 @@ public class Min_BossMover : MonoBehaviour
         private void Update()
         {
             LastAttackTime -= Time.deltaTime;
-            if (_moveDir.x > 0)
-            {
-                transform.rotation = Quaternion.Euler(0, 0, 0);
-            }
-            else if (_moveDir.x < 0)
-            {
-                transform.rotation = Quaternion.Euler(0, 180, 0);
-            }
-            
         }
 
         private IEnumerator StartAttack()
@@ -139,6 +139,7 @@ public class Min_BossMover : MonoBehaviour
         {
             Attack1 = false;
             Attack2 = false;
+            _rb.linearVelocity = Vector2.zero;
             Attack3 = false;
             Tp = false;
         }
