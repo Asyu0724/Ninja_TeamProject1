@@ -29,7 +29,7 @@ public class AudioManager : MonoBehaviour
         avgAtk0, avgAtk1, avgAtk2, QSkill , Hit , Step1 , Step2 , Step3 , Crack , Tick , Majestic , Attacked ,
         BossAtk1 , BossAtk2 , BossAtk3 , BossCharge , BossDash , BossDeath , BossJump , BossLand, BossWalk
     }
-    public enum Bgm { main , spiderBoss}
+    public enum Bgm { main , spiderBoss , minBoss}
 
     private void Awake()
     {
