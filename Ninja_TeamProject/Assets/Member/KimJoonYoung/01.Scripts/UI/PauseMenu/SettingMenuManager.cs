@@ -1,5 +1,6 @@
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Member.KimJoonYoung._01.Scripts.UI.PauseMenu
 {
@@ -8,6 +9,7 @@ namespace Member.KimJoonYoung._01.Scripts.UI.PauseMenu
         private bool _isOnSetting;
         [SerializeField] private RectTransform sfx;
         [SerializeField] private RectTransform bgm;
+        [SerializeField] private RectTransform toggle;
 
         public void Setting()
         {
@@ -24,14 +26,16 @@ namespace Member.KimJoonYoung._01.Scripts.UI.PauseMenu
             seq.SetUpdate(true);
             seq.Prepend(sfx.DOLocalMoveX(675f, 0.5f).SetEase(Ease.OutCubic).SetDelay(0.05f));
             seq.Join(bgm.DOLocalMoveX(675f, 0.5f).SetEase(Ease.OutCubic).SetDelay(0.05f));
+            seq.Join(toggle.DOLocalMoveX(675f, 0.5f).SetEase(Ease.OutCubic).SetDelay(0.05f));
         }
         public void OffSetting()
         {
             _isOnSetting = false;
             Sequence seq = DOTween.Sequence();
             seq.SetUpdate(true);
-            seq.Prepend(sfx.DOLocalMoveX(1250f, 0.5f).SetEase(Ease.OutCubic).SetDelay(0.05f));
-            seq.Join(bgm.DOLocalMoveX(1250f, 0.5f).SetEase(Ease.OutCubic).SetDelay(0.05f));
+            seq.Prepend(sfx.DOLocalMoveX(1450f, 0.5f).SetEase(Ease.OutCubic).SetDelay(0.05f));
+            seq.Join(bgm.DOLocalMoveX(1450f, 0.5f).SetEase(Ease.OutCubic).SetDelay(0.05f));
+            seq.Join(toggle.DOLocalMoveX(1450f, 0.5f).SetEase(Ease.OutCubic).SetDelay(0.05f));
         }
 
     }

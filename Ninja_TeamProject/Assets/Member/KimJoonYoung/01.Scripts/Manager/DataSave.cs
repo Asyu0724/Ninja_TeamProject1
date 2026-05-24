@@ -14,7 +14,14 @@ public class DataSave : MonoBehaviour
         BestS = PlayerPrefs.GetInt("BestS", 0);
         BestF = PlayerPrefs.GetFloat("BestF", 0);
         
-        if (timerSO.saveM > BestM && timerSO.saveS > BestS && timerSO.saveF > BestF)
+        if (BestM <= 0 && BestS <= 0 && BestF <= 0)
+        {
+            PlayerPrefs.SetInt("BestM", timerSO.saveM);
+            PlayerPrefs.SetInt("BestS", timerSO.saveS);
+            PlayerPrefs.SetFloat("BestF", timerSO.saveF);
+        }
+        
+        else if (timerSO.saveM < BestM && timerSO.saveS < BestS && timerSO.saveF < BestF)
         {
             PlayerPrefs.SetInt("BestM", timerSO.saveM);
             PlayerPrefs.SetInt("BestS", timerSO.saveS);

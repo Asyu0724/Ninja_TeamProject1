@@ -21006,6 +21006,7 @@ MonoBehaviour:
   OnEvent:
     m_PersistentCalls:
       m_Calls: []
+  <OnFlash>k__BackingField: 0
 --- !u!199 &814477400
 ParticleSystemRenderer:
   serializedVersion: 7
@@ -27189,6 +27190,14 @@ PrefabInstance:
     - target: {fileID: 9083552514201339227, guid: cdd78871081b7d14e904ea56de654d91, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SfxSoundVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 9170211356028767164, guid: cdd78871081b7d14e904ea56de654d91, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 814477399}
+    - target: {fileID: 9170211356028767164, guid: cdd78871081b7d14e904ea56de654d91, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: set_OnFlash
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

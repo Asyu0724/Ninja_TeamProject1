@@ -49,8 +49,26 @@ AnimationClip:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   m_ClipBindingConstant:
-    genericBindings: []
-    pptrCurveMapping: []
+    genericBindings:
+    - serializedVersion: 2
+      path: 0
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
+      isIntCurve: 0
+      isSerializeReferenceCurve: 0
+    pptrCurveMapping:
+    - {fileID: -5587881257011832205, guid: c33fbba657337ca41aadc4c92c9afeaa, type: 3}
+    - {fileID: -7514505236152008181, guid: c33fbba657337ca41aadc4c92c9afeaa, type: 3}
+    - {fileID: -7781357969189879912, guid: c33fbba657337ca41aadc4c92c9afeaa, type: 3}
+    - {fileID: -2500454840858013761, guid: c33fbba657337ca41aadc4c92c9afeaa, type: 3}
+    - {fileID: -5809099901230185149, guid: c33fbba657337ca41aadc4c92c9afeaa, type: 3}
+    - {fileID: -3833315213745690608, guid: c33fbba657337ca41aadc4c92c9afeaa, type: 3}
+    - {fileID: 1216898687442853459, guid: c33fbba657337ca41aadc4c92c9afeaa, type: 3}
+    - {fileID: 7393030917242870223, guid: c33fbba657337ca41aadc4c92c9afeaa, type: 3}
+    - {fileID: 7393030917242870223, guid: c33fbba657337ca41aadc4c92c9afeaa, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -75,4 +93,18 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.21
+    functionName: StartSFX
+    data: 32,15
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.61
+    functionName: StartSFX
+    data: 32,15
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
