@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -70,8 +71,34 @@ public class AudioManager : MonoBehaviour
 
     public void PlayBgm(Bgm bgm , bool loop)
     {
+        StartCoroutine(FadeIn(bgm, loop));
+    }
+
+    public void StopBgm()
+    {
+        StartCoroutine(FadeOut());
+    }
+
+    private IEnumerator FadeIn(Bgm bgm, bool loop, float time = 2f)
+    {
         bgmPlayers.clip = bgmClips[(int)bgm];
+        bgmPlayers.loop = loop;
+        bgmPlayers.volume = 0f;
         bgmPlayers.Play();
+        while (bgmPlayers.volume < bgmVolume)
+        {
+            bgmPlayers.volume += Time.deltaTime * bgmVolume/time;
+            yield return null;
+        }
+    }
+
+    private IEnumerator FadeOut(float time = 2f)
+    {
+        while (bgmPlayers.volume > 0f)
+        {
+            bgmPlayers.volume -= Time.deltaTime * bgmVolume/time;
+            yield return null;
+        }
     }
     
     public void PlaySfx(Sfx sfx , int ch)
