@@ -127,4 +127,9 @@ public class AudioManager : MonoBehaviour
         _bgmVolume = Mathf.Log10(value) * 20;
         mixer.SetFloat("BGMVolume", _bgmVolume);
     }
+    
+    private void OnDestroy()
+    {
+        StopAllCoroutines();
+    }
 }
